@@ -72,3 +72,6 @@ WebSocket của HMR kết nối về `localhost:3000`. Trên phone, `localhost` 
 
 ## Phone gửi request vào webpack-dev-server thế nào?
 Phone mở Chrome → gõ `http://192.168.2.26:3000` → Chrome gửi HTTP GET tới IP đó port 3000 → packet đi qua WiFi → đến WiFi adapter laptop → webpack-dev-server đang listen `0.0.0.0:3000` nhận request → trả `index.html` → browser load JS bundle → React app chạy.
+
+## Vai trò của HTTP server?
+Nhận HTTP request từ client, xử lý, trả về HTTP response. Ví dụ: client gửi `GET /index.html` → server tìm file đó → trả về nội dung kèm status 200. webpack-dev-server là HTTP server dùng trong development; production dùng Nginx/Apache.

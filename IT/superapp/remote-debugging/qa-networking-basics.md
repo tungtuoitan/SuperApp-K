@@ -102,3 +102,35 @@ Phần lớn đúng, nhưng có ngoại lệ: router có thể cấu hình VLAN 
 
 ## `192.168.2.1` có phải IP WiFi của laptop không?
 Không. Đó là Ethernet static IP. IP WiFi là `192.168.2.26`. Khi WiFi hiển thị `169.254.x.x` (APIPA) thì WiFi chưa kết nối được DHCP — không dùng được.
+
+<!-- ## Khi WiFi của laptop hiển thị `169.254.x.x` thì có debug mobile qua IP được không?
+Không. `169.254.x.x` là APIPA — WiFi chưa lấy được IP từ DHCP, nghĩa là laptop chưa thực sự kết nối vào mạng WiFi. Phải dùng USB port forwarding thay thế. -->
+
+## Interface là gì (trong `route print`)?
+Interface là card mạng (network adapter) đang được dùng để gửi packet. Trong `route print`, cột Interface hiển thị IP của adapter đó — ví dụ `192.168.2.26` nghĩa là laptop đang dùng WiFi adapter để gửi traffic ra ngoài.
+## Adapter nào cũng là interface?
+Không hẳn. Adapter là phần cứng/phần mềm kết nối vật lý. Interface là lớp phần mềm mà OS dùng để giao tiếp với adapter đó. Mỗi adapter có 1 interface tương ứng, nhưng cũng có interface không cần adapter vật lý (ví dụ loopback).
+
+## Adapter là gì?
+Bộ điều hợp — chuyển đổi giữa 2 hệ thống có giao diện khác nhau. Network adapter = card mạng, là phần cứng (hoặc phần mềm ảo) cho phép máy tính kết nối vào mạng.
+
+## Quan hệ giữa interface, adapter, driver — cho ví dụ?
+- **Adapter**: phần cứng vật lý (hoặc ảo) — ví dụ chip WiFi Intel AX211 gắn trong laptop
+- **Driver**: phần mềm do nhà sản xuất viết, cho phép OS "nói chuyện" với adapter đó
+- **Interface**: cái OS tạo ra sau khi driver cài xong — là "cửa sổ" phần mềm mà ứng dụng dùng để gửi/nhận packet
+
+Ví dụ thực tế: Intel AX211 (adapter) → Intel WiFi driver (driver) → "Wi-Fi" interface với IP `192.168.2.26`.
+
+## Mỗi WiFi là 1 subnet?
+Thường đúng. Router cấp IP cho tất cả thiết bị kết nối WiFi trong cùng 1 dải — ví dụ `192.168.2.0/24`. Tất cả thiết bị đó cùng subnet. Ngoại lệ: router doanh nghiệp có thể tách WiFi thành nhiều VLAN/subnet riêng.
+
+## Router trong WiFi thường có IP = subnet + .1 phải không?
+Thường đúng với router nhà — router lấy `.1` của subnet, ví dụ subnet `192.168.1.0/24` → router là `192.168.1.1`. Nhưng không bắt buộc — router có thể lấy bất kỳ IP nào trong subnet, ví dụ `.253` như trong trường hợp này (`192.168.2.253`).
+## Router có phải thiết bị vật lý không?
+Đúng. Router là thiết bị vật lý mà laptop cắm cáp hoặc kết nối WiFi vào. Nó có IP riêng trong subnet (gateway IP) và có nhiệm vụ định tuyến traffic.
+
+## IP của router trong subnet là bao nhiêu?
+Là **gateway IP** — trong trường hợp này `192.168.2.253`. Đây là IP "phía trong" (LAN). Router còn có IP "phía ngoài" (WAN) để kết nối internet, nhưng ta không cần quan tâm khi debug local.
+
+## IP của router luôn là `192.168.2.253`?
+Không. Tùy cấu hình của từng router. Phổ biến nhất là `192.168.1.1` hoặc `192.168.0.1`. `192.168.2.253` là cấu hình riêng của router này. Để biết IP gateway, chạy `route print` và xem cột Gateway.
