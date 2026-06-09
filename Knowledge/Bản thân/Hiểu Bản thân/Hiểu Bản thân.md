@@ -69,8 +69,7 @@ name: "Hiểu Bản thân"
 # Làm sao để có cảm hứng mỗi ngày? [id:191 order:15]
 - mỗi lần nhích gần lại mục tiêu trùm dev là mình có cảm hứng à
 
-# giữa thói quen và trùm dev thì mình nên ưu tiên hư thế nào? 
-vì sao? [id:192 order:16]
+# giữa thói quen và trùm dev thì mình nên ưu tiên hư thế nào? vì sao? [id:192 order:16]
 ưu tiên trùm dev, vì nó tạo ra cảm hứng
 còn thói quen sẽ đến dần dần, k cần dồn sức cho nó.
 

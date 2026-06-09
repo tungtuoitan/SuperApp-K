@@ -14,7 +14,7 @@ vì function component ít boiler code
 # markup là gì? [id:117 order:2]
 - là html
 
-# Tại sao lại nên dùng  configuration object để viết repeat markup? [id:143 order:2]
+# Tại sao lại nên dùng configuration object để viết repeat markup? [id:143 order:2]
 code dễ đọc, dễ sửa hơn do tuân thủ DRY và data-driven
 
 # 4 nguyên tắc viết component? [id:118 order:3]
@@ -44,8 +44,7 @@ là dùng thuộc tính trực tiếp thay vì object
 # primitives là gì? [id:127 order:12]
 - kiểu dữ liệu nguyên thuỷ (string, number,...)
 
-# khi nào thì nên tạo  component riêng cho List?
-khi nào không nên ? [id:128 order:13]
+# khi nào thì nên tạo component riêng cho List? khi nào không nên ? [id:128 order:13]
 hầu hết là nên tách,
 k nên tách khi component chính đơn giản
 
@@ -101,8 +100,7 @@ việc này tương tự việc dùng fetch thủ công thay vì Axios
 # props drilling là gì? [id:169 order:29]
 là việc prop bị truyền qua quá nhiều tầng component
 
-# Interceptor là gì? 
-có chức năng gì? [id:170 order:30]
+# Interceptor là gì? có chức năng gì? [id:170 order:30]
 à lớp đứng giữa app và server, 
 có chức năng xử lí mọi lỗi trước khi app thấy chúng
 

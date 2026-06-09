@@ -23,7 +23,4 @@ trùm dev + chữa bệnh
 
 <!--# có mấy loại task? [id:268 order:4] -->
 
-<!--# làm sao đảm bảo được: 
-k quên task, 
-tuân thủ các rule, nguyên tắc đã dặt ra
-tuân thủ flow đã đặt ra? [id:269 order:5] -->
+<!--# làm sao đảm bảo được: k quên task, tuân thủ các rule, nguyên tắc đã dặt ra tuân thủ flow đã đặt ra? [id:269 order:5] -->

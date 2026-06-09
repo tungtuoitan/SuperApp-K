@@ -21,7 +21,6 @@ chữa bệnh
 # Vì sao mình cần thói quen? [id:149 order:11]
 vì thói quen là bước đầu của kỉ luật
 
-# Thói quen ưu tiên nhất nên là gì? 
-vì sao? [id:150 order:12]
+# Thói quen ưu tiên nhất nên là gì? vì sao? [id:150 order:12]
 nên là đi bộ 2h mỗi ngày
 vì nó giúp mình chữa bệnh hiện tại, và tránh phải ở phòng 1 mình quá nhiều

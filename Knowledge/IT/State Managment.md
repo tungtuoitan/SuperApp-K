@@ -11,8 +11,7 @@ name: "State Managment"
 performance kém
 ít tính năng
 
-# dùng react context ở giai đoạn đầu, khi cần thì migrate qua zustand, đây có phải flow tốt không? 
-vì sao? [id:207 order:11]
+# dùng react context ở giai đoạn đầu, khi cần thì migrate qua zustand, đây có phải flow tốt không? vì sao? [id:207 order:11]
 không, 
 ta nên dùng zustand ngay từ đầu
 
@@ -34,13 +33,10 @@ vì khi 1 state update, mọi component link đến context đều re-render
 # Tại sao zustand có hiệu suất cao hơn React Context? [id:216 order:20]
 vì react context sẽ trigger re-render hàng loạt
 
-# React Context là gì?
-React có phải state manager không? [id:217 order:21]
+# React Context là gì? React có phải state manager không? [id:217 order:21]
 nó là kỹ thuật DI, k phải là state manager
 
-# React Context nên dc dùng để làm gì?
-nó k nên dùng cho việc gì?
-vì sao? [id:218 order:22]
+# React Context nên dc dùng để làm gì? nó k nên dùng cho việc gì? vì sao? [id:218 order:22]
 để truyền giá trị ít thay đổi
 nó k nên dùng để quản lí state thay đổi nhiều
 vì nó có vấn đề re-render

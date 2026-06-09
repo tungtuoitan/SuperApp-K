@@ -19,8 +19,7 @@ hóa.
 Không phổ biến vì khó sử dụng và rất nguy hiểm nếu không có thiết bị y
 tế.
 
-# Propofol có phổ biến không?
-phổ biến trong việc gì? [id:3 order:2]
+# Propofol có phổ biến không? phổ biến trong việc gì? [id:3 order:2]
 Rất phổ biến trong bệnh viện trên toàn thế giới, đặc biệt trong nội soi
 và phẫu thuật.
 

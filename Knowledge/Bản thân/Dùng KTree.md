@@ -3,7 +3,7 @@ id: 9
 name: "Dùng KTree"
 ---
 
-# Cách đặt tên node?  [id:67 order:0]
+# Cách đặt tên node? [id:67 order:0]
 mỗi node là tên công việc mà mình sẽ làm
 
 # Cách dùng KTree để học? [id:68 order:1]
@@ -11,8 +11,7 @@ mỗi node là tên công việc mà mình sẽ làm
 - tạo bộ câu hỏi
 - test đi test lại
 
-<!--# khi nào thì nên học kiến thức? 
-khi nào không nên? [id:73 order:2]
+<!--# khi nào thì nên học kiến thức? khi nào không nên? [id:73 order:2]
 học khi ứng dụng được ngay 
 nếu k thì k nên học -->
 

@@ -67,8 +67,8 @@ craco cho phép override cấu hình webpack-dev-server của CRA. Để debug m
 # Tại sao cần `host: "0.0.0.0"` trong craco? [id:500 order:16]
 Mặc định webpack-dev-server bind `localhost` (127.0.0.1) — chỉ nhận request từ chính máy. Đổi sang `0.0.0.0` thì phone mới gửi request vào được qua WiFi.
 
-# Tại sao HMR lỗi khi dùng USB debug mà không config? [id:501 order:17]
-WebSocket của HMR kết nối về `localhost:3000`. Trên phone, `localhost` là chính phone, không phải laptop → WebSocket fail → HMR không hoạt động sau khi reload.
+<!--# Tại sao HMR lỗi khi dùng USB debug mà không config? [id:501 order:17]
+WebSocket của HMR kết nối về `localhost:3000`. Trên phone, `localhost` là chính phone, không phải laptop → WebSocket fail → HMR không hoạt động sau khi reload. -->
 
 <!--# `auto://0.0.0.0:0/ws` nghĩa là gì? [id:502 order:18]
 `auto` = WebSocket tự lấy host từ URL mà page đang được load. Phone mở `http://192.168.2.26:3000` → WebSocket tự kết nối `ws://192.168.2.26:3000/ws`. Không cần hardcode IP. -->
