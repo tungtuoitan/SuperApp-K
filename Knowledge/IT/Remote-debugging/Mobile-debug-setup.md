@@ -40,8 +40,8 @@ Không hoàn toàn. **IP** là địa chỉ số (`192.168.2.26`). **Host** rộ
 <!--# Tại sao port forwarding không cần cùng mạng? [id:545 order:12]
 Vì traffic đi qua USB cable, không qua WiFi hay Ethernet. Không cần IP, không cần firewall rule, không cần CORS. -->
 
-# USB cable có phải network interface không? [id:546 order:13]
-Không theo nghĩa thông thường. USB là giao thức kết nối thiết bị, không phải network protocol. ADB tạo virtual network interface qua USB để truyền data — đó là interface ảo, không phải USB cable là network interface.
+<!--# USB cable có phải network interface không? [id:546 order:13]
+Không theo nghĩa thông thường. USB là giao thức kết nối thiết bị, không phải network protocol. ADB tạo virtual network interface qua USB để truyền data — đó là interface ảo, không phải USB cable là network interface. -->
 
 <!--# Nếu PC kết nối Ethernet, mobile kết nối WiFi thì chrome://inspect không dùng được? [id:547 order:14]
 Dùng được bình thường. `chrome://inspect` dùng USB cable (ADB), không phụ thuộc vào WiFi hay Ethernet của laptop. Miễn là laptop và phone kết nối qua USB và bật USB Debugging. -->
