@@ -25,10 +25,10 @@ Khối lượng công việc (CPU, RAM, IO) mà 1 process phải xử lý trong 
 - Daemon xuất báo cáo / render PDF: nhiều user request song song, mỗi job nặng
 - Daemon crawl / sync data từ nhiều nguồn: cần chia shard để chạy song song
 
-# ví dụ trường hợp việc giữ cho api hoạt động liên tục là quan trọng? [id:2672 order:6]
+<!--# ví dụ trường hợp việc giữ cho api hoạt động liên tục là quan trọng? [id:2672 order:6]
 - API serve websocket / streaming: restart làm rớt kết nối, client phải reconnect
 - API có warmup cache lâu: restart gây cold start, request đầu chậm vài giây
-- API serve traffic cao: mỗi lần restart đều có khoảng downtime ngắn ảnh hưởng SLA
+- API serve traffic cao: mỗi lần restart đều có khoảng downtime ngắn ảnh hưởng SLA -->
 
 # deamon on-demand là gì, cho ví dụ? [id:2673 order:7]
 Daemon chỉ chạy khi có trigger sự kiện, xong thì idle hoặc tắt — không chạy liên tục theo schedule. Ví dụ: daemon export Excel khởi chạy khi user click nút export, hoàn tất thì kết thúc.
