@@ -16,6 +16,38 @@ Khi đáp ứng ít nhất một trong các điều kiện:
 # workload là gì?
 Khối lượng công việc (CPU, RAM, IO) mà 1 process phải xử lý trong 1 đơn vị thời gian. Workload nặng = tốn nhiều tài nguyên hoặc kéo dài.
 
+# workload có được đo bằng số không?
+Có. Đo bằng các metric cụ thể: CPU usage (%), RAM (MB), số request/giây, số job/phút, latency trung bình (ms). Tool monitor như Prometheus, App Insights, Grafana track các con số này.
+
+# đo api bằng tool monitor để cải thiện performance có phổ biến không?
+Có. Đây là thực hành chuẩn — gọi là APM (Application Performance Monitoring). Hầu hết team backend production đều dùng để xác định bottleneck trước khi optimize.
+
+# ta chỉ có thể phân phát tài nguyên cho process chứ k thể chia nhỏ hơn cho từng phần trong process được phải không?
+Sai. OS cấp tài nguyên ở mức process, nhưng bên trong process có thể chia tiếp cho từng thread/task qua thread pool, semaphore, rate limiter. Code app tự kiểm soát phân chia bên trong.
+
+# thread là gì?
+là đơn vị thực thi nhỏ nhất mà OS lên lịch (schedule). Nhiều thread chạy song song trong cùng 1 process, chia sẻ memory space nhưng có stack riêng.
+
+# đặc điểm của thread?
+- Share memory với thread khác trong cùng process → giao tiếp nhanh nhưng dễ race condition
+- Có stack riêng → mỗi thread theo dõi call stack của nó độc lập
+- OS quản lý việc switch giữa các thread (context switch)
+- Tốn tài nguyên hơn task vì OS phải track kernel object cho mỗi thread
+
+# task là gì?
+là đơn vị công việc bất đồng bộ ở tầng app, không nhất thiết gắn với 1 thread cố định. Trong .NET, `Task` đại diện cho 1 operation async có thể chạy trên thread pool.
+
+# đặc điểm của task?
+- Nhẹ hơn thread — nhiều task dùng chung ít thread qua thread pool
+- Có thể await, chain (`.ContinueWith`), cancel qua `CancellationToken`
+- Không tự chạy song song — song song hay không phụ thuộc vào thread pool và scheduler
+- Dùng cho I/O-bound work: await giải phóng thread trong khi chờ I/O
+
+# quan hệ giữa process, thread và task?
+- Process chứa nhiều thread, có memory space riêng
+- Thread là đơn vị OS thực sự chạy code
+- Task là abstraction ở tầng app, được scheduler map lên thread khi cần chạy
+Thứ tự từ lớn đến nhỏ: Process → Thread → Task.
 # ví dụ các trường hợp cần scale deamon?
 - Daemon consume message queue: traffic tăng đột biến, cần thêm worker để xử lý kịp
 - Daemon xuất báo cáo / render PDF: nhiều user request song song, mỗi job nặng
@@ -25,6 +57,18 @@ Khối lượng công việc (CPU, RAM, IO) mà 1 process phải xử lý trong 
 - API serve websocket / streaming: restart làm rớt kết nối, client phải reconnect
 - API có warmup cache lâu: restart gây cold start, request đầu chậm vài giây
 - API serve traffic cao: mỗi lần restart đều có khoảng downtime ngắn ảnh hưởng SLA
+
+# warmup cache là gì?
+là quá trình app load sẵn dữ liệu hay dùng vào RAM trước khi serve request, để request đầu không phải query DB/API chậm. Ví dụ: load full bảng config, build index in-memory.
+
+# cold start là gì?
+là trạng thái app vừa khởi động, chưa có cache, chưa JIT compile, chưa pool connection — request đầu chậm hơn bình thường vài lần. Sau vài request, app "warm" lên thì tốc độ ổn định.
+
+# downtime là gì?
+là khoảng thời gian app không phục vụ được request, tính từ lúc start restart đến lúc sẵn sàng nhận traffic lại. Downtime gồm thời gian shutdown + startup + warmup.
+
+# SLA là gì?
+Service Level Agreement — cam kết về mức dịch vụ, thường tính uptime (vd 99.9%/năm). Mỗi 0.1% downtime tương đương ~8.7 giờ/năm — rất ít, nên mỗi lần restart đều phải tính.
 
 # deamon on-demand là gì, cho ví dụ?
 Daemon chỉ chạy khi có trigger sự kiện, xong thì idle hoặc tắt — không chạy liên tục theo schedule. Ví dụ: daemon export Excel khởi chạy khi user click nút export, hoàn tất thì kết thúc.
@@ -53,6 +97,9 @@ Code chạy đầu tiên khi app khởi động, lo phần setup: load config, r
 # host là gì?
 Process/môi trường runtime nuôi và quản lý lifecycle của các thành phần con (DI container, config, logging, scheduled task). Trong .NET, `IHost` là object chứa toàn bộ app — start nó là start daemon.
 
+# vậy host là process à ? hay nó chỉ là 1 class?
+Cả hai. `IHost` về bản chất là 1 class trong .NET, nhưng khi gọi `host.Run()` thì class này điều khiển toàn bộ process — nó định nghĩa process làm gì. Nói "host là process" theo nghĩa logic; nói "host là class" theo nghĩa code.
+
 # runtime là gì?
 Lớp execution engine chạy code của ngôn ngữ — cung cấp GC, JIT, type system, threading. Ví dụ CLR cho .NET, JVM cho Java, V8 cho JavaScript. Code không tự chạy được; phải có runtime dịch và thực thi.
 
@@ -61,8 +108,20 @@ Lớp execution engine chạy code của ngôn ngữ — cung cấp GC, JIT, typ
 - Runtime: engine bên trong process, dịch và chạy code (CLR, JVM)
 - Host: lớp app cấp, orchestrate các service/component bên trong runtime (IHost trong .NET)
 Layer xếp từ ngoài vào: OS → Process → Runtime → Host → App code.
+# nếu deamon nằm trong api server thì nó và service được gắn vào chung 1 host, còn nếu deamon viết riêng thì nó sẽ là 1 app riêng và có lớp Host bên trong phải không?
+Đúng. Cùng host = cùng process, share DI/config. Tách riêng = mỗi app có host riêng, process riêng, config riêng — giao tiếp qua DB hoặc message queue.
+
+# memory space là gì?
+Vùng RAM mà OS cấp cho 1 process, các process khác không đọc/ghi trực tiếp được. Mỗi process có address space riêng — biến trong process A không nhìn thấy được từ process B.
+
+# tài nguyên của process chỉ gồm RAM và CPU à?
+Không. Còn: file handle (số file mở cùng lúc), socket/network connection, thread, GPU, disk IO bandwidth. OS quản hết các loại này, mỗi loại đều có thể bị cap.
+
 # serverless là gì?
 Mô hình mà cloud provider quản hết server và daemon, dev chỉ viết function. Không phải "không có server" mà là "dev không thấy server" — provider auto scale, auto restart, auto bill theo lượt invoke.
+
+# invoke là gì?
+Lượt gọi function. Mỗi HTTP request, mỗi message từ queue, mỗi lần timer tick đều là 1 invoke. Serverless tính tiền theo số invoke và thời gian mỗi invoke chạy.
 
 # cần cpu/ram riêng có nghĩa là gì?
 Daemon chiếm tài nguyên đủ lớn để ảnh hưởng tới process khác cùng máy. Ví dụ daemon chạy ML inference ngốn 100% CPU sẽ làm API cùng process chậm theo. Tách ra cho mỗi cái có ngân sách riêng.
