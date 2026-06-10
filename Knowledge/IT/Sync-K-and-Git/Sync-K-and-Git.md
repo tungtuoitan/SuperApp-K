@@ -37,13 +37,33 @@ Daemon là process chạy nền, là chủ thể thực thi. Job là đơn vị 
 
 # job tương ứng với function, còn deamon tương ứng với host phải không?
 Đúng theo analogy. Job là đơn vị thực thi (như function được gọi), daemon là môi trường giữ runtime để gọi job đó (như host nuôi function).
+
 # analogy là gì?
+Phép so sánh tương tự — dùng cấu trúc của thứ A đã quen để giải thích thứ B mới. Không phải A và B giống hệt, chỉ giống về quan hệ.
+
 # deamon tương tự program.cs, startup.cs phải không?
+Đúng phần bootstrap. `program.cs` / `startup.cs` là code khởi tạo daemon (host) — chúng định nghĩa cách daemon chạy và quản lý job. Bản thân daemon là process đang chạy sau khi `program.cs` đã run xong.
+
+# bootstrap là gì?
+Code chạy đầu tiên khi app khởi động, lo phần setup: load config, register dependency, mở kết nối, build host. Sau khi bootstrap xong, app mới sẵn sàng nhận request hoặc chạy job.
 
 # vậy trên Azure, azure có deamon lắng nge event theo thời gian, ta chỉ việc tạo job thôi phải không?
 Đúng. Azure Functions, Logic Apps, WebJobs hoạt động theo model này — Azure quản daemon (host process lắng nghe trigger HTTP, queue, timer, blob...), user chỉ viết function/workflow. Đây là bản chất của serverless.
+
 # host là gì?
+Process/môi trường runtime nuôi và quản lý lifecycle của các thành phần con (DI container, config, logging, scheduled task). Trong .NET, `IHost` là object chứa toàn bộ app — start nó là start daemon.
+
+# runtime là gì?
+Lớp execution engine chạy code của ngôn ngữ — cung cấp GC, JIT, type system, threading. Ví dụ CLR cho .NET, JVM cho Java, V8 cho JavaScript. Code không tự chạy được; phải có runtime dịch và thực thi.
+
+# phân biệt host, process, runtime?
+- Process: đơn vị OS cấp, có PID và memory space riêng
+- Runtime: engine bên trong process, dịch và chạy code (CLR, JVM)
+- Host: lớp app cấp, orchestrate các service/component bên trong runtime (IHost trong .NET)
+Layer xếp từ ngoài vào: OS → Process → Runtime → Host → App code.
 # serverless là gì?
+Mô hình mà cloud provider quản hết server và daemon, dev chỉ viết function. Không phải "không có server" mà là "dev không thấy server" — provider auto scale, auto restart, auto bill theo lượt invoke.
+
 # cần cpu/ram riêng có nghĩa là gì?
 Daemon chiếm tài nguyên đủ lớn để ảnh hưởng tới process khác cùng máy. Ví dụ daemon chạy ML inference ngốn 100% CPU sẽ làm API cùng process chậm theo. Tách ra cho mỗi cái có ngân sách riêng.
 
