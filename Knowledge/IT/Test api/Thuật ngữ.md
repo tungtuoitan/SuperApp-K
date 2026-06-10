@@ -21,8 +21,8 @@ Khi có pattern — ví dụ 100 outliers 5s mỗi giờ. 1 outlier đơn lẻ t
 # GC pause thường kéo dài bao lâu? [id:407 order:6]
 10–100ms với .NET 8 server GC. Chỉ lo nếu pause vài giây liên tục.
 
-# Cold start cache miss là gì? [id:408 order:7]
-Lần đầu cache chưa có data, phải query DB rồi mới populate — request đó chậm hơn bình thường.
+<!--# Cold start cache miss là gì? [id:408 order:7]
+Lần đầu cache chưa có data, phải query DB rồi mới populate — request đó chậm hơn bình thường. -->
 
 <!--# Tại sao p99 thường cao hơn p95 trong sticky test? [id:409 order:8]
 Vì 1000 VU × 1 cold start mỗi VU = 1000 cache miss trong ramp-up, tạo tail latency. -->
