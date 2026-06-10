@@ -2,6 +2,8 @@
 là HTTP server mặc định của ASP.NET Core, được Microsoft viết tối ưu cho .NET.
 
 # ý nghĩa tên kestrel?
+là tên 1 loài chim cắt nhỏ, bay nhanh và linh hoạt — Microsoft đặt để gợi ý tới tốc độ và sự nhẹ nhàng của HTTP server này.
+
 # Kestrel nhanh vì sao?
 - Dùng asynchronous I/O — thread không bị block khi chờ network
 - Không phụ thuộc IIS
