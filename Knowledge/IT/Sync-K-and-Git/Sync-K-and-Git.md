@@ -36,8 +36,14 @@ Daemon chỉ chạy khi có trigger sự kiện, xong thì idle hoặc tắt —
 Daemon là process chạy nền, là chủ thể thực thi. Job là đơn vị công việc rời rạc, là cái được thực thi. Một daemon có thể chạy nhiều job khác nhau theo thời gian.
 
 # job tương ứng với function, còn deamon tương ứng với host phải không?
-# job tương tự program.cs, startup.cs phải không?
+Đúng theo analogy. Job là đơn vị thực thi (như function được gọi), daemon là môi trường giữ runtime để gọi job đó (như host nuôi function).
+# analogy là gì?
+# deamon tương tự program.cs, startup.cs phải không?
+
 # vậy trên Azure, azure có deamon lắng nge event theo thời gian, ta chỉ việc tạo job thôi phải không?
+Đúng. Azure Functions, Logic Apps, WebJobs hoạt động theo model này — Azure quản daemon (host process lắng nghe trigger HTTP, queue, timer, blob...), user chỉ viết function/workflow. Đây là bản chất của serverless.
+# host là gì?
+# serverless là gì?
 # cần cpu/ram riêng có nghĩa là gì?
 Daemon chiếm tài nguyên đủ lớn để ảnh hưởng tới process khác cùng máy. Ví dụ daemon chạy ML inference ngốn 100% CPU sẽ làm API cùng process chậm theo. Tách ra cho mỗi cái có ngân sách riêng.
 
