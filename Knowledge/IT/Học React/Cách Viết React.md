@@ -128,10 +128,12 @@ là mỗi feature có 1 folder tương ứng
 
 # public api là gì? [id:190 order:35]
 là việc import/export giữa các feature thông qua file index
-# public api có liên hệ gì với abstract không?
+
+# public api có liên hệ gì với abstract không? [id:2802 order:36]
 Có. Public API là 1 dạng abstraction — chỉ phơi ra những gì cần dùng (qua `index.ts`), giấu chi tiết bên trong feature. Code ngoài chỉ thấy interface, không biết implementation.
-# tradeoff của caching là gì? [id:225 order:36]
+
+# tradeoff của caching là gì? [id:225 order:37]
 dữ liệu có thể bị cũ
 
-# code bị nest thì sao? [id:232 order:37]
+# code bị nest thì sao? [id:232 order:38]
 thì khó scan, khó đọc
