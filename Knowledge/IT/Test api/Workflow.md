@@ -10,6 +10,7 @@ Restore baseline DB → swap .env sang test DB → restart BE → re-prewarm tok
 Để đảm bảo data shape nhất quán, tránh kết quả bị ảnh hưởng bởi data thay đổi từ run trước.
 
 # re-prewarm là gì ? [id:397 order:3]
+là bước generate lại JWT tokens cho user trong DB vừa restore, lưu vào `tokens.json` để k6 dùng — tránh test bị 401 do token cũ.
 
 # Tại sao phải re-prewarm tokens sau mỗi lần restore? [id:398 order:4]
 Vì restore tạo lại user trong DB, JWT cũ tham chiếu user cũ sẽ không hợp lệ.

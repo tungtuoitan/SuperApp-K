@@ -15,7 +15,11 @@ name: "Mobile-debug-setup"
 Đọc là "dee-mon". Process chạy ngầm (background) liên tục, không có UI, phục vụ các yêu cầu khi cần. Ví dụ: ADB daemon chạy ngầm trên laptop, chờ phone kết nối USB để xử lý debug commands và port forwarding.
 
 # deamon khác gì job nhỉ? [id:537 order:5]
-
+Daemon chạy ngầm liên tục từ lúc khởi động OS đến lúc tắt máy, phục vụ nhiều client. Job là tác vụ có start–end rõ ràng, chạy 1 lần hoặc theo schedule rồi kết thúc.
+# deamon, job có thể chạy độc lập không?
+Có. Cả hai đều chạy như process riêng, không cần app chính. Daemon chạy nền dài hạn, job có thể trigger thủ công hoặc theo schedule.
+# deamon, job có thể là process cũng có thể là class à?
+Đúng. Ở góc OS, daemon/job là process. Trong code, có thể là class (ví dụ `IHostedService` trong .NET là class chạy như background job bên trong process app).
 # Port forwarding trong `chrome://inspect` là gì? [id:538 order:6]
 Tính năng cho phép Chrome trên phone truy cập các port trên laptop như thể chúng là port của chính phone. Cài `3000 → localhost:3000` thì khi phone request `localhost:3000`, ADB tunnel chuyển request sang `localhost:3000` trên laptop.
 
