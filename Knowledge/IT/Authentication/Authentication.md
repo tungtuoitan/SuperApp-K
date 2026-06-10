@@ -18,8 +18,8 @@ có, chúng là 1.
 - E trước O
 - xác thực xong thì mới trao quyền
 
-# Token-based Authentication là gì? [id:61 order:11]
+# Token-based Authentication là gì? [id:61 order:5]
 - là xác thực dựa trên Token
 
-# Authentication là gì? [id:64 order:14]
+# Authentication là gì? [id:64 order:6]
 là quá trình xác minh danh tính của user/client trước khi cho truy cập vào tài nguyên/ hệ thống
