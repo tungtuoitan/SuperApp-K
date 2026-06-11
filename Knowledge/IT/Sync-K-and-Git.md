@@ -36,8 +36,8 @@ Daemon chỉ chạy khi có trigger sự kiện, xong thì idle hoặc tắt —
 # deamon k phải chạy liên tục à, có thể dùng trigger à? [id:2674 order:8]
 Đúng. Daemon truyền thống chạy liên tục để chờ event, nhưng kiểu on-demand thì khởi tạo theo trigger và tắt sau khi xong. Cả hai đều là daemon vì chạy ngầm, không có UI.
 
-# nếu vậy thì deamon khác job thế nào? [id:2675 order:9]
-Daemon là process chạy nền, là chủ thể thực thi. Job là đơn vị công việc rời rạc, là cái được thực thi. Một daemon có thể chạy nhiều job khác nhau theo thời gian.
+<!--# nếu vậy thì deamon khác job thế nào? [id:2675 order:9]
+Daemon là process chạy nền, là chủ thể thực thi. Job là đơn vị công việc rời rạc, là cái được thực thi. Một daemon có thể chạy nhiều job khác nhau theo thời gian. -->
 
 # job tương ứng với function, còn deamon tương ứng với host phải không? [id:2676 order:10]
 Đúng theo analogy. Job là đơn vị thực thi (như function được gọi), daemon là môi trường giữ runtime để gọi job đó (như host nuôi function).
