@@ -30,8 +30,8 @@ Phần cứng hoặc phần mềm giúp kết nối 2 thứ có giao diện khá
 # Card mạng là gì? Có phải card vật lý không? [id:512 order:9]
 Card mạng (NIC) thường là phần cứng vật lý gắn trong máy. Nhưng cũng có card mạng ảo: loopback (`127.0.0.1`), VPN adapter, Docker bridge — không có phần cứng vật lý tương ứng.
 
-# interface có phải là adapter không? [id:2805 order:10]
-Không hẳn. Adapter là phần cứng/phần mềm nối 2 hệ thống khác giao diện. Interface là điểm kết nối logic mà OS expose ra để gửi/nhận packet. Mỗi adapter thường tạo ra 1 interface tương ứng.
+<!--# interface có phải là adapter không? [id:2805 order:10]
+Không hẳn. Adapter là phần cứng/phần mềm nối 2 hệ thống khác giao diện. Interface là điểm kết nối logic mà OS expose ra để gửi/nhận packet. Mỗi adapter thường tạo ra 1 interface tương ứng. -->
 
 # quan hệ giữa adapter và interface? [id:2806 order:11]
 Adapter là tầng dưới (NIC vật lý hoặc driver ảo). Interface là tầng trên — abstraction OS dùng, có IP/MAC/route. 1 adapter = 1 interface trong hầu hết trường hợp.
