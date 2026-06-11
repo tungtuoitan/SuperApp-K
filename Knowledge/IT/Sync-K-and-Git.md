@@ -7,8 +7,8 @@ name: "Sync-K-and-Git"
 - vì markdown là dữ liệu k có cấu trúc, việc transfer dữ liệu k cùng cấu trúc sẽ có nhiều vấn đề
 - có nhiều lỗi cú pháp do markdown được tạo ở vscode, ở đó ta k thể validate data được
 
-# khi nào nên tách deamon thành service riêng, khi nào nên đặt nó nằm trong api server? [id:2668 order:2]
-Quyết định dựa trên workload và lifecycle của daemon. Xem 2 câu dưới để chi tiết.
+<!--# khi nào nên tách deamon thành service riêng, khi nào nên đặt nó nằm trong api server? [id:2668 order:2]
+Quyết định dựa trên workload và lifecycle của daemon. Xem 2 câu dưới để chi tiết. -->
 
 # khi nào nên tách deamon thành service riêng? [id:2669 order:3]
 Khi đáp ứng ít nhất một trong các điều kiện:
