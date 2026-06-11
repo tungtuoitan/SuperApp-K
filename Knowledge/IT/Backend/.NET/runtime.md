@@ -128,7 +128,7 @@ là compiler chính thức của C# và VB trong .NET. Roslyn biên dịch code 
 4. GC quản lý bộ nhớ trong suốt quá trình chạy
 5. Khi app tắt, CLR dọn dẹp tài nguyên -->
 
-# Khi ứng dụng Go chạy, chuyện gì xảy ra? [id:2796 order:40]
+<!--# Khi ứng dụng Go chạy, chuyện gì xảy ra? [id:2796 order:40]
 1. Build chương trình, sinh ra file binary (machine code trực tiếp, không có IL)
 2. Binary chạy trực tiếp trên OS — không cần runtime như CLR hay JVM
-3. Go runtime (nhỏ, nhúng trong binary) xử lý goroutine scheduling và GC
+3. Go runtime (nhỏ, nhúng trong binary) xử lý goroutine scheduling và GC -->
