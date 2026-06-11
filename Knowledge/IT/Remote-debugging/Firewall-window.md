@@ -80,9 +80,6 @@ Windows tự tạo khi lần đầu kết nối và hỏi user chọn Public/Pri
 # Chủ WiFi có thể tạo GPO rule không? [id:578 order:23]
 Không. GPO là cơ chế của Windows Domain, không liên quan đến WiFi. Chủ WiFi chỉ quản lý router (SSID, password, firewall của router). GPO chỉ IT admin trong môi trường domain mới tạo được.
 
-<!--# Windows Domain là gì? [id:579 order:24]
-Mạng máy tính được quản lý tập trung bởi một server gọi là **Domain Controller** (chạy Active Directory). Tất cả máy "join domain" = đều dưới quyền quản lý của IT admin. Admin có thể đẩy GPO, quản lý user/password, cài phần mềm từ xa. Thường thấy trong môi trường công ty. -->
-
 # Tại sao Windows Firewall block inbound từ external device? [id:580 order:25]
 Hành vi mặc định — bảo vệ máy khỏi kết nối không mong muốn. Mọi inbound connection từ device khác đều bị block trừ khi có rule cho phép.
 

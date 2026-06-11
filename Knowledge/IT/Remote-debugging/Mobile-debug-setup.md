@@ -6,7 +6,7 @@ name: "Mobile-debug-setup"
 # Có mấy cách debug mobile với SuperApp? [id:533 order:1]
 2 cách: USB + port forwarding, hoặc cùng WiFi + local IP.
 
-<!--# khi remote-debugging bằng cable thì packet đi từ moble chrome > cable > pc chrome > webpack dev server, còn wifi thì packet đi từ mobile chrome > router > pc chrome > webpack dev server phải không? [id:534 order:2] -->
+# khi remote-debugging bằng cable thì data đi như thể nào? [id:534 order:2]
 
 # Công cụ nào dùng để debug mobile? [id:535 order:3]
 `chrome://inspect/#devices` trên laptop.
@@ -41,17 +41,12 @@ Thường đúng — BE dùng 5000, FE dùng 3000. Một port chỉ có 1 proces
 # IP và host có nghĩa tương tự nhau không? [id:543 order:13]
 Không hoàn toàn. **IP** là địa chỉ số (`192.168.2.26`). **Host** rộng hơn — có thể là IP hoặc domain name (`localhost`, `example.com`). Domain được DNS resolve thành IP.
 
-<!--# Khi dùng port forwarding, phone truy cập FE bằng URL nào? [id:544 order:14]
-`http://localhost:3000`. -->
+# USB cable có phải network interface không? [id:546 order:16]
+Không phải
+# mỗi adapter thường có 1 interface tương ứng phải không?
 
-<!--# Tại sao port forwarding không cần cùng mạng? [id:545 order:15]
-Vì traffic đi qua USB cable, không qua WiFi hay Ethernet. Không cần IP, không cần firewall rule, không cần CORS. -->
+# Nếu PC kết nối Ethernet, mobile kết nối WiFi, và k được dùng usb cable thì có dùng dc chrome://inspect k? [id:547 order:17]
 
-<!--# USB cable có phải network interface không? [id:546 order:16]
-Không theo nghĩa thông thường. USB là giao thức kết nối thiết bị, không phải network protocol. ADB tạo virtual network interface qua USB để truyền data — đó là interface ảo, không phải USB cable là network interface. -->
-
-<!--# Nếu PC kết nối Ethernet, mobile kết nối WiFi thì chrome://inspect không dùng được? [id:547 order:17]
-Dùng được bình thường. `chrome://inspect` dùng USB cable (ADB), không phụ thuộc vào WiFi hay Ethernet của laptop. Miễn là laptop và phone kết nối qua USB và bật USB Debugging. -->
 
 # BE cần sửa file nào để nhận connection từ ngoài (WiFi)? [id:548 order:18]
 `launchSettings.json` — đổi `applicationUrl` từ `http://localhost:5000` thành `http://0.0.0.0:5000`.
@@ -59,13 +54,9 @@ Dùng được bình thường. `chrome://inspect` dùng USB cable (ADB), không
 # Khi forward, phải có app nào đó nhận và forward request? [id:549 order:19]
 Đúng. Trong port forwarding qua USB, **ADB daemon** làm việc đó — listen trên port phone, nhận packet từ phone qua USB, rồi gửi vào `localhost:PORT` của laptop.
 
-<!--# Port forwarding hoạt động thế nào ở tầng thấp? [id:550 order:20]
-ADB tạo tunnel qua USB. Phone gửi request tới `localhost:PORT` → ADB bắt lấy → forward qua USB → laptop nhận và xử lý → trả kết quả ngược lại qua USB → phone nhận response. -->
+# khi dùng use cable thì khi mobile vào localhost:3000, traffic sẽ đi như thế nào, nói thật cụ thể từng bước?
 
-<!--# Tại sao API pending khi dùng WiFi IP nhưng FE vào được bình thường? [id:551 order:21]
-FE (port 3000, webpack-dev-server) tự thêm Windows Firewall exception khi khởi động → port 3000 tự được mở. BE (port 5000, .NET) không tự làm vậy → phải có firewall rule thủ công → rule bị vô hiệu do WiFi profile Public + GPO → packet drop → pending. -->
-
-# Firewall chỉ áp dụng cho wireless, cable thì không bị check? [id:552 order:22]
+# Firewall chỉ áp dụng cho wireless, cable thì không bị check phải không? [id:552 order:22]
 Sai. Firewall áp dụng cho **tất cả** network interfaces — WiFi, Ethernet, VPN, Docker đều bị check. Port forwarding qua USB "bypass" firewall không phải vì USB không bị check, mà vì ADB forward traffic thành connection từ `127.0.0.1` (loopback) — loopback không bị apply inbound rules.
 
 # API pending có nghĩa là gì? [id:553 order:23]
