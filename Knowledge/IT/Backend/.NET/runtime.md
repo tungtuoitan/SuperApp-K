@@ -43,8 +43,8 @@ là Garbage Collector — tự động giải phóng memory của object không 
 <!--# Thread & Concurrency Manager là gì? [id:2783 order:12]
 là thành phần chịu trách nhiệm tạo, quản lý, và lên lịch các thread trong process. -->
 
-# Standard Library Integration là gì? [id:2784 order:13]
-là các thư viện được tích hợp sẵn vào runtime — BCL (Base Class Library), gồm `List`, `Dictionary`, `Stream`, `HttpClient`...
+<!--# Standard Library Integration là gì? [id:2784 order:13]
+là các thư viện được tích hợp sẵn vào runtime — BCL (Base Class Library), gồm `List`, `Dictionary`, `Stream`, `HttpClient`... -->
 
 # Interop Layer là gì? [id:2785 order:14]
 là tầng cho phép .NET gọi native code (C/C++), OS API mà không cần viết lại từ đầu.
