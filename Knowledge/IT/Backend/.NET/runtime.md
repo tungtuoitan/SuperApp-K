@@ -31,8 +31,8 @@ gồm: JIT compiler, GC, type system, thread scheduler, exception handler, và B
 # Execution Engine là gì? [id:2780 order:8]
 là phần cốt lõi của runtime, thực hiện các lệnh IL.
 
-# Memory Manager là gì? [id:2781 order:9]
-là thành phần có nhiệm vụ quản lý bộ nhớ, bao gồm: cấp phát, theo dõi, và thu hồi bộ nhớ khi không dùng.
+<!--# Memory Manager là gì? [id:2781 order:9]
+là thành phần có nhiệm vụ quản lý bộ nhớ, bao gồm: cấp phát, theo dõi, và thu hồi bộ nhớ khi không dùng. -->
 
 # Garbage Collector là gì? [id:2782 order:10]
 là thành phần trong Memory Manager, tự động thu hồi bộ nhớ của object không còn reference. Không cần dev gọi `free()`.
