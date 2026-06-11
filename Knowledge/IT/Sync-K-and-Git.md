@@ -66,8 +66,8 @@ Lớp execution engine chạy code của ngôn ngữ — cung cấp GC, JIT, typ
 - Host: lớp app cấp, orchestrate các service/component bên trong runtime (IHost trong .NET)
 Layer xếp từ ngoài vào: OS → Process → Runtime → Host → App code.
 
-# serverless là gì? [id:2684 order:18]
-Mô hình mà cloud provider quản hết server và daemon, dev chỉ viết function. Không phải "không có server" mà là "dev không thấy server" — provider auto scale, auto restart, auto bill theo lượt invoke.
+<!--# serverless là gì? [id:2684 order:18]
+Mô hình mà cloud provider quản hết server và daemon, dev chỉ viết function. Không phải "không có server" mà là "dev không thấy server" — provider auto scale, auto restart, auto bill theo lượt invoke. -->
 
 # cần cpu/ram riêng có nghĩa là gì? [id:2685 order:19]
 Daemon chiếm tài nguyên đủ lớn để ảnh hưởng tới process khác cùng máy. Ví dụ daemon chạy ML inference ngốn 100% CPU sẽ làm API cùng process chậm theo. Tách ra cho mỗi cái có ngân sách riêng.
