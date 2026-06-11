@@ -18,11 +18,11 @@ là phần mềm nhận kết nối mạng và xử lý giao thức HTTP.
 # HTTP Server và Web Server khác nhau không? [id:2743 order:5]
 Gần như giống nhau. Web server ám chỉ server xử lý request từ browser (chủ yếu HTTP/HTTPS). HTTP server nhấn mạnh rằng server xử lý giao thức HTTP. Hiện nay hai từ dùng thay thế nhau.
 
-# Lịch sử phát triển HTTP Server diễn ra thế nào? [id:2744 order:6]
+<!--# Lịch sử phát triển HTTP Server diễn ra thế nào? [id:2744 order:6]
 - 1990s: Web server đơn giản, chỉ serve static file
 - 2000s: App lớn dần, server serve HTML + chạy PHP + xử lý logic → dev tách ra 2 loại: static server và app server
 - 2010s: Framework như Rails, Django, .NET MVC tích hợp HTTP server vào app
-- 2016+: ASP.NET Core tích hợp Kestrel, không cần IIS nữa
+- 2016+: ASP.NET Core tích hợp Kestrel, không cần IIS nữa -->
 
 # Thành phần của web server build bằng ASP.NET Core gồm gì? [id:2745 order:7]
 - Kestrel: nhận HTTP connection
@@ -30,12 +30,12 @@ Gần như giống nhau. Web server ám chỉ server xử lý request từ brows
 - Controller/Endpoint: xử lý business logic
 - Response: trả về HTTP response
 
-# Điểm mạnh của ASP.NET Core là gì? [id:2746 order:8]
+<!--# Điểm mạnh của ASP.NET Core là gì? [id:2746 order:8]
 - Cross-platform (chạy trên Linux, macOS, Windows)
 - High performance
 - Tích hợp sẵn Kestrel
 - Pipeline linh hoạt, cho phép thêm middleware
-- DI container built-in
+- DI container built-in -->
 
 # High performance trong ASP.NET Core nghĩa là gì? [id:2747 order:9]
 là: xử lý request nhanh, phục vụ nhiều request cùng lúc, dùng ít CPU/RAM. Đo bằng: latency (ms), throughput (req/s), memory usage (MB).
