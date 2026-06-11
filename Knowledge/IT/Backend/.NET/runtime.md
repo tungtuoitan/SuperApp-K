@@ -121,12 +121,12 @@ Mỗi method chỉ được JIT compile lần đầu khi được gọi. Sau đ�
 # Roslyn là gì? [id:2794 order:38]
 là compiler chính thức của C# và VB trong .NET. Roslyn biên dịch code C# → IL → output file .dll hoặc .exe.
 
-# Khi C# .NET app chạy, chuyện gì xảy ra? [id:2795 order:39]
+<!--# Khi C# .NET app chạy, chuyện gì xảy ra? [id:2795 order:39]
 1. Host của .NET khởi động
 2. CLR load assembly (.dll)
 3. JIT compile method thành machine code khi method được gọi lần đầu
 4. GC quản lý bộ nhớ trong suốt quá trình chạy
-5. Khi app tắt, CLR dọn dẹp tài nguyên
+5. Khi app tắt, CLR dọn dẹp tài nguyên -->
 
 # Khi ứng dụng Go chạy, chuyện gì xảy ra? [id:2796 order:40]
 1. Build chương trình, sinh ra file binary (machine code trực tiếp, không có IL)
