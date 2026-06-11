@@ -40,8 +40,8 @@ là thành phần trong Memory Manager, tự động thu hồi bộ nhớ của 
 <!--# GC trong .NET là gì? [id:2867 order:11]
 là Garbage Collector — tự động giải phóng memory của object không còn được tham chiếu, không cần dev tự `free()`. -->
 
-# Thread & Concurrency Manager là gì? [id:2783 order:12]
-là thành phần chịu trách nhiệm tạo, quản lý, và lên lịch các thread trong process.
+<!--# Thread & Concurrency Manager là gì? [id:2783 order:12]
+là thành phần chịu trách nhiệm tạo, quản lý, và lên lịch các thread trong process. -->
 
 # Standard Library Integration là gì? [id:2784 order:13]
 là các thư viện được tích hợp sẵn vào runtime — BCL (Base Class Library), gồm `List`, `Dictionary`, `Stream`, `HttpClient`...
