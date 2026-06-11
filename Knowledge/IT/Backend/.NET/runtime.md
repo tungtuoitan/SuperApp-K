@@ -3,8 +3,8 @@ id: 318
 name: "runtime"
 ---
 
-# Runtime Systems là gì? [id:2775 order:1]
-là tập hợp các thành phần phần mềm chịu trách nhiệm thực thi chương trình sau khi compile xong.
+<!--# Runtime Systems là gì? [id:2775 order:1]
+là tập hợp các thành phần phần mềm chịu trách nhiệm thực thi chương trình sau khi compile xong. -->
 
 # Runtime là gì? [id:2776 order:2]
 là hệ thống có trách nhiệm chạy code.
