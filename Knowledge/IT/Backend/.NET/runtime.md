@@ -37,8 +37,8 @@ là thành phần có nhiệm vụ quản lý bộ nhớ, bao gồm: cấp phát
 # Garbage Collector là gì? [id:2782 order:10]
 là thành phần trong Memory Manager, tự động thu hồi bộ nhớ của object không còn reference. Không cần dev gọi `free()`.
 
-# GC trong .NET là gì? [id:2867 order:11]
-là Garbage Collector — tự động giải phóng memory của object không còn được tham chiếu, không cần dev tự `free()`.
+<!--# GC trong .NET là gì? [id:2867 order:11]
+là Garbage Collector — tự động giải phóng memory của object không còn được tham chiếu, không cần dev tự `free()`. -->
 
 # Thread & Concurrency Manager là gì? [id:2783 order:12]
 là thành phần chịu trách nhiệm tạo, quản lý, và lên lịch các thread trong process.
