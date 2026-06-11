@@ -91,8 +91,8 @@ tạo ra machine code
 # JIT là gì? [id:2875 order:28]
 là quá trình CLR biên dịch IL sang machine code
 
-# compiler tạo ra gì? [id:2876 order:29]
-tạo ra IL (file `.dll` hoặc `.exe`) cùng metadata, không phải machine code trực tiếp.
+<!--# compiler tạo ra gì? [id:2876 order:29]
+tạo ra IL (file `.dll` hoặc `.exe`) cùng metadata, không phải machine code trực tiếp. -->
 
 # tại sao tại cần compiler? [id:2877 order:30]
 Vì CPU không đọc được code C#. Compiler dịch C# → IL để CLR hiểu, rồi CLR JIT tiếp sang machine code mà CPU chạy được.
