@@ -46,8 +46,8 @@ là thành phần chịu trách nhiệm tạo, quản lý, và lên lịch các 
 <!--# Standard Library Integration là gì? [id:2784 order:13]
 là các thư viện được tích hợp sẵn vào runtime — BCL (Base Class Library), gồm `List`, `Dictionary`, `Stream`, `HttpClient`... -->
 
-# Interop Layer là gì? [id:2785 order:14]
-là tầng cho phép .NET gọi native code (C/C++), OS API mà không cần viết lại từ đầu.
+<!--# Interop Layer là gì? [id:2785 order:14]
+là tầng cho phép .NET gọi native code (C/C++), OS API mà không cần viết lại từ đầu. -->
 
 # Exception Handling System là gì? [id:2786 order:15]
 là thành phần trong CLR xử lý exception — catch, propagate, và unwind call stack khi lỗi xảy ra.
