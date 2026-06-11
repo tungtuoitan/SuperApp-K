@@ -21,12 +21,12 @@ Trong văn nói, 90% VM === Runtime. Cả hai đều là môi trường thực t
 # runtime gồm những gì? [id:2866 order:6]
 gồm: JIT compiler, GC, type system, thread scheduler, exception handler, và BCL (thư viện chuẩn).
 
-# Công việc cụ thể của Runtime là gì? [id:2779 order:7]
+<!--# Công việc cụ thể của Runtime là gì? [id:2779 order:7]
 - Load program vào memory
 - JIT compile IL sang machine code
 - Quản lý bộ nhớ qua GC
 - Xử lý exception
-- Enforce type safety
+- Enforce type safety -->
 
 # Execution Engine là gì? [id:2780 order:8]
 là phần cốt lõi của runtime, thực hiện các lệnh IL.
