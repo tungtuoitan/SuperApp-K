@@ -20,8 +20,8 @@ Daemon chạy ngầm liên tục từ lúc khởi động OS đến lúc tắt m
 <!--# deamon, job có thể chạy độc lập không? [id:2803 order:6]
 Có. Cả hai đều chạy như process riêng, không cần app chính. Daemon chạy nền dài hạn, job có thể trigger thủ công hoặc theo schedule. -->
 
-# deamon, job có thể là process cũng có thể là class à? [id:2804 order:7]
-Đúng. Ở góc OS, daemon/job là process. Trong code, có thể là class (ví dụ `IHostedService` trong .NET là class chạy như background job bên trong process app).
+<!--# deamon, job có thể là process cũng có thể là class à? [id:2804 order:7]
+Đúng. Ở góc OS, daemon/job là process. Trong code, có thể là class (ví dụ `IHostedService` trong .NET là class chạy như background job bên trong process app). -->
 
 # Port forwarding trong `chrome://inspect` là gì? [id:538 order:8]
 Tính năng cho phép Chrome trên phone truy cập các port trên laptop như thể chúng là port của chính phone. Cài `3000 → localhost:3000` thì khi phone request `localhost:3000`, ADB tunnel chuyển request sang `localhost:3000` trên laptop.
