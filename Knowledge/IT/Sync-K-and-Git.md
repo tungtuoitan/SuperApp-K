@@ -45,8 +45,8 @@ Daemon là process chạy nền, là chủ thể thực thi. Job là đơn vị 
 # analogy là gì? [id:2677 order:11]
 Phép so sánh tương tự — dùng cấu trúc của thứ A đã quen để giải thích thứ B mới. Không phải A và B giống hệt, chỉ giống về quan hệ.
 
-# deamon tương tự program.cs, startup.cs phải không? [id:2678 order:12]
-Đúng phần bootstrap. `program.cs` / `startup.cs` là code khởi tạo daemon (host) — chúng định nghĩa cách daemon chạy và quản lý job. Bản thân daemon là process đang chạy sau khi `program.cs` đã run xong.
+<!--# deamon tương tự program.cs, startup.cs phải không? [id:2678 order:12]
+Đúng phần bootstrap. `program.cs` / `startup.cs` là code khởi tạo daemon (host) — chúng định nghĩa cách daemon chạy và quản lý job. Bản thân daemon là process đang chạy sau khi `program.cs` đã run xong. -->
 
 # bootstrap là gì? [id:2679 order:13]
 Code chạy đầu tiên khi app khởi động, lo phần setup: load config, register dependency, mở kết nối, build host. Sau khi bootstrap xong, app mới sẵn sàng nhận request hoặc chạy job.
