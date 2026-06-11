@@ -10,12 +10,12 @@ name: "Sync-K-and-Git"
 <!--# khi nào nên tách deamon thành service riêng, khi nào nên đặt nó nằm trong api server? [id:2668 order:2]
 Quyết định dựa trên workload và lifecycle của daemon. Xem 2 câu dưới để chi tiết. -->
 
-# khi nào nên tách deamon thành service riêng? [id:2669 order:3]
+<!--# khi nào nên tách deamon thành service riêng? [id:2669 order:3]
 Khi đáp ứng ít nhất một trong các điều kiện:
 - Workload nặng, làm chậm request thread của API
 - Cần scale độc lập với API (chạy nhiều instance daemon mà không scale API)
 - Cần deploy/restart riêng (sync lỗi không kéo theo restart cả API)
-- Lifecycle khác API (chạy schedule dài, on-demand, hoặc cần CPU/RAM riêng)
+- Lifecycle khác API (chạy schedule dài, on-demand, hoặc cần CPU/RAM riêng) -->
 
 # workload là gì? [id:2670 order:4]
 Khối lượng công việc (CPU, RAM, IO) mà 1 process phải xử lý trong 1 đơn vị thời gian. Workload nặng = tốn nhiều tài nguyên hoặc kéo dài.
