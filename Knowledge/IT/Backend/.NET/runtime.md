@@ -64,8 +64,8 @@ là Intermediate Language — bytecode mà compiler C# tạo ra. CLR sẽ JIT co
 <!--# Bytecode là gì? [id:2789 order:19]
 là dạng mã trung gian, không phải machine code của CPU cụ thể. IL trong .NET là bytecode — platform-independent, CLR mới dịch sang machine code của từng CPU. -->
 
-# Intermediate language là gì? [id:2790 order:20]
-là IL — ngôn ngữ trung gian mà Roslyn (C# compiler) tạo ra. CLR đọc IL và JIT compile sang machine code. Cho phép .NET cross-platform vì IL không gắn với CPU cụ thể.
+<!--# Intermediate language là gì? [id:2790 order:20]
+là IL — ngôn ngữ trung gian mà Roslyn (C# compiler) tạo ra. CLR đọc IL và JIT compile sang machine code. Cho phép .NET cross-platform vì IL không gắn với CPU cụ thể. -->
 
 # Machine code là gì? [id:2791 order:21]
 là tập lệnh nhị phân mà CPU đọc và thực thi trực tiếp — output cuối cùng sau khi JIT compile IL.
