@@ -12,8 +12,8 @@ Gần như đúng cho server-side. IO async giúp thread không bị block, serv
 # lợi ích của async khi dùng cho IO? [id:2813 order:3]
 Thread không bị block khi chờ IO → trả về thread pool để xử lý request khác. Server cùng số thread phục vụ được nhiều request hơn → throughput cao.
 
-# khi nào nên dùng Task? [id:2814 order:4]
-Khi cần chạy work đồng thời/bất đồng bộ — IO async, parallel processing, hoặc compose nhiều operation. Mặc định nên dùng Task thay vì Thread.
+<!--# khi nào nên dùng Task? [id:2814 order:4]
+Khi cần chạy work đồng thời/bất đồng bộ — IO async, parallel processing, hoặc compose nhiều operation. Mặc định nên dùng Task thay vì Thread. -->
 
 # Task liên quan gì đến async? [id:2815 order:5]
 `async` method trong C# trả về Task. Task đại diện cho công việc đang/sẽ hoàn thành — `await` task để chờ kết quả mà không block thread.
