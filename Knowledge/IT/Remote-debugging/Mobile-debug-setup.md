@@ -17,8 +17,8 @@ name: "Mobile-debug-setup"
 # deamon khác gì job nhỉ? [id:537 order:5]
 Daemon chạy ngầm liên tục từ lúc khởi động OS đến lúc tắt máy, phục vụ nhiều client. Job là tác vụ có start–end rõ ràng, chạy 1 lần hoặc theo schedule rồi kết thúc.
 
-# deamon, job có thể chạy độc lập không? [id:2803 order:6]
-Có. Cả hai đều chạy như process riêng, không cần app chính. Daemon chạy nền dài hạn, job có thể trigger thủ công hoặc theo schedule.
+<!--# deamon, job có thể chạy độc lập không? [id:2803 order:6]
+Có. Cả hai đều chạy như process riêng, không cần app chính. Daemon chạy nền dài hạn, job có thể trigger thủ công hoặc theo schedule. -->
 
 # deamon, job có thể là process cũng có thể là class à? [id:2804 order:7]
 Đúng. Ở góc OS, daemon/job là process. Trong code, có thể là class (ví dụ `IHostedService` trong .NET là class chạy như background job bên trong process app).
