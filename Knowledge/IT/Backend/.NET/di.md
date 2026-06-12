@@ -6,8 +6,8 @@ name: "di"
 # dependency injection là gì? [id:2829 order:1]
 là 1 pattern
 
-# Dependency Injection | DI là gì? [id:2830 order:2]
-là kỹ thuật giúp 1 object nhận các dependency từ bên ngoài thay vì tự tạo. Hầu hết framework backend hiện nay đều có DI built-in.
+<!--# Dependency Injection | DI là gì? [id:2830 order:2]
+là kỹ thuật giúp 1 object nhận các dependency từ bên ngoài thay vì tự tạo. Hầu hết framework backend hiện nay đều có DI built-in. -->
 
 # Dependency là gì? [id:2831 order:3]
 là 1 object mà class cần để hoạt động. Ví dụ: `UserService` cần `EmailSender` → `EmailSender` là dependency của `UserService`.
