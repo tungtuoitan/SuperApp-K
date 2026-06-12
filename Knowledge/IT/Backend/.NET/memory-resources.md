@@ -12,8 +12,8 @@ là tài nguyên do OS quản lý chứ không phải CLR — file handle, netwo
 # tài nguyên process k quản lí thì phải dispose mới dọn được phải không? [id:2847 order:3]
 Đúng. Tài nguyên unmanaged (file handle, socket, DB connection) do OS giữ — CLR không tự thu hồi, phải gọi `Dispose()` để OS giải phóng.
 
-# toàn bộ tài nguyên của process là do CLR quản lí à? [id:2848 order:4]
-Không. CLR chỉ quản managed memory (object trên heap). Tài nguyên unmanaged như file/socket do OS giữ, CLR không động vào.
+<!--# toàn bộ tài nguyên của process là do CLR quản lí à? [id:2848 order:4]
+Không. CLR chỉ quản managed memory (object trên heap). Tài nguyên unmanaged như file/socket do OS giữ, CLR không động vào. -->
 
 # tài nguyên của process gồm những gì? [id:2849 order:5]
 - Memory (heap, stack)
