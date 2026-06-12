@@ -22,10 +22,10 @@ là phần "chữ ký" của method — gồm tên, danh sách tham số (kiểu
 <!--# model cũng là 1 class phải không? [id:2888 order:6]
 Đúng. Model trong .NET thường là class (hoặc record) đại diện cho 1 entity hay DTO — chỉ chứa property, ít/không có logic. -->
 
-# các loại class phổ biến? [id:2889 order:7]
+<!--# các loại class phổ biến? [id:2889 order:7]
 - Entity / Model: map với DB
 - DTO: truyền data qua API
 - Service: chứa business logic
 - Repository: truy cập DB
 - Controller: nhận HTTP request
-- ViewModel: data cho UI
+- ViewModel: data cho UI -->
