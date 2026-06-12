@@ -18,10 +18,10 @@ là mạch xử lý — trong .NET, hay gặp ở Circuit Breaker pattern (chặ
 # IHostedService là gì? [id:2857 order:5]
 là interface để chạy background task
 
-# một .net server đơn giản nhất gồm những gì? [id:2858 order:6]
+<!--# một .net server đơn giản nhất gồm những gì? [id:2858 order:6]
 - Kestrel: nhận HTTP connection
 - Middleware pipeline: xử lý request
-- Endpoint/Controller: business logic
+- Endpoint/Controller: business logic -->
 
 # mặc định thì k có middleware nào cả phải không? tức request sẽ đi đến Kestrel và đến thẳng controller ? [id:2859 order:7]
 Gần đúng. ASP.NET Core mặc định có vài middleware tối thiểu (routing, endpoint). Còn auth/logging/cors thì dev tự `app.Use...` thêm.
