@@ -33,10 +33,10 @@ Thread là đơn vị OS thực sự, tốn tài nguyên. Task là abstraction c
 <!--# abstraction cao hơn nghĩa là gì? cho ví dụ phổ biến [id:2820 order:10]
 là layer ẩn đi chi tiết của layer dưới, dev dùng API đơn giản hơn. Ví dụ: Task ẩn Thread, EF Core ẩn SQL, HttpClient ẩn TCP socket. -->
 
-# abstraction có những nghĩa nào? [id:2821 order:11]
+<!--# abstraction có những nghĩa nào? [id:2821 order:11]
 - Trong code: che giấu chi tiết, phơi interface đơn giản (Task, ORM, HttpClient)
 - Trong thiết kế: vẽ kiến trúc ở level cao, bỏ qua implementation detail
-- Trong OOP: `abstract class`, `abstract method` — khai báo mà không implement
+- Trong OOP: `abstract class`, `abstract method` — khai báo mà không implement -->
 
 # đơn vị OS là gì? [id:2822 order:12]
 là tài nguyên thực do OS cấp phát và quản lý — process, thread, file handle, socket.
