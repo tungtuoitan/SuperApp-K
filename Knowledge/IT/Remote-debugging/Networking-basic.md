@@ -101,6 +101,16 @@ WiFi .26  WiFi .50  Cáp .100
 ```
 
 # wifi là 1 subnet phải không?
+Đúng. Mỗi WiFi network (1 SSID) thường tương ứng 1 subnet — router cấp IP cùng dải cho tất cả thiết bị connect vào. Ví dụ tất cả device WiFi nhà đều có IP `192.168.2.x` → cùng subnet `192.168.2.0/24`.
+# ssid là gì?
+Service Set Identifier — tên hiển thị của 1 mạng WiFi (ví dụ "Home_5G", "VietnamPostOffice"). Là chuỗi tối đa 32 ký tự dùng để phân biệt các WiFi network với nhau.
+
+# pc kết nối wifi và pc kết nối đến router bằng cáp thì giống nhau/khác nhau gì?
+giống nhau: cùng subnet
+khác nhau: adapter khác nhau (wifi adapter vs ethernet adapter)
+
+# kết nối đến router wifi bằng cáp thì có phải là ethernet không?
+Đúng. Bất kỳ kết nối nào dùng dây RJ45 cắm vào port LAN của router đều là Ethernet, dù router đó có hỗ trợ WiFi hay không.
 # Thiết bị cùng router thì luôn cùng subnet và ping trực tiếp được? [id:530 order:29]
 Phần lớn đúng, nhưng có ngoại lệ: router có thể cấu hình VLAN hoặc client isolation (WiFi isolation) để cô lập các thiết bị dù cùng subnet. Trong setup nhà bình thường thì đúng.
 

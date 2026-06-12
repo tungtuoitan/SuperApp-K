@@ -20,7 +20,9 @@ Có.
 <!--# VPN tunnel là gì? [id:417 order:6]
 VPN tunnel là kết nối mã hóa giữa client và VPN server. -->
 # vpn tunnel cụ thể là gì?
-
+là kênh truyền ảo giữa client và VPN server. Mỗi packet gốc được bọc thêm header mới và mã hóa, rồi gửi qua internet — người ngoài chỉ thấy gói mã hóa, không đọc được nội dung bên trong.
+# tunnel là bọc thêm header và mã hoá packet phải không?
+Đúng. Tunnel = encapsulation + encryption: bọc packet gốc vào packet mới (header mới có IP của VPN server), rồi mã hóa toàn bộ payload bên trong.
 # VPN dùng để làm gì? [id:418 order:7]
 ẩn danh
 bảo mật
@@ -40,7 +42,12 @@ Không.
 Không.
 
 # “Virtual” trong VPN nghĩa là gì? cụ thể là gì? [id:423 order:12]
+nghĩa là không có dây/thiết bị riêng — VPN tạo ra 1 mạng logic chạy đè lên internet. Các thiết bị khác mạng vật lý vẫn "thấy nhau" như cùng 1 LAN.
+
 # mạng logic là gì?
+là mạng tồn tại ở mức phần mềm, không có dây cáp riêng. Các thiết bị được nhóm lại bằng cấu hình (IP ảo, routing rule), không bằng kết nối vật lý.
+<!-- # wifi có phải là mạng logic không?
+Không hẳn. WiFi là mạng vật lý ở tầng L1/L2 (sóng vô tuyến + chuẩn 802.11). Nhưng dải IP/subnet mà router gán cho các thiết bị WiFi thì là mạng logic ở tầng L3. -->
 
 # Khi connect VPN, client có được cấp IP riêng không? [id:431 order:16]
 Có.

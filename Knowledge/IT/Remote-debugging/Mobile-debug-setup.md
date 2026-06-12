@@ -7,6 +7,7 @@ name: "Mobile-debug-setup"
 2 cách: USB + port forwarding, hoặc cùng WiFi + local IP.
 
 # khi remote-debugging bằng cable thì data đi như thể nào? [id:534 order:2]
+Phone gửi request → ADB daemon trên phone bắt request → đẩy qua USB cable → ADB daemon trên laptop nhận → forward vào `localhost:PORT` của laptop. Toàn bộ traffic chạy trong loopback laptop, không qua WiFi/Ethernet.
 
 # Công cụ nào dùng để debug mobile? [id:535 order:3]
 `chrome://inspect/#devices` trên laptop.
@@ -44,10 +45,31 @@ Không hoàn toàn. **IP** là địa chỉ số (`192.168.2.26`). **Host** rộ
 # USB cable có phải network interface không? [id:546 order:16]
 Không phải
 # mỗi adapter thường có 1 interface tương ứng phải không?
+Đúng. 1 adapter (vật lý hoặc ảo) thường tạo ra 1 interface để OS gửi/nhận packet. Hiếm khi 1 adapter map tới nhiều interface.
+# interface có phải là abstract của adapter không?
+Đúng. Interface là abstraction tầng OS — có IP, MAC, route, do OS expose ra cho app dùng. Adapter là tầng dưới (NIC vật lý hoặc driver ảo) tạo ra interface đó.
+# driver là gì?
+# lí do driver tồn tại?
+<!-- # driver cũng có interface à?
+Driver tự nó không phải interface, nhưng driver tạo ra interface cho OS. Ví dụ WiFi driver tạo ra `Wi-Fi` interface mà bạn thấy trong `ipconfig`. -->
 
+# mọi phần cứng đều có interface phải không?
+Không. 
+# các phần cứng phổ biến có interface?
+<!-- # phần cứng nào thì mới có interface?
+Chỉ phần cứng cần OS giao tiếp qua chuẩn nào đó mới expose interface. 
+ví dụ: Network card → network interface, ổ cứng → block device interface. Còn RAM, CPU thì OS truy cập trực tiếp, không qua "interface" theo nghĩa network. -->
+
+# NIC khác gì Adapter?
+nó là 1 trong context network. 
 # Nếu PC kết nối Ethernet, mobile kết nối WiFi, và k được dùng usb cable thì có dùng dc chrome://inspect k? [id:547 order:17]
-
-
+Không. `chrome://inspect/#devices` chỉ phát hiện phone qua USB cable (ADB). Không có cable thì laptop không "thấy" phone, dù cùng mạng đi nữa. Trường hợp này phải debug bằng cách khác — ví dụ truy cập local IP của laptop từ phone qua WiFi.
+# dùng cáp cắm vào router cũng được gọi là ethernet à?
+Đúng. 
+# A kết nối với wifi còn B kết nối với ethernet, vậy A và B có liên hệ với nhau không?
+Có, nếu cả hai cắm chung 1 router và router đặt WiFi + Ethernet cùng subnet (setup nhà bình thường). Khi đó A và B ping trực tiếp được. Nếu router tách VLAN hoặc 2 subnet khác nhau thì phải đi qua gateway.
+# mặc định thì wifi và ehternet cùng router sẽ cùng subnet à?
+Đúng. 
 # BE cần sửa file nào để nhận connection từ ngoài (WiFi)? [id:548 order:18]
 `launchSettings.json` — đổi `applicationUrl` từ `http://localhost:5000` thành `http://0.0.0.0:5000`.
 
@@ -55,6 +77,13 @@ Không phải
 Đúng. Trong port forwarding qua USB, **ADB daemon** làm việc đó — listen trên port phone, nhận packet từ phone qua USB, rồi gửi vào `localhost:PORT` của laptop.
 
 # khi dùng use cable thì khi mobile vào localhost:3000, traffic sẽ đi như thế nào, nói thật cụ thể từng bước?
+1. Chrome trên phone gửi request tới `localhost:3000` (loopback của phone)
+2. ADB daemon trên phone đã listen sẵn port 3000 (do `chrome://inspect` setup port forwarding) — bắt request
+3. ADB daemon đóng gói request, đẩy qua USB cable
+4. ADB daemon trên laptop nhận packet từ USB
+5. Laptop daemon forward request vào `127.0.0.1:3000` của laptop
+6. webpack-dev-server (FE) nhận request, xử lý, trả response
+7. Response đi ngược lại: laptop → ADB laptop → USB → ADB phone → Chrome phone
 
 # Firewall chỉ áp dụng cho wireless, cable thì không bị check phải không? [id:552 order:22]
 Sai. Firewall áp dụng cho **tất cả** network interfaces — WiFi, Ethernet, VPN, Docker đều bị check. Port forwarding qua USB "bypass" firewall không phải vì USB không bị check, mà vì ADB forward traffic thành connection từ `127.0.0.1` (loopback) — loopback không bị apply inbound rules.

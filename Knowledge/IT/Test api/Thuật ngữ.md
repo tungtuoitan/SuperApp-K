@@ -23,8 +23,22 @@ Khi có pattern — ví dụ 100 outliers 5s mỗi giờ. 1 outlier đơn lẻ t
 <!--# Cold start cache miss là gì? [id:408 order:7]
 Lần đầu cache chưa có data, phải query DB rồi mới populate — request đó chậm hơn bình thường. -->
 # cold start cache miss là 1 câu, hay là động từ, hay danh từ vậy?
-# cold start thì cache miss phải không?
-# cold start là start lần đầu phải không?
-# Tại sao p99 thường cao hơn p95 trong sticky test? [id:409 order:8]
+là cụm danh từ ghép — mô tả tình huống "lần khởi động đầu mà cache chưa có data". Không phải câu, không phải động từ.
 
+# cold start thì cache miss phải không?
+Đúng. Cold start = lần đầu chạy, cache trống → request đầu tiên buộc phải miss và đi xuống DB.
+
+# cold start là start lần đầu phải không?
+Đúng. Là lần khởi động đầu tiên (hoặc sau khi restart) khi mọi thứ chưa "ấm" — cache rỗng, JIT chưa compile, connection pool chưa tạo.
+
+# Tại sao p99 thường cao hơn p95 trong sticky test? [id:409 order:8]
+Vì p99 là 1% chậm nhất, p95 là 5% chậm nhất — p99 lấy từ phần đuôi xa hơn, nên giá trị lớn hơn. Trong sticky test, các request 1% chậm nhất thường rơi vào GC pause, cache miss, hoặc network jitter.
+# p99 nghĩa là gì?
+là response time tại vị trí 99% (p99)
+# cách tính p99?
+1. Sắp xếp tất cả response time tăng dần
+2. lấy vị trí tương ứng với 99%
+3. Giá trị tại vị trí đó là p99
+Ví dụ: 1000 request → p99 là response time của request thứ 990 (sau khi sort).
 # cache warm là gì?
+là trạng thái cache đã có sẵn data — request tới sẽ hit cache, không phải đi DB. Đối lập với cold (cache rỗng).
