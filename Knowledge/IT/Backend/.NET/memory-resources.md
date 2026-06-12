@@ -15,12 +15,12 @@ là tài nguyên do OS quản lý chứ không phải CLR — file handle, netwo
 <!--# toàn bộ tài nguyên của process là do CLR quản lí à? [id:2848 order:4]
 Không. CLR chỉ quản managed memory (object trên heap). Tài nguyên unmanaged như file/socket do OS giữ, CLR không động vào. -->
 
-# tài nguyên của process gồm những gì? [id:2849 order:5]
+<!--# tài nguyên của process gồm những gì? [id:2849 order:5]
 - Memory (heap, stack)
 - File handle, socket, DB connection
 - Thread, timer
 - Lock, mutex, semaphore
-- Environment variables, working dir
+- Environment variables, working dir -->
 
 # heap là tài nguyên của runtime à? [id:2850 order:6]
 Đúng (managed heap). CLR cấp phát và quản managed heap, dùng để chứa object. GC quét heap này để dọn rác.
