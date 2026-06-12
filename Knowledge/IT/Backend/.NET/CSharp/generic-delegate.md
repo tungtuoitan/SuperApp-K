@@ -10,9 +10,6 @@ là keyword
 # khi nào dùng deletegate?
 khi cần pass function như 1 tham số
 
-<!-- # Func, Action, Predicate là gì?
-3 delegate built-in: -->
-
 # lambda expression là gì?
 là cú pháp viết delegate ngắn — `x => x * 2`. Hay dùng với LINQ: `list.Where(x => x > 5)`.
 # lambda chỉ dùng cho delegate và LINQ thôi à?
