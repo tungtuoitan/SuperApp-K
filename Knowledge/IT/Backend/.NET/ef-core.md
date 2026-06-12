@@ -15,8 +15,8 @@ là Language Integrated Query — cú pháp query data ngay trong C#, dùng đư
 # query là gì? [id:2840 order:4]
 là lệnh yêu cầu lấy/lọc data — thường viết bằng SQL (DB) hoặc LINQ (C#).
 
-# query là script phải không? [id:2841 order:5]
-Không. Query là biểu thức/lệnh, script là file gồm nhiều lệnh.
+<!--# query là script phải không? [id:2841 order:5]
+Không. Query là biểu thức/lệnh, script là file gồm nhiều lệnh. -->
 
 <!--# script có những nghĩa nào? [id:2842 order:6]
 - File chứa nhiều lệnh chạy tuần tự (`.sh`, `.ps1`, `.sql`)
