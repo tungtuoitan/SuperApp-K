@@ -10,8 +10,8 @@ name: "types-oop"
 # contract có nghĩa là gì? [id:2884 order:2]
 là cam kết về những method/property mà class phải có, không quy định cách implement.
 
-# contract ở đây có phải là dev cam kết với sourcecode không? [id:2885 order:3]
-Đúng. Class implement interface = cam kết với compiler/codebase rằng class có đủ method/property mà interface yêu cầu.
+<!--# contract ở đây có phải là dev cam kết với sourcecode không? [id:2885 order:3]
+Đúng. Class implement interface = cam kết với compiler/codebase rằng class có đủ method/property mà interface yêu cầu. -->
 
 # sự khác nhau giữa "định nghĩa" và triển khai? [id:2886 order:4]
 Định nghĩa là khai báo signature (tên, tham số, kiểu trả về). Triển khai là viết code thực thi bên trong.
