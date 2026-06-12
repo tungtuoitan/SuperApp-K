@@ -55,8 +55,8 @@ là thành phần trong CLR xử lý exception — catch, propagate, và unwind 
 # Type System là gì? [id:2787 order:16]
 là thành phần quản lý các kiểu dữ liệu trong runtime — đảm bảo type safety, hỗ trợ reflection và generics.
 
-# Kiến trúc chạy của .NET như thế nào? [id:2788 order:17]
-Từ trên xuống: Application Layer → Framework Layer (ASP.NET Core, EF Core...) → CLR (JIT, GC, Type System) → OS.
+<!--# Kiến trúc chạy của .NET như thế nào? [id:2788 order:17]
+Từ trên xuống: Application Layer → Framework Layer (ASP.NET Core, EF Core...) → CLR (JIT, GC, Type System) → OS. -->
 
 # IL là gì? [id:2868 order:18]
 là Intermediate Language — bytecode mà compiler C# tạo ra. CLR sẽ JIT compile IL thành machine code lúc runtime.
