@@ -12,8 +12,8 @@ là hệ thống có trách nhiệm chạy code.
 <!--# Runtime Systems là gì? [id:2865 order:3]
 là tập hợp các thành phần phần mềm chịu trách nhiệm thực thi chương trình sau khi compile xong. -->
 
-# Phân biệt CLR, Runtime, Runtime engine, Execution engine? [id:2777 order:4]
-Đây là 4 tên khác nhau cho cùng 1 khái niệm trong .NET. CLR = Common Language Runtime = Runtime = Runtime engine = Execution engine. Trong văn nói chúng được dùng thay thế nhau.
+<!--# Phân biệt CLR, Runtime, Runtime engine, Execution engine? [id:2777 order:4]
+Đây là 4 tên khác nhau cho cùng 1 khái niệm trong .NET. CLR = Common Language Runtime = Runtime = Runtime engine = Execution engine. Trong văn nói chúng được dùng thay thế nhau. -->
 
 # Phân biệt Runtime và Virtual machine? [id:2778 order:5]
 Trong văn nói, 90% VM === Runtime. Cả hai đều là môi trường thực thi code. Điểm khác: VM thường ám chỉ môi trường ảo hóa toàn bộ OS; Runtime chỉ ảo hóa ở mức ngôn ngữ (JVM, CLR).
