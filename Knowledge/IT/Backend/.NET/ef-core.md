@@ -3,8 +3,8 @@ id: 323
 name: "ef-core"
 ---
 
-# Entity Framework Core là gì? [id:2837 order:1]
-là ORM của .NET
+<!--# Entity Framework Core là gì? [id:2837 order:1]
+là ORM của .NET -->
 
 # ORM là gì? [id:2838 order:2]
 là Object-Relational Mapping — mapping table DB thành class C#, row thành object. Dev thao tác object thay vì viết SQL trực tiếp.
