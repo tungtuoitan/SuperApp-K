@@ -49,11 +49,11 @@ là các thư viện được tích hợp sẵn vào runtime — BCL (Base Class
 <!--# Interop Layer là gì? [id:2785 order:14]
 là tầng cho phép .NET gọi native code (C/C++), OS API mà không cần viết lại từ đầu. -->
 
-# Exception Handling System là gì? [id:2786 order:15]
-là thành phần trong CLR xử lý exception — catch, propagate, và unwind call stack khi lỗi xảy ra.
+<!--# Exception Handling System là gì? [id:2786 order:15]
+là thành phần trong CLR xử lý exception — catch, propagate, và unwind call stack khi lỗi xảy ra. -->
 
-# Type System là gì? [id:2787 order:16]
-là thành phần quản lý các kiểu dữ liệu trong runtime — đảm bảo type safety, hỗ trợ reflection và generics.
+<!--# Type System là gì? [id:2787 order:16]
+là thành phần quản lý các kiểu dữ liệu trong runtime — đảm bảo type safety, hỗ trợ reflection và generics. -->
 
 <!--# Kiến trúc chạy của .NET như thế nào? [id:2788 order:17]
 Từ trên xuống: Application Layer → Framework Layer (ASP.NET Core, EF Core...) → CLR (JIT, GC, Type System) → OS. -->
