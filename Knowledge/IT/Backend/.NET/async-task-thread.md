@@ -30,8 +30,8 @@ là "bị giới hạn bởi". CPU-bound = bị giới hạn bởi tốc độ C
 # Task và Thread khác nhau thế nào? [id:2819 order:9]
 Thread là đơn vị OS thực sự, tốn tài nguyên. Task là abstraction cao hơn, nhiều Task chạy trên ít thread qua thread pool — nhẹ hơn và dễ compose hơn.
 
-# abstraction cao hơn nghĩa là gì? cho ví dụ phổ biến [id:2820 order:10]
-là layer ẩn đi chi tiết của layer dưới, dev dùng API đơn giản hơn. Ví dụ: Task ẩn Thread, EF Core ẩn SQL, HttpClient ẩn TCP socket.
+<!--# abstraction cao hơn nghĩa là gì? cho ví dụ phổ biến [id:2820 order:10]
+là layer ẩn đi chi tiết của layer dưới, dev dùng API đơn giản hơn. Ví dụ: Task ẩn Thread, EF Core ẩn SQL, HttpClient ẩn TCP socket. -->
 
 # abstraction có những nghĩa nào? [id:2821 order:11]
 - Trong code: che giấu chi tiết, phơi interface đơn giản (Task, ORM, HttpClient)
