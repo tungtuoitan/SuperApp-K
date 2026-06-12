@@ -3,9 +3,9 @@ id: 326
 name: "types-oop"
 ---
 
-# interface khác abstract class thế nào trong C#? [id:2883 order:1]
+<!--# interface khác abstract class thế nào trong C#? [id:2883 order:1]
 - Interface: chỉ định nghĩa contract (method/property), không có implementation (từ C# 8 có default impl)
-- Abstract class: có thể có implementation, chỉ kế thừa được 1 class, thêm trạng thái (field)
+- Abstract class: có thể có implementation, chỉ kế thừa được 1 class, thêm trạng thái (field) -->
 
 # contract có nghĩa là gì? [id:2884 order:2]
 là cam kết về những method/property mà class phải có, không quy định cách implement.
