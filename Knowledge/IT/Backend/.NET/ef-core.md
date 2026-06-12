@@ -6,8 +6,8 @@ name: "ef-core"
 <!--# Entity Framework Core là gì? [id:2837 order:1]
 là ORM của .NET -->
 
-# ORM là gì? [id:2838 order:2]
-là Object-Relational Mapping — mapping table DB thành class C#, row thành object. Dev thao tác object thay vì viết SQL trực tiếp.
+<!--# ORM là gì? [id:2838 order:2]
+là Object-Relational Mapping — mapping table DB thành class C#, row thành object. Dev thao tác object thay vì viết SQL trực tiếp. -->
 
 # LINQ là gì? [id:2839 order:3]
 là Language Integrated Query — cú pháp query data ngay trong C#, dùng được cho collection, DB (qua EF Core), XML.
