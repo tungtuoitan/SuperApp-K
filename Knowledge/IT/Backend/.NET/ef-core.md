@@ -9,8 +9,8 @@ là ORM của .NET -->
 <!--# ORM là gì? [id:2838 order:2]
 là Object-Relational Mapping — mapping table DB thành class C#, row thành object. Dev thao tác object thay vì viết SQL trực tiếp. -->
 
-# LINQ là gì? [id:2839 order:3]
-là Language Integrated Query — cú pháp query data ngay trong C#, dùng được cho collection, DB (qua EF Core), XML.
+<!--# LINQ là gì? [id:2839 order:3]
+là Language Integrated Query — cú pháp query data ngay trong C#, dùng được cho collection, DB (qua EF Core), XML. -->
 
 # query là gì? [id:2840 order:4]
 là lệnh yêu cầu lấy/lọc data — thường viết bằng SQL (DB) hoặc LINQ (C#).
