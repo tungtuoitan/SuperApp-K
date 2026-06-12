@@ -15,8 +15,8 @@ Thread không bị block khi chờ IO → trả về thread pool để xử lý 
 <!--# khi nào nên dùng Task? [id:2814 order:4]
 Khi cần chạy work đồng thời/bất đồng bộ — IO async, parallel processing, hoặc compose nhiều operation. Mặc định nên dùng Task thay vì Thread. -->
 
-# Task liên quan gì đến async? [id:2815 order:5]
-`async` method trong C# trả về Task. Task đại diện cho công việc đang/sẽ hoàn thành — `await` task để chờ kết quả mà không block thread.
+<!--# Task liên quan gì đến async? [id:2815 order:5]
+`async` method trong C# trả về Task. Task đại diện cho công việc đang/sẽ hoàn thành — `await` task để chờ kết quả mà không block thread. -->
 
 # khi nào nên dùng Thread? [id:2816 order:6]
 Hiếm khi. Chỉ khi cần kiểm soát thấp như set priority, dùng `ThreadStatic`, hoặc tích hợp legacy API. Còn lại dùng Task.
