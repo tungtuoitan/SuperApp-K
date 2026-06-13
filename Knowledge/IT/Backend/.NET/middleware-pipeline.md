@@ -9,8 +9,8 @@ là thành phần xử lý HTTP request/response theo pipeline.
 # ware trong middleware có nghĩa là phần mềm phải không?? [id:2854 order:2]
 Đúng. `ware` viết tắt của `software`, `middle` là ở giữa — middleware là phần mềm nằm giữa request và handler cuối.
 
-# circuit là gì? [id:2855 order:3]
-là mạch xử lý — trong .NET, hay gặp ở Circuit Breaker pattern (chặn call khi service downstream lỗi liên tục) và Blazor Circuit (kết nối SignalR giữa browser và server).
+<!--# circuit là gì? [id:2855 order:3]
+là mạch xử lý — trong .NET, hay gặp ở Circuit Breaker pattern (chặn call khi service downstream lỗi liên tục) và Blazor Circuit (kết nối SignalR giữa browser và server). -->
 
 # cách đọc circuit ? [id:2856 order:4]
 Đọc là "sơ-kịt" (tiếng Anh /ˈsɜːr.kɪt/).
