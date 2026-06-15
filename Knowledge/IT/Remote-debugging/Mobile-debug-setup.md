@@ -42,41 +42,46 @@ Thường đúng — BE dùng 5000, FE dùng 3000. Một port chỉ có 1 proces
 # IP và host có nghĩa tương tự nhau không? [id:543 order:13]
 Không hoàn toàn. **IP** là địa chỉ số (`192.168.2.26`). **Host** rộng hơn — có thể là IP hoặc domain name (`localhost`, `example.com`). Domain được DNS resolve thành IP.
 
-# USB cable có phải network interface không? [id:546 order:16]
+# USB cable có phải network interface không? [id:546 order:14]
 Không phải
-# mỗi adapter thường có 1 interface tương ứng phải không?
+
+# mỗi adapter thường có 1 interface tương ứng phải không? [id:2930 order:15]
 Đúng. 1 adapter (vật lý hoặc ảo) thường tạo ra 1 interface để OS gửi/nhận packet. Hiếm khi 1 adapter map tới nhiều interface.
-# interface có phải là abstract của adapter không?
+
+# interface có phải là abstract của adapter không? [id:2931 order:16]
 Đúng. Interface là abstraction tầng OS — có IP, MAC, route, do OS expose ra cho app dùng. Adapter là tầng dưới (NIC vật lý hoặc driver ảo) tạo ra interface đó.
-# driver là gì?
-# lí do driver tồn tại?
-<!-- # driver cũng có interface à?
-Driver tự nó không phải interface, nhưng driver tạo ra interface cho OS. Ví dụ WiFi driver tạo ra `Wi-Fi` interface mà bạn thấy trong `ipconfig`. -->
 
-# mọi phần cứng đều có interface phải không?
-Không. 
-# các phần cứng phổ biến có interface?
-<!-- # phần cứng nào thì mới có interface?
-Chỉ phần cứng cần OS giao tiếp qua chuẩn nào đó mới expose interface. 
-ví dụ: Network card → network interface, ổ cứng → block device interface. Còn RAM, CPU thì OS truy cập trực tiếp, không qua "interface" theo nghĩa network. -->
+# driver là gì? [id:2932 order:17]
 
-# NIC khác gì Adapter?
-nó là 1 trong context network. 
-# Nếu PC kết nối Ethernet, mobile kết nối WiFi, và k được dùng usb cable thì có dùng dc chrome://inspect k? [id:547 order:17]
+# lí do driver tồn tại? [id:2933 order:18]
+
+# mọi phần cứng đều có interface phải không? [id:2934 order:19]
+Không.
+
+# các phần cứng phổ biến có interface? [id:2935 order:20]
+
+# NIC khác gì Adapter? [id:2936 order:21]
+nó là 1 trong context network.
+
+# Nếu PC kết nối Ethernet, mobile kết nối WiFi, và k được dùng usb cable thì có dùng dc chrome://inspect k? [id:547 order:22]
 Không. `chrome://inspect/#devices` chỉ phát hiện phone qua USB cable (ADB). Không có cable thì laptop không "thấy" phone, dù cùng mạng đi nữa. Trường hợp này phải debug bằng cách khác — ví dụ truy cập local IP của laptop từ phone qua WiFi.
-# dùng cáp cắm vào router cũng được gọi là ethernet à?
-Đúng. 
-# A kết nối với wifi còn B kết nối với ethernet, vậy A và B có liên hệ với nhau không?
+
+# dùng cáp cắm vào router cũng được gọi là ethernet à? [id:2937 order:23]
+Đúng.
+
+# A kết nối với wifi còn B kết nối với ethernet, vậy A và B có liên hệ với nhau không? [id:2938 order:24]
 Có, nếu cả hai cắm chung 1 router và router đặt WiFi + Ethernet cùng subnet (setup nhà bình thường). Khi đó A và B ping trực tiếp được. Nếu router tách VLAN hoặc 2 subnet khác nhau thì phải đi qua gateway.
-# mặc định thì wifi và ehternet cùng router sẽ cùng subnet à?
-Đúng. 
-# BE cần sửa file nào để nhận connection từ ngoài (WiFi)? [id:548 order:18]
+
+# mặc định thì wifi và ehternet cùng router sẽ cùng subnet à? [id:2939 order:25]
+Đúng.
+
+# BE cần sửa file nào để nhận connection từ ngoài (WiFi)? [id:548 order:26]
 `launchSettings.json` — đổi `applicationUrl` từ `http://localhost:5000` thành `http://0.0.0.0:5000`.
 
-# Khi forward, phải có app nào đó nhận và forward request? [id:549 order:19]
+# Khi forward, phải có app nào đó nhận và forward request? [id:549 order:27]
 Đúng. Trong port forwarding qua USB, **ADB daemon** làm việc đó — listen trên port phone, nhận packet từ phone qua USB, rồi gửi vào `localhost:PORT` của laptop.
 
-# khi dùng use cable thì khi mobile vào localhost:3000, traffic sẽ đi như thế nào, nói thật cụ thể từng bước?
+# khi dùng use cable thì khi mobile vào localhost:3000, traffic sẽ đi như thế nào, nói thật cụ thể từng bước? [id:2940 order:28]
 1. Chrome trên phone gửi request tới `localhost:3000` (loopback của phone)
 2. ADB daemon trên phone đã listen sẵn port 3000 (do `chrome://inspect` setup port forwarding) — bắt request
 3. ADB daemon đóng gói request, đẩy qua USB cable
@@ -85,20 +90,20 @@ Có, nếu cả hai cắm chung 1 router và router đặt WiFi + Ethernet cùng
 6. webpack-dev-server (FE) nhận request, xử lý, trả response
 7. Response đi ngược lại: laptop → ADB laptop → USB → ADB phone → Chrome phone
 
-# Firewall chỉ áp dụng cho wireless, cable thì không bị check phải không? [id:552 order:22]
+# Firewall chỉ áp dụng cho wireless, cable thì không bị check phải không? [id:552 order:29]
 Sai. Firewall áp dụng cho **tất cả** network interfaces — WiFi, Ethernet, VPN, Docker đều bị check. Port forwarding qua USB "bypass" firewall không phải vì USB không bị check, mà vì ADB forward traffic thành connection từ `127.0.0.1` (loopback) — loopback không bị apply inbound rules.
 
-# API pending có nghĩa là gì? [id:553 order:23]
+# API pending có nghĩa là gì? [id:553 order:30]
 Browser đã gửi request nhưng không nhận được response (kể cả không nhận tín hiệu từ chối). Khác với "refused" là connection bị từ chối ngay. Pending do: firewall drop packet, server quá tải, hoặc network không route được tới đích.
 
-# Khi thiết bị A truy cập B:3000, nghĩa là gửi 1 packet? [id:554 order:24]
+# Khi thiết bị A truy cập B:3000, nghĩa là gửi 1 packet? [id:554 order:31]
 Thực ra là nhiều packet. Flow HTTP cơ bản:
 1. TCP handshake: 3 packet (SYN, SYN-ACK, ACK)
 2. HTTP request: 1+ packet
 3. HTTP response: nhiều packet (tùy kích thước)
 Mỗi packet có header chứa IP nguồn + IP đích. Router đọc IP đích để biết forward về đâu.
 
-# Chuyện gì xảy ra khi phone gõ `192.168.2.26:3000`? [id:555 order:25]
+# Chuyện gì xảy ra khi phone gõ `192.168.2.26:3000`? [id:555 order:32]
 1. Phone gửi packet TCP tới `192.168.2.26:3000` qua WiFi router
 2. Router forward packet đến laptop (cùng subnet, không qua internet)
 3. Laptop nhận packet tại WiFi adapter

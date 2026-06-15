@@ -12,8 +12,8 @@ Rule được inject khi bật VPN app, chỉ bị gỡ khi tắt VPN app chủ 
 # Kill switch hoạt động khi VPN tunnel rớt mạng không? [id:475 order:3]
 Có. Rule firewall tồn tại độc lập với trạng thái tunnel — tunnel rớt thì traffic bị block hoàn toàn, không lọt ra ngoài.
 
-# Mục đích chính của kill switch là gì? [id:477 order:5]
+# Mục đích chính của kill switch là gì? [id:477 order:4]
 Không cho traffic lọt ra ngoài tunnel khi tunnel không còn — bảo vệ khoảng thời gian tunnel rớt mà người dùng không hay biết.
 
-# Không có kill switch thì điều gì xảy ra? [id:478 order:6]
+# Không có kill switch thì điều gì xảy ra? [id:478 order:5]
 Khi tunnel rớt, OS tự fallback ra interface thật ngay lập tức — IP thật bị lộ trong vài giây mà người dùng không nhận ra.

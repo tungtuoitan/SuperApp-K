@@ -80,77 +80,77 @@ Windows tự tạo khi lần đầu kết nối và hỏi user chọn Public/Pri
 # Chủ WiFi có thể tạo GPO rule không? [id:578 order:23]
 Không. GPO là cơ chế của Windows Domain, không liên quan đến WiFi. Chủ WiFi chỉ quản lý router (SSID, password, firewall của router). GPO chỉ IT admin trong môi trường domain mới tạo được.
 
-# Tại sao Windows Firewall block inbound từ external device? [id:580 order:25]
+# Tại sao Windows Firewall block inbound từ external device? [id:580 order:24]
 Hành vi mặc định — bảo vệ máy khỏi kết nối không mong muốn. Mọi inbound connection từ device khác đều bị block trừ khi có rule cho phép.
 
-# Firewall xác định device là external device bằng cách nào? [id:581 order:26]
+# Firewall xác định device là external device bằng cách nào? [id:581 order:25]
 Dựa vào **IP nguồn** của packet. Nếu IP nguồn là `127.0.0.1` hoặc IP của chính máy → internal. Nếu IP nguồn khác (ví dụ `192.168.2.50` của phone) → external → apply inbound rules.
 
-# Trong WiFi profile Public, local rule luôn bị bỏ qua phải không? [id:582 order:27]
+# Trong WiFi profile Public, local rule luôn bị bỏ qua phải không? [id:582 order:26]
 không,
 Chỉ khi GPO cấu hình `LocalFirewallRules: N/A`. Không phải mặc định luôn thế. Máy cá nhân không join domain thường không bị ảnh hưởng.
 
-# "Domain" trong networking có mấy nghĩa? [id:583 order:28]
+# "Domain" trong networking có mấy nghĩa? [id:583 order:27]
 3 nghĩa phổ biến:
 1. **Windows Domain**: mạng máy tính quản lý tập trung qua Active Directory (công ty, trường học)
 2. **Internet domain / DNS domain**: tên miền website — `google.com`, `tungle.uk`
 3. **WiFi profile "Domain"**: profile thứ 3 của Windows (ngoài Public/Private) — tự động gán khi máy detect đang trong Windows Domain network
 
-# Ai tạo ra local rule? [id:584 order:29]
+# Ai tạo ra local rule? [id:584 order:28]
 User hoặc ứng dụng (với quyền admin). Ví dụ: cài game → game tự thêm rule mở port. Hoặc tự thêm thủ công qua Windows Defender Firewall.
 
-# Ví dụ về WiFi profile Public/Private? [id:585 order:30]
+# Ví dụ về WiFi profile Public/Private? [id:585 order:29]
 - **Public**: kết nối WiFi quán cà phê → Windows hỏi "network này loại gì?" → chọn Public → firewall strict, ẩn máy khỏi network discovery.
 - **Private**: WiFi nhà mình → chọn Private → firewall thoáng hơn, máy hiện trong network, local rules có hiệu lực.
 
-# Network discovery là gì? [id:586 order:31]
+# Network discovery là gì? [id:586 order:30]
 Tính năng của Windows cho phép máy "thông báo" sự hiện diện trong mạng và "thấy" các máy khác. Khi bật: máy xuất hiện trong Network Explorer, có thể share file/printer. Khi tắt (profile Public): máy ẩn — các máy khác không thấy trong danh sách.
 
-# Khi thiết bị A bị ẩn khỏi network discovery thì các máy cùng mạng không thể giao tiếp được với A? [id:587 order:32]
+# Khi thiết bị A bị ẩn khỏi network discovery thì các máy cùng mạng không thể giao tiếp được với A? [id:587 order:31]
 Sai. Network discovery chỉ ảnh hưởng đến "danh bạ" — có thấy nhau trong Network Explorer không. Vẫn ping được và kết nối được nếu biết IP. Ẩn discovery ≠ block traffic.
 
-# Tại sao tắt local rules lại bảo vệ user? [id:588 order:33]
+# Tại sao tắt local rules lại bảo vệ user? [id:588 order:32]
 Ví dụ: bạn cài phần mềm lạ ở quán cà phê → phần mềm tự thêm local rule mở port 8080 → các máy trong quán có thể kết nối vào máy bạn. Nếu profile Public tắt local rules → rule đó vô hiệu → máy bạn an toàn.
 
-# Tắt local rules không có quá nhiều ý nghĩa trong việc bảo vệ user thông thường? [id:589 order:34]
+# Tắt local rules không có quá nhiều ý nghĩa trong việc bảo vệ user thông thường? [id:589 order:33]
 Đúng. Tác dụng chính là ngăn app/malware tự mở port mà user không hay. Với user bình thường không cài phần mềm lạ thì khác biệt không đáng kể. Dev mới cảm nhận rõ — vì cần mở port cho server local.
 
-# Rules thường được dùng khi nào? [id:590 order:35]
+# Rules thường được dùng khi nào? [id:590 order:34]
 - Dev cần mở port cho local server (như rule "SuperApp BE 5000")
 - Cài server software (game server, VPN, web server)
 - App tự thêm khi cài (Zoom, Skype, game launchers)
 - IT cần block một port/IP cụ thể
 
-# Mặc định khi kết nối WiFi mới thì profile là Public? [id:591 order:36]
+# Mặc định khi kết nối WiFi mới thì profile là Public? [id:591 order:35]
 Đúng. Windows default gán Public nếu không hỏi. Ở Windows 10/11 thường có popup "Do you want your PC to be discoverable?" — chọn **Yes** = Private, **No** = Public. Nhiều user bấm No cho nhanh → profile Public.
 
-# Người dùng bình thường sẽ không cảm nhận được sự khác biệt? [id:592 order:37]
+# Người dùng bình thường sẽ không cảm nhận được sự khác biệt? [id:592 order:36]
 Đúng. Browser, email, Zalo, YouTube đều hoạt động bình thường với cả 2 profile. Chỉ cảm nhận khi: cần share file với máy khác (cần Private) hoặc cần mở port cho server dev (cần Private để local rule có hiệu lực).
 
-# Tại sao profile Private cho phép local rule còn Public thì không? [id:593 order:38]
+# Tại sao profile Private cho phép local rule còn Public thì không? [id:593 order:37]
 Windows thiết kế theo mức tin cậy: Private = mạng nhà/văn phòng → tin cậy → local rules được đọc. Public = quán cà phê → không tin cậy → GPO tắt local rules để bảo vệ người dùng khỏi vô tình mở port nguy hiểm.
 
-# Test từ laptop thành công nhưng phone vẫn không reach được — tại sao? [id:594 order:39]
+# Test từ laptop thành công nhưng phone vẫn không reach được — tại sao? [id:594 order:38]
 Test từ laptop tới chính laptop (`127.0.0.1`) bypass firewall inbound rules — traffic là loopback, không bị check. Phone là external device với IP khác → bị chặn bởi firewall inbound.
 
-# Tại sao đổi sang Private profile giải quyết vấn đề API pending? [id:595 order:40]
+# Tại sao đổi sang Private profile giải quyết vấn đề API pending? [id:595 order:39]
 Flow: phone gửi request đến BE port 5000 → Firewall thấy IP nguồn là phone (external) → kiểm tra inbound rules → WiFi ở profile Public → GPO bật `LocalFirewallRules: N/A` → local rule "SuperApp BE 5000" bị bỏ qua → packet bị drop → pending.
 Đổi sang Private: GPO không tắt local rules → rule có hiệu lực → allow inbound → request qua được.
 
-# Mặc định thì Public profile sẽ tắt local rules? [id:596 order:41]
+# Mặc định thì Public profile sẽ tắt local rules? [id:596 order:40]
 Không phải mặc định của Windows thuần. Đây là do **GPO** cấu hình `LocalFirewallRules: N/A` — chỉ xảy ra khi máy join Windows Domain và IT admin set policy đó. Máy cá nhân không join domain thì Public profile vẫn cho phép local rules bình thường.
 
-# Windows Firewall chỉ đơn giản là tập hợp local rule + GPO rule? [id:597 order:42]
+# Windows Firewall chỉ đơn giản là tập hợp local rule + GPO rule? [id:597 order:41]
 Về cơ bản đúng. Ngoài ra còn có: default action per profile (block all / allow all khi không có rule nào match), và Windows Service Hardening rules (tự động). Nhưng với dev, hiểu "local rule + GPO rule, GPO thắng" là đủ.
 
-# Rule là thành phần chính của policy (GPO)? [id:598 order:43]
+# Rule là thành phần chính của policy (GPO)? [id:598 order:42]
 Đúng. Policy (GPO) là container chứa nhiều settings, trong đó firewall rules là một loại setting. Policy còn chứa password policy, software deployment policy, registry settings, v.v.
 
-# Giải thích "inbound" trong rule "allow TCP port 5000 inbound từ mọi IP"? [id:599 order:44]
+# Giải thích "inbound" trong rule "allow TCP port 5000 inbound từ mọi IP"? [id:599 order:43]
 Inbound = traffic đi **vào** máy (từ bên ngoài vào). Outbound = traffic đi **ra** khỏi máy. Rule này nghĩa là: cho phép bất kỳ IP nào gửi packet TCP đến port 5000 của máy này.
 
-# Đổi WiFi từ Public → Private có ý nghĩa gì với dev? [id:600 order:45]
+# Đổi WiFi từ Public → Private có ý nghĩa gì với dev? [id:600 order:44]
 Profile Private cho phép local firewall rules có hiệu lực — rule "SuperApp BE 5000" sẽ được đọc và connection từ phone được allow. Đây là bước cần thiết khi debug mobile qua WiFi IP.
 
-# Thường thì Public profile sẽ tắt local rule? [id:601 order:46]
+# Thường thì Public profile sẽ tắt local rule? [id:601 order:45]
 Không phải "thường". Chỉ xảy ra khi máy **join Windows Domain** và IT admin cấu hình GPO `LocalFirewallRules: N/A`. Máy cá nhân không join domain → Public profile vẫn cho phép local rules. Trường hợp của mình bị chặn là vì máy đang trong môi trường domain có GPO đó.

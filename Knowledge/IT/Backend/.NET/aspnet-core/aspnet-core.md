@@ -24,28 +24,28 @@ Gần như giống nhau. Web server ám chỉ server xử lý request từ brows
 - 2010s: Framework như Rails, Django, .NET MVC tích hợp HTTP server vào app
 - 2016+: ASP.NET Core tích hợp Kestrel, không cần IIS nữa -->
 
-# Điểm mạnh của ASP.NET Core là gì? [id:2746 order:8]
-- Cross-platform 
+# Điểm mạnh của ASP.NET Core là gì? [id:2746 order:7]
+- Cross-platform
 - High performance
 
-# High performance trong ASP.NET Core nghĩa là gì? [id:2747 order:9]
+# High performance trong ASP.NET Core nghĩa là gì? [id:2747 order:8]
 là: xử lý request nhanh, phục vụ nhiều request cùng lúc, dùng ít CPU/RAM. Đo bằng: latency (ms), throughput (req/s), memory usage (MB).
 
-# Vì sao ASP.NET Core nhanh? [id:2748 order:10]
+# Vì sao ASP.NET Core nhanh? [id:2748 order:9]
 - Dùng Kestrel (HTTP server viết tối ưu cho .NET)
 - Dùng nhiều async/await — thread không bị block
 - Pipeline rất nhẹ — chỉ chạy middleware cần thiết
 
-# Vì sao ASP.NET Core có thể cross-platform? [id:2749 order:11]
+# Vì sao ASP.NET Core có thể cross-platform? [id:2749 order:10]
 - Chạy trên CLR, CLR được implement trên nhiều OS
 - Không phụ thuộc IIS và Windows API, dùng kernel API cross-platform
 - Thư viện chuẩn được thiết kế cross-platform
 
-# Điều kiện để app cross-platform là gì? [id:2750 order:12]
+# Điều kiện để app cross-platform là gì? [id:2750 order:11]
 Cần 3 điều kiện:
 - Runtime cross-platform (CLR chạy được trên Linux/macOS)
 - Thư viện/framework cross-platform
 - OS API mà code dùng phải cross-platform
 
-# ASP là gì? [id:2751 order:13]
+# ASP là gì? [id:2751 order:12]
 là Active Server Pages — tên cũ của Microsoft cho công nghệ web server-side scripting. ASP.NET Core không liên quan đến ASP cũ, chỉ giữ tên vì lịch sử.

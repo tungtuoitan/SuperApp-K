@@ -50,17 +50,22 @@ là che giấu chi tiết phức tạp bên dưới, chỉ phơi ra interface đ
 # compose là gì? [id:2825 order:15]
 là ghép nhiều thành phần nhỏ lại thành thành phần lớn hơn. Trong .NET, compose Task là chain `await` nhiều operation, hoặc dùng `Task.WhenAll`.
 
-# Task<ResultOptions> Error(LogDto log); trong này Task có nghĩa gì?
+# Task<ResultOptions> Error(LogDto log); trong này Task có nghĩa gì? [id:2951 order:16]
 nghĩa là method này async — trả về `Task<ResultOptions>` thay vì trả thẳng `ResultOptions`. Caller phải `await` để lấy giá trị thật.
-# result type Task có nghĩa là chưa có kq, đang đợi có phải không?
-# khi nào dùng private?
-khi member chỉ dùng nội bộ trong class. 
-# mặc định thì member là private hay public?
-# các keyword ngược lại với private?
-# string dạng này gọi là gì?  $"{x}-abc";
+
+# result type Task có nghĩa là chưa có kq, đang đợi có phải không? [id:2952 order:17]
+
+# khi nào dùng private? [id:2953 order:18]
+khi member chỉ dùng nội bộ trong class.
+
+# mặc định thì member là private hay public? [id:2954 order:19]
+
+# các keyword ngược lại với private? [id:2955 order:20]
+
+# string dạng này gọi là gì? $"{x}-abc"; [id:2956 order:21]
 là string interpolation
 
-# các keyword phổ biến trước 1 biến/hàm?
+# các keyword phổ biến trước 1 biến/hàm? [id:2957 order:22]
 `public`, `private`, `protected`, `internal`
 `static`, `readonly`, `const`, `virtual`, `override`, `abstract`, `sealed`
 `async`, `await`, `volatile`

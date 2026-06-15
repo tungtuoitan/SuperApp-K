@@ -27,6 +27,7 @@ Khối lượng công việc (CPU, RAM, IO) mà 1 process phải xử lý trong 
 
 # ví dụ trường hợp việc giữ cho api hoạt động liên tục là quan trọng? [id:2672 order:6]
 - streaming video, download file nặng
+
 # deamon on-demand là gì, cho ví dụ? [id:2673 order:7]
 Daemon chỉ chạy khi có trigger sự kiện, xong thì idle hoặc tắt — không chạy liên tục theo schedule. Ví dụ: daemon export Excel khởi chạy khi user click nút export, hoàn tất thì kết thúc.
 

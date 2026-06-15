@@ -100,19 +100,21 @@ Quy ước của nhà sản xuất. `192.168.x.x` là dải IP private (RFC 1918
 WiFi .26  WiFi .50  Cáp .100
 ```
 
-# wifi là 1 subnet phải không?
+# wifi là 1 subnet phải không? [id:2941 order:28]
 Đúng. Mỗi WiFi network (1 SSID) thường tương ứng 1 subnet — router cấp IP cùng dải cho tất cả thiết bị connect vào. Ví dụ tất cả device WiFi nhà đều có IP `192.168.2.x` → cùng subnet `192.168.2.0/24`.
-# ssid là gì?
+
+# ssid là gì? [id:2942 order:29]
 Service Set Identifier — tên hiển thị của 1 mạng WiFi (ví dụ "Home_5G", "VietnamPostOffice"). Là chuỗi tối đa 32 ký tự dùng để phân biệt các WiFi network với nhau.
 
-# pc kết nối wifi và pc kết nối đến router bằng cáp thì giống nhau/khác nhau gì?
+# pc kết nối wifi và pc kết nối đến router bằng cáp thì giống nhau/khác nhau gì? [id:2943 order:30]
 giống nhau: cùng subnet
 khác nhau: adapter khác nhau (wifi adapter vs ethernet adapter)
 
-# kết nối đến router wifi bằng cáp thì có phải là ethernet không?
+# kết nối đến router wifi bằng cáp thì có phải là ethernet không? [id:2944 order:31]
 Đúng. Bất kỳ kết nối nào dùng dây RJ45 cắm vào port LAN của router đều là Ethernet, dù router đó có hỗ trợ WiFi hay không.
-# Thiết bị cùng router thì luôn cùng subnet và ping trực tiếp được? [id:530 order:29]
+
+# Thiết bị cùng router thì luôn cùng subnet và ping trực tiếp được? [id:530 order:32]
 Phần lớn đúng, nhưng có ngoại lệ: router có thể cấu hình VLAN hoặc client isolation (WiFi isolation) để cô lập các thiết bị dù cùng subnet. Trong setup nhà bình thường thì đúng.
 
-# Tại sao không dùng `ipconfig` để lấy IP WiFi? [id:531 order:30]
-`ipconfig` hiển thị nhièu ip nên dễ lấy nhầm 
+# Tại sao không dùng `ipconfig` để lấy IP WiFi? [id:531 order:33]
+`ipconfig` hiển thị nhièu ip nên dễ lấy nhầm

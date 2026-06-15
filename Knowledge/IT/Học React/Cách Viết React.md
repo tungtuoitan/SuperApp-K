@@ -61,75 +61,75 @@ featured-base dễ mở rộng, phù hợp với app vừa và lớn, còn layou
 # Làm sao tránh cross-feature import [id:156 order:17]
 tạo rule trong eslint để báo lỗi khi có cross feature
 
-# Vì sao state đặt gần thì performance càng tốt? [id:159 order:19]
+# Vì sao state đặt gần thì performance càng tốt? [id:159 order:18]
 vì state càng trên cao, nó càng dễ trigger re-render lan rộng, gây ra bad performance
 
-# Khi nào thì nên cache server state? [id:160 order:20]
+# Khi nào thì nên cache server state? [id:160 order:19]
 - khi data nặng và ít thay đổi
 
-# phân biệt Server state và UI state? [id:161 order:21]
+# phân biệt Server state và UI state? [id:161 order:20]
 server state là data từ server
 còn UI state là data mà user đang edit ở client
 
-# Form state là gì ? [id:162 order:22]
+# Form state là gì ? [id:162 order:21]
 là toàn bộ trạng thái của 1 form,
 ví dụ: value, isTouched, error,...
 
-# Khi nào dùng Form state? [id:163 order:23]
+# Khi nào dùng Form state? [id:163 order:22]
 khi nào cần thì dùng, hiện tại tự dùng là đủ rồi,
 việc này tương tự việc dùng fetch thủ công thay vì Axios
 
-# 4 nguyên tắc viết FE? [id:165 order:24]
+# 4 nguyên tắc viết FE? [id:165 order:23]
 - public api
 - Layered Architecture
 - Interceptor
 - Shared
 
-# Khi nào thì nên move local state lên trên? [id:167 order:25]
+# Khi nào thì nên move local state lên trên? [id:167 order:24]
 - khi cần share với các component khác
 - khi nó bị props drilling
 
-# lợi ích của state ở gần nơi sử dụng ? [id:168 order:26]
+# lợi ích của state ở gần nơi sử dụng ? [id:168 order:25]
 - code dễ hiểu
 - performance tốt
 
-# props drilling là gì? [id:169 order:27]
+# props drilling là gì? [id:169 order:26]
 là việc prop bị truyền qua quá nhiều tầng component
 
-# Interceptor là gì? có chức năng gì? [id:170 order:28]
+# Interceptor là gì? có chức năng gì? [id:170 order:27]
 à lớp đứng giữa app và server,
 có chức năng xử lí mọi lỗi trước khi app thấy chúng
 
-# Cách abstract UI component đúng cách? [id:171 order:29]
+# Cách abstract UI component đúng cách? [id:171 order:28]
 - không abstract ngay
 - quan sát pattern lặp lại của chúng
 - khi đủ 3 usecase giống nhau thì hãy abstract
 
-# 2 extension nên dùng trong FE? [id:187 order:30]
+# 2 extension nên dùng trong FE? [id:187 order:29]
 - ESLint
 - Prettier
 
-# Nguyên tắc viết code? [id:188 order:31]
+# Nguyên tắc viết code? [id:188 order:30]
 - code nên ở gần nơi sử dụng
 
-# layer-based structure là gì? [id:273 order:32]
+# layer-based structure là gì? [id:273 order:31]
 là mỗi loại file có 1 folder lớn tương ứng
 
-# Layer Architecture là gì? [id:189 order:33]
+# Layer Architecture là gì? [id:189 order:32]
 là kiến trúc phân tầng: app > feature > shared
 flow đi theo chiều từ trên xuống
 
-# Feature-based architecture là gì? [id:274 order:34]
+# Feature-based architecture là gì? [id:274 order:33]
 là mỗi feature có 1 folder tương ứng
 
-# public api là gì? [id:190 order:35]
+# public api là gì? [id:190 order:34]
 là việc import/export giữa các feature thông qua file index
 
-# public api có liên hệ gì với abstract không? [id:2802 order:36]
+# public api có liên hệ gì với abstract không? [id:2802 order:35]
 Có. Public API là 1 dạng abstraction — chỉ phơi ra những gì cần dùng (qua `index.ts`), giấu chi tiết bên trong feature. Code ngoài chỉ thấy interface, không biết implementation.
 
-# tradeoff của caching là gì? [id:225 order:37]
+# tradeoff của caching là gì? [id:225 order:36]
 dữ liệu có thể bị cũ
 
-# code bị nest thì sao? [id:232 order:38]
+# code bị nest thì sao? [id:232 order:37]
 thì khó scan, khó đọc
