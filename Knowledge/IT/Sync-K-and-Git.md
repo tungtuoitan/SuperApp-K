@@ -25,11 +25,8 @@ Khối lượng công việc (CPU, RAM, IO) mà 1 process phải xử lý trong 
 - Daemon xuất báo cáo / render PDF: nhiều user request song song, mỗi job nặng
 - Daemon crawl / sync data từ nhiều nguồn: cần chia shard để chạy song song
 
-<!--# ví dụ trường hợp việc giữ cho api hoạt động liên tục là quan trọng? [id:2672 order:6]
-- API serve websocket / streaming: restart làm rớt kết nối, client phải reconnect
-- API có warmup cache lâu: restart gây cold start, request đầu chậm vài giây
-- API serve traffic cao: mỗi lần restart đều có khoảng downtime ngắn ảnh hưởng SLA -->
-
+# ví dụ trường hợp việc giữ cho api hoạt động liên tục là quan trọng? [id:2672 order:6]
+- streaming video, download file nặng
 # deamon on-demand là gì, cho ví dụ? [id:2673 order:7]
 Daemon chỉ chạy khi có trigger sự kiện, xong thì idle hoặc tắt — không chạy liên tục theo schedule. Ví dụ: daemon export Excel khởi chạy khi user click nút export, hoàn tất thì kết thúc.
 
@@ -54,8 +51,10 @@ Code chạy đầu tiên khi app khởi động, lo phần setup: load config, r
 <!--# vậy trên Azure, azure có deamon lắng nge event theo thời gian, ta chỉ việc tạo job thôi phải không? [id:2680 order:14]
 Đúng. Azure Functions, Logic Apps, WebJobs hoạt động theo model này — Azure quản daemon (host process lắng nghe trigger HTTP, queue, timer, blob...), user chỉ viết function/workflow. Đây là bản chất của serverless. -->
 
-<!--# host là gì? [id:2681 order:15]
-Process/môi trường runtime nuôi và quản lý lifecycle của các thành phần con (DI container, config, logging, scheduled task). Trong .NET, `IHost` là object chứa toàn bộ app — start nó là start daemon. -->
+# Các ý nghĩa của host? [id:2681 order:15]
+là máy chủ
+tên miền
+ip
 
 # runtime là gì? [id:2682 order:16]
 Lớp execution engine chạy code của ngôn ngữ — cung cấp GC, JIT, type system, threading. Ví dụ CLR cho .NET, JVM cho Java, V8 cho JavaScript. Code không tự chạy được; phải có runtime dịch và thực thi.

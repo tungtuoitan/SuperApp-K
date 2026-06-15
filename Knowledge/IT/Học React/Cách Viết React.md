@@ -61,10 +61,6 @@ featured-base dễ mở rộng, phù hợp với app vừa và lớn, còn layou
 # Làm sao tránh cross-feature import [id:156 order:17]
 tạo rule trong eslint để báo lỗi khi có cross feature
 
-<!--# Nguyên tắc dùng state? [id:158 order:18]
-đặt gần nơi sử dụng nhất có thể
-- bắt đầu đặt state ở component, sau đó nâng level lên dần khi cần thiết -->
-
 # Vì sao state đặt gần thì performance càng tốt? [id:159 order:19]
 vì state càng trên cao, nó càng dễ trigger re-render lan rộng, gây ra bad performance
 

@@ -100,14 +100,19 @@ Quy ước của nhà sản xuất. `192.168.x.x` là dải IP private (RFC 1918
 WiFi .26  WiFi .50  Cáp .100
 ```
 
-<!--# PC dùng cáp Ethernet thì subnet có khác WiFi không? [id:529 order:28]
-Thông thường trong nhà, cùng router thì cùng subnet dù dùng cáp hay WiFi. Có thể khác nếu dùng static IP thủ công — như trường hợp `192.168.2.1` (Ethernet static) tách biệt với `192.168.2.26` (WiFi DHCP). -->
+# wifi là 1 subnet phải không?
+Đúng. Mỗi WiFi network (1 SSID) thường tương ứng 1 subnet — router cấp IP cùng dải cho tất cả thiết bị connect vào. Ví dụ tất cả device WiFi nhà đều có IP `192.168.2.x` → cùng subnet `192.168.2.0/24`.
+# ssid là gì?
+Service Set Identifier — tên hiển thị của 1 mạng WiFi (ví dụ "Home_5G", "VietnamPostOffice"). Là chuỗi tối đa 32 ký tự dùng để phân biệt các WiFi network với nhau.
 
+# pc kết nối wifi và pc kết nối đến router bằng cáp thì giống nhau/khác nhau gì?
+giống nhau: cùng subnet
+khác nhau: adapter khác nhau (wifi adapter vs ethernet adapter)
+
+# kết nối đến router wifi bằng cáp thì có phải là ethernet không?
+Đúng. Bất kỳ kết nối nào dùng dây RJ45 cắm vào port LAN của router đều là Ethernet, dù router đó có hỗ trợ WiFi hay không.
 # Thiết bị cùng router thì luôn cùng subnet và ping trực tiếp được? [id:530 order:29]
 Phần lớn đúng, nhưng có ngoại lệ: router có thể cấu hình VLAN hoặc client isolation (WiFi isolation) để cô lập các thiết bị dù cùng subnet. Trong setup nhà bình thường thì đúng.
 
 # Tại sao không dùng `ipconfig` để lấy IP WiFi? [id:531 order:30]
-`ipconfig` hiển thị tất cả interfaces, dễ nhầm Ethernet IP (`192.168.2.1`) với WiFi IP (`192.168.2.26`). Dùng `Get-NetIPAddress -InterfaceAlias "Wi-Fi"` để lấy đúng.
-
-<!--# `192.168.2.1` có phải IP WiFi của laptop không? [id:532 order:31]
-Không. Đó là Ethernet static IP. IP WiFi là `192.168.2.26`. Khi WiFi hiển thị `169.254.x.x` (APIPA) thì WiFi chưa kết nối được DHCP — không dùng được. -->
+`ipconfig` hiển thị nhièu ip nên dễ lấy nhầm 

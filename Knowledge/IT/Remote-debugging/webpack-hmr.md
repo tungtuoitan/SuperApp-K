@@ -33,8 +33,6 @@ Thường là 1 file source (1 `.ts` hoặc `.tsx`). Webpack bundle nhiều modu
 # HMR dùng giao thức gì để nhận thông báo từ server? [id:492 order:9]
 WebSocket — kết nối 2 chiều liên tục giữa browser và webpack-dev-server. Khi code thay đổi, server push thông báo qua WebSocket, browser tự fetch module mới.
 
-<!--# `WDS_SOCKET_HOST` và `WDS_SOCKET_PORT` là gì? [id:493 order:10]
-Biến env cho webpack-dev-server biết HMR WebSocket nên kết nối tới host và port nào. -->
 
 # WebSocket hoạt động thế nào? [id:494 order:11]
 Khác HTTP (gửi → nhận → đóng), WebSocket là kết nối 2 chiều liên tục:
@@ -67,11 +65,7 @@ craco cho phép override cấu hình webpack-dev-server của CRA. Để debug m
 # Tại sao cần `host: "0.0.0.0"` trong craco? [id:500 order:17]
 Mặc định webpack-dev-server bind `localhost` (127.0.0.1) — chỉ nhận request từ chính máy. Đổi sang `0.0.0.0` thì phone mới gửi request vào được qua WiFi.
 
-<!--# Tại sao HMR lỗi khi dùng USB debug mà không config? [id:501 order:18]
-WebSocket của HMR kết nối về `localhost:3000`. Trên phone, `localhost` là chính phone, không phải laptop → WebSocket fail → HMR không hoạt động sau khi reload. -->
 
-<!--# `auto://0.0.0.0:0/ws` nghĩa là gì? [id:502 order:19]
-`auto` = WebSocket tự lấy host từ URL mà page đang được load. Phone mở `http://192.168.2.26:3000` → WebSocket tự kết nối `ws://192.168.2.26:3000/ws`. Không cần hardcode IP. -->
 
 # Phone gửi request vào webpack-dev-server thế nào? [id:503 order:20]
 Phone mở Chrome → gõ `http://192.168.2.26:3000` → Chrome gửi HTTP GET tới IP đó port 3000 → packet đi qua WiFi → đến WiFi adapter laptop → webpack-dev-server đang listen `0.0.0.0:3000` nhận request → trả `index.html` → browser load JS bundle → React app chạy.

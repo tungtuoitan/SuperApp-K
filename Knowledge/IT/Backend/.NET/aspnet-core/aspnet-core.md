@@ -24,18 +24,9 @@ Gần như giống nhau. Web server ám chỉ server xử lý request từ brows
 - 2010s: Framework như Rails, Django, .NET MVC tích hợp HTTP server vào app
 - 2016+: ASP.NET Core tích hợp Kestrel, không cần IIS nữa -->
 
-<!--# Thành phần của web server build bằng ASP.NET Core gồm gì? [id:2745 order:7]
-- Kestrel: nhận HTTP connection
-- Middleware pipeline: xử lý request (logging, auth, routing...)
-- Controller/Endpoint: xử lý business logic
-- Response: trả về HTTP response -->
-
-<!--# Điểm mạnh của ASP.NET Core là gì? [id:2746 order:8]
-- Cross-platform (chạy trên Linux, macOS, Windows)
+# Điểm mạnh của ASP.NET Core là gì? [id:2746 order:8]
+- Cross-platform 
 - High performance
-- Tích hợp sẵn Kestrel
-- Pipeline linh hoạt, cho phép thêm middleware
-- DI container built-in -->
 
 # High performance trong ASP.NET Core nghĩa là gì? [id:2747 order:9]
 là: xử lý request nhanh, phục vụ nhiều request cùng lúc, dùng ít CPU/RAM. Đo bằng: latency (ms), throughput (req/s), memory usage (MB).

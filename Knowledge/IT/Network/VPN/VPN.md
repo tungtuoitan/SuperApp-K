@@ -17,15 +17,20 @@ Không.
 
 # VPN có cần internet để hoạt động không? [id:416 order:5]
 Có.
-
 <!--# VPN tunnel là gì? [id:417 order:6]
 VPN tunnel là kết nối mã hóa giữa client và VPN server. -->
+# vpn tunnel cụ thể là gì?
+là kênh truyền ảo giữa client và VPN server. Mỗi packet gốc được bọc thêm header mới và mã hóa, rồi gửi qua internet — người ngoài chỉ thấy gói mã hóa, không đọc được nội dung bên trong.
+# tunnel là bọc thêm header và mã hoá packet phải không?
+Đúng. Tunnel = encapsulation + encryption: bọc packet gốc vào packet mới (header mới có IP của VPN server), rồi mã hóa toàn bộ payload bên trong.
+# VPN dùng để làm gì? [id:418 order:7]
+ẩn danh
+bảo mật
+truy cập tài nguyên nội bộ từ xa
 
-<!--# VPN dùng để làm gì? [id:418 order:7]
-VPN dùng để truy cập mạng riêng từ xa qua internet. -->
 
-<!--# Consumer VPN và corporate VPN khác nhau thế nào? [id:419 order:8]
-Consumer VPN chủ yếu để privacy và đổi IP. Corporate VPN để vào mạng nội bộ công ty. -->
+# Consumer VPN và corporate VPN khác nhau thế nào? [id:419 order:8]
+Consumer VPN dành cho cá nhân, corporate dành cho doanh nghiệp
 
 # Trong công ty, VPN dùng để làm gì? [id:420 order:9]
 VPN cho phép nhân viên truy cập tài nguyên nội bộ từ xa.
@@ -36,17 +41,13 @@ Không.
 # VPN có phải mạng vật lý không? [id:422 order:11]
 Không.
 
-<!--# “Virtual” trong VPN nghĩa là gì? [id:423 order:12]
-Nó là mạng logic, không phải dây mạng thật. -->
+# “Virtual” trong VPN nghĩa là gì? cụ thể là gì? [id:423 order:12]
+nghĩa là không có dây/thiết bị riêng — VPN tạo ra 1 mạng logic chạy đè lên internet. Các thiết bị khác mạng vật lý vẫn "thấy nhau" như cùng 1 LAN.
 
-<!--# VPN có luôn cần VPN server không? [id:424 order:13]
-Thông thường là có. -->
-
-<!--# VPN server dùng để làm gì? [id:425 order:14]
-VPN server authenticate user, tạo tunnel và route traffic. -->
-
-<!--# Client VPN có luôn connect đến VPN server trước không? [id:426 order:15]
-Thông thường là có. -->
+# mạng logic là gì?
+là mạng tồn tại ở mức phần mềm, không có dây cáp riêng. Các thiết bị được nhóm lại bằng cấu hình (IP ảo, routing rule), không bằng kết nối vật lý.
+<!-- # wifi có phải là mạng logic không?
+Không hẳn. WiFi là mạng vật lý ở tầng L1/L2 (sóng vô tuyến + chuẩn 802.11). Nhưng dải IP/subnet mà router gán cho các thiết bị WiFi thì là mạng logic ở tầng L3. -->
 
 # Khi connect VPN, client có được cấp IP riêng không? [id:431 order:16]
 Có.
@@ -57,14 +58,8 @@ Virtual IP hoặc VPN IP.
 # Virtual IP dùng để làm gì? [id:433 order:18]
 Để định danh và route traffic trong VPN.
 
-<!--# Máy dùng VPN có thể có nhiều IP không? [id:434 order:19]
-Có. -->
-
-<!--# Ví dụ máy có nhiều IP? [id:435 order:20]
-Một IP mạng nhà và một IP VPN. -->
-
-<!--# Split tunnel VPN là gì? [id:436 order:21]
-Là kiểu VPN chỉ route một phần traffic qua VPN. -->
+# Split tunnel VPN là gì? [id:436 order:21]
+Là kiểu VPN chỉ route một phần traffic qua VPN.
 
 # Trong split tunnel, YouTube đi đâu? [id:437 order:22]
 Đi internet thường.
@@ -89,12 +84,6 @@ Họ chỉ thấy client đang connect đến VPN server.
 
 # User lạ làm sao bị chặn khỏi VPN công ty? [id:444 order:29]
 VPN server yêu cầu account, password hoặc MFA.
-
-<!--# Sau khi vào VPN, máy user giống như thế nào? [id:445 order:30]
-Giống như đang nằm trong mạng nội bộ công ty. -->
-
-<!--# Bastion server khác VPN thế nào? [id:446 order:31]
-Bastion chỉ cho truy cập service cụ thể, còn VPN cho tham gia network riêng. -->
 
 # User → Server A → DB B có phải VPN không? [id:447 order:32]
 Chưa hẳn.
