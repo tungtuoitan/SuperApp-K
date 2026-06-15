@@ -12,8 +12,8 @@ Phone gửi request → ADB daemon trên phone bắt request → đẩy qua USB 
 # Công cụ nào dùng để debug mobile? [id:535 order:3]
 `chrome://inspect/#devices` trên laptop.
 
-# Daemon là gì? Đọc là gì? [id:536 order:4]
-Đọc là "dee-mon". Process chạy ngầm (background) liên tục, không có UI, phục vụ các yêu cầu khi cần. Ví dụ: ADB daemon chạy ngầm trên laptop, chờ phone kết nối USB để xử lý debug commands và port forwarding.
+<!--# Daemon là gì? Đọc là gì? [id:536 order:4]
+Đọc là "dee-mon". Process chạy ngầm (background) liên tục, không có UI, phục vụ các yêu cầu khi cần. Ví dụ: ADB daemon chạy ngầm trên laptop, chờ phone kết nối USB để xử lý debug commands và port forwarding. -->
 
 # deamon khác gì job nhỉ? [id:537 order:5]
 Daemon chạy ngầm liên tục từ lúc khởi động OS đến lúc tắt máy, phục vụ nhiều client. Job là tác vụ có start–end rõ ràng, chạy 1 lần hoặc theo schedule rồi kết thúc.
