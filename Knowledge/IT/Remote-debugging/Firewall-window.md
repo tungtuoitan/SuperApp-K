@@ -38,9 +38,9 @@ Group Policy Object — cơ chế quản lý cấu hình Windows tập trung. IT
 # WiFi profile là gì? [id:565 order:10]
 Windows gán một "network profile" cho mỗi mạng WiFi đã từng kết nối: **Public**, **Private**, hoặc **Domain**. Profile xác định mức độ tin cậy → ảnh hưởng đến bộ firewall rules nào được áp dụng.
 
-# Ý nghĩa của Private/Public trong WiFi profile? [id:566 order:11]
+<!--# Ý nghĩa của Private/Public trong WiFi profile? [id:566 order:11]
 - **Private** = mạng tin cậy, mình kiểm soát (nhà, văn phòng) → firewall thoáng hơn, local rules có hiệu lực.
-- **Public** = mạng công cộng (quán cà phê, sân bay) → firewall strict hơn, ẩn máy khỏi network discovery.
+- **Public** = mạng công cộng (quán cà phê, sân bay) → firewall strict hơn, ẩn máy khỏi network discovery. -->
 
 # Các lợi ích cụ thể mà Public/Private profile mang lại? [id:567 order:12]
 **Private**: local firewall rules có hiệu lực (mở port cho dev), máy hiện trong Network Explorer, có thể share file/printer với máy khác.
