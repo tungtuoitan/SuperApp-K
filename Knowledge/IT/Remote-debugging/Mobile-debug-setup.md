@@ -51,9 +51,9 @@ Không phải
 # interface có phải là abstract của adapter không? [id:2931 order:16]
 Đúng. Interface là abstraction tầng OS — có IP, MAC, route, do OS expose ra cho app dùng. Adapter là tầng dưới (NIC vật lý hoặc driver ảo) tạo ra interface đó.
 
-# driver là gì? [id:2932 order:17]
+<!--# driver là gì? [id:2932 order:17] -->
 
-# lí do driver tồn tại? [id:2933 order:18]
+<!--# lí do driver tồn tại? [id:2933 order:18] -->
 
 # mọi phần cứng đều có interface phải không? [id:2934 order:19]
 Không.
