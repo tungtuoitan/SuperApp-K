@@ -58,7 +58,7 @@ Không phải
 # mọi phần cứng đều có interface phải không? [id:2934 order:19]
 Không.
 
-# các phần cứng phổ biến có interface? [id:2935 order:20]
+<!--# các phần cứng phổ biến có interface? [id:2935 order:20] -->
 
 # NIC khác gì Adapter? [id:2936 order:21]
 nó là 1 trong context network.
