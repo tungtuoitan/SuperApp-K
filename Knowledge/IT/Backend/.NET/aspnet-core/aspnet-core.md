@@ -1,4 +1,4 @@
-﻿---
+---
 id: 313
 name: "aspnet-core"
 ---
