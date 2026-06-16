@@ -12,8 +12,8 @@ Phone gửi request → ADB daemon trên phone bắt request → đẩy qua USB 
 # Công cụ nào dùng để debug mobile? [id:535 order:3]
 `chrome://inspect/#devices` trên laptop.
 
-# Daemon là gì? Đọc là gì? [id:536 order:4]
-Đọc là "dee-mon". Process chạy ngầm (background) liên tục, không có UI, phục vụ các yêu cầu khi cần. Ví dụ: ADB daemon chạy ngầm trên laptop, chờ phone kết nối USB để xử lý debug commands và port forwarding.
+<!--# Daemon là gì? Đọc là gì? [id:536 order:4]
+Đọc là "dee-mon". Process chạy ngầm (background) liên tục, không có UI, phục vụ các yêu cầu khi cần. Ví dụ: ADB daemon chạy ngầm trên laptop, chờ phone kết nối USB để xử lý debug commands và port forwarding. -->
 
 # deamon khác gì job nhỉ? [id:537 order:5]
 Daemon chạy ngầm liên tục từ lúc khởi động OS đến lúc tắt máy, phục vụ nhiều client. Job là tác vụ có start–end rõ ràng, chạy 1 lần hoặc theo schedule rồi kết thúc.
@@ -51,14 +51,14 @@ Không phải
 # interface có phải là abstract của adapter không? [id:2931 order:16]
 Đúng. Interface là abstraction tầng OS — có IP, MAC, route, do OS expose ra cho app dùng. Adapter là tầng dưới (NIC vật lý hoặc driver ảo) tạo ra interface đó.
 
-# driver là gì? [id:2932 order:17]
+<!--# driver là gì? [id:2932 order:17] -->
 
-# lí do driver tồn tại? [id:2933 order:18]
+<!--# lí do driver tồn tại? [id:2933 order:18] -->
 
 # mọi phần cứng đều có interface phải không? [id:2934 order:19]
 Không.
 
-# các phần cứng phổ biến có interface? [id:2935 order:20]
+<!--# các phần cứng phổ biến có interface? [id:2935 order:20] -->
 
 # NIC khác gì Adapter? [id:2936 order:21]
 nó là 1 trong context network.

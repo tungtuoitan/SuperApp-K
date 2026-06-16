@@ -24,8 +24,8 @@ Hiếm khi. Chỉ khi cần kiểm soát thấp như set priority, dùng `Thread
 # CPU-bound work là gì? [id:2817 order:7]
 là công việc tốn CPU để tính toán — encrypt, parse, image processing, machine learning. Đối ngược với IO-bound (chờ DB/network/file).
 
-# bound nghĩa là gì? [id:2818 order:8]
-là "bị giới hạn bởi". CPU-bound = bị giới hạn bởi tốc độ CPU; IO-bound = bị giới hạn bởi tốc độ IO (DB, network, disk).
+<!--# bound nghĩa là gì? [id:2818 order:8]
+là "bị giới hạn bởi". CPU-bound = bị giới hạn bởi tốc độ CPU; IO-bound = bị giới hạn bởi tốc độ IO (DB, network, disk). -->
 
 <!--# Task và Thread khác nhau thế nào? [id:2819 order:9]
 Thread là đơn vị OS thực sự, tốn tài nguyên. Task là abstraction cao hơn, nhiều Task chạy trên ít thread qua thread pool — nhẹ hơn và dễ compose hơn. -->

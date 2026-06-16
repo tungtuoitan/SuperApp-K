@@ -127,8 +127,8 @@ Ví dụ: bạn cài phần mềm lạ ở quán cà phê → phần mềm tự 
 # Người dùng bình thường sẽ không cảm nhận được sự khác biệt? [id:592 order:36]
 Đúng. Browser, email, Zalo, YouTube đều hoạt động bình thường với cả 2 profile. Chỉ cảm nhận khi: cần share file với máy khác (cần Private) hoặc cần mở port cho server dev (cần Private để local rule có hiệu lực).
 
-# Tại sao profile Private cho phép local rule còn Public thì không? [id:593 order:37]
-Windows thiết kế theo mức tin cậy: Private = mạng nhà/văn phòng → tin cậy → local rules được đọc. Public = quán cà phê → không tin cậy → GPO tắt local rules để bảo vệ người dùng khỏi vô tình mở port nguy hiểm.
+<!--# Tại sao profile Private cho phép local rule còn Public thì không? [id:593 order:37]
+Windows thiết kế theo mức tin cậy: Private = mạng nhà/văn phòng → tin cậy → local rules được đọc. Public = quán cà phê → không tin cậy → GPO tắt local rules để bảo vệ người dùng khỏi vô tình mở port nguy hiểm. -->
 
 # Test từ laptop thành công nhưng phone vẫn không reach được — tại sao? [id:594 order:38]
 Test từ laptop tới chính laptop (`127.0.0.1`) bypass firewall inbound rules — traffic là loopback, không bị check. Phone là external device với IP khác → bị chặn bởi firewall inbound.
