@@ -1,44 +1,49 @@
-# tính kế thừa mặc định diễn ra thế nào?
+﻿---
+id: 331
+name: "inheritance"
+---
+
+# tính kế thừa mặc định diễn ra thế nào? [id:3042 order:1]
 Class con tự động thừa hưởng mọi member `public`, `protected`, `internal` của cha. Member `private` không kế thừa.
 
-# rule của kế thừa?
+# rule của kế thừa? [id:3043 order:2]
 Class con bắt buộc `override` mọi abstract member của cha, trừ khi class con cũng được khai báo là `abstract`.
 
-# khi A : B và B : C thì A có liên hệ gì với C không?
+# khi A : B và B : C thì A có liên hệ gì với C không? [id:3044 order:3]
 Có, C là ông nội của A.
 
-# thông thường có cần quan tâm đến class ông nội không? vì sao?
+# thông thường có cần quan tâm đến class ông nội không? vì sao? [id:3045 order:4]
 Không, vì class cha là đã đủ — class cha đã có tất cả member của ông nội rồi.
 
-# khi nào cần quan tâm tới class ông nội?
+# khi nào cần quan tâm tới class ông nội? [id:3046 order:5]
 chỉ khi cần override member do ông nội khai báo.
 
-# tại sao class chỉ kế thừa được 1 class?
+# tại sao class chỉ kế thừa được 1 class? [id:3047 order:6]
 Vì C# cấm multiple class inheritance. Quy tắc này áp dụng cho mọi class, không riêng abstract class.
 
-# vì sao c# lại cấm multiple class inheritance?
+# vì sao c# lại cấm multiple class inheritance? [id:3048 order:7]
 vì khi 2 cha cùng có method trùng tên, con không biết theo cha nào.
 
-# cho ví dụ về vấn đề của multiple class inheritance?
+# cho ví dụ về vấn đề của multiple class inheritance? [id:3049 order:8]
 C++ cho phép: `class C : public A, public B {}` — class `C` kế thừa cả `A` và `B`. Nếu cả `A` và `B` cùng có method `Print()` thì `c.Print()` mơ hồ — đây là diamond problem.
 
-# những class nào không thể kế thừa?
+# những class nào không thể kế thừa? [id:3050 order:9]
 sealed class.
 
-# khi nào thì được override member của cha?
+# khi nào thì được override member của cha? [id:3051 order:10]
 Khi member của cha được đánh dấu `virtual` hoặc `abstract`, và class con dùng `override`.
 
-# override keyword dùng để làm gì?
+# override keyword dùng để làm gì? [id:3052 order:11]
 Để class con thay implementation của member `virtual`/`abstract` trong class cha.
 
-# override chỉ được dùng trong class con phải không?
+# override chỉ được dùng trong class con phải không? [id:3053 order:12]
 Đúng. `override` chỉ có ý nghĩa khi thay implementation của member do class cha khai báo `virtual`/`abstract`. Class gốc (không kế thừa) không có gì để override.
 
-# lí do override tồn tại?
+# lí do override tồn tại? [id:3054 order:13]
 - triển khai body cho abstract member
 - thay implementation của virtual member
 
-# nếu con cứ viết trùng signature của cha nhưng k dùng override thì sao?
+# nếu con cứ viết trùng signature của cha nhưng k dùng override thì sao? [id:3055 order:14]
 Compiler warning, đề nghị thêm `new` hoặc `override`. Đây là method hiding: behavior phụ thuộc kiểu reference — gọi qua kiểu cha thì chạy method cha, gọi qua kiểu con thì chạy method con.
 
 Ví dụ:
@@ -53,5 +58,5 @@ a.Speak(); // animal - reference kiểu cha (cùng instance)
 ```
 Nếu dùng `override` (cha phải `virtual`) thì cả hai đều in `dog` — đó là polymorphism thật sự.
 
-# hầu hết trường hợp, viết trùng signature thì sẽ đi kèm override phải không?
+# hầu hết trường hợp, viết trùng signature thì sẽ đi kèm override phải không? [id:3056 order:15]
 Đúng. Trùng signature mà cố tình không `override` (method hiding) là edge case hiếm — thường để giữ nguyên hành vi cũ khi gọi qua kiểu cha. Code thực tế gần như luôn dùng `override` để có polymorphism.
