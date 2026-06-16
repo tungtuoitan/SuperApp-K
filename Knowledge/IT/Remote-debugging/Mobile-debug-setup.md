@@ -55,8 +55,8 @@ Không phải
 
 <!--# lí do driver tồn tại? [id:2933 order:18] -->
 
-# mọi phần cứng đều có interface phải không? [id:2934 order:19]
-Không.
+<!--# mọi phần cứng đều có interface phải không? [id:2934 order:19]
+Không. -->
 
 <!--# các phần cứng phổ biến có interface? [id:2935 order:20] -->
 
