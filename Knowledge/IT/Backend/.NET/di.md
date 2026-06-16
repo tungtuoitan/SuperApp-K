@@ -21,10 +21,10 @@ Có. DI vừa là pattern (cách tổ chức) vừa là technique (cách code).
 - Khó test vì không thể inject mock
 - Khó bảo trì, mở rộng
 
-# DI giải quyết vấn đề gì? [id:2834 order:6]
+<!--# DI giải quyết vấn đề gì? [id:2834 order:6]
 - Tight coupling: class tự `new` dependency
 - Khó test: không inject được mock
-- Khó thay đổi: muốn đổi implementation phải sửa nhiều chỗ
+- Khó thay đổi: muốn đổi implementation phải sửa nhiều chỗ -->
 
 # singleton, scoped, transient là gì? [id:2835 order:7]
 là 3 lifetime của service trong DI container — quy định khi nào instance được tạo mới.
