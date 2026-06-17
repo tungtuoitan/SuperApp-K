@@ -12,12 +12,12 @@ dùng để giải quyết 1 vấn đề cụ thể: tách code (UI, logic, data
 # Quan hệ giữa app và Design Pattern là gì? [id:2757 order:3]
 1 app thường dùng nhiều design pattern cùng lúc — mỗi pattern giải quyết 1 vấn đề khác nhau trong cùng app.
 
-# Các loại pattern là gì? [id:2758 order:4]
+<!--# Các loại pattern là gì? [id:2758 order:4]
 - Architectural/Application pattern (MVC, Microservice, CQRS)
 - Creational patterns (Singleton, Factory, Builder)
 - Structural patterns (Repository)
 - Behavioral patterns
-- Frontend/UI patterns (MVVM)
+- Frontend/UI patterns (MVVM) -->
 
 # Các Architectural Pattern phổ biến là gì? [id:2759 order:5]
 - MVC
