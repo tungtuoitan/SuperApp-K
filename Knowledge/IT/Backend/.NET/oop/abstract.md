@@ -59,8 +59,8 @@ Không hẳn. Ngoài việc cấm khởi tạo, abstract class còn cho phép ch
 # abstract class có thể chứa code phải không? [id:3002 order:18]
 Đúng.
 
-# abstract có thể dùng trong mọi class phải không? [id:3003 order:19]
-hầu hết là thế.
+<!--# abstract có thể dùng trong mọi class phải không? [id:3003 order:19]
+hầu hết là thế. -->
 
 # abstract k thể dùng trong class nào? [id:3004 order:20]
 sealed và static class.
