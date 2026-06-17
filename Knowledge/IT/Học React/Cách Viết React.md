@@ -85,9 +85,9 @@ việc này tương tự việc dùng fetch thủ công thay vì Axios
 - Interceptor
 - Shared
 
-# Khi nào thì nên move local state lên trên? [id:167 order:24]
+<!--# Khi nào thì nên move local state lên trên? [id:167 order:24]
 - khi cần share với các component khác
-- khi nó bị props drilling
+- khi nó bị props drilling -->
 
 # lợi ích của state ở gần nơi sử dụng ? [id:168 order:25]
 - code dễ hiểu
