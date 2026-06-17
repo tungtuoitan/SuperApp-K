@@ -6,10 +6,10 @@ name: "abstract"
 # khi nào dùng abstract keyword? [id:2985 order:1]
 Khi muốn class/member làm khuôn chung nhưng bắt class con tự implement chi tiết, và không cho phép tạo instance trực tiếp.
 
-# chức năng của abstract keyword? [id:2986 order:2]
+<!--# chức năng của abstract keyword? [id:2986 order:2]
 - chặn dev tạo instance
 - bắt dev tự implement ở class con
-- đánh dấu 1 class/member là "template"
+- đánh dấu 1 class/member là "template" -->
 
 # abstract class tương tự interface có phải không? [id:2987 order:3]
 Đúng.
