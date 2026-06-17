@@ -152,5 +152,5 @@ Inbound = traffic đi **vào** máy (từ bên ngoài vào). Outbound = traffic 
 # Đổi WiFi từ Public → Private có ý nghĩa gì với dev? [id:600 order:44]
 Profile Private cho phép local firewall rules có hiệu lực — rule "SuperApp BE 5000" sẽ được đọc và connection từ phone được allow. Đây là bước cần thiết khi debug mobile qua WiFi IP.
 
-# Thường thì Public profile sẽ tắt local rule? [id:601 order:45]
-Không phải "thường". Chỉ xảy ra khi máy **join Windows Domain** và IT admin cấu hình GPO `LocalFirewallRules: N/A`. Máy cá nhân không join domain → Public profile vẫn cho phép local rules. Trường hợp của mình bị chặn là vì máy đang trong môi trường domain có GPO đó.
+<!--# Thường thì Public profile sẽ tắt local rule? [id:601 order:45]
+Không phải "thường". Chỉ xảy ra khi máy **join Windows Domain** và IT admin cấu hình GPO `LocalFirewallRules: N/A`. Máy cá nhân không join domain → Public profile vẫn cho phép local rules. Trường hợp của mình bị chặn là vì máy đang trong môi trường domain có GPO đó. -->
