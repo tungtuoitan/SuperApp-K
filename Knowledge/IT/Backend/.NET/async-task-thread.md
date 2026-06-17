@@ -53,7 +53,7 @@ là ghép nhiều thành phần nhỏ lại thành thành phần lớn hơn. Tro
 # Task<ResultOptions> Error(LogDto log); trong này Task có nghĩa gì? [id:2951 order:16]
 nghĩa là method này async — trả về `Task<ResultOptions>` thay vì trả thẳng `ResultOptions`. Caller phải `await` để lấy giá trị thật.
 
-# result type Task có nghĩa là chưa có kq, đang đợi có phải không? [id:2952 order:17]
+<!--# result type Task có nghĩa là chưa có kq, đang đợi có phải không? [id:2952 order:17] -->
 
 # khi nào dùng private? [id:2953 order:18]
 khi member chỉ dùng nội bộ trong class.
