@@ -60,7 +60,7 @@ khi member chỉ dùng nội bộ trong class.
 
 <!--# mặc định thì member là private hay public? [id:2954 order:19] -->
 
-# các keyword ngược lại với private? [id:2955 order:20]
+<!--# các keyword ngược lại với private? [id:2955 order:20] -->
 
 # string dạng này gọi là gì? $"{x}-abc"; [id:2956 order:21]
 là string interpolation
