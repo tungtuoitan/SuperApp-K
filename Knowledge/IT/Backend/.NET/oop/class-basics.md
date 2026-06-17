@@ -39,8 +39,8 @@ khởi tạo value cho các field và DI.
 # có bắt buộc phải có constructor không? [id:3026 order:11]
 Không.
 
-# nếu k có constructor thì thế nào? [id:3027 order:12]
-compiler tự sinh ra default constructor.
+<!--# nếu k có constructor thì thế nào? [id:3027 order:12]
+compiler tự sinh ra default constructor. -->
 
 # cách phân biệt constructor và method thông thường? [id:3028 order:13]
 Constructor:
