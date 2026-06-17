@@ -10,8 +10,8 @@ Ví dụ: `5`, `"hello"`, `true`, `3.14`, `null`.
 # cách khai báo array? [id:3017 order:2]
 `new int[] {1,2,3}`
 
-# array trong c# là collection à? [id:3018 order:3]
-Có. Array implement `IEnumerable`, `ICollection`, `IList` nên được tính là collection. Khác `List<T>` ở chỗ size cố định.
+<!--# array trong c# là collection à? [id:3018 order:3]
+Có. Array implement `IEnumerable`, `ICollection`, `IList` nên được tính là collection. Khác `List<T>` ở chỗ size cố định. -->
 
 # array khác gì collection? [id:3019 order:4]
 Array là 1 loại collection cụ thể.
