@@ -27,8 +27,8 @@ bị Compile error.
 - chạy constructor
 - trả về reference đến object mới
 
-# new được dùng với gì? [id:3023 order:8]
-Với reference type (class, array, delegate) và value type (struct, int…).
+<!--# new được dùng với gì? [id:3023 order:8]
+Với reference type (class, array, delegate) và value type (struct, int…). -->
 
 # object nào cũng có constructor à? [id:3024 order:9]
 Đúng.
