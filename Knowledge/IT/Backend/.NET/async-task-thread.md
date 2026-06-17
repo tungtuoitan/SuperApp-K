@@ -58,7 +58,7 @@ nghĩa là method này async — trả về `Task<ResultOptions>` thay vì trả
 # khi nào dùng private? [id:2953 order:18]
 khi member chỉ dùng nội bộ trong class.
 
-# mặc định thì member là private hay public? [id:2954 order:19]
+<!--# mặc định thì member là private hay public? [id:2954 order:19] -->
 
 # các keyword ngược lại với private? [id:2955 order:20]
 
