@@ -25,9 +25,9 @@ dùng để giải quyết 1 vấn đề cụ thể: tách code (UI, logic, data
 - CQRS
 - Microservice -->
 
-# Lợi ích của MVC là gì? [id:2760 order:6]
+<!--# Lợi ích của MVC là gì? [id:2760 order:6]
 - Server tạo HTML hoàn chỉnh → load page nhanh → SEO tốt
-- Tránh lộ API/dữ liệu thô cho client → bảo mật hơn
+- Tránh lộ API/dữ liệu thô cho client → bảo mật hơn -->
 
 # Phân biệt Kỹ thuật, Pattern, Framework? [id:2761 order:7]
 - Kỹ thuật: cách code giải quyết vấn đề nhỏ, level 1 hàm (async/await, hash password)
