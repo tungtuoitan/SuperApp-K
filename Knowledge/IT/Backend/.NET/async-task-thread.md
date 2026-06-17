@@ -65,8 +65,8 @@ khi member chỉ dùng nội bộ trong class.
 # string dạng này gọi là gì? $"{x}-abc"; [id:2956 order:21]
 là string interpolation
 
-# các keyword phổ biến trước 1 biến/hàm? [id:2957 order:22]
+<!--# các keyword phổ biến trước 1 biến/hàm? [id:2957 order:22]
 `public`, `private`, `protected`, `internal`
 `static`, `readonly`, `const`, `virtual`, `override`, `abstract`, `sealed`
 `async`, `await`, `volatile`
-`ref`, `out`, `in`, `params`
+`ref`, `out`, `in`, `params` -->
