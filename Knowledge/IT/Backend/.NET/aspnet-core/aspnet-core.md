@@ -73,11 +73,11 @@ không dùng được trong `static` method
 # vì sao this không được dùng trong static method? [id:2966 order:19]
 vì static không thuộc instance nào.
 
-# Các cách dùng this? [id:2967 order:20]
+<!--# Các cách dùng this? [id:2967 order:20]
 - Phân biệt field với tham số/biến local trùng tên
 - Gọi constructor khác trong cùng class (`: this(...)`)
 - Pass instance hiện tại ra ngoài (`Foo(this)`)
-- Return chính object để chain method (`return this;`)
+- Return chính object để chain method (`return this;`) -->
 
 # trước mỗi object mới thì phải luôn có new à? return new int[] { 0, 2, 5, 3, 7, 8, 4 }; [id:2968 order:21]
 Có với reference type (class, array, delegate) — `new` cấp phát memory trên heap. Value type (struct, int, bool) không cần `new`, gán literal trực tiếp được.
