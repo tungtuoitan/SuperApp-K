@@ -35,8 +35,8 @@ concrete class.
 # concrete class là gì? [id:2994 order:10]
 là class thường, không có từ khoá `abstract`.
 
-# tạo abstract và implement từ abstract, và implement trực tiếp luôn, 2 cách này gọi là gì? [id:2995 order:11]
-Cách qua abstract gọi là abstraction (một trong 4 nguyên lý OOP). Cách viết thẳng gọi là concrete class — không có lớp trừu tượng ở giữa.
+<!--# tạo abstract và implement từ abstract, và implement trực tiếp luôn, 2 cách này gọi là gì? [id:2995 order:11]
+Cách qua abstract gọi là abstraction (một trong 4 nguyên lý OOP). Cách viết thẳng gọi là concrete class — không có lớp trừu tượng ở giữa. -->
 
 # abstraction là abstract class à? [id:2996 order:12]
 Không.
