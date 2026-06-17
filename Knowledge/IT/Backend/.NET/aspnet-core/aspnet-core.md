@@ -63,8 +63,8 @@ Chỉ cần dùng khi field và tham số trùng tên.
 # vai trò lớn nhất của this trong thực tế? [id:2963 order:16]
 Phân biệt field với tham số trùng tên trong constructor.
 
-# hầu hết this chỉ được dùng trong constructor phải không? [id:2964 order:17]
-Không.
+<!--# hầu hết this chỉ được dùng trong constructor phải không? [id:2964 order:17]
+Không. -->
 
 # this được dùng và không được dùng ở đâu? [id:2965 order:18]
 `this` dùng được ở mọi instance method/property.
