@@ -39,11 +39,11 @@ dùng để giải quyết 1 vấn đề cụ thể: tách code (UI, logic, data
 - Object: thực thể thật được tạo ra từ Class, sống trong bộ nhớ
 Ví von: class là bản thiết kế xe, object là chiếc xe thật.
 
-# Domain là gì? [id:2763 order:9]
+<!--# Domain là gì? [id:2763 order:9]
 có 3 nghĩa:
 - Business domain: lĩnh vực mà phần mềm giải quyết (Banking, E-commerce, Healthcare)
 - Internet domain: tên định danh trên internet (google.com)
-- Code domain: nhóm logic nghiệp vụ liên quan trong codebase (HR domain, Finance domain)
+- Code domain: nhóm logic nghiệp vụ liên quan trong codebase (HR domain, Finance domain) -->
 
 # Phân biệt Domain, Module, Component? [id:2764 order:10]
 - Domain: lớn hơn feature (HR, Finance)
