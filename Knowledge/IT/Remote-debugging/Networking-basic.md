@@ -27,8 +27,8 @@ Thường thì không — nhà thường dùng thiết bị combo modem+router t
 # Adapter là gì? [id:511 order:8]
 Phần cứng hoặc phần mềm giúp kết nối 2 thứ có giao diện khác nhau. Network adapter = card mạng, cho phép máy tính kết nối vào mạng.
 
-# Card mạng là gì? Có phải card vật lý không? [id:512 order:9]
-Card mạng (NIC) thường là phần cứng vật lý gắn trong máy. Nhưng cũng có card mạng ảo: loopback (`127.0.0.1`), VPN adapter, Docker bridge — không có phần cứng vật lý tương ứng.
+<!--# Card mạng là gì? Có phải card vật lý không? [id:512 order:9]
+Card mạng (NIC) thường là phần cứng vật lý gắn trong máy. Nhưng cũng có card mạng ảo: loopback (`127.0.0.1`), VPN adapter, Docker bridge — không có phần cứng vật lý tương ứng. -->
 
 <!--# interface có phải là adapter không? [id:2805 order:10]
 Không hẳn. Adapter là phần cứng/phần mềm nối 2 hệ thống khác giao diện. Interface là điểm kết nối logic mà OS expose ra để gửi/nhận packet. Mỗi adapter thường tạo ra 1 interface tương ứng. -->
