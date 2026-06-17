@@ -19,11 +19,11 @@ dùng để giải quyết 1 vấn đề cụ thể: tách code (UI, logic, data
 - Behavioral patterns
 - Frontend/UI patterns (MVVM) -->
 
-# Các Architectural Pattern phổ biến là gì? [id:2759 order:5]
+<!--# Các Architectural Pattern phổ biến là gì? [id:2759 order:5]
 - MVC
 - API-first
 - CQRS
-- Microservice
+- Microservice -->
 
 # Lợi ích của MVC là gì? [id:2760 order:6]
 - Server tạo HTML hoàn chỉnh → load page nhanh → SEO tốt
