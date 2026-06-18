@@ -65,8 +65,8 @@ hầu hết là thế. -->
 <!--# abstract k thể dùng trong class nào? [id:3004 order:20]
 sealed và static class. -->
 
-# tại sao abstract không được dùng trong static class? [id:3005 order:21]
-vì abstract class được dùng cho mục đích kế thừa, còn static class thì lại k cho kế thừa -> mâu thuẫn mục đích.
+<!--# tại sao abstract không được dùng trong static class? [id:3005 order:21]
+vì abstract class được dùng cho mục đích kế thừa, còn static class thì lại k cho kế thừa -> mâu thuẫn mục đích. -->
 
 # abstract có thể dùng cho mọi member có phải không? [id:3006 order:22]
 Không.
