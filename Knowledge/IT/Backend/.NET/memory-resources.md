@@ -54,8 +54,8 @@ Local variable là biến khai báo trong body của 1 method/function, sống t
 Trong 1 vùng riêng của heap
 trong 1 vùng riêng gọi là "high frequency heap" hoặc "loader heap" của AppDomain. Sống suốt vòng đời process, không bị GC dọn theo cách object thường.
 
-# khi nào stack lưu reference type? [id:3117 order:15]
-Khi reference đó là local variable: bản thân con trỏ ở stack, object thật vẫn ở heap.
+<!--# khi nào stack lưu reference type? [id:3117 order:15]
+Khi reference đó là local variable: bản thân con trỏ ở stack, object thật vẫn ở heap. -->
 
 # con trỏ được lưu ở đâu? [id:3118 order:16]
 lưu trong stack/heap Tùy ngữ cảnh.
