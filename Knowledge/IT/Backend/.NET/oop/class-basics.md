@@ -75,11 +75,11 @@ Không. -->
 # vì sao this không được dùng trong static method? [id:3037 order:22]
 vì static không thuộc instance nào.
 
-# Các cách dùng this? [id:3038 order:23]
+<!--# Các cách dùng this? [id:3038 order:23]
 - Phân biệt field với tham số/biến local trùng tên
 - Gọi constructor khác trong cùng class (`: this(...)`)
 - Pass instance hiện tại ra ngoài (`Foo(this)`)
-- Return chính object để chain method (`return this;`)
+- Return chính object để chain method (`return this;`) -->
 
 # quá trình khởi tạo 1 instance? [id:3039 order:24]
 4 bước theo thứ tự:
