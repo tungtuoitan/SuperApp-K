@@ -7,15 +7,8 @@ name: "Sync-K-and-Git"
 - vì markdown là dữ liệu k có cấu trúc, việc transfer dữ liệu k cùng cấu trúc sẽ có nhiều vấn đề
 - có nhiều lỗi cú pháp do markdown được tạo ở vscode, ở đó ta k thể validate data được
 
-<!--# khi nào nên tách deamon thành service riêng, khi nào nên đặt nó nằm trong api server? [id:2668 order:2]
-Quyết định dựa trên workload và lifecycle của daemon. Xem 2 câu dưới để chi tiết. -->
-
-<!--# khi nào nên tách deamon thành service riêng? [id:2669 order:3]
-Khi đáp ứng ít nhất một trong các điều kiện:
-- Workload nặng, làm chậm request thread của API
-- Cần scale độc lập với API (chạy nhiều instance daemon mà không scale API)
-- Cần deploy/restart riêng (sync lỗi không kéo theo restart cả API)
-- Lifecycle khác API (chạy schedule dài, on-demand, hoặc cần CPU/RAM riêng) -->
+# khi nào nên tách deamon thành service riêng? [id:2669 order:3]
+ - khi nó ảnh hưởng api server
 
 # workload là gì? [id:2670 order:4]
 Khối lượng công việc (CPU, RAM, IO) mà 1 process phải xử lý trong 1 đơn vị thời gian. Workload nặng = tốn nhiều tài nguyên hoặc kéo dài.
@@ -36,21 +29,31 @@ Daemon chỉ chạy khi có trigger sự kiện, xong thì idle hoặc tắt —
 
 <!--# nếu vậy thì deamon khác job thế nào? [id:2675 order:9]
 Daemon là process chạy nền, là chủ thể thực thi. Job là đơn vị công việc rời rạc, là cái được thực thi. Một daemon có thể chạy nhiều job khác nhau theo thời gian. -->
+# deamon là gì?
+-Daemon là process chạy nền, giữ runtime — chủ thể thực thi (như host nuôi function). 
+# job là gì?
+Job là đơn vị công việc rời rạc — cái được thực thi (như function được gọi). 
 
-<!--# job tương ứng với function, còn deamon tương ứng với host phải không? [id:2676 order:10]
-Đúng theo analogy. Job là đơn vị thực thi (như function được gọi), daemon là môi trường giữ runtime để gọi job đó (như host nuôi function). -->
+# quan hệ deamon và job?
+deamon quản lí và thực thi job
+
+# deamon có thể chạy chung với api server không?
+Có. 
+Đó là kiểu hosted background service — daemon chạy chung process với API server (`IHostedService` trong .NET), share memory và DI container.
+
+# azure webjob có phải là job không? nếu k thì nó là gì?
+không, nó là deamon
+Đúng kiểu Azure gọi nó là "job", nhưng về bản chất WebJob là 1 daemon — 1 process chạy nền liên tục (continuous) hoặc theo trigger (manual/scheduled). Tên "job" gây nhầm với "đơn vị công việc".
+# azure webjob có thể chạy độc lập k cần azure phải không?
+đúng. 
+WebJob bản chất là 1 .NET console app — chạy được ở bất kỳ máy nào có .NET runtime. Azure chỉ cung cấp môi trường host (App Service) + tooling (deploy, log, scheduler).
 
 # analogy là gì? [id:2677 order:11]
 Phép so sánh tương tự — dùng cấu trúc của thứ A đã quen để giải thích thứ B mới. Không phải A và B giống hệt, chỉ giống về quan hệ.
 
-<!--# deamon tương tự program.cs, startup.cs phải không? [id:2678 order:12]
-Đúng phần bootstrap. `program.cs` / `startup.cs` là code khởi tạo daemon (host) — chúng định nghĩa cách daemon chạy và quản lý job. Bản thân daemon là process đang chạy sau khi `program.cs` đã run xong. -->
-
 # bootstrap là gì? [id:2679 order:13]
 Code chạy đầu tiên khi app khởi động, lo phần setup: load config, register dependency, mở kết nối, build host. Sau khi bootstrap xong, app mới sẵn sàng nhận request hoặc chạy job.
 
-<!--# vậy trên Azure, azure có deamon lắng nge event theo thời gian, ta chỉ việc tạo job thôi phải không? [id:2680 order:14]
-Đúng. Azure Functions, Logic Apps, WebJobs hoạt động theo model này — Azure quản daemon (host process lắng nghe trigger HTTP, queue, timer, blob...), user chỉ viết function/workflow. Đây là bản chất của serverless. -->
 
 # Các ý nghĩa của host? [id:2681 order:15]
 là máy chủ
@@ -66,8 +69,6 @@ Lớp execution engine chạy code của ngôn ngữ — cung cấp GC, JIT, typ
 - Host: lớp app cấp, orchestrate các service/component bên trong runtime (IHost trong .NET)
 Layer xếp từ ngoài vào: OS → Process → Runtime → Host → App code.
 
-<!--# serverless là gì? [id:2684 order:18]
-Mô hình mà cloud provider quản hết server và daemon, dev chỉ viết function. Không phải "không có server" mà là "dev không thấy server" — provider auto scale, auto restart, auto bill theo lượt invoke. -->
 
 <!--# cần cpu/ram riêng có nghĩa là gì? [id:2685 order:19]
 Daemon chiếm tài nguyên đủ lớn để ảnh hưởng tới process khác cùng máy. Ví dụ daemon chạy ML inference ngốn 100% CPU sẽ làm API cùng process chậm theo. Tách ra cho mỗi cái có ngân sách riêng. -->

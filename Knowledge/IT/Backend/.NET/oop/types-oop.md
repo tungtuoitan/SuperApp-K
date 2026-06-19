@@ -29,3 +29,9 @@ là phần "chữ ký" của method — gồm tên, danh sách tham số (kiểu
 - Repository: truy cập DB
 - Controller: nhận HTTP request
 - ViewModel: data cho UI -->
+
+# interface khác abstract class thế nào? [id:2905 order:22]
+Interface chỉ định nghĩa contract (signature), 1 class implement nhiều interface. Abstract class có thể có code, field, constructor — chỉ kế thừa được 1.
+
+# khi nào dùng abstract class? [id:2906 order:23]
+khi cần triển khai abstraction
