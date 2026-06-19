@@ -235,5 +235,5 @@ Trong context thread pool: worker = thread.
 Đúng.
 Pool thread khi tạo ra → vào loop: lấy task từ queue, chạy, xong rồi quay lại lấy task tiếp. Idle quá lâu thì OS đưa vào sleep. Không làm việc gì khác.
 
-# worker liên hệ gì với pool.thread? [id:3103 order:43]
-Worker thread CHÍNH LÀ thread trong pool. Số worker = số thread trong pool. Khi nói "worker" trong context thread pool là nói tới các thread đang chờ task.
+<!--# worker liên hệ gì với pool.thread? [id:3103 order:43]
+Worker thread CHÍNH LÀ thread trong pool. Số worker = số thread trong pool. Khi nói "worker" trong context thread pool là nói tới các thread đang chờ task. -->
