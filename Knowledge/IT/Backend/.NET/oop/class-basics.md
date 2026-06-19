@@ -88,3 +88,36 @@ khởi tạo field trước.
 
 # class có nằm trong class được không?
 Được. Gọi là nested class — class khai báo bên trong class khác.
+
+# phân biệt field, property trong object?
+- Field: biến trực tiếp lưu data trong object
+- Property: cặp getter/setter wrap quanh field, cho phép validate, lazy load, computed value
+
+# rule of thumb khi chọn property/field? vì sao?
+mặc định dùng property, chỉ dùng field cho biến nội bộ private
+vì dùng property thì sau này thay đổi hook vẫn k break code
+
+# sự khác nhau chính giữa field và property?
+Property cho phép chèn hook (validate, log, computed). Field thì không — chỉ là ô nhớ thuần.
+
+# property có phổ biến không?
+Cực phổ biến. 
+Mọi DTO, entity, ViewModel trong .NET hầu hết toàn là property. Tỉ lệ field public ở code .NET hiện đại gần như bằng 0.
+
+# ví dụ phổ biến cần dùng property?
+- Computed property: `FullName => FirstName + " " + LastName`
+# so sánh property  và computed state ở FE ?
+giống: đều có thể computed value,
+khác: state có cache, còn property k có cache (luôn tính toán mỗi lần gọi)
+
+# khi nào setter được thực thi nhỉ?
+Mỗi khi gán giá trị: `user.Name = "abc"` 
+→ setter chạy. Đọc property (`var x = user.Name`) thì gọi getter, không gọi setter.
+# property có lưu giá trị không? vì sao?
+không lưu, vì bản chất nó là hàm
+
+# const là gì? [id:2913 order:30]
+là gán giá trị ngay lúc khai báo, không đổi được. 
+
+# var là gì? [id:2914 order:31]
+là keyword cho phép compiler tự suy luận type từ giá trị bên phải.

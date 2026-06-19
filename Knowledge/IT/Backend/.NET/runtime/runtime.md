@@ -112,6 +112,9 @@ tạo ra machine code
 # JIT là gì? [id:2882 order:35]
 là quá trình CLR biên dịch IL sang machine code
 
+# Garbage Collection trong .NET hoạt động thế nào? [id:2903 order:20]
+GC tự dọn object không còn reference trên heap. Chia 3 generation (0, 1, 2) — object sống lâu được "promote" lên generation cao hơn để dọn ít thường xuyên hơn.
+
 # JIT Compiler là gì? [id:2792 order:36]
 là thành phần trong CLR có nhiệm vụ chuyển bytecode/IL (Intermediate Language) thành machine code lúc runtime.
 

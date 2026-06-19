@@ -12,5 +12,7 @@ name: "Nhắc nhở"
 x
 
 # hết tháng 6 sẽ master c#
+x
 
 # hết tháng 7 có 100 câu interview base question
+x
