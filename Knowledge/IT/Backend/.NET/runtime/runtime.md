@@ -112,26 +112,26 @@ tạo ra machine code
 # JIT là gì? [id:2882 order:35]
 là quá trình CLR biên dịch IL sang machine code
 
-# Garbage Collection trong .NET hoạt động thế nào? [id:2903 order:20]
+# Garbage Collection trong .NET hoạt động thế nào? [id:2903 order:36]
 GC tự dọn object không còn reference trên heap. Chia 3 generation (0, 1, 2) — object sống lâu được "promote" lên generation cao hơn để dọn ít thường xuyên hơn.
 
-# JIT Compiler là gì? [id:2792 order:36]
+# JIT Compiler là gì? [id:2792 order:37]
 là thành phần trong CLR có nhiệm vụ chuyển bytecode/IL (Intermediate Language) thành machine code lúc runtime.
 
-# JIT compile khi nào? [id:2793 order:37]
+# JIT compile khi nào? [id:2793 order:38]
 Mỗi method chỉ được JIT compile lần đầu khi được gọi. Sau đó machine code được cache lại — lần gọi tiếp theo chạy thẳng machine code, không compile lại.
 
-# Roslyn là gì? [id:2794 order:38]
+# Roslyn là gì? [id:2794 order:39]
 là compiler chính thức của C# và VB trong .NET. Roslyn biên dịch code C# → IL → output file .dll hoặc .exe.
 
-<!--# Khi C# .NET app chạy, chuyện gì xảy ra? [id:2795 order:39]
+<!--# Khi C# .NET app chạy, chuyện gì xảy ra? [id:2795 order:40]
 1. Host của .NET khởi động
 2. CLR load assembly (.dll)
 3. JIT compile method thành machine code khi method được gọi lần đầu
 4. GC quản lý bộ nhớ trong suốt quá trình chạy
 5. Khi app tắt, CLR dọn dẹp tài nguyên -->
 
-<!--# Khi ứng dụng Go chạy, chuyện gì xảy ra? [id:2796 order:40]
+<!--# Khi ứng dụng Go chạy, chuyện gì xảy ra? [id:2796 order:41]
 1. Build chương trình, sinh ra file binary (machine code trực tiếp, không có IL)
 2. Binary chạy trực tiếp trên OS — không cần runtime như CLR hay JVM
 3. Go runtime (nhỏ, nhúng trong binary) xử lý goroutine scheduling và GC -->

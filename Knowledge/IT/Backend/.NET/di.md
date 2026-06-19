@@ -34,7 +34,7 @@ là 3 lifetime của service trong DI container — quy định khi nào instanc
 - Scoped: 1 instance mỗi HTTP request
 - Transient: tạo mới mỗi lần inject
 
-# Singleton, Scoped, Transient khác nhau gì? [id:2920 order:37]
+# Singleton, Scoped, Transient khác nhau gì? [id:2920 order:9]
 - `Singleton`: vòng đời giống app.
 - `Scoped`: vòng đời giống request.
 - `Transient`: vòng đời giống hàm dùng nó

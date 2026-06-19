@@ -94,35 +94,37 @@ khởi tạo field trước.
 # class có nằm trong class được không? [id:3041 order:26]
 Được. Gọi là nested class — class khai báo bên trong class khác.
 
-# phân biệt field, property trong object?
+# phân biệt field, property trong object? [id:3125 order:27]
 - Field: biến trực tiếp lưu data trong object
 - Property: cặp getter/setter wrap quanh field, cho phép validate, lazy load, computed value
 
-# rule of thumb khi chọn property/field? vì sao?
+# rule of thumb khi chọn property/field? vì sao? [id:3126 order:28]
 mặc định dùng property, chỉ dùng field cho biến nội bộ private
 vì dùng property thì sau này thay đổi hook vẫn k break code
 
-# sự khác nhau chính giữa field và property?
+# sự khác nhau chính giữa field và property? [id:3127 order:29]
 Property cho phép chèn hook (validate, log, computed). Field thì không — chỉ là ô nhớ thuần.
 
-# property có phổ biến không?
-Cực phổ biến. 
+# property có phổ biến không? [id:3128 order:30]
+Cực phổ biến.
 Mọi DTO, entity, ViewModel trong .NET hầu hết toàn là property. Tỉ lệ field public ở code .NET hiện đại gần như bằng 0.
 
-# ví dụ phổ biến cần dùng property?
+# ví dụ phổ biến cần dùng property? [id:3129 order:31]
 - Computed property: `FullName => FirstName + " " + LastName`
-# so sánh property  và computed state ở FE ?
+
+# so sánh property và computed state ở FE ? [id:3130 order:32]
 giống: đều có thể computed value,
 khác: state có cache, còn property k có cache (luôn tính toán mỗi lần gọi)
 
-# khi nào setter được thực thi nhỉ?
-Mỗi khi gán giá trị: `user.Name = "abc"` 
+# khi nào setter được thực thi nhỉ? [id:3131 order:33]
+Mỗi khi gán giá trị: `user.Name = "abc"`
 → setter chạy. Đọc property (`var x = user.Name`) thì gọi getter, không gọi setter.
-# property có lưu giá trị không? vì sao?
+
+# property có lưu giá trị không? vì sao? [id:3132 order:34]
 không lưu, vì bản chất nó là hàm
 
-# const là gì? [id:2913 order:30]
-là gán giá trị ngay lúc khai báo, không đổi được. 
+# const là gì? [id:2913 order:35]
+là gán giá trị ngay lúc khai báo, không đổi được.
 
-# var là gì? [id:2914 order:31]
+# var là gì? [id:2914 order:36]
 là keyword cho phép compiler tự suy luận type từ giá trị bên phải.

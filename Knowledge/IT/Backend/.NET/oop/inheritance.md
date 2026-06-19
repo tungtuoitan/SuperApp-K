@@ -61,15 +61,15 @@ Nếu dùng `override` (cha phải `virtual`) thì cả hai đều in `dog` — 
 # hầu hết trường hợp, viết trùng signature thì sẽ đi kèm override phải không? [id:3056 order:15]
 Đúng. Trùng signature mà cố tình không `override` (method hiding) là edge case hiếm — thường để giữ nguyên hành vi cũ khi gọi qua kiểu cha. Code thực tế gần như luôn dùng `override` để có polymorphism.
 
-# overload là loại từ gì? [id:2908 order:25]
+# overload là loại từ gì? [id:2908 order:16]
 vừa là danh từ, vừa là động từ
 
-# overload(n) là gì? [id:2909 order:26]
+# overload(n) là gì? [id:2909 order:17]
 là hàm trùng tên nhưng khác params
 
-# overide (v) là gì? [id:2911 order:28]
+# overide (v) là gì? [id:2911 order:18]
 là việc lớp con thay đổi implementation của lớp cha
 
-# keyword gì để overide(v)? [id:2912 order:29]
-`override` ở lớp con, 
+# keyword gì để overide(v)? [id:2912 order:19]
+`override` ở lớp con,
 kết hợp `virtual` hoặc `abstract` ở lớp cha.

@@ -48,8 +48,8 @@ Thường là vậy. Mỗi middleware là 1 class có method `InvokeAsync(HttpCo
 5. Repository / EF Core
 6. DB
 
-# pipeline là gì? [id:2921 order:38]
+# pipeline là gì? [id:2921 order:13]
 là chuỗi các middleware
 
-# trong MinimalAPI có pipeline không? [id:2922 order:39]
-Có. 
+# trong MinimalAPI có pipeline không? [id:2922 order:14]
+Có.
