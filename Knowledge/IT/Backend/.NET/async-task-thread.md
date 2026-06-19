@@ -214,9 +214,9 @@ OS tạo main thread khi process start, chạy `Main()` đầu tiên.
 # main thread có thuộc pool không? [id:3097 order:37]
 không
 
-# mỗi process đều có 1 main thread à? [id:3098 order:38]
+<!--# mỗi process đều có 1 main thread à? [id:3098 order:38]
 Đúng.
-OS yêu cầu mọi process phải có 1 thread khởi đầu để chạy entry point. Process không có thread nào thì không tồn tại.
+OS yêu cầu mọi process phải có 1 thread khởi đầu để chạy entry point. Process không có thread nào thì không tồn tại. -->
 
 # main thread khác gì pool thread? [id:3099 order:39]
 - Main thread: tạo bởi OS khi process start,     chạy `Main()`
