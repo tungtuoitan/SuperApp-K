@@ -24,9 +24,9 @@ Stack chứa local variable kiểu value type (`int`, `struct`) và reference (c
 là 1 ô nhớ chứa địa chỉ của 1 object.
 Trong .NET ẩn đi dưới dạng "reference" — bạn không thấy địa chỉ trực tiếp.
 
-# reference là gì? [id:3109 order:7]
+<!--# reference là gì? [id:3109 order:7]
 là con trỏ
-Reference trong .NET là 1 con trỏ tới object trên heap, nhưng được runtime quản lý — không cho phép arithmetic như C/C++.
+Reference trong .NET là 1 con trỏ tới object trên heap, nhưng được runtime quản lý — không cho phép arithmetic như C/C++. -->
 
 # trong văn nói, con trỏ, reference, địa chỉ là 1 phải không? [id:3110 order:8]
 Gần như vậy.
