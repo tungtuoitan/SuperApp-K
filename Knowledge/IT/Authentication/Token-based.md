@@ -55,9 +55,9 @@ là gõ URL, F5, click thẻ `<a href>`, submit `<form>`): browser TỰ tạo HT
 # tại sao browser navigation lại gọi page request? [id:3075 order:15]
 Vì khi navigation, browser tạo request mặc định `Accept: text/html' để reload page
 
-# sự khác biệt giữa SSR và hybrid? [id:3076 order:16]
+<!--# sự khác biệt giữa SSR và hybrid? [id:3076 order:16]
 - SSR thuần: server render toàn bộ HTML
-- Hybrid: browser navigation đầu tiên lấy full html, sau đó thì work như SPA.
+- Hybrid: browser navigation đầu tiên lấy full html, sau đó thì work như SPA. -->
 
 # lí do hybrid web tồn tại? [id:3077 order:17]
 Để có cả SEO/first-paint nhanh của SSR lẫn UX mượt của SPA. Server render page đầu cho crawler đọc được + user thấy nội dung ngay, sau đó JS hydrate để các navigation tiếp theo chạy như SPA, không reload.
