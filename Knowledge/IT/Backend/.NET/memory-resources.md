@@ -57,10 +57,10 @@ trong 1 vùng riêng gọi là "high frequency heap" hoặc "loader heap" của 
 <!--# khi nào stack lưu reference type? [id:3117 order:15]
 Khi reference đó là local variable: bản thân con trỏ ở stack, object thật vẫn ở heap. -->
 
-# con trỏ được lưu ở đâu? [id:3118 order:16]
+<!--# con trỏ được lưu ở đâu? [id:3118 order:16]
 lưu trong stack/heap Tùy ngữ cảnh.
 Nếu là local reference variable → lưu ở stack.
-Nếu là field reference của 1 object → lưu inline trong object đó trên heap.
+Nếu là field reference của 1 object → lưu inline trong object đó trên heap. -->
 
 # khi biến local là refernece type, thì biến được lưu trực tiếp trong stack k cần con trỏ luôn à? [id:3119 order:17]
 Không.
