@@ -3,8 +3,8 @@ id: 320
 name: "async-task-thread"
 ---
 
-# khi nào nên dùng async/await? [id:2811 order:1]
-Khi method có I/O (DB query, HTTP call, file). Không nên dùng cho CPU-bound work — sẽ không có lợi.
+<!--# khi nào nên dùng async/await? [id:2811 order:1]
+Khi method có I/O (DB query, HTTP call, file). Không nên dùng cho CPU-bound work — sẽ không có lợi. -->
 
 # cứ có IO là luôn nên dùng await phải không? [id:2812 order:2]
 Gần như đúng cho server-side. IO async giúp thread không bị block, server xử lý được nhiều request đồng thời. Trừ trường hợp IO rất ngắn hoặc app tool một thread.
