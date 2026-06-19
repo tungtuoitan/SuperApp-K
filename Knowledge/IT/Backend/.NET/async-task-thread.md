@@ -222,9 +222,9 @@ OS yêu cầu mọi process phải có 1 thread khởi đầu để chạy entry
 - Main thread: tạo bởi OS khi process start,     chạy `Main()`
 - Pool thread: tạo bởi CLR, sống lâu trong pool, chạy task từ queue
 
-# chỉ CLR dùng pool thôi phải không? [id:3100 order:40]
+<!--# chỉ CLR dùng pool thôi phải không? [id:3100 order:40]
 Không.
-Pool là khái niệm chung của OS/runtime. CLR có thread pool riêng, JVM cũng có, Node.js có libuv thread pool, IIS có request thread pool. Mỗi runtime tự quản pool của mình.
+Pool là khái niệm chung của OS/runtime. CLR có thread pool riêng, JVM cũng có, Node.js có libuv thread pool, IIS có request thread pool. Mỗi runtime tự quản pool của mình. -->
 
 # worker và thread là 1 à? [id:3101 order:41]
 đúng
