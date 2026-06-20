@@ -218,9 +218,9 @@ không
 Đúng.
 OS yêu cầu mọi process phải có 1 thread khởi đầu để chạy entry point. Process không có thread nào thì không tồn tại. -->
 
-# main thread khác gì pool thread? [id:3099 order:39]
+<!--# main thread khác gì pool thread? [id:3099 order:39]
 - Main thread: tạo bởi OS khi process start,     chạy `Main()`
-- Pool thread: tạo bởi CLR, sống lâu trong pool, chạy task từ queue
+- Pool thread: tạo bởi CLR, sống lâu trong pool, chạy task từ queue -->
 
 <!--# chỉ CLR dùng pool thôi phải không? [id:3100 order:40]
 Không.
