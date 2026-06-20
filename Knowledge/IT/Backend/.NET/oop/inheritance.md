@@ -3,8 +3,8 @@ id: 331
 name: "inheritance"
 ---
 
-# tính kế thừa mặc định diễn ra thế nào? [id:3042 order:1]
-Class con tự động thừa hưởng mọi member `public`, `protected`, `internal` của cha. Member `private` không kế thừa.
+<!--# tính kế thừa mặc định diễn ra thế nào? [id:3042 order:1]
+Class con tự động thừa hưởng mọi member `public`, `protected`, `internal` của cha. Member `private` không kế thừa. -->
 
 # rule của kế thừa? [id:3043 order:2]
 Class con bắt buộc `override` mọi abstract member của cha, trừ khi class con cũng được khai báo là `abstract`.
