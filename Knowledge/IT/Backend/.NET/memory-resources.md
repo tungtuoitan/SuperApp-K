@@ -62,9 +62,9 @@ lưu trong stack/heap Tùy ngữ cảnh.
 Nếu là local reference variable → lưu ở stack.
 Nếu là field reference của 1 object → lưu inline trong object đó trên heap. -->
 
-# khi biến local là refernece type, thì biến được lưu trực tiếp trong stack k cần con trỏ luôn à? [id:3119 order:17]
+<!--# khi biến local là refernece type, thì biến được lưu trực tiếp trong stack k cần con trỏ luôn à? [id:3119 order:17]
 Không.
-object vẫn ở heap, stack chỉ chứa con trỏ trỏ tới nó.
+object vẫn ở heap, stack chỉ chứa con trỏ trỏ tới nó. -->
 
 # reference type luôn luôn được lưu trong heap phải không? [id:3120 order:18]
 Hầu hết là vậy
