@@ -203,9 +203,9 @@ khi có thread rảnh, scheduler bốc task trong queue ra cho thread chạy
 Đúng.
 Cả 3 đều là component của .NET runtime (CLR). Process khởi động → runtime tạo sẵn pool + scheduler + queue. App code chỉ submit task, không quản lý 3 cái đó.
 
-# mọi hoạt động trong .net đều dùng pool.thread trừ khi dùng .NET thread phải không [id:3095 order:35]
+<!--# mọi hoạt động trong .net đều dùng pool.thread trừ khi dùng .NET thread phải không [id:3095 order:35]
 Gần đúng.
-`Task`, `async/await`, `Parallel.For`, ASP.NET request handler đều chạy trên pool. Chỉ khi `new Thread()` mới tạo thread riêng. Main thread của app cũng không thuộc pool.
+`Task`, `async/await`, `Parallel.For`, ASP.NET request handler đều chạy trên pool. Chỉ khi `new Thread()` mới tạo thread riêng. Main thread của app cũng không thuộc pool. -->
 
 # mỗi process có 1 main thread để chạy app à? [id:3096 order:36]
 Đúng.
