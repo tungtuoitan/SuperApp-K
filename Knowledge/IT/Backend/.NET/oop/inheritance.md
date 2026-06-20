@@ -43,7 +43,7 @@ Khi member của cha được đánh dấu `virtual` hoặc `abstract`, và clas
 - triển khai body cho abstract member
 - thay implementation của virtual member
 
-# nếu con cứ viết trùng signature của cha nhưng k dùng override thì sao? [id:3055 order:14]
+<!--# nếu con cứ viết trùng signature của cha nhưng k dùng override thì sao? [id:3055 order:14]
 Compiler warning, đề nghị thêm `new` hoặc `override`. Đây là method hiding: behavior phụ thuộc kiểu reference — gọi qua kiểu cha thì chạy method cha, gọi qua kiểu con thì chạy method con.
 
 Ví dụ:
@@ -56,7 +56,7 @@ Animal a = d;
 d.Speak(); // dog  - reference kiểu con
 a.Speak(); // animal - reference kiểu cha (cùng instance)
 ```
-Nếu dùng `override` (cha phải `virtual`) thì cả hai đều in `dog` — đó là polymorphism thật sự.
+Nếu dùng `override` (cha phải `virtual`) thì cả hai đều in `dog` — đó là polymorphism thật sự. -->
 
 # hầu hết trường hợp, viết trùng signature thì sẽ đi kèm override phải không? [id:3056 order:15]
 Đúng. Trùng signature mà cố tình không `override` (method hiding) là edge case hiếm — thường để giữ nguyên hành vi cũ khi gọi qua kiểu cha. Code thực tế gần như luôn dùng `override` để có polymorphism.
