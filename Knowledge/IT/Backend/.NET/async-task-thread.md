@@ -171,9 +171,9 @@ Thread:
 # 1 Thread trong thread pool có tương ứng với 1 OS thread không? [id:2902 order:25]
 Có. Mỗi worker thread trong thread pool là 1 OS thread thật. Pool chỉ tái sử dụng — không tạo/dọn liên tục để tiết kiệm overhead.
 
-# lí do thread pool tồn tại là để tiết kiệm overhead do bỏ qua việc tạo/dọn phải không? [id:3087 order:26]
+<!--# lí do thread pool tồn tại là để tiết kiệm overhead do bỏ qua việc tạo/dọn phải không? [id:3087 order:26]
 Đúng.
-Tạo OS thread mới tốn ~1ms và 1MB stack — pool giữ sẵn 1 nhóm thread, tái sử dụng cho nhiều task ngắn. Tránh tạo/dọn liên tục.
+Tạo OS thread mới tốn ~1ms và 1MB stack — pool giữ sẵn 1 nhóm thread, tái sử dụng cho nhiều task ngắn. Tránh tạo/dọn liên tục. -->
 
 # tạo 1 OS thread mới thì tốn gì? [id:3088 order:27]
 ~1ms và 1MB stack
