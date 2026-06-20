@@ -30,8 +30,8 @@ C++ cho phép: `class C : public A, public B {}` — class `C` kế thừa cả 
 # những class nào không thể kế thừa? [id:3050 order:9]
 sealed class.
 
-# khi nào thì được override member của cha? [id:3051 order:10]
-Khi member của cha được đánh dấu `virtual` hoặc `abstract`, và class con dùng `override`.
+<!--# khi nào thì được override member của cha? [id:3051 order:10]
+Khi member của cha được đánh dấu `virtual` hoặc `abstract`, và class con dùng `override`. -->
 
 # override keyword dùng để làm gì? [id:3052 order:11]
 Để class con thay implementation của member `virtual`/`abstract` trong class cha.
