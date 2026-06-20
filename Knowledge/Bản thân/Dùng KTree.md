@@ -6,10 +6,10 @@ name: "Dùng KTree"
 # Cách đặt tên node? [id:67 order:1]
 mỗi node là tên công việc mà mình sẽ làm
 
-# Cách dùng KTree để học? [id:68 order:2]
+<!--# Cách dùng KTree để học? [id:68 order:2]
 - tạo node
 - tạo bộ câu hỏi
-- test đi test lại
+- test đi test lại -->
 
 <!--# khi nào thì nên học kiến thức? khi nào không nên? [id:73 order:3]
 học khi ứng dụng được ngay
