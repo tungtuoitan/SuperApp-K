@@ -50,8 +50,8 @@ data được phân bổ rải rác trong heap qua nhiều lần `new` — ví d
 # pointer có phải địa chỉ của ô nhớ không? [id:3168 order:14]
 Đúng. Pointer là 1 số nguyên đại diện cho địa chỉ ô nhớ trong RAM, dùng để CPU biết phải đi tới đâu để lấy data.
 
-# lợi ích/bất lợi của phân mảnh? [id:3169 order:15]
-lợi: linh hoạt thêm/xóa node bất kỳ vị trí mà không phải dịch chuyển data. Bất lợi: truy cập chậm hơn (phải nhảy theo pointer), không tận dụng được CPU cache, tốn thêm memory cho pointer.
+<!--# lợi ích/bất lợi của phân mảnh? [id:3169 order:15]
+lợi: linh hoạt thêm/xóa node bất kỳ vị trí mà không phải dịch chuyển data. Bất lợi: truy cập chậm hơn (phải nhảy theo pointer), không tận dụng được CPU cache, tốn thêm memory cho pointer. -->
 
 # tại sao phân mảnh lại k tận dụng được CPU cache? [id:3170 order:16]
 vì CPU cache load data theo block liên tiếp
