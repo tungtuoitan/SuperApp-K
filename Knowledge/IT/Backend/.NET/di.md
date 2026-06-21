@@ -38,3 +38,15 @@ là 3 lifetime của service trong DI container — quy định khi nào instanc
 - `Singleton`: vòng đời giống app.
 - `Scoped`: vòng đời giống request.
 - `Transient`: vòng đời giống hàm dùng nó
+
+# DI có phải vừa là pattern vừa là technique không? vì sao?
+Đúng. 
+Là pattern vì nó mô tả 1 giải pháp design (truyền dependency từ ngoài). 
+Là technique vì có cách triển khai cụ thể (constructor injection, property injection, DI container).
+
+# pattern khác technique chỗ nào?
+pattern mô tả "vấn đề + cách giải quyết" ở mức ý tưởng, không phụ thuộc ngôn ngữ.
+Technique là cách triển khai pattern bằng code cụ thể.
+
+# 1 pattern có thể có nhiều technique khác nhau à?
+đúng
