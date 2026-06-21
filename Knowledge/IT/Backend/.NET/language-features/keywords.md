@@ -22,8 +22,8 @@ Instance là mặc định — không cần keyword, không khai báo gì thêm.
 # làm sao để tạo instance member? [id:3233 order:5]
 mặc định là instance, k cần khai báo gì thêm?
 
-# readonly dùng để làm gì? khi nào dùng? [id:3234 order:6]
-rot: gần giống constant, k thay đổi value sau khi khai báo
+<!--# readonly dùng để làm gì? khi nào dùng? [id:3234 order:6]
+rot: gần giống constant, k thay đổi value sau khi khai báo -->
 
 # tại sao có const rồi mà vẫn cần readonly? [id:3235 order:7]
 vì `const` phải biết value lúc compile time và chỉ dùng được với primitive/string. `readonly` cho phép set value lúc runtime qua constructor, dùng được với mọi type (object, struct, collection).
