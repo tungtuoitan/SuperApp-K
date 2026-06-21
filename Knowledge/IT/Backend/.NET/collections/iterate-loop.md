@@ -29,8 +29,8 @@ Loop không iterate: `for (int i = 0; i < 10; i++)` — lặp đếm số.
 Iterate trong loop: `foreach (var user in users)` — duyệt collection.
 Iterate không có loop tường minh: `users.Where(u => u.IsActive)` — LINQ iterate bên trong, không thấy loop. -->
 
-# phân biệt loop và interate? [id:3197 order:9]
-interate là hành động đi qua từng item, còn loop là lặp đi lặp lại 1 hành động cụ thể, hành động có thể là interate hoặc là 1 phép tính
+<!--# phân biệt loop và interate? [id:3197 order:9]
+interate là hành động đi qua từng item, còn loop là lặp đi lặp lại 1 hành động cụ thể, hành động có thể là interate hoặc là 1 phép tính -->
 
 # trong loop k nhất thiết phải là interate phải k? [id:3198 order:10]
 Đúng. Ví dụ `while (true) { doWork(); }` là loop nhưng không iterate collection — nó lặp lại một hành động, không duyệt qua phần tử nào.
