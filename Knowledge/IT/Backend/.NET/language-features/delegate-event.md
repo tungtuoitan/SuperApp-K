@@ -9,8 +9,8 @@ name: "delegate-event"
 <!--# event và delegate khác nhau thế nào? [id:3214 order:2]
 event là wrapper trên delegate: chỉ class khai báo event mới có thể raise (invoke), bên ngoài chỉ subscribe/unsubscribe. Delegate thì ai cũng invoke được trực tiếp. -->
 
-# invoke là gì? [id:3215 order:3]
-là gọi/thực thi một method hoặc delegate. `myDelegate.Invoke(args)` hoặc viết tắt `myDelegate(args)`.
+<!--# invoke là gì? [id:3215 order:3]
+là gọi/thực thi một method hoặc delegate. `myDelegate.Invoke(args)` hoặc viết tắt `myDelegate(args)`. -->
 
 # delegate có phổ biến trong web api k? [id:3216 order:4]
 không
