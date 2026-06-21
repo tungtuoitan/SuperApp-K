@@ -79,5 +79,5 @@ Không trực tiếp. `sealed` ngăn attacker extend class để override logic 
 Cùng nghĩa.
 "Extend" là tiếng Anh, "kế thừa" là tiếng Việt — cả hai đều chỉ việc class con dùng `:`  để thừa hưởng từ class cha.
 
-# ví dụ phổ biến thực tế cần dùng sealed? [id:3251 order:23]
-`string` trong .NET là sealed. Trong web API: DTO/response class thường sealed. Class xử lý auth/payment nên sealed để ngăn override vô tình.
+<!--# ví dụ phổ biến thực tế cần dùng sealed? [id:3251 order:23]
+`string` trong .NET là sealed. Trong web API: DTO/response class thường sealed. Class xử lý auth/payment nên sealed để ngăn override vô tình. -->
