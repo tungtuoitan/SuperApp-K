@@ -154,8 +154,8 @@ khi dữ liệu nhỏ, immutable, không cần kế thừa
 Có thể, nhưng không nên.
 Vì struct là value type — khi gán hoặc truyền vào method, nó bị copy. Sửa field trên bản copy không ảnh hưởng bản gốc, dễ gây bug khó debug. Best practice: struct nên immutable.
 
-# struct k nên mutable, vậy tại sao biến thông thường thì có thể mutable? [id:3148 order:42]
-vì biến thông thường (reference type, class) khi gán/truyền là copy reference — sửa qua reference nào cũng thấy đổi trên cùng 1 object. Còn struct bị copy giá trị, sửa bản copy không đụng bản gốc → mutable struct tạo ảo giác đã sửa nhưng thật ra chưa.
+<!--# struct k nên mutable, vậy tại sao biến thông thường thì có thể mutable? [id:3148 order:42]
+vì biến thông thường (reference type, class) khi gán/truyền là copy reference — sửa qua reference nào cũng thấy đổi trên cùng 1 object. Còn struct bị copy giá trị, sửa bản copy không đụng bản gốc → mutable struct tạo ảo giác đã sửa nhưng thật ra chưa. -->
 
 # ví dụ dùng struct phổ biến? [id:3149 order:43]
 toạ độ, màu sắc
