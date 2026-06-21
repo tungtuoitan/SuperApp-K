@@ -21,8 +21,8 @@ loop là cơ chế (for, while, foreach). iterate là hành động duyệt qua 
 # cho tôi câu nói ví dụ dùng cả 2 từ đi? [id:3194 order:6]
 "Chúng ta dùng loop `foreach` để iterate qua từng phần tử trong list." — loop là cái vòng lặp, iterate là hành động đang làm bên trong.
 
-# duyệt là đi từ 1 đến 9, còn loop là lặp đi lặp lại việc đi từ 1 đến 9 phải không? [id:3195 order:7]
-Gần đúng nhưng ngược. Iterate (duyệt) là hành động đi qua từng phần tử — tức là đi từ 1 đến 9 một lần. Loop là cơ chế cho phép lặp lại hành động đó nếu cần. Khi duyệt collection, thường chỉ đi qua mỗi phần tử 1 lần.
+<!--# duyệt là đi từ 1 đến 9, còn loop là lặp đi lặp lại việc đi từ 1 đến 9 phải không? [id:3195 order:7]
+Gần đúng nhưng ngược. Iterate (duyệt) là hành động đi qua từng phần tử — tức là đi từ 1 đến 9 một lần. Loop là cơ chế cho phép lặp lại hành động đó nếu cần. Khi duyệt collection, thường chỉ đi qua mỗi phần tử 1 lần. -->
 
 # ví dụ phổ biến của loop và interate? [id:3196 order:8]
 Loop không iterate: `for (int i = 0; i < 10; i++)` — lặp đếm số.
