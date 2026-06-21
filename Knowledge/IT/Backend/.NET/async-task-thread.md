@@ -235,26 +235,26 @@ Trong context thread pool: worker = thread.
 Đúng.
 Pool thread khi tạo ra → vào loop: lấy task từ queue, chạy, xong rồi quay lại lấy task tiếp. Idle quá lâu thì OS đưa vào sleep. Không làm việc gì khác.
 
-# khi async được thực thi thì nó tạo ra Task phải không?
+# khi async được thực thi thì nó tạo ra Task phải không? [id:3134 order:43]
 Đúng.
 `async` method trả về `Task` (hoặc `Task<T>`) — đại diện cho một operation bất đồng bộ, không phải là thread.
 
-# khi gặp I/O bound task thì diễn biến thế nào?
+# khi gặp I/O bound task thì diễn biến thế nào? [id:3135 order:44]
 khi method `await` 1 I/O operation, thread đang chạy được trả về thread pool. OS dùng I/O completion port để chờ kết quả. Khi I/O xong, runtime lấy 1 thread bất kỳ từ pool để continue method.
 
-# I/O bound task thì nằm trong queue không?
+# I/O bound task thì nằm trong queue không? [id:3136 order:45]
 Có. Khi I/O xong, callback được đưa vào queue của thread pool, chờ thread pick up để continue.
 
-# hoạt động IO có được đưa vào queue không?
+# hoạt động IO có được đưa vào queue không? [id:3137 order:46]
 không
 OS xử lý I/O ngay và không bỏ vào queue chờ.
 
-# có sự liên hệ giữa task và dòng lệnh/hàm không?
+# có sự liên hệ giữa task và dòng lệnh/hàm không? [id:3138 order:47]
 Có. Task đại diện cho công việc 1 method async đang làm — bao gồm các dòng lệnh sau `await`. Khi await, task pause method tại đó; khi I/O xong, task resume từ đúng dòng tiếp theo.
 
-# những task nào mà pool.thread k xử lí?
+# những task nào mà pool.thread k xử lí? [id:3139 order:48]
 I/O-bound task:
 HTTP call, file read/write, DB query. Những task này dùng I/O completion port của OS — không cần thread pool thread ngồi chờ, thread được trả về ngay khi đang chờ I/O.
 
-<!--# worker liên hệ gì với pool.thread? [id:3103 order:43]
+<!--# worker liên hệ gì với pool.thread? [id:3103 order:49]
 Worker thread CHÍNH LÀ thread trong pool. Số worker = số thread trong pool. Khi nói "worker" trong context thread pool là nói tới các thread đang chờ task. -->

@@ -45,12 +45,10 @@ Khi member của cha được đánh dấu `virtual` hoặc `abstract`, và clas
 
 <!--# nếu con cứ viết trùng signature của cha nhưng k dùng override thì sao? [id:3055 order:14]
 Compiler warning, đề nghị thêm `new` hoặc `override`. Đây là method hiding: behavior phụ thuộc kiểu reference — gọi qua kiểu cha thì chạy method cha, gọi qua kiểu con thì chạy method con.
-
 Ví dụ:
 ```csharp
 class Animal { public void Speak() => Console.WriteLine("animal"); }
 class Dog : Animal { public void Speak() => Console.WriteLine("dog"); }
-
 Dog d = new Dog();
 Animal a = d;
 d.Speak(); // dog  - reference kiểu con
