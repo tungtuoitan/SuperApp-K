@@ -9,8 +9,8 @@ là cú pháp query collection tương tự SQL
 # LINQ giống sql ở chỗ nào? [id:3190 order:2]
 giống ở cú pháp
 
-# interate là gì? có phải loop không? [id:3191 order:3]
-là duyệt qua từng phần tử của collection.
+<!--# interate là gì? có phải loop không? [id:3191 order:3]
+là duyệt qua từng phần tử của collection. -->
 
 # loop là 1 chuỗi các interation phải không? [id:3192 order:4]
 Đúng. Loop (`for`, `while`) là cơ chế lặp lại. Mỗi lần lặp là 1 iteration. Iterate qua collection = loop qua từng phần tử.
