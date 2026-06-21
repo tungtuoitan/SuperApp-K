@@ -44,8 +44,8 @@ rot: đúng
 # lưu liên tiếp trong memory nghĩa là gì? [id:3166 order:12]
 các phần tử nằm sát nhau trong RAM, không bị phân mảnh. Nhờ vậy CPU có thể tính địa chỉ phần tử bằng công thức `base + index * size` và truy cập trong O(1).
 
-# data gì thì bị phân mảnh? [id:3167 order:13]
-data được phân bổ rải rác trong heap qua nhiều lần `new` — ví dụ `LinkedList`, hoặc các object reference riêng lẻ. Mỗi node nằm 1 chỗ trong RAM, link với nhau qua pointer.
+<!--# data gì thì bị phân mảnh? [id:3167 order:13]
+data được phân bổ rải rác trong heap qua nhiều lần `new` — ví dụ `LinkedList`, hoặc các object reference riêng lẻ. Mỗi node nằm 1 chỗ trong RAM, link với nhau qua pointer. -->
 
 # pointer có phải địa chỉ của ô nhớ không? [id:3168 order:14]
 Đúng. Pointer là 1 số nguyên đại diện cho địa chỉ ô nhớ trong RAM, dùng để CPU biết phải đi tới đâu để lấy data.
