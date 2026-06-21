@@ -143,3 +143,38 @@ Khi object giữ unmanaged resource: file handle, DB connection, socket, stream,
 
 # IDisposable và using dùng để làm gì? [id:2926 order:38]
 `IDisposable` interface cho object nắm giữ resource cần dọn (file, connection, DB). `using` tự gọi `Dispose()` khi thoát scope, kể cả khi có exception.
+
+# struct này có vấn đề gì? Identity{public readonly string EyeColor { get; }} vì sao?
+readonly bị thừa, vì k có set thì k cần readonly nữa
+
+# khi nào dùng struct?
+khi dữ liệu nhỏ, immutable, không cần kế thừa
+
+# struct có thể lưu mutable value không? có nên lưu mutable value không? vì sao?
+Có thể, nhưng không nên.
+Vì struct là value type — khi gán hoặc truyền vào method, nó bị copy. Sửa field trên bản copy không ảnh hưởng bản gốc, dễ gây bug khó debug. Best practice: struct nên immutable.
+
+# struct k nên mutable, vậy tại sao biến thông thường thì có thể mutable?
+vì biến thông thường (reference type, class) khi gán/truyền là copy reference — sửa qua reference nào cũng thấy đổi trên cùng 1 object. Còn struct bị copy giá trị, sửa bản copy không đụng bản gốc → mutable struct tạo ảo giác đã sửa nhưng thật ra chưa.
+
+# ví dụ dùng struct phổ biến?
+toạ độ, màu sắc
+
+# mutable, imutable là gì?
+mutable: có thể thay đổi.
+immutable: k thể thay đổi (cách dễ nhớ: im là "im ắng trọn đời")
+
+# sự khác nhau giữa struct và class?
+struct là value type còn class là reference type
+struct k kế thừa được
+
+# value type và reference type khác nhau thế nào khi gán/truyền?
+value type: copy value
+Reference type: copy reference
+
+# tại sao lại phân ra thành value type và reference type?
+để tối ưu memory và performance.
+
+# tại sao phân ra value type và reference type lại tối ưu memory và performance?
+vì object to lớn trên heap sẽ được DÙNG CHUNG thông qua reference -> tiết kiệm memory
+còn value type ở stack thì copy nhanh và k cần GC
