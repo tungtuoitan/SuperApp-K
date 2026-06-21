@@ -49,8 +49,8 @@ vào khai báo để thay đổi hành vi: `public`, `private`, `static`, `reado
 `const` chỉ dùng cho field và local variable.
 Không dùng được cho property, method, hay parameter. Kiểu dữ liệu phải là primitive hoặc string — không thể là object/reference type.
 
-# tại sao const k được dùng cho property, method? [id:3242 order:14]
-vì `const` value được "inline" vào nơi gọi lúc compile, nên không thể có getter/setter (property) hay logic thực thi (method). Property và method cần runtime để chạy, còn const thì không tồn tại ở runtime.
+<!--# tại sao const k được dùng cho property, method? [id:3242 order:14]
+vì `const` value được "inline" vào nơi gọi lúc compile, nên không thể có getter/setter (property) hay logic thực thi (method). Property và method cần runtime để chạy, còn const thì không tồn tại ở runtime. -->
 
 # tại sao nên dùng public const string Blue = "blue"; thay vì public string Blue = "blue"; [id:3243 order:15]
 để code rõ nghĩa hơn, vì biến này là constant
