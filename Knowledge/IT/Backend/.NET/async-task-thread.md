@@ -249,8 +249,8 @@ Có. Khi I/O xong, callback được đưa vào queue của thread pool, chờ t
 không
 OS xử lý I/O ngay và không bỏ vào queue chờ.
 
-# có sự liên hệ giữa task và dòng lệnh/hàm không? [id:3138 order:47]
-Có. Task đại diện cho công việc 1 method async đang làm — bao gồm các dòng lệnh sau `await`. Khi await, task pause method tại đó; khi I/O xong, task resume từ đúng dòng tiếp theo.
+<!--# có sự liên hệ giữa task và dòng lệnh/hàm không? [id:3138 order:47]
+Có. Task đại diện cho công việc 1 method async đang làm — bao gồm các dòng lệnh sau `await`. Khi await, task pause method tại đó; khi I/O xong, task resume từ đúng dòng tiếp theo. -->
 
 # những task nào mà pool.thread k xử lí? [id:3139 order:48]
 I/O-bound task:
