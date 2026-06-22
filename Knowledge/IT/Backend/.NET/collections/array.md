@@ -26,8 +26,8 @@ Array map gần như 1-1 với cách CPU/RAM lưu data — không có thêm logi
 Đúng.
 Vì càng nhiều abstraction tức là càng nhiều code chạy trung gian -> gây tốn CPU và memory.
 
-# càng gần phần cứng thì càng ít abstraction phải không? tại sao? [id:3161 order:7]
-Đúng. Vì abstraction là lớp logic phụ thêm vào để che đi chi tiết phần cứng. Càng gần phần cứng, dev càng phải tự xử lý chi tiết — không có lớp che. Đổi lại, code chạy thẳng vào CPU/RAM nên nhanh hơn.
+<!--# càng gần phần cứng thì càng ít abstraction phải không? tại sao? [id:3161 order:7]
+Đúng. Vì abstraction là lớp logic phụ thêm vào để che đi chi tiết phần cứng. Càng gần phần cứng, dev càng phải tự xử lý chi tiết — không có lớp che. Đổi lại, code chạy thẳng vào CPU/RAM nên nhanh hơn. -->
 
 # code bậc càng thấp thì performance tốt hơn vì ít abstraction phải không? [id:3162 order:8]
 Đúng. Code low-level (C, assembly) chạy gần phần cứng, ít lớp trung gian → nhanh hơn. Đổi lại, dev phải tự xử lý chi tiết (cấp phát memory, quản lý pointer), code khó viết và dễ bug.
