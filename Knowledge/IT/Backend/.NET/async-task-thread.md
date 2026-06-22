@@ -242,12 +242,12 @@ Pool thread khi tạo ra → vào loop: lấy task từ queue, chạy, xong rồ
 # khi gặp I/O bound task thì diễn biến thế nào? [id:3135 order:44]
 khi method `await` 1 I/O operation, thread đang chạy được trả về thread pool. OS dùng I/O completion port để chờ kết quả. Khi I/O xong, runtime lấy 1 thread bất kỳ từ pool để continue method.
 
-# I/O bound task thì nằm trong queue không? [id:3136 order:45]
-Có. Khi I/O xong, callback được đưa vào queue của thread pool, chờ thread pick up để continue.
+<!--# I/O bound task thì nằm trong queue không? [id:3136 order:45]
+Có. Khi I/O xong, callback được đưa vào queue của thread pool, chờ thread pick up để continue. -->
 
-# hoạt động IO có được đưa vào queue không? [id:3137 order:46]
+<!--# hoạt động IO có được đưa vào queue không? [id:3137 order:46]
 không
-OS xử lý I/O ngay và không bỏ vào queue chờ.
+OS xử lý I/O ngay và không bỏ vào queue chờ. -->
 
 <!--# có sự liên hệ giữa task và dòng lệnh/hàm không? [id:3138 order:47]
 Có. Task đại diện cho công việc 1 method async đang làm — bao gồm các dòng lệnh sau `await`. Khi await, task pause method tại đó; khi I/O xong, task resume từ đúng dòng tiếp theo. -->
