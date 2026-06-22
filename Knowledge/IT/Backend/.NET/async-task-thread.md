@@ -235,9 +235,9 @@ Trong context thread pool: worker = thread.
 Đúng.
 Pool thread khi tạo ra → vào loop: lấy task từ queue, chạy, xong rồi quay lại lấy task tiếp. Idle quá lâu thì OS đưa vào sleep. Không làm việc gì khác.
 
-# khi async được thực thi thì nó tạo ra Task phải không? [id:3134 order:43]
+<!--# khi async được thực thi thì nó tạo ra Task phải không? [id:3134 order:43]
 Đúng.
-`async` method trả về `Task` (hoặc `Task<T>`) — đại diện cho một operation bất đồng bộ, không phải là thread.
+`async` method trả về `Task` (hoặc `Task<T>`) — đại diện cho một operation bất đồng bộ, không phải là thread. -->
 
 # khi gặp I/O bound task thì diễn biến thế nào? [id:3135 order:44]
 khi method `await` 1 I/O operation, thread đang chạy được trả về thread pool. OS dùng I/O completion port để chờ kết quả. Khi I/O xong, runtime lấy 1 thread bất kỳ từ pool để continue method.
