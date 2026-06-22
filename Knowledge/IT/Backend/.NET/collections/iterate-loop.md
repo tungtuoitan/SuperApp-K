@@ -18,8 +18,8 @@ là duyệt qua từng phần tử của collection. -->
 <!--# loop khác gì interate? [id:3193 order:5]
 loop là cơ chế (for, while, foreach). iterate là hành động duyệt qua collection. Có thể iterate mà không cần loop tường minh (LINQ, recursion). Loop không nhất thiết phải iterate collection — có thể lặp đếm số (`for i = 0..9`). -->
 
-# cho tôi câu nói ví dụ dùng cả 2 từ đi? [id:3194 order:6]
-"Chúng ta dùng loop `foreach` để iterate qua từng phần tử trong list." — loop là cái vòng lặp, iterate là hành động đang làm bên trong.
+<!--# cho tôi câu nói ví dụ dùng cả 2 từ đi? [id:3194 order:6]
+"Chúng ta dùng loop `foreach` để iterate qua từng phần tử trong list." — loop là cái vòng lặp, iterate là hành động đang làm bên trong. -->
 
 <!--# duyệt là đi từ 1 đến 9, còn loop là lặp đi lặp lại việc đi từ 1 đến 9 phải không? [id:3195 order:7]
 Gần đúng nhưng ngược. Iterate (duyệt) là hành động đi qua từng phần tử — tức là đi từ 1 đến 9 một lần. Loop là cơ chế cho phép lặp lại hành động đó nếu cần. Khi duyệt collection, thường chỉ đi qua mỗi phần tử 1 lần. -->
