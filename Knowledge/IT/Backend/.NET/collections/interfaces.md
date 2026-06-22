@@ -22,9 +22,9 @@ A là derived class (con), B là base class (cha). Hoặc gọi A là subclass, 
 `ICollection<T>`: item có 1 value
 IDictionary: item có 2 value (key - value)
 
-# lợi và hại của 2 cái trên? [id:3183 order:7]
+<!--# lợi và hại của 2 cái trên? [id:3183 order:7]
 `ICollection`: đơn giản, thứ tự rõ ràng, duyệt nhanh. Không lookup theo key được.
-`IDictionary`: lookup O(1) theo key, nhưng tốn memory hơn (lưu cả key lẫn value), không có thứ tự mặc định.
+`IDictionary`: lookup O(1) theo key, nhưng tốn memory hơn (lưu cả key lẫn value), không có thứ tự mặc định. -->
 
 # các hành động phổ biến với data: lookup,duyệt,...? [id:3184 order:8]
 - lookup: tìm 1 item theo key/index
