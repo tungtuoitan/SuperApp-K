@@ -6,9 +6,12 @@ là container lưu "ambient state" của một logical flow
 là biến trong mỗi logical flow of execution, 
 không phải mỗi thread. Giá trị tự flow theo `await` và `Task.Run` nhờ `ExecutionContext`.
 
-# AsyncLocal được dùng mặc định trong await, task.Run à?
+# ExecutionContext được dùng mặc định trong await, task.Run à?
 Đúng. 
 .NET runtime tự động capture và flow `ExecutionContext` (chứa `AsyncLocal` values) khi gọi `await` hoặc `Task.Run` — không cần làm gì thêm.
+
+# dev ít khi dùng đến ExecutionContext phải không? vì sao?
+Đúng. Runtime tự lo capture và flow — dev chỉ cần dùng `AsyncLocal` để đặt giá trị, không cần chạm vào `ExecutionContext` trực tiếp trừ khi cần suppress flow (`ExecutionContext.SuppressFlow`).
 
 # logical flow of execution là logical work à ?
 Đúng, cùng nghĩa.
@@ -26,7 +29,8 @@ là "xung quanh, có sẵn trong môi trường".
 # Thread-Local Storage là gì?
 là kỹ thuật: mỗi thread lưu bản riêng của một biến
  — thread A và thread B cùng tên biến nhưng không đụng nhau. `[ThreadStatic]` là cách .NET implement TLS.
-
+# thread-local là gì?
+là biến có bản riêng cho mỗi thread — thread A và thread B không đụng nhau dù cùng tên biến.
 # lí do Thread-Local Storage tồn tại?
 để tránh race condition
 
@@ -129,3 +133,30 @@ là [hàm + snapshot] các biến từ scope bên ngoài
 
 # closure allocation là gì?
 là object chứa tất cả biến mà 1 hàm capture
+
+# khi nào executionContext được tạo ra?
+khi thread bắt đầu chạy (runtime tạo mặc định), hoặc khi có `AsyncLocal.Value` được gán (runtime tạo bản copy mới theo copy-on-write).
+
+# tại sao AsyncLocal được gán thì tạo ra executionContext mới?
+để tránh ảnh hưởng các nhánh khác đang share context gốc. 
+Nếu sửa trực tiếp thì mọi task đang dùng context đó đều thấy giá trị mới — sai logic isolation.
+
+# executionContext mới sẽ được dùng còn executionContext cũ luôn bị bỏ đi phải không?
+Không. 
+Context cũ vẫn còn và các nhánh khác vẫn dùng nó. Chỉ thread hiện tại (và các task nó tạo ra sau đó) dùng context mới.
+
+# executionContext tương tự value type, khi được dùng thì sẽ copy ra version mới để dùng, có phải không?
+Không. 
+`ExecutionContext` là reference type, không copy khi dùng. Nó chỉ tạo bản copy mới khi `AsyncLocal.Value` bị gán (copy-on-write) — khác value type ở chỗ copy có điều kiện, không phải mọi lúc.
+
+# lock là gì?
+là cơ chế đảm bảo chỉ 1 thread được chạy 1 đoạn code tại một thời điểm. 
+Thread khác muốn vào phải đợi thread hiện tại ra khỏi block.
+
+# lí do lock tồn tại?
+để tránh race condition 
+khi nhiều thread cùng đọc/ghi shared mutable state.
+
+# khi nào dùng lock?
+khi nhiều thread cùng truy cập 1 biến
+hoặc resource có thể thay đổi (mutable) — ít nhất 1 thread ghi.
