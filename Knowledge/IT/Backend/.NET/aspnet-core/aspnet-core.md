@@ -106,8 +106,8 @@ Ví dụ: `5`, `"hello"`, `true`, `3.14`, `null`.
 # array trong c# là collection à? [id:2975 order:28]
 Có. Array implement `IEnumerable`, `ICollection`, `IList` nên được tính là collection. Khác `List<T>` ở chỗ size cố định.
 
-# array khác gì collection? [id:2976 order:29]
-Array là 1 loại collection cụ thể.
+<!--# array khác gì collection? [id:2976 order:29]
+Array là 1 loại collection cụ thể. -->
 
 # quá trình khởi tạo 1 instance? [id:2977 order:30]
 4 bước theo thứ tự:
