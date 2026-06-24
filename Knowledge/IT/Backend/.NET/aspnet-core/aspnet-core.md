@@ -85,10 +85,10 @@ Có với reference type (class, array, delegate) — `new` cấp phát memory t
 # nếu k dùng new cho object mới thì sao? [id:2969 order:22]
 bị Compile error
 
-# vai trò của new? [id:2970 order:23]
+<!--# vai trò của new? [id:2970 order:23]
 - cấp phát memory,
 - chạy constructor,
-- trả về reference đến object mới.
+- trả về reference đến object mới. -->
 
 # object nào cũng có constructor à? [id:2971 order:24]
 đúng
