@@ -132,5 +132,5 @@ là cấp phát bộ nhớ trên heap cho 1 object mới. GC sau đó phải d�
 # closure là gì? [id:3293 order:36]
 là [hàm + snapshot] các biến từ scope bên ngoài
 
-# closure allocation là gì? [id:3294 order:37]
-là object chứa tất cả biến mà 1 hàm capture
+<!--# closure allocation là gì? [id:3294 order:37]
+là object chứa tất cả biến mà 1 hàm capture -->
