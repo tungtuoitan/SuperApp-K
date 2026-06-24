@@ -3,8 +3,8 @@ id: 23
 name: "Authentication"
 ---
 
-# Uỷ quyền là gì? [id:37 order:1]
-là user trao quyền cho website, để website truy cập vào Drive, google photo của mình
+<!--# Uỷ quyền là gì? [id:37 order:1]
+là user trao quyền cho website, để website truy cập vào Drive, google photo của mình -->
 
 # ví dụ về Uỷ quyền? [id:38 order:2]
 mình vào website SuperApp, nó mở ra trang google và gg hỏi mình: bạn có cho phép SuperApp truy cập vào Drive của bạn không?
