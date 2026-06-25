@@ -1,4 +1,4 @@
----
+﻿---
 id: 322
 name: "di"
 ---
@@ -9,8 +9,8 @@ là 1 pattern
 # DI là gì? [id:2830 order:2]
 là kỹ thuật giúp tránh coupling
 
-# DI là pattern hay kĩ thuật ? vì sao?
-Vừa là pattern vừa là technique. 
+# DI là pattern hay kĩ thuật ? vì sao? [id:3318 order:3]
+Vừa là pattern vừa là technique.
 Pattern ở chỗ nó mô tả cách tổ chức dependency. Technique ở chỗ nó là cách code cụ thể.
 
 # DI có phải là technique không? [id:2832 order:4]
@@ -25,7 +25,6 @@ Có. DI vừa là pattern (cách tổ chức) vừa là technique (cách code).
 # DI giải quyết vấn đề gì? [id:2834 order:6]
 - Tight coupling
 
-
 # singleton, scoped, transient là gì? [id:2835 order:7]
 là 3 lifetime của service trong DI container — quy định khi nào instance được tạo mới.
 
@@ -39,9 +38,9 @@ là 3 lifetime của service trong DI container — quy định khi nào instanc
 - `Scoped`: vòng đời giống request.
 - `Transient`: vòng đời giống hàm dùng nó
 
-# pattern khác technique chỗ nào? [id:3142 order:11]
+# pattern khác technique chỗ nào? [id:3142 order:10]
 pattern mô tả "vấn đề + cách giải quyết" ở mức ý tưởng, không phụ thuộc ngôn ngữ.
 Technique là cách triển khai pattern bằng code cụ thể.
 
-# 1 pattern có thể có nhiều technique khác nhau à? [id:3143 order:12]
+# 1 pattern có thể có nhiều technique khác nhau à? [id:3143 order:11]
 đúng

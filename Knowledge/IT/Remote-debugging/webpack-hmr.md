@@ -65,5 +65,5 @@ craco cho phép override cấu hình webpack-dev-server của CRA. Để debug m
 Mặc định webpack-dev-server bind `localhost` (127.0.0.1) — chỉ nhận request từ chính máy. Đổi sang `0.0.0.0` thì phone mới gửi request vào được qua WiFi.
 
 # Phone gửi kết nối webpack-dev-server bằng cách nào? [id:503 order:17]
- gửi request đến `http://192.168.2.26:3000` 
+gửi request đến `http://192.168.2.26:3000`
  webpack-dev-server listen `0.0.0.0:3000` và nhận request

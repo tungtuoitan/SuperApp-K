@@ -3,55 +3,55 @@ id: 331
 name: "inheritance"
 ---
 
-# rule của kế thừa? [id:3043 order:2]
+# rule của kế thừa? [id:3043 order:1]
 Class con bắt buộc `override` mọi abstract member của cha, trừ khi class con cũng được khai báo là `abstract`.
 
-# khi A : B và B : C thì A có liên hệ gì với C không? [id:3044 order:3]
+# khi A : B và B : C thì A có liên hệ gì với C không? [id:3044 order:2]
 Có, C là ông nội của A.
 
-# thông thường có cần quan tâm đến class ông nội không? vì sao? [id:3045 order:4]
+# thông thường có cần quan tâm đến class ông nội không? vì sao? [id:3045 order:3]
 Không, vì class cha là đã đủ — class cha đã có tất cả member của ông nội rồi.
 
-# khi nào cần quan tâm tới class ông nội? [id:3046 order:5]
+# khi nào cần quan tâm tới class ông nội? [id:3046 order:4]
 chỉ khi cần override member do ông nội khai báo.
 
-# tại sao class chỉ kế thừa được 1 class? [id:3047 order:6]
+# tại sao class chỉ kế thừa được 1 class? [id:3047 order:5]
 Vì C# cấm multiple class inheritance. Quy tắc này áp dụng cho mọi class, không riêng abstract class.
 
-# vì sao c# lại cấm multiple class inheritance? [id:3048 order:7]
+# vì sao c# lại cấm multiple class inheritance? [id:3048 order:6]
 vì khi 2 cha cùng có method trùng tên, con không biết theo cha nào.
 
-# cho ví dụ về vấn đề của multiple class inheritance? [id:3049 order:8]
+# cho ví dụ về vấn đề của multiple class inheritance? [id:3049 order:7]
 C++ cho phép: `class C : public A, public B {}` — class `C` kế thừa cả `A` và `B`. Nếu cả `A` và `B` cùng có method `Print()` thì `c.Print()` mơ hồ — đây là diamond problem.
 
-# những class nào không thể kế thừa? [id:3050 order:9]
+# những class nào không thể kế thừa? [id:3050 order:8]
 sealed class.
 
-# cách override 1 member? [id:3051 order:10]
+# cách override 1 member? [id:3051 order:9]
 đánh dấu `virtual` hoặc `abstract` cho parent method, và class con dùng `override`.
 
-# override keyword dùng để làm gì? [id:3052 order:11]
+# override keyword dùng để làm gì? [id:3052 order:10]
 Để class con thay implementation của member `virtual`/`abstract` trong class cha.
 
-# override chỉ được dùng trong class con phải không? [id:3053 order:12]
+# override chỉ được dùng trong class con phải không? [id:3053 order:11]
 Đúng. `override` chỉ có ý nghĩa khi thay implementation của member do class cha khai báo `virtual`/`abstract`. Class gốc (không kế thừa) không có gì để override.
 
-# lí do override tồn tại? [id:3054 order:13]
+# lí do override tồn tại? [id:3054 order:12]
 - triển khai body cho abstract member
 - thay implementation của virtual member
 
-# hầu hết trường hợp, viết trùng signature thì sẽ đi kèm override phải không? [id:3056 order:15]
+# hầu hết trường hợp, viết trùng signature thì sẽ đi kèm override phải không? [id:3056 order:13]
 Đúng. Trùng signature mà cố tình không `override` (method hiding) là edge case hiếm — thường để giữ nguyên hành vi cũ khi gọi qua kiểu cha. Code thực tế gần như luôn dùng `override` để có polymorphism.
 
-# overload là loại từ gì? [id:2908 order:16]
+# overload là loại từ gì? [id:2908 order:14]
 vừa là danh từ, vừa là động từ
 
-# overload(n) là gì? [id:2909 order:17]
+# overload(n) là gì? [id:2909 order:15]
 là hàm trùng tên nhưng khác params
 
-# overide (v) là gì? [id:2911 order:18]
+# overide (v) là gì? [id:2911 order:16]
 là việc lớp con thay đổi implementation của lớp cha
 
-# keyword gì để overide(v)? [id:2912 order:19]
+# keyword gì để overide(v)? [id:2912 order:17]
 `override` ở lớp con,
 kết hợp `virtual` hoặc `abstract` ở lớp cha.

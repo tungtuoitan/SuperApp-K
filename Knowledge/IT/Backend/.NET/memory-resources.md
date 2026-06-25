@@ -1,4 +1,4 @@
----
+﻿---
 id: 324
 name: "memory-resources"
 ---
@@ -54,18 +54,17 @@ Local variable là biến khai báo trong body của 1 method/function, sống t
 Trong 1 vùng riêng của heap
 trong 1 vùng riêng gọi là "high frequency heap" hoặc "loader heap" của AppDomain. Sống suốt vòng đời process, không bị GC dọn theo cách object thường.
 
-
-# khi biến local là refernece type thì nó được lưu thế nào? [id:3119 order:17]
+# khi biến local là refernece type thì nó được lưu thế nào? [id:3119 order:15]
 stack lưu con trỏ, heap lưu object
 
-# reference type luôn luôn được lưu trong heap phải không? [id:3120 order:18]
+# reference type luôn luôn được lưu trong heap phải không? [id:3120 order:16]
 Hầu hết là vậy
 Object class luôn nằm trên heap, kể cả khi reference được khai báo local. Trừ khi dùng `Span<T>`, `ref struct` — đó là các trường hợp đặc biệt không phải reference type thông thường.
 
-# khi nào heap lưu value type? [id:3121 order:19]
+# khi nào heap lưu value type? [id:3121 order:17]
 Khi value type là field của 1 class
 
-# stack và heap khác nhau gì? [id:2891 order:20]
+# stack và heap khác nhau gì? [id:2891 order:18]
 Stack:
     chứa value type.
     lifetime ngắn, theo hàm
@@ -75,44 +74,44 @@ Heap:
     sống lâu dài
     dung lượng nhiều
 
-# mỗi process 1 heap à? [id:3122 order:21]
+# mỗi process 1 heap à? [id:3122 order:19]
 Đúng.
 Mỗi process .NET có 1 managed heap riêng do GC quản lý. Process khác không truy cập được heap của nhau.
 
-# độ lớn giữa stack và heap? [id:2892 order:22]
+# độ lớn giữa stack và heap? [id:2892 order:20]
 Stack nhỏ — mặc định 1MB/thread trên Windows. Heap lớn — gần như giới hạn bằng RAM của process.
 
-# boxing và unboxing là gì? [id:2895 order:23]
+# boxing và unboxing là gì? [id:2895 order:21]
 Boxing: convert value type → object (wrap vào heap). Unboxing: ngược lại, lấy value type ra khỏi object.
 
-# boxing, unboxing k phổ biến phải không? [id:2896 order:24]
+# boxing, unboxing k phổ biến phải không? [id:2896 order:22]
 Đúng.
 Code hiện đại dùng generic (`List<T>`, `Dictionary<K,V>`) nên không cần wrap value type vào `object`. Boxing chỉ còn xuất hiện khi gán value type vào `object` hoặc interface non-generic.
 
-# dung lượng mặc định của stack? [id:3123 order:25]
+# dung lượng mặc định của stack? [id:3123 order:23]
 Stack: 1MB/thread trên Windows, 8MB trên Linux.
 
-# dung lượng mặc định của Heap? [id:3124 order:26]
+# dung lượng mặc định của Heap? [id:3124 order:24]
 khoảng vài GB
 gần bằng RAM ảo của process
 
-# IDisposable và using statement dùng để làm gì? [id:2845 order:27]
+# IDisposable và using statement dùng để làm gì? [id:2845 order:25]
 `IDisposable` là interface để giải phóng tài nguyên unmanaged (file, connection, socket). `using` block tự gọi `Dispose()` khi ra khỏi scope.
 
-# tài nguyên unmanaged nghĩa là gì? [id:2846 order:28]
+# tài nguyên unmanaged nghĩa là gì? [id:2846 order:26]
 là tài nguyên do OS quản lý chứ không phải CLR — file handle, network socket, DB connection. GC không tự dọn được, phải `Dispose()`.
 
-# tài nguyên process k quản lí thì phải dispose mới dọn được phải không? [id:2847 order:29]
+# tài nguyên process k quản lí thì phải dispose mới dọn được phải không? [id:2847 order:27]
 Đúng. Tài nguyên unmanaged (file handle, socket, DB connection) do OS giữ — CLR không tự thu hồi, phải gọi `Dispose()` để OS giải phóng.
 
-# ai quản lí tài nguyên của process? [id:2848 order:30]
-OS quản lý 
+# ai quản lí tài nguyên của process? [id:2848 order:28]
+OS quản lý
 (thread, file handle, socket, memory region). Trong .NET, CLR quản lý thêm managed heap và GC — nhưng OS là tầng cuối cùng cấp phát/thu hồi.
 
-# quản lí tài nguyên nghĩa là gì?
-là cấp phát, theo dõi, và thu hồi tài nguyên. 
+# quản lí tài nguyên nghĩa là gì? [id:3321 order:29]
+là cấp phát, theo dõi, và thu hồi tài nguyên.
 
-# ai quản lí tài nguyên của thread?
+# ai quản lí tài nguyên của thread? [id:3322 order:30]
 OS quản lý thread (cấp phát, schedule, thu hồi). CLR quản lý stack content (local variable, frame) nhưng bản thân OS thread là do OS giữ.
 
 # tài nguyên của process gồm những gì? [id:2849 order:31]
@@ -149,28 +148,27 @@ khi dữ liệu nhỏ, immutable, không cần kế thừa
 
 # struct có thể lưu mutable value không? có nên lưu mutable value không? vì sao? [id:3147 order:41]
 Có thể, nhưng không nên.
-Vì struct là value type nên Sửa field trên bản copy không ảnh hưởng bản gốc, dễ gây bug. 
+Vì struct là value type nên Sửa field trên bản copy không ảnh hưởng bản gốc, dễ gây bug.
 Best practice: struct nên immutable.
 
-
-# ví dụ dùng struct phổ biến? [id:3149 order:43]
+# ví dụ dùng struct phổ biến? [id:3149 order:42]
 toạ độ, màu sắc
 
-# mutable, imutable là gì? [id:3150 order:44]
+# mutable, imutable là gì? [id:3150 order:43]
 mutable: có thể thay đổi.
 immutable: k thể thay đổi (cách dễ nhớ: im là "im ắng trọn đời")
 
-# sự khác nhau giữa struct và class? [id:3151 order:45]
+# sự khác nhau giữa struct và class? [id:3151 order:44]
 struct là value type còn class là reference type
 struct k kế thừa được
 
-# value type và reference type khác nhau thế nào khi gán/truyền? [id:3152 order:46]
+# value type và reference type khác nhau thế nào khi gán/truyền? [id:3152 order:45]
 value type: copy value
 Reference type: copy reference
 
-# tại sao lại phân ra thành value type và reference type? [id:3153 order:47]
+# tại sao lại phân ra thành value type và reference type? [id:3153 order:46]
 để tối ưu memory và performance.
 
-# tại sao phân ra value type và reference type lại tối ưu memory và performance? [id:3154 order:48]
+# tại sao phân ra value type và reference type lại tối ưu memory và performance? [id:3154 order:47]
 vì object to lớn trên heap sẽ được DÙNG CHUNG thông qua reference -> tiết kiệm memory
 còn value type ở stack thì copy nhanh và k cần GC

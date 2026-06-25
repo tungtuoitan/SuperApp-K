@@ -22,7 +22,7 @@ A là derived class (con), B là base class (cha). Hoặc gọi A là subclass, 
 `ICollection<T>`: item có 1 value
 IDictionary: item có 2 value (key - value)
 
-# so sánh  ICollection và IDictionary ? [id:3183 order:7]
+# so sánh ICollection và IDictionary ? [id:3183 order:7]
 `ICollection`: interate nhanh
 `IDictionary`: lookup nhanh, tốn memory nhiều
 

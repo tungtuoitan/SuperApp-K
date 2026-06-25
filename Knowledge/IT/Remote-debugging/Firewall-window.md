@@ -1,4 +1,4 @@
----
+﻿---
 id: 65
 name: "Firewall-window"
 ---
@@ -127,7 +127,7 @@ Ví dụ: bạn cài phần mềm lạ ở quán cà phê → phần mềm tự 
 # Người dùng bình thường sẽ không cảm nhận được sự khác biệt? [id:592 order:36]
 Đúng. Browser, email, Zalo, YouTube đều hoạt động bình thường với cả 2 profile. Chỉ cảm nhận khi: cần share file với máy khác (cần Private) hoặc cần mở port cho server dev (cần Private để local rule có hiệu lực).
 
-# private profile thì khác gì public profile?
+# private profile thì khác gì public profile? [id:3298 order:37]
 - Private: tin tưởng mạng → firewall cho phép inbound hơn, file sharing, network discovery bật được.
 - Public: không tin mạng → firewall block inbound, ẩn máy khỏi các thiết bị khác.
 

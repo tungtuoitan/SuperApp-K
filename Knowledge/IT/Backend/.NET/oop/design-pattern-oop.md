@@ -19,24 +19,23 @@ dùng để giải quyết 1 vấn đề cụ thể: tách code (UI, logic, data
 - Behavioral patterns
 - Frontend/UI patterns (MVVM)
 
-
-# Phân biệt Kỹ thuật, Pattern, Framework? [id:2761 order:7]
+# Phân biệt Kỹ thuật, Pattern, Framework? [id:2761 order:5]
 - Kỹ thuật: cách code giải quyết vấn đề nhỏ, level 1 hàm (async/await, hash password)
 - Pattern: cách tổ chức code ở mức thiết kế (MVC, Repository, Singleton)
 - Framework: công cụ có sẵn giải quyết 1 vấn đề cụ thể (ASP.NET Core, React, EF Core)
 
-# Phân biệt Class và Object? [id:2762 order:8]
+# Phân biệt Class và Object? [id:2762 order:6]
 - Class: bản thiết kế, không có sự sống
 - Object: thực thể thật được tạo ra từ Class, sống trong bộ nhớ
 Ví von: class là bản thiết kế xe, object là chiếc xe thật.
 
-# các nghĩa của domain? [id:2763 order:9]
+# các nghĩa của domain? [id:2763 order:7]
 có 3 nghĩa:
 - Business domain: lĩnh vực mà phần mềm giải quyết (Banking, E-commerce, Healthcare)
 - Internet domain: tên định danh trên internet (google.com)
 - Code domain: nhóm logic nghiệp vụ liên quan trong codebase (HR domain, Finance domain)
 
-# Phân biệt Domain, Module, Component? [id:2764 order:10]
+# Phân biệt Domain, Module, Component? [id:2764 order:8]
 - Domain: lớn hơn feature (HR, Finance)
 - Module: là feature (HRListPage, RFDList)
 - Component: 1 phần của feature (HRGrid, Filter, Pagination)
