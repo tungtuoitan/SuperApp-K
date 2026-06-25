@@ -3,7 +3,7 @@ id: 317
 name: "kestrel-reverse-proxy"
 ---
 
-# Kestrel là gì? [id:2770 order:1]
+# Kestrel là gì? [id:2770 order:1 atts:1]
 là HTTP server mặc định của ASP.NET Core, được Microsoft viết tối ưu cho .NET.
 
 # ý nghĩa tên kestrel? [id:2843 order:2]
