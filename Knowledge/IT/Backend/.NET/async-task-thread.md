@@ -3,8 +3,8 @@ id: 320
 name: "async-task-thread"
 ---
 
-<!--# khi nào nên dùng async/await? [id:2811 order:1]
-Khi method có I/O (DB query, HTTP call, file). Không nên dùng cho CPU-bound work — sẽ không có lợi. -->
+# khi nào nên dùng async/await? [id:2811 order:1]
+Khi method có I/O (DB query, HTTP call, file).
 
 # cứ có IO là luôn nên dùng await phải không? [id:2812 order:2]
 Gần như đúng cho server-side. IO async giúp thread không bị block, server xử lý được nhiều request đồng thời. Trừ trường hợp IO rất ngắn hoặc app tool một thread.
@@ -12,11 +12,11 @@ Gần như đúng cho server-side. IO async giúp thread không bị block, serv
 # lợi ích của async khi dùng cho IO? [id:2813 order:3]
 Thread không bị block khi chờ IO → trả về thread pool để xử lý request khác. Server cùng số thread phục vụ được nhiều request hơn → throughput cao.
 
-<!--# khi nào nên dùng Task? [id:2814 order:4]
-Khi cần chạy work đồng thời/bất đồng bộ — IO async, parallel processing, hoặc compose nhiều operation. Mặc định nên dùng Task thay vì Thread. -->
+# khi nào nên dùng Task.Run? [id:2814 order:4]
 
-<!--# Task liên quan gì đến async? [id:2815 order:5]
-`async` method trong C# trả về Task. Task đại diện cho công việc đang/sẽ hoàn thành — `await` task để chờ kết quả mà không block thread. -->
+
+# Task type liên quan gì đến async? [id:2815 order:5]
+`async` method trong C# trả về Task.
 
 # khi nào nên dùng Thread? [id:2816 order:6]
 Hiếm khi. Chỉ khi cần kiểm soát thấp như set priority, dùng `ThreadStatic`, hoặc tích hợp legacy API. Còn lại dùng Task.
@@ -24,23 +24,21 @@ Hiếm khi. Chỉ khi cần kiểm soát thấp như set priority, dùng `Thread
 # CPU-bound work là gì? [id:2817 order:7]
 là công việc tốn CPU để tính toán — encrypt, parse, image processing, machine learning. Đối ngược với IO-bound (chờ DB/network/file).
 
-<!--# bound nghĩa là gì? [id:2818 order:8]
-là "bị giới hạn bởi". CPU-bound = bị giới hạn bởi tốc độ CPU; IO-bound = bị giới hạn bởi tốc độ IO (DB, network, disk). -->
+# bound nghĩa là gì? [id:2818 order:8]
 
-<!--# Task và Thread khác nhau thế nào? [id:2819 order:9]
-Thread là đơn vị OS thực sự, tốn tài nguyên. Task là abstraction cao hơn, nhiều Task chạy trên ít thread qua thread pool — nhẹ hơn và dễ compose hơn. -->
+# Task và Thread khác nhau thế nào? [id:2819 order:9]
+Thread là đơn vị OS thực sự, tốn tài nguyên. 
+Task là abstraction của Thread, Task tốn thread pool.
 
-<!--# abstraction cao hơn nghĩa là gì? cho ví dụ phổ biến [id:2820 order:10]
-là layer ẩn đi chi tiết của layer dưới, dev dùng API đơn giản hơn. Ví dụ: Task ẩn Thread, EF Core ẩn SQL, HttpClient ẩn TCP socket. -->
+# "abstraction cao hơn" nghĩa là gì? cho ví dụ phổ biến [id:2820 order:10]
+là layer nằm trên, ẩn đi chi tiết của layer bên dưới
+Ví dụ: Task ẩn Thread, EF Core ẩn SQL, HttpClient ẩn TCP socket.
+# abstraction có những nghĩa nào, là loại từ gì? [id:2821 order:11]
 
-<!--# abstraction có những nghĩa nào? [id:2821 order:11]
-- Trong code: che giấu chi tiết, phơi interface đơn giản (Task, ORM, HttpClient)
-- Trong thiết kế: vẽ kiến trúc ở level cao, bỏ qua implementation detail
-- Trong OOP: `abstract class`, `abstract method` — khai báo mà không implement -->
-
-<!--# đơn vị OS là gì? [id:2822 order:12]
-là tài nguyên thực do OS cấp phát và quản lý — process, thread, file handle, socket. -->
-
+# đơn vị OS là gì? [id:2822 order:12]
+là tài nguyên thực do OS cấp phát và quản lý
+# tài nguyên OS là gì?
+ — process, thread, file handle, socket.
 # abstraction nghĩa là gì? [id:2823 order:13]
 là che giấu chi tiết phức tạp bên dưới, chỉ phơi ra interface đơn giản. Task abstract Thread, ORM abstract SQL.
 
@@ -73,88 +71,103 @@ Riêng interface member mặc định `public`.
 # string dạng này gọi là gì? $"{x}-abc"; [id:2956 order:21]
 là string interpolation
 
-<!--# các keyword phổ biến trước 1 biến/hàm? [id:2957 order:22]
-`public`, `private`, `protected`, `internal`
-`static`, `readonly`, `const`, `virtual`, `override`, `abstract`, `sealed`
-`async`, `await`, `volatile`
-`ref`, `out`, `in`, `params`
+# các modifier phổ biến? [id:2957 order:22]
+
 # async/await dùng để làm gì? [id:2897 order:14]
-để io mà k tốn thread
-# ngoài hoạt động IO thì await còn dùng làm gì nữa? [id:2898 order:15]
-- Đợi CPU-bound task chạy trên thread khác (`await Task.Run(...)`)
-- Đợi delay/timer (`await Task.Delay(...)`)
-- Đợi nhiều task song song hoàn tất (`await Task.WhenAll(...)`)
-- Đợi user cancel (`await tcs.Task` với `CancellationToken`)
+để tránh lãng phí thread
+
+# await dùng với CPU-bound task có phổ biến không? cho ví dụ
+
 # hoạt động IO là gì?
 là thao tác đọc/ghi dữ liệu ngoài CPU
+
 # làm sao để biết được dùng await có lợi hơn là không dùng? vì dùng await thì phải tốn tài nguyên cho context switch
 Rule of thumb: nếu await > vài chục micro giây thì đáng dùng await.
+
 # mỗi process có 1 thread pool phải không? [id:2899 order:16]
 Đúng.
 .NET runtime tạo 1 `ThreadPool` mặc định cho mỗi process — share cho tất cả Task, async/await, `Task.Run`.
-# Task.Run là gì?
-là API để đẩy 1 đoạn code chạy trên thread pool, trả về `Task` để await. Dùng khi muốn offload CPU-bound work khỏi thread hiện tại.
+
+# chức năng của Task.Run?
+ đẩy 1 đoạn code chạy trên thread pool
+ , trả về `Task` để await. Dùng khi muốn offload CPU-bound work khỏi thread hiện tại.
+
+# ví dụ phổ biến dùng Task.Run?
+
 # thread nào chạy main code?
 Main thread
+# khi nào main thread exist?
+
 # khi nào pool.thread được dùng?
 khi gọi `Task.Run`, `await`, ...
+
 # task.run tạo task mới à?
 Đúng.
+
 `Task.Run(...)` tạo 1 Task mới, schedule nó lên thread pool và return Task object để caller có thể await hoặc chờ kết quả.
+# khi await IO trả về Task type nhưng thật sự nó đâu tạo ra Task trong queue đâu nhỉ?
+
 # await nghĩa là gì?
-- nhận 1 task đã có
-- pause hàm hiện tại,
-- trả thread về pool.
-- Khi task xong, runtime resume hàm tại đúng chỗ `await`.
+
+
 # thread A chạy hàm a, trong a có await Task b thì b được chạy bởi thread nào?
 Tùy task b.
 Nếu b là `Task.Run(...)` → 1 pool thread khác (không phải A). Nếu b là I/O async (`HttpGet`, `DbQuery`) → không thread nào chạy cả, chỉ kernel I/O xử lý; khi xong, runtime mới lấy 1 pool thread (có thể chính là A) để resume hàm a sau `await`.
-# Kernel nghĩa là gì?
-là phần lõi của OS
-chạy ở chế độ đặc quyền (kernel mode), trực tiếp quản lý CPU, RAM, disk, network card. App code chạy ở user mode, muốn dùng phần cứng phải gọi kernel qua syscall.
+
+# Kernel là gì? nó là phần mềm à?
+
 # ý nghĩa của tên Kernel?
-"Kernel" tiếng Anh nghĩa là "hạt nhân", "lõi" — như nhân của hạt quả. Đặt tên vậy vì nó là phần lõi cốt yếu của OS, mọi thứ khác (shell, app, driver) bao quanh và phụ thuộc vào nó.
+"Kernel" tiếng Anh nghĩa là "hạt nhân", "lõi" — như nhân của hạt quả. 
+Đặt tên vậy vì nó là phần lõi cốt yếu của OS, mọi thứ khác (shell, app, driver) bao quanh và phụ thuộc vào nó.
+
 # Kernel xử lí toàn bộ hoạt động I/O phải không?
 Đúng.
 App gọi I/O (đọc file, gửi packet) → syscall → kernel giao việc cho driver/hardware. Trong khi hardware xử lý, app thread không cần đợi (với async I/O), kernel sẽ notify khi xong.
 # I/O có tạo task không?
-Có ở mức .NET API. `File.ReadAllTextAsync` trả về 1 `Task<string>`, nhưng task này KHÔNG chiếm thread — nó chỉ là cái "phiếu chờ" runtime tạo ra. Khi kernel báo I/O xong, runtime mới complete task và resume code sau await.
+Có 
+`File.ReadAllTextAsync` trả về 1 `Task<string>`, nhưng task này KHÔNG chiếm thread — nó chỉ là cái "phiếu chờ" runtime tạo ra. Khi kernel báo I/O xong, runtime mới complete task và resume code sau await.
+# I/O Task có tốn thread không?
+
 # mọi I/O đều tạo ra Task nhưng k tốn thread phải không?
-Đúng với I/O async (`xxxAsync` API). Task chỉ là "phiếu chờ", kernel + driver xử lý ngầm bằng IOCP/epoll. I/O sync (vd `File.ReadAllText`) thì khác — block thread cho tới khi xong, không tạo task.
+Đúng 
+Task chỉ là "phiếu chờ", kernel + driver xử lý ngầm bằng IOCP/epoll. I/O sync (vd `File.ReadAllText`) thì khác — block thread cho tới khi xong, không tạo task.
+
 # hàm async luôn tạo ra Task mới à?
 Đúng.
 Compiler tự wrap body hàm `async` thành state machine và return về `Task`/`Task<T>`. Caller dùng task đó để await hoặc chờ kết quả.
 # task.run giống gì trong js?
-Gần giống `Promise` kết hợp với offload sang Web Worker. JS không có thread pool sẵn nên không có analog 1-1 — `setTimeout(fn, 0)` chỉ defer chứ không chạy thread khác.
+Gần giống `Promise` 
+kết hợp với offload sang Web Worker. JS không có thread pool sẵn nên không có analog 1-1 — `setTimeout(fn, 0)` chỉ defer chứ không chạy thread khác.
+
+# sự khác nhau của task.run và promise trong js?
+
 # offload là gì?
-là chuyển công việc từ chỗ hiện tại sang chỗ khác để giải phóng tài nguyên. Trong .NET: offload = đẩy code từ thread đang chạy (vd UI thread, request thread) sang thread khác (thường là pool).
-# cho ví dụ offload
-- ASP.NET: request handler offload công việc nặng (parse file, tính toán) sang pool để giải phóng request thread sớm
-# giải thích ví dụ trên đi, tôi k hiểu, tại sao lại giải phóng request thread sớm khi công việc nặng đó vẫn tốn thời gian để hoàn thành mà phải không?
-Server có pool request thread giới hạn (vd 100). Mỗi request chiếm 1 thread. Nếu thread bị block 5 giây để parse file → 5 giây đó pool bớt 1 thread, request mới phải chờ. Offload sang pool khác (hoặc await I/O) → trả thread request về sớm, pool nhận thêm request mới. Công việc nặng vẫn tốn thời gian, nhưng chạy SONG SONG ở thread khác — không chặn request thread.
+là chuyển công việc từ chỗ hiện tại sang chỗ khác 
+Trong .NET: offload = đẩy code từ thread đang chạy (vd UI thread, request thread) sang thread khác (thường là pool).
+# mục đích offload ?
+# cho ví dụ offload (kèm code)
+
 # chỉ offload được khi không await phải không? vì khi có await thì phải đợi xong thì thread mới chạy tiếp được
 Ngược lại. Chính `await` mới là offload — `await` không block thread, nó trả thread về pool, đợi xong mới lấy thread khác chạy tiếp. Nếu KHÔNG await mà gọi blocking → thread bị giữ suốt thời gian chờ, không offload được.
-# nếu thread a chạy hàm A và trong A gọi await B, và B lại tốn 1 thread thì việc dùng await B sẽ k có ý nghĩa vì k giúp tiết kiệm thread có phải không?
-Đúng
-nếu B là CPU-bound chạy trên pool. Tổng thread vẫn tốn 1 (a được trả về pool, b chiếm 1 thread khác). Lợi nằm ở chỗ giải phóng đúng thread a (request/UI), còn pool thread thì không quý bằng. Với I/O async thì khác — B không tốn thread nào, mới là tiết kiệm thật.
-# trường hợp thì dùng await k mang lại lợi ích?
-- Khi task được await đã hoàn tất ngay (synchronous result, vd cache hit) → await chỉ thêm overhead state machine, không tiết kiệm thread.
-- Hoặc trong console/desktop app 1 user — không có nhiều request song song, throughput không phải vấn đề, await chỉ thêm phức tạp.
+# dùng await tức là offload phải không?
+# offload là loại từ gì? cho ví dụ câu phổ biến?
+
 # khi ta offload sang 1 thread b thì giải phóng thread a nhưng lại tốn b, thì nó có lợi hơn chỗ nào nhỉ?
-Lợi khi a là thread đặc biệt (UI thread, request thread) còn b là pool thread thường. UI thread block thì app freeze, request thread block thì nghẽn server. Pool thread block thì pool tự co giãn — ít hại hơn. Với I/O async thì còn lợi hơn nữa: không cần thread b nào cả, chỉ kernel xử lý.
+Lợi khi:
+1. a là thread đặc biệt (UI thread, request thread) còn b là pool thread thường. 
+UI thread block thì app freeze, request thread block thì nghẽn server. Pool thread block thì pool tự co giãn — ít hại hơn. 
+2. hoạt động là I/O async: không cần thread b nào cả, chỉ kernel xử lý.
 # request thread chính là thread trong pool phải không?
 Đúng trong ASP.NET Core.
 Kestrel nhận request → đẩy vào thread pool, 1 pool thread bốc lên chạy handler. Không có pool riêng cho request — chung pool với mọi Task khác.
 # dùng await chính là offload phải không?
 Gần đúng.
 `await` offload theo nghĩa "trả thread hiện tại về pool". Còn task được await thì chạy ở đâu (pool thread, kernel I/O) là việc của runtime/task đó.
+# mỗi khi await thì thread hiện tại luôn được giải phóng có phải không?
 # mỗi request đến server tương ứng 1 task à?
 Đúng trong ASP.NET Core.
 Mỗi HTTP request → 1 task chạy trên 1 pool thread. Khi handler `await`, thread được trả về pool, đến khi await xong runtime lấy thread khác (có thể cùng) chạy tiếp.
-# await trong .NET khác gì trong js?
-JS chỉ có 1 main thread (event loop) — `await` luôn quay lại đúng thread đó. .NET có nhiều thread thật — `await` có thể tiếp tục trên thread khác trong pool, trừ khi có `SynchronizationContext` (UI app) bắt quay lại thread cũ.
-trong js: await xong thì luôn quay lại main thread để chạy tiếp
-trong .NET: await xong thì pool trỏ tới thread bất kì để chạy tiếp -->
+
 
 # Thread .NET có liên hệ gì với OS thread? [id:2900 order:23]
 Quan trọng với UI app. WPF/WinForms chỉ cho update UI từ UI thread — nếu await xong nhảy sang thread khác, code update UI sẽ throw exception. ASP.NET Core và console app không có ràng buộc này nên chạy thread nào cũng được, lợi cho throughput.

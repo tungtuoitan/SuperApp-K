@@ -24,11 +24,10 @@ Khối lượng công việc (CPU, RAM, IO) mà 1 process phải xử lý trong 
 # deamon on-demand là gì, cho ví dụ? [id:2673 order:6]
 Daemon chỉ chạy khi có trigger sự kiện, xong thì idle hoặc tắt — không chạy liên tục theo schedule. Ví dụ: daemon export Excel khởi chạy khi user click nút export, hoàn tất thì kết thúc.
 
-<!--# deamon k phải chạy liên tục à, có thể dùng trigger à? [id:2674 order:7]
-Đúng. Daemon truyền thống chạy liên tục để chờ event, nhưng kiểu on-demand thì khởi tạo theo trigger và tắt sau khi xong. Cả hai đều là daemon vì chạy ngầm, không có UI. -->
 
-<!--# nếu vậy thì deamon khác job thế nào? [id:2675 order:8]
-Daemon là process chạy nền, là chủ thể thực thi. Job là đơn vị công việc rời rạc, là cái được thực thi. Một daemon có thể chạy nhiều job khác nhau theo thời gian. -->
+# deamon khác job thế nào? [id:2675 order:8]
+Daemon là process, 
+Job là 1 công việc bên trong deamon. 
 
 # deamon là gì? [id:3059 order:9]
 -Daemon là process chạy nền, giữ runtime — chủ thể thực thi (như host nuôi function).
@@ -71,8 +70,6 @@ Lớp execution engine chạy code của ngôn ngữ — cung cấp GC, JIT, typ
 - Host: lớp app cấp, orchestrate các service/component bên trong runtime (IHost trong .NET)
 Layer xếp từ ngoài vào: OS → Process → Runtime → Host → App code.
 
-<!--# cần cpu/ram riêng có nghĩa là gì? [id:2685 order:20]
-Daemon chiếm tài nguyên đủ lớn để ảnh hưởng tới process khác cùng máy. Ví dụ daemon chạy ML inference ngốn 100% CPU sẽ làm API cùng process chậm theo. Tách ra cho mỗi cái có ngân sách riêng. -->
 
 # mặc định tài nguyên cấp cho 1 process là k giới hạn phải không? [id:2686 order:21]
 Đúng. OS không cap CPU/RAM cho 1 process trừ khi có cấu hình (cgroup, container limit, job object). Mặc định các process cạnh tranh tài nguyên với nhau — process nào ngốn nhiều thì process khác bị chậm.
