@@ -1,4 +1,4 @@
-﻿---
+---
 id: 65
 name: "Firewall-window"
 ---
@@ -38,9 +38,9 @@ Group Policy Object — cơ chế quản lý cấu hình Windows tập trung. IT
 # WiFi profile là gì? [id:565 order:10]
 Windows gán một "network profile" cho mỗi mạng WiFi đã từng kết nối: **Public**, **Private**, hoặc **Domain**. Profile xác định mức độ tin cậy → ảnh hưởng đến bộ firewall rules nào được áp dụng.
 
-<!--# Ý nghĩa của Private/Public trong WiFi profile? [id:566 order:11]
-- **Private** = mạng tin cậy, mình kiểm soát (nhà, văn phòng) → firewall thoáng hơn, local rules có hiệu lực.
-- **Public** = mạng công cộng (quán cà phê, sân bay) → firewall strict hơn, ẩn máy khỏi network discovery. -->
+# Ý nghĩa của Private/Public trong WiFi profile? [id:566 order:11]
+- **Private** = mạng riêng tư -> tin cậy > cho dùng local rules
+- **Public** = mạng công cộng > k đáng tin > tắt local rule
 
 # Các lợi ích cụ thể mà Public/Private profile mang lại? [id:567 order:12]
 **Private**: local firewall rules có hiệu lực (mở port cho dev), máy hiện trong Network Explorer, có thể share file/printer với máy khác.
@@ -127,8 +127,9 @@ Ví dụ: bạn cài phần mềm lạ ở quán cà phê → phần mềm tự 
 # Người dùng bình thường sẽ không cảm nhận được sự khác biệt? [id:592 order:36]
 Đúng. Browser, email, Zalo, YouTube đều hoạt động bình thường với cả 2 profile. Chỉ cảm nhận khi: cần share file với máy khác (cần Private) hoặc cần mở port cho server dev (cần Private để local rule có hiệu lực).
 
-<!--# Tại sao profile Private cho phép local rule còn Public thì không? [id:593 order:37]
-Windows thiết kế theo mức tin cậy: Private = mạng nhà/văn phòng → tin cậy → local rules được đọc. Public = quán cà phê → không tin cậy → GPO tắt local rules để bảo vệ người dùng khỏi vô tình mở port nguy hiểm. -->
+# private profile thì khác gì public profile?
+- Private: tin tưởng mạng → firewall cho phép inbound hơn, file sharing, network discovery bật được.
+- Public: không tin mạng → firewall block inbound, ẩn máy khỏi các thiết bị khác.
 
 # Test từ laptop thành công nhưng phone vẫn không reach được — tại sao? [id:594 order:38]
 Test từ laptop tới chính laptop (`127.0.0.1`) bypass firewall inbound rules — traffic là loopback, không bị check. Phone là external device với IP khác → bị chặn bởi firewall inbound.
@@ -151,6 +152,3 @@ Inbound = traffic đi **vào** máy (từ bên ngoài vào). Outbound = traffic 
 
 # Đổi WiFi từ Public → Private có ý nghĩa gì với dev? [id:600 order:44]
 Profile Private cho phép local firewall rules có hiệu lực — rule "SuperApp BE 5000" sẽ được đọc và connection từ phone được allow. Đây là bước cần thiết khi debug mobile qua WiFi IP.
-
-<!--# Thường thì Public profile sẽ tắt local rule? [id:601 order:45]
-Không phải "thường". Chỉ xảy ra khi máy **join Windows Domain** và IT admin cấu hình GPO `LocalFirewallRules: N/A`. Máy cá nhân không join domain → Public profile vẫn cho phép local rules. Trường hợp của mình bị chặn là vì máy đang trong môi trường domain có GPO đó. -->

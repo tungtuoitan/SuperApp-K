@@ -18,14 +18,11 @@ Không.
 # VPN có cần internet để hoạt động không? [id:416 order:5]
 Có.
 
-<!--# VPN tunnel là gì? [id:417 order:6]
-VPN tunnel là kết nối mã hóa giữa client và VPN server. -->
+# VPN tunnel là gì? [id:417 order:6]
+là bọc data lại trước khi gửi đi
 
 # vpn tunnel cụ thể là gì? [id:2927 order:7]
 là kênh truyền ảo giữa client và VPN server. Mỗi packet gốc được bọc thêm header mới và mã hóa, rồi gửi qua internet — người ngoài chỉ thấy gói mã hóa, không đọc được nội dung bên trong.
-
-<!--# tunnel là bọc thêm header và mã hoá packet phải không? [id:2928 order:8]
-Đúng. Tunnel = encapsulation + encryption: bọc packet gốc vào packet mới (header mới có IP của VPN server), rồi mã hóa toàn bộ payload bên trong. -->
 
 # VPN dùng để làm gì? [id:418 order:9]
 ẩn danh

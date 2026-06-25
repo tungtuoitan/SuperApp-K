@@ -6,10 +6,8 @@ name: "abstract"
 # khi nào dùng abstract keyword? [id:2985 order:1]
 Khi muốn class/member làm khuôn chung nhưng bắt class con tự implement chi tiết, và không cho phép tạo instance trực tiếp.
 
-<!--# chức năng của abstract keyword? [id:2986 order:2]
-- chặn dev tạo instance
-- bắt dev tự implement ở class con
-- đánh dấu 1 class/member là "template" -->
+# lí do abstract keyword tồn tại? [id:2986 order:2]
+- giúp triển khai abstraction
 
 # abstract class tương tự interface có phải không? [id:2987 order:3]
 Đúng.
@@ -35,9 +33,6 @@ concrete class.
 # concrete class là gì? [id:2994 order:10]
 là class thường, không có từ khoá `abstract`.
 
-<!--# tạo abstract và implement từ abstract, và implement trực tiếp luôn, 2 cách này gọi là gì? [id:2995 order:11]
-Cách qua abstract gọi là abstraction (một trong 4 nguyên lý OOP). Cách viết thẳng gọi là concrete class — không có lớp trừu tượng ở giữa. -->
-
 # abstraction là abstract class à? [id:2996 order:12]
 Không.
 
@@ -59,14 +54,10 @@ Không hẳn. Ngoài việc cấm khởi tạo, abstract class còn cho phép ch
 # abstract class có thể chứa code phải không? [id:3002 order:18]
 Đúng.
 
-<!--# abstract có thể dùng trong mọi class phải không? [id:3003 order:19]
-hầu hết là thế. -->
+# abstract k thể dùng với class nào? tại sao? [id:3004 order:20]
+sealed và static class.
+vì seal và static ngăn k cho kế thừa
 
-<!--# abstract k thể dùng trong class nào? [id:3004 order:20]
-sealed và static class. -->
-
-<!--# tại sao abstract không được dùng trong static class? [id:3005 order:21]
-vì abstract class được dùng cho mục đích kế thừa, còn static class thì lại k cho kế thừa -> mâu thuẫn mục đích. -->
 
 # abstract có thể dùng cho mọi member có phải không? [id:3006 order:22]
 Không.

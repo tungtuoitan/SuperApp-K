@@ -1,4 +1,4 @@
-﻿---
+---
 id: 328
 name: "concepts"
 ---
@@ -14,6 +14,3 @@ Không. `pseudo-` (Hy Lạp, nghĩa "giả") khác `sudo` (viết tắt "superus
 
 # rule of thumb là gì? [id:2983 order:4]
 là quy tắc kinh nghiệm — đúng trong đa số trường hợp nhưng không tuyệt đối. Dùng làm điểm xuất phát, gặp ngoại lệ thì điều chỉnh.
-
-<!--# literal là gì? [id:2984 order:5]
-Xem `Knowledge/IT/Backend/.NET/oop/class-basics.md`. -->

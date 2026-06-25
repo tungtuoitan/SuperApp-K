@@ -1,4 +1,4 @@
-﻿---
+---
 id: 324
 name: "memory-resources"
 ---
@@ -24,9 +24,9 @@ Stack chứa local variable kiểu value type (`int`, `struct`) và reference (c
 là 1 ô nhớ chứa địa chỉ của 1 object.
 Trong .NET ẩn đi dưới dạng "reference" — bạn không thấy địa chỉ trực tiếp.
 
-<!--# reference là gì? [id:3109 order:7]
-là con trỏ
-Reference trong .NET là 1 con trỏ tới object trên heap, nhưng được runtime quản lý — không cho phép arithmetic như C/C++. -->
+# reference là gì? [id:3109 order:7]
+là địa chỉ ô nhớ
+Reference trong .NET là 1 con trỏ tới object trên heap, nhưng được runtime quản lý — không cho phép arithmetic như C/C++.
 
 # trong văn nói, con trỏ, reference, địa chỉ là 1 phải không? [id:3110 order:8]
 Gần như vậy.
@@ -54,17 +54,9 @@ Local variable là biến khai báo trong body của 1 method/function, sống t
 Trong 1 vùng riêng của heap
 trong 1 vùng riêng gọi là "high frequency heap" hoặc "loader heap" của AppDomain. Sống suốt vòng đời process, không bị GC dọn theo cách object thường.
 
-<!--# khi nào stack lưu reference type? [id:3117 order:15]
-Khi reference đó là local variable: bản thân con trỏ ở stack, object thật vẫn ở heap. -->
 
-<!--# con trỏ được lưu ở đâu? [id:3118 order:16]
-lưu trong stack/heap Tùy ngữ cảnh.
-Nếu là local reference variable → lưu ở stack.
-Nếu là field reference của 1 object → lưu inline trong object đó trên heap. -->
-
-<!--# khi biến local là refernece type, thì biến được lưu trực tiếp trong stack k cần con trỏ luôn à? [id:3119 order:17]
-Không.
-object vẫn ở heap, stack chỉ chứa con trỏ trỏ tới nó. -->
+# khi biến local là refernece type thì nó được lưu thế nào? [id:3119 order:17]
+stack lưu con trỏ, heap lưu object
 
 # reference type luôn luôn được lưu trong heap phải không? [id:3120 order:18]
 Hầu hết là vậy
@@ -113,15 +105,20 @@ là tài nguyên do OS quản lý chứ không phải CLR — file handle, netwo
 # tài nguyên process k quản lí thì phải dispose mới dọn được phải không? [id:2847 order:29]
 Đúng. Tài nguyên unmanaged (file handle, socket, DB connection) do OS giữ — CLR không tự thu hồi, phải gọi `Dispose()` để OS giải phóng.
 
-<!--# toàn bộ tài nguyên của process là do CLR quản lí à? [id:2848 order:30]
-Không. CLR chỉ quản managed memory (object trên heap). Tài nguyên unmanaged như file/socket do OS giữ, CLR không động vào. -->
+# ai quản lí tài nguyên của process? [id:2848 order:30]
+OS quản lý 
+(thread, file handle, socket, memory region). Trong .NET, CLR quản lý thêm managed heap và GC — nhưng OS là tầng cuối cùng cấp phát/thu hồi.
 
-<!--# tài nguyên của process gồm những gì? [id:2849 order:31]
-- Memory (heap, stack)
-- File handle, socket, DB connection
-- Thread, timer
-- Lock, mutex, semaphore
-- Environment variables, working dir -->
+# quản lí tài nguyên nghĩa là gì?
+là cấp phát, theo dõi, và thu hồi tài nguyên. 
+
+# ai quản lí tài nguyên của thread?
+OS quản lý thread (cấp phát, schedule, thu hồi). CLR quản lý stack content (local variable, frame) nhưng bản thân OS thread là do OS giữ.
+
+# tài nguyên của process gồm những gì? [id:2849 order:31]
+- rot:
+- Memory
+- Thread
 
 # heap là tài nguyên của runtime à? [id:2850 order:32]
 Đúng (managed heap). CLR cấp phát và quản managed heap, dùng để chứa object. GC quét heap này để dọn rác.
@@ -152,10 +149,9 @@ khi dữ liệu nhỏ, immutable, không cần kế thừa
 
 # struct có thể lưu mutable value không? có nên lưu mutable value không? vì sao? [id:3147 order:41]
 Có thể, nhưng không nên.
-Vì struct là value type — khi gán hoặc truyền vào method, nó bị copy. Sửa field trên bản copy không ảnh hưởng bản gốc, dễ gây bug khó debug. Best practice: struct nên immutable.
+Vì struct là value type nên Sửa field trên bản copy không ảnh hưởng bản gốc, dễ gây bug. 
+Best practice: struct nên immutable.
 
-<!--# struct k nên mutable, vậy tại sao biến thông thường thì có thể mutable? [id:3148 order:42]
-vì biến thông thường (reference type, class) khi gán/truyền là copy reference — sửa qua reference nào cũng thấy đổi trên cùng 1 object. Còn struct bị copy giá trị, sửa bản copy không đụng bản gốc → mutable struct tạo ảo giác đã sửa nhưng thật ra chưa. -->
 
 # ví dụ dùng struct phổ biến? [id:3149 order:43]
 toạ độ, màu sắc

@@ -1,4 +1,4 @@
-﻿---
+---
 id: 63
 name: "Networking-basic"
 ---
@@ -27,20 +27,63 @@ Thường thì không — nhà thường dùng thiết bị combo modem+router t
 # Adapter là gì? [id:511 order:8]
 Phần cứng hoặc phần mềm giúp kết nối 2 thứ có giao diện khác nhau. Network adapter = card mạng, cho phép máy tính kết nối vào mạng.
 
-<!--# Card mạng là gì? Có phải card vật lý không? [id:512 order:9]
-Card mạng (NIC) thường là phần cứng vật lý gắn trong máy. Nhưng cũng có card mạng ảo: loopback (`127.0.0.1`), VPN adapter, Docker bridge — không có phần cứng vật lý tương ứng. -->
 
-<!--# interface có phải là adapter không? [id:2805 order:10]
-Không hẳn. Adapter là phần cứng/phần mềm nối 2 hệ thống khác giao diện. Interface là điểm kết nối logic mà OS expose ra để gửi/nhận packet. Mỗi adapter thường tạo ra 1 interface tương ứng. -->
+# lí do driver tồn tại?
+để OS có thể nói chuyện được với NIC
 
-<!--# quan hệ giữa adapter và interface? [id:2806 order:11]
-Adapter là tầng dưới (NIC vật lý hoặc driver ảo). Interface là tầng trên — abstraction OS dùng, có IP/MAC/route. 1 adapter = 1 interface trong hầu hết trường hợp. -->
+# lí do card mạng tồn tại?
+để kết nối máy tính vào mạng
+
+# hoạt động của card mạng?
+Nhận dữ liệu số từ OS 
+→ chuyển thành tín hiệu điện (Ethernet) hoặc sóng radio (WiFi) 
+→ truyền ra mạng. 
+
+# Network Interface là gì?
+là 1 struct chứa: IP address, MAC address, routing entry. 
+
+
+# chuyện gì xảy ra khi App gửi data đi?
+Chrome gọi socket.Send(data)
+OS chọn Interface và xác định adapter tương ứng
+Adapter.Send(packet)
+Driver chuyển lệnh trên thành lệnh mà NIC hiểu được
+NIC truyền dữ liệu vật lí ra ngoài
+
+# tại sao máy có nhiều network interface?
+vì máy có thể có nhiều đường ra mạng khác nhau
+
+# quan hệ Interface và wifi, ethernet?
+interface là abstract của 1 điểm tham gia vào mạng cụ thể
+còn wifi, ethernet là các điểm tham gia vào mạng
+
+# quan hệ giữa Adapter và NIC?
+Adapter là abstract của NIC
+
+# quan hệ giữa Interface và Adapter?
+Interface là abstract của Adapter
+
+
+# ví dụ điểm tham gia vào mạng?
+wifi, vpn, loopback, ethernet
 
 # Network interface là gì? [id:513 order:12]
 Điểm kết nối của máy vào mạng. Mỗi interface có: địa chỉ IP, MAC address, và driver. Gồm: WiFi adapter, Ethernet adapter, Loopback, VPN adapter... Mỗi cái có IP riêng.
 
-# `localhost` tương ứng với IP gì? [id:514 order:13]
-`127.0.0.1`. Đây là mapping cố định trong file `hosts` của hệ điều hành — không cần DNS.
+
+# lí do network interface tồn tại?
+giúp App gửi request dễ dàng, với mọi loại NIC
+
+# cho ví dụ abstraction tương tự Network Interface/Adapter?
+File System Interface là abstract của các ổ cứng
+Task là abstract của Thread
+
+# tại sao có driver rồi mà vẫn cần adapter?
+Driver giúp OS nói chuyện với NIC (tầng hardware). 
+Adapter là object đại diện NIC  (tầng software)
+# adapter là gì?
+- là struct/object đại diện cho 1 NIC
+
 
 # `127.0.0.1` có phải là IP không? [id:515 order:14]
 Có, là một địa chỉ IPv4 đầy đủ. Thuộc dải `127.0.0.0/8` dành riêng làm loopback — mọi địa chỉ trong dải này đều trỏ về chính máy.
