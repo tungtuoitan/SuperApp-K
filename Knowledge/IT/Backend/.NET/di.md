@@ -1,4 +1,4 @@
-﻿---
+---
 id: 322
 name: "di"
 ---
@@ -6,11 +6,12 @@ name: "di"
 # dependency injection là gì? [id:2829 order:1]
 là 1 pattern
 
-<!--# Dependency Injection | DI là gì? [id:2830 order:2]
-là kỹ thuật giúp 1 object nhận các dependency từ bên ngoài thay vì tự tạo. Hầu hết framework backend hiện nay đều có DI built-in. -->
+# DI là gì? [id:2830 order:2]
+là kỹ thuật giúp tránh coupling
 
-<!--# Dependency là gì? [id:2831 order:3]
-là 1 object mà class cần để hoạt động. Ví dụ: `UserService` cần `EmailSender` → `EmailSender` là dependency của `UserService`. -->
+# DI là pattern hay kĩ thuật ? vì sao?
+Vừa là pattern vừa là technique. 
+Pattern ở chỗ nó mô tả cách tổ chức dependency. Technique ở chỗ nó là cách code cụ thể.
 
 # DI có phải là technique không? [id:2832 order:4]
 Có. DI vừa là pattern (cách tổ chức) vừa là technique (cách code).
@@ -21,10 +22,9 @@ Có. DI vừa là pattern (cách tổ chức) vừa là technique (cách code).
 - Khó test vì không thể inject mock
 - Khó bảo trì, mở rộng
 
-<!--# DI giải quyết vấn đề gì? [id:2834 order:6]
-- Tight coupling: class tự `new` dependency
-- Khó test: không inject được mock
-- Khó thay đổi: muốn đổi implementation phải sửa nhiều chỗ -->
+# DI giải quyết vấn đề gì? [id:2834 order:6]
+- Tight coupling
+
 
 # singleton, scoped, transient là gì? [id:2835 order:7]
 là 3 lifetime của service trong DI container — quy định khi nào instance được tạo mới.
@@ -38,11 +38,6 @@ là 3 lifetime của service trong DI container — quy định khi nào instanc
 - `Singleton`: vòng đời giống app.
 - `Scoped`: vòng đời giống request.
 - `Transient`: vòng đời giống hàm dùng nó
-
-<!--# DI có phải vừa là pattern vừa là technique không? vì sao? [id:3141 order:10]
-Đúng.
-Là pattern vì nó mô tả 1 giải pháp design (truyền dependency từ ngoài).
-Là technique vì có cách triển khai cụ thể (constructor injection, property injection, DI container). -->
 
 # pattern khác technique chỗ nào? [id:3142 order:11]
 pattern mô tả "vấn đề + cách giải quyết" ở mức ý tưởng, không phụ thuộc ngôn ngữ.

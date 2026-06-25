@@ -3,9 +3,6 @@ id: 331
 name: "inheritance"
 ---
 
-<!--# tính kế thừa mặc định diễn ra thế nào? [id:3042 order:1]
-Class con tự động thừa hưởng mọi member `public`, `protected`, `internal` của cha. Member `private` không kế thừa. -->
-
 # rule của kế thừa? [id:3043 order:2]
 Class con bắt buộc `override` mọi abstract member của cha, trừ khi class con cũng được khai báo là `abstract`.
 
@@ -30,8 +27,8 @@ C++ cho phép: `class C : public A, public B {}` — class `C` kế thừa cả 
 # những class nào không thể kế thừa? [id:3050 order:9]
 sealed class.
 
-<!--# khi nào thì được override member của cha? [id:3051 order:10]
-Khi member của cha được đánh dấu `virtual` hoặc `abstract`, và class con dùng `override`. -->
+# cách override 1 member? [id:3051 order:10]
+đánh dấu `virtual` hoặc `abstract` cho parent method, và class con dùng `override`.
 
 # override keyword dùng để làm gì? [id:3052 order:11]
 Để class con thay implementation của member `virtual`/`abstract` trong class cha.
@@ -42,19 +39,6 @@ Khi member của cha được đánh dấu `virtual` hoặc `abstract`, và clas
 # lí do override tồn tại? [id:3054 order:13]
 - triển khai body cho abstract member
 - thay implementation của virtual member
-
-<!--# nếu con cứ viết trùng signature của cha nhưng k dùng override thì sao? [id:3055 order:14]
-Compiler warning, đề nghị thêm `new` hoặc `override`. Đây là method hiding: behavior phụ thuộc kiểu reference — gọi qua kiểu cha thì chạy method cha, gọi qua kiểu con thì chạy method con.
-Ví dụ:
-```csharp
-class Animal { public void Speak() => Console.WriteLine("animal"); }
-class Dog : Animal { public void Speak() => Console.WriteLine("dog"); }
-Dog d = new Dog();
-Animal a = d;
-d.Speak(); // dog  - reference kiểu con
-a.Speak(); // animal - reference kiểu cha (cùng instance)
-```
-Nếu dùng `override` (cha phải `virtual`) thì cả hai đều in `dog` — đó là polymorphism thật sự. -->
 
 # hầu hết trường hợp, viết trùng signature thì sẽ đi kèm override phải không? [id:3056 order:15]
 Đúng. Trùng signature mà cố tình không `override` (method hiding) là edge case hiếm — thường để giữ nguyên hành vi cũ khi gọi qua kiểu cha. Code thực tế gần như luôn dùng `override` để có polymorphism.

@@ -3,11 +3,8 @@ id: 319
 name: "assembly"
 ---
 
-<!--# cho tôi vài câu phổ biến có dùng assemply? [id:2807 order:1]
+# cho tôi vài câu phổ biến có dùng assemply? [id:2807 order:1]
 - "load assembly vào memory"
-- "reference thêm assembly"
-- "assembly version conflict"
-- "scan assembly để tìm class" -->
 
 # assembly là 1 ngôn ngữ code phải không? [id:2808 order:2]
 Không. Assembly trong .NET là file output (`.dll`/`.exe`). Trùng tên với "Assembly language" (ngôn ngữ cấp thấp) nhưng khác hẳn nhau.

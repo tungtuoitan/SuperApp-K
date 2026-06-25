@@ -1,4 +1,4 @@
-﻿---
+---
 id: 64
 name: "Mobile-debug-setup"
 ---
@@ -12,17 +12,15 @@ Phone gửi request → ADB daemon trên phone bắt request → đẩy qua USB 
 # Công cụ nào dùng để debug mobile? [id:535 order:3]
 `chrome://inspect/#devices` trên laptop.
 
-<!--# Daemon là gì? Đọc là gì? [id:536 order:4]
-Đọc là "dee-mon". Process chạy ngầm (background) liên tục, không có UI, phục vụ các yêu cầu khi cần. Ví dụ: ADB daemon chạy ngầm trên laptop, chờ phone kết nối USB để xử lý debug commands và port forwarding. -->
+# Daemon là gì? [id:536 order:4]
+là Process chạy ngầm 
 
 # deamon khác gì job nhỉ? [id:537 order:5]
 Daemon chạy ngầm liên tục từ lúc khởi động OS đến lúc tắt máy, phục vụ nhiều client. Job là tác vụ có start–end rõ ràng, chạy 1 lần hoặc theo schedule rồi kết thúc.
 
-<!--# deamon, job có thể chạy độc lập không? [id:2803 order:6]
-Có. Cả hai đều chạy như process riêng, không cần app chính. Daemon chạy nền dài hạn, job có thể trigger thủ công hoặc theo schedule. -->
+# deamon có thể chạy độc lập không? [id:2803 order:6]
+Có. 
 
-<!--# deamon, job có thể là process cũng có thể là class à? [id:2804 order:7]
-Đúng. Ở góc OS, daemon/job là process. Trong code, có thể là class (ví dụ `IHostedService` trong .NET là class chạy như background job bên trong process app). -->
 
 # Port forwarding trong `chrome://inspect` là gì? [id:538 order:8]
 Tính năng cho phép Chrome trên phone truy cập các port trên laptop như thể chúng là port của chính phone. Cài `3000 → localhost:3000` thì khi phone request `localhost:3000`, ADB tunnel chuyển request sang `localhost:3000` trên laptop.
@@ -51,14 +49,24 @@ Không phải
 # interface có phải là abstract của adapter không? [id:2931 order:16]
 Đúng. Interface là abstraction tầng OS — có IP, MAC, route, do OS expose ra cho app dùng. Adapter là tầng dưới (NIC vật lý hoặc driver ảo) tạo ra interface đó.
 
-<!--# driver là gì? [id:2932 order:17] -->
+# driver là gì? [id:2932 order:17]
+là phần mềm trung gian giúp OS giao tiếp với phần cứng. Driver "dịch" lệnh chung của OS thành lệnh cụ thể mà hardware hiểu được.
 
-<!--# lí do driver tồn tại? [id:2933 order:18] -->
+# lí do driver tồn tại? [id:2933 order:18]
+giúp OS giao tiếp với hardware
 
-<!--# mọi phần cứng đều có interface phải không? [id:2934 order:19]
-Không. -->
+# tại sao OS k thể giao tiếp trực tiếp với hardware?
+vì hardware có nhiều loại, OS không thể biết trước cách điều khiển chúng
 
-<!--# các phần cứng phổ biến có interface? [id:2935 order:20] -->
+# driver và hardware luôn đi cùng nhau phải không?
+Không. Driver có thể tạo ra hardware ảo không có phần cứng vật lý — ví dụ VPN adapter, loopback interface. Driver ảo = software driver không cần NIC thật.
+
+# k có phần cứng vật lí thì cần gì driver nhỉ?
+Driver ảo cần để OS biết cách tạo interface cho thiết bị ảo đó. Ví dụ VPN adapter không có NIC thật, nhưng vẫn cần driver để OS tạo ra network interface với IP, MAC, routing rules.
+
+# hầu hết mọi phần cứng đều có interface phải không? vì sao [id:2934 order:19]
+Không. 
+Vì Chỉ phần cứng nào cần OS/app giao tiếp qua mới có interface. CPU, RAM không có network interface — chúng được access qua cơ chế khác (syscall, memory map). Interface chủ yếu xuất hiện ở thiết bị I/O: NIC, disk, USB.
 
 # NIC khác gì Adapter? [id:2936 order:21]
 nó là 1 trong context network.

@@ -21,8 +21,8 @@ Khi có pattern — ví dụ 100 outliers 5s mỗi giờ. 1 outlier đơn lẻ t
 # GC pause thường kéo dài bao lâu? [id:407 order:6]
 10–100ms với .NET 8 server GC. Chỉ lo nếu pause vài giây liên tục.
 
-<!--# Cold start cache miss là gì? [id:408 order:7]
-Lần đầu cache chưa có data, phải query DB rồi mới populate — request đó chậm hơn bình thường. -->
+# Cold start cache miss là gì? [id:408 order:7]
+là mới bắt đầu chạy, chưa có cache
 
 # cold start cache miss là 1 câu, hay là động từ, hay danh từ vậy? [id:2945 order:8]
 là cụm danh từ ghép — mô tả tình huống "lần khởi động đầu mà cache chưa có data". Không phải câu, không phải động từ.

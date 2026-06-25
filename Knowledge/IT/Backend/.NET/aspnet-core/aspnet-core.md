@@ -1,4 +1,4 @@
-﻿---
+---
 id: 313
 name: "aspnet-core"
 ---
@@ -17,12 +17,6 @@ là phần mềm nhận kết nối mạng và xử lý giao thức HTTP.
 
 # HTTP Server và Web Server khác nhau không? [id:2743 order:5]
 Gần như giống nhau. Web server ám chỉ server xử lý request từ browser (chủ yếu HTTP/HTTPS). HTTP server nhấn mạnh rằng server xử lý giao thức HTTP. Hiện nay hai từ dùng thay thế nhau.
-
-<!--# Lịch sử phát triển HTTP Server diễn ra thế nào? [id:2744 order:6]
-- 1990s: Web server đơn giản, chỉ serve static file
-- 2000s: App lớn dần, server serve HTML + chạy PHP + xử lý logic → dev tách ra 2 loại: static server và app server
-- 2010s: Framework như Rails, Django, .NET MVC tích hợp HTTP server vào app
-- 2016+: ASP.NET Core tích hợp Kestrel, không cần IIS nữa -->
 
 # Điểm mạnh của ASP.NET Core là gì? [id:2746 order:7]
 - Cross-platform
@@ -63,9 +57,6 @@ Chỉ cần dùng khi field và tham số trùng tên.
 # vai trò lớn nhất của this trong thực tế? [id:2963 order:16]
 Phân biệt field với tham số trùng tên trong constructor.
 
-<!--# hầu hết this chỉ được dùng trong constructor phải không? [id:2964 order:17]
-Không. -->
-
 # this được dùng và không được dùng ở đâu? [id:2965 order:18]
 `this` dùng được ở mọi instance method/property.
 không dùng được trong `static` method
@@ -73,14 +64,20 @@ không dùng được trong `static` method
 # vì sao this không được dùng trong static method? [id:2966 order:19]
 vì static không thuộc instance nào.
 
-<!--# Các cách dùng this? [id:2967 order:20]
-- Phân biệt field với tham số/biến local trùng tên
-- Gọi constructor khác trong cùng class (`: this(...)`)
-- Pass instance hiện tại ra ngoài (`Foo(this)`)
-- Return chính object để chain method (`return this;`) -->
+# Các cách dùng this phổ biến và ví dụ? [id:2967 order:20]
+- Phân biệt field với tham số trùng tên: `this.name = name`
+- Gọi constructor khác trong class: `: this(...)`
+- Pass instance hiện tại ra ngoài: `Foo(this)`
+- Chain method: `return this;`
 
-<!--# trước mỗi object mới thì phải luôn có new à? return new int[] { 0, 2, 5, 3, 7, 8, 4 }; [id:2968 order:21]
+<!--# trước mỗi object mới thì phải luôn có new à? [id:2968 order:21]
 Có với reference type (class, array, delegate) — `new` cấp phát memory trên heap. Value type (struct, int, bool) không cần `new`, gán literal trực tiếp được. -->
+
+
+# object là gì trong .NET?
+là instance của 1 class (reference type). 
+Tất cả class đều kế thừa `System.Object`. 
+
 
 # nếu k dùng new cho object mới thì sao? [id:2969 order:22]
 bị Compile error

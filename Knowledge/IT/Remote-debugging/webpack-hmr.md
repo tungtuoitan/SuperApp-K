@@ -64,5 +64,6 @@ craco cho phép override cấu hình webpack-dev-server của CRA. Để debug m
 # Tại sao cần `host: "0.0.0.0"` trong craco? [id:500 order:16]
 Mặc định webpack-dev-server bind `localhost` (127.0.0.1) — chỉ nhận request từ chính máy. Đổi sang `0.0.0.0` thì phone mới gửi request vào được qua WiFi.
 
-<!--# Phone gửi request vào webpack-dev-server thế nào? [id:503 order:17]
-Phone mở Chrome → gõ `http://192.168.2.26:3000` → Chrome gửi HTTP GET tới IP đó port 3000 → packet đi qua WiFi → đến WiFi adapter laptop → webpack-dev-server đang listen `0.0.0.0:3000` nhận request → trả `index.html` → browser load JS bundle → React app chạy. -->
+# Phone gửi kết nối webpack-dev-server bằng cách nào? [id:503 order:17]
+ gửi request đến `http://192.168.2.26:3000` 
+ webpack-dev-server listen `0.0.0.0:3000` và nhận request

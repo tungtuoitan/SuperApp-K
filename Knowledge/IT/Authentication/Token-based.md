@@ -35,9 +35,12 @@ vì page request được thiết kế như vậy
 **Page request** (hoặc **document request**, **navigation request**).
 Là HTTP request browser tự tạo khi navigation, server trả về HTML đầy đủ. Khác với **API call** (request trả về JSON cho JS xử lý).
 
-<!--# page request khác gì so với api thông thường? [id:3070 order:10]
-- Page request: browser tự tạo khi navigate, server trả HTML đầy đủ để browser dựng page.
-- API call: JS chủ động fetch, server trả JSON cho JS xử lý, không reload page. -->
+# page request khác gì so với api thông thường? [id:3070 order:10]
+- Page request: được gọi khi navigation. 
+  - trả về html
+- API call: 
+  - JS chủ động fetch
+  - trả về data
 
 # trong SSR, hầu hết api là page request phải không? [id:3071 order:11]
 đúng.
@@ -55,9 +58,9 @@ là gõ URL, F5, click thẻ `<a href>`, submit `<form>`): browser TỰ tạo HT
 # tại sao browser navigation lại gọi page request? [id:3075 order:15]
 Vì khi navigation, browser tạo request mặc định `Accept: text/html' để reload page
 
-<!--# sự khác biệt giữa SSR và hybrid? [id:3076 order:16]
-- SSR thuần: server render toàn bộ HTML
-- Hybrid: browser navigation đầu tiên lấy full html, sau đó thì work như SPA. -->
+# sự khác biệt giữa SSR và hybrid? [id:3076 order:16]
+- SSR   : hầu hết là page request
+- Hybrid: 50% page request, 50% api.
 
 # lí do hybrid web tồn tại? [id:3077 order:17]
 Để có cả SEO/first-paint nhanh của SSR lẫn UX mượt của SPA. Server render page đầu cho crawler đọc được + user thấy nội dung ngay, sau đó JS hydrate để các navigation tiếp theo chạy như SPA, không reload.
