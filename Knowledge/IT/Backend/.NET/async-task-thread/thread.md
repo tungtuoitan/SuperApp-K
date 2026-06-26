@@ -7,8 +7,8 @@ name: "thread"
 Đúng.
 OS tạo main thread khi process start, chạy `Main()` đầu tiên.
 
-# main thread có thuộc pool không? [id:3097 order:2]
-không
+<!--# main thread có thuộc pool không? [id:3097 order:2]
+không -->
 
 # mỗi process đều có 1 main thread à? [id:3098 order:3]
 Đúng.
