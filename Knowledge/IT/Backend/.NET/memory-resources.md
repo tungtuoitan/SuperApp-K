@@ -111,8 +111,8 @@ OS quản lý
 # quản lí tài nguyên nghĩa là gì? [id:3321 order:29]
 là cấp phát, theo dõi, và thu hồi tài nguyên.
 
-# ai quản lí tài nguyên của thread? [id:3322 order:30]
-OS quản lý thread (cấp phát, schedule, thu hồi). CLR quản lý stack content (local variable, frame) nhưng bản thân OS thread là do OS giữ.
+<!--# ai quản lí tài nguyên của thread? [id:3322 order:30]
+OS quản lý thread (cấp phát, schedule, thu hồi). CLR quản lý stack content (local variable, frame) nhưng bản thân OS thread là do OS giữ. -->
 
 # tài nguyên của process gồm những gì? [id:2849 order:31]
 - rot:
