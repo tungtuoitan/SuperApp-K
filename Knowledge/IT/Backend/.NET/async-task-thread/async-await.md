@@ -45,9 +45,9 @@ app.MapGet("/hash", async () => {
 ```
 Request thread được trả về pool ngay khi gặp `await Task.Run`, không bị giữ suốt quá trình hash. -->
 
-# dùng await chính là offload phải không? [id:3338 order:11]
+<!--# dùng await chính là offload phải không? [id:3338 order:11]
 Gần đúng.
-`await` offload theo nghĩa "trả thread hiện tại về pool". Còn task được await thì chạy ở đâu (pool thread, kernel I/O) là việc của runtime/task đó.
+`await` offload theo nghĩa "trả thread hiện tại về pool". Còn task được await thì chạy ở đâu (pool thread, kernel I/O) là việc của runtime/task đó. -->
 
 # offload là loại từ gì? cho ví dụ câu phổ biến? [id:3339 order:12]
 (v): "We offload the heavy computation to a background thread."
