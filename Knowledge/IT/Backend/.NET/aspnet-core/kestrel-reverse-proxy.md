@@ -21,5 +21,5 @@ là tên 1 loài chim cắt nhỏ, bay nhanh và linh hoạt — Microsoft đặ
 - Nginx/Apache: HTTP server + reverse proxy, thường đứng trước Kestrel để handle SSL termination, load balancing, serve static file
 - IIS: Windows-only, tích hợp với Windows Server, cũ hơn
 
-# Reverse Proxy là gì? [id:2774 order:5]
-là server đứng trước application server để nhận request từ Internet, rồi forward vào app server (Kestrel). Xử lý SSL, load balancing, caching, logging.
+<!--# Reverse Proxy là gì? [id:2774 order:5]
+là server đứng trước application server để nhận request từ Internet, rồi forward vào app server (Kestrel). Xử lý SSL, load balancing, caching, logging. -->
