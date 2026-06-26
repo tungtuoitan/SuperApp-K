@@ -49,9 +49,9 @@ Compiler tự wrap body hàm `async` thành state machine và return về `Task`
 - Gọi `Task.Run(...)`
 - Gọi I/O async (`File.ReadAllTextAsync`, `HttpClient.GetAsync`)
 
-# mỗi request đến server tương ứng 1 task à? [id:3355 order:12]
+<!--# mỗi request đến server tương ứng 1 task à? [id:3355 order:12]
 Đúng trong ASP.NET Core.
-Mỗi HTTP request → 1 task chạy trên 1 pool thread. Khi handler `await`, thread được trả về pool, đến khi await xong runtime lấy thread khác (có thể cùng) chạy tiếp.
+Mỗi HTTP request → 1 task chạy trên 1 pool thread. Khi handler `await`, thread được trả về pool, đến khi await xong runtime lấy thread khác (có thể cùng) chạy tiếp. -->
 
 # Task của await IO có đi vào queue không? [id:3356 order:13]
 không.
