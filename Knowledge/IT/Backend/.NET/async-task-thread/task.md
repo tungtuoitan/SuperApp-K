@@ -10,9 +10,9 @@ name: "task"
 Gần giống `Promise`
 kết hợp với offload sang Web Worker. JS không có thread pool sẵn nên không có analog 1-1 — `setTimeout(fn, 0)` chỉ defer chứ không chạy thread khác.
 
-# sự khác nhau của task.run và promise trong js? [id:3347 order:3]
+<!--# sự khác nhau của task.run và promise trong js? [id:3347 order:3]
 - `Task.Run` chạy trên thread pool thật (multi-thread).
-- Promise trong JS chạy trên event loop single-thread
+- Promise trong JS chạy trên event loop single-thread -->
 
 # ví dụ CPU-bound work phổ biến? [id:3348 order:4]
 encrypt/hash password, parse JSON lớn, xử lý ảnh, compress file, tính toán ML.
