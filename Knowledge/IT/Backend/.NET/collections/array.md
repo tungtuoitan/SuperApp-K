@@ -31,9 +31,9 @@ là (v) duyệt qua từng phần tử theo thứ tự. Ví dụ: "traverse the 
 # traverse khác gì interate? [id:3375 order:8]
 trong văn nói là 1
 
-# truy cập tức là đọc phải không? [id:3376 order:9]
+<!--# truy cập tức là đọc phải không? [id:3376 order:9]
 Không.
-truy cập (access) = đọc hoặc ghi
+truy cập (access) = đọc hoặc ghi -->
 
 # cấu trúc cấp thấp nghĩa là gì? [id:3159 order:10]
 là cấu trúc gần với phần cứng, ít abstraction.
