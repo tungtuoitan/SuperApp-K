@@ -35,7 +35,7 @@ giải phóng thread quan trọng (UI thread, request thread) khỏi công việ
 # cách offload phổ biến? [id:3336 order:9]
 `Task.Run(() => ...)` — đẩy CPU-bound work lên Thread Pool thread để thread chính nhẹ đầu (UI thread hoặc request thread).
 
-# cho ví dụ offload (kèm code) [id:3337 order:10]
+<!--# cho ví dụ offload (kèm code) [id:3337 order:10]
 ```csharp
 // Offload CPU-bound khỏi request thread
 app.MapGet("/hash", async () => {
@@ -43,7 +43,7 @@ app.MapGet("/hash", async () => {
     return result;
 });
 ```
-Request thread được trả về pool ngay khi gặp `await Task.Run`, không bị giữ suốt quá trình hash.
+Request thread được trả về pool ngay khi gặp `await Task.Run`, không bị giữ suốt quá trình hash. -->
 
 # dùng await chính là offload phải không? [id:3338 order:11]
 Gần đúng.
