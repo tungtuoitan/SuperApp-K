@@ -53,8 +53,8 @@ Gần đúng.
 (v): "We offload the heavy computation to a background thread."
 Cũng dùng như noun: "This is an offload to the thread pool."
 
-# chỉ offload được khi không await phải không? vì khi có await thì phải đợi xong thì thread mới chạy tiếp được [id:3340 order:13]
-Ngược lại. Chính `await` mới là offload — `await` không block thread, nó trả thread về pool, đợi xong mới lấy thread khác chạy tiếp. Nếu KHÔNG await mà gọi blocking → thread bị giữ suốt thời gian chờ, không offload được.
+<!--# chỉ offload được khi không await phải không? vì khi có await thì phải đợi xong thì thread mới chạy tiếp được [id:3340 order:13]
+Ngược lại. Chính `await` mới là offload — `await` không block thread, nó trả thread về pool, đợi xong mới lấy thread khác chạy tiếp. Nếu KHÔNG await mà gọi blocking → thread bị giữ suốt thời gian chờ, không offload được. -->
 
 # khi nào thread được trả về pool? [id:3341 order:14]
 Khi gặp `await` một Task chưa complete.
