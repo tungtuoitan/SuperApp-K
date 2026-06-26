@@ -104,8 +104,8 @@ lan truyền — exception propagate = exception được chuyển lên caller p
 Là một lock
 cho phép tối đa N thread vào critical section cùng lúc (so với `lock` chỉ cho 1).
 
-# SemaphoreSlim và lock là cơ chế hay gì? [id:3398 order:26]
-Là synchronization primitive — cơ chế điều phối truy cập vào tài nguyên dùng chung giữa nhiều thread.
+<!--# SemaphoreSlim và lock là cơ chế hay gì? [id:3398 order:26]
+Là synchronization primitive — cơ chế điều phối truy cập vào tài nguyên dùng chung giữa nhiều thread. -->
 
 # primitive nghĩa là gì? [id:3399 order:27]
 nguyên thủy / cơ bản nhất
