@@ -49,8 +49,8 @@ Cũng dùng như (v) "to abstract" = trừu tượng hóa.
 # đơn vị OS là gì? [id:2822 order:12]
 là tài nguyên thực do OS cấp phát và quản lý
 
-# tài nguyên OS là gì? [id:3317 order:13]
-— process, thread, file handle, socket.
+<!--# tài nguyên OS là gì? [id:3317 order:13]
+— process, thread, file handle, socket. -->
 
 # abstraction nghĩa là gì? [id:2823 order:14]
 là che giấu chi tiết phức tạp bên dưới, chỉ phơi ra interface đơn giản. Task abstract Thread, ORM abstract SQL.
