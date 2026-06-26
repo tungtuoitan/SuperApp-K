@@ -86,9 +86,9 @@ Cả 3 task start gần như cùng lúc, thứ tự B1 in ra không đảm bảo
 # WhenAll throw Exception thế nào? [id:3392 order:20]
 chỉ rethrow exception **đầu tiên**
 
-# async void (C): exception khong the catch tu ngoai -> luon tu catch ben trong --> giải thích và cho ví dụ [id:3393 order:21]
+<!--# async void (C): exception khong the catch tu ngoai -> luon tu catch ben trong --> giải thích và cho ví dụ [id:3393 order:21]
 `async void` không trả về `Task`, nên caller không có gì để `await` hay `catch`.
-Exception bị throw vào `SynchronizationContext` hiện tại → thường crash app, không bắt được.
+Exception bị throw vào `SynchronizationContext` hiện tại → thường crash app, không bắt được. -->
 
 # khi nào thì exception k đi vào catch? vì sao [id:3394 order:22]
 khi exception được throw trong `async void`
