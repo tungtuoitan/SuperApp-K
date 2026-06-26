@@ -78,7 +78,7 @@ hoặc I/O cực nhanh xong ngay.
 # khi Task hoàn thành trước khi await yield thì sao? [id:3345 order:18]
 thread chạy tiếp mà k cần trả về pool
 
-# t1,t2,t3 có chạy theo thứ tự k? [id:3391 order:19 atts:async_01]
+# t1,t2,t3 có chạy theo thứ tự k? [id:3391 order:19 atts:2]
 không.
 Cả 3 task start gần như cùng lúc, thứ tự B1 in ra không đảm bảo.
 `Task.WhenAll` chỉ đảm bảo A2 chạy sau khi cả 3 xong — không đảm bảo thứ tự giữa t1/t2/t3.
