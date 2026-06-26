@@ -43,9 +43,9 @@ Cả 3 đều là component của .NET runtime (CLR). Process khởi động →
 đúng
 `Task`, `async/await`, `Parallel.For`, ASP.NET request handler đều chạy trên pool. Chỉ khi `new Thread()` mới tạo thread riêng. Main thread của app cũng không thuộc pool.
 
-# request thread chính là thread trong pool phải không? [id:3369 order:12]
+<!--# request thread chính là thread trong pool phải không? [id:3369 order:12]
 Đúng trong ASP.NET Core.
-Kestrel nhận request → đẩy vào thread pool, 1 pool thread bốc lên chạy handler. Không có pool riêng cho request — chung pool với mọi Task khác.
+Kestrel nhận request → đẩy vào thread pool, 1 pool thread bốc lên chạy handler. Không có pool riêng cho request — chung pool với mọi Task khác. -->
 
 # pool là gì? [id:3100 order:13]
 Pool là tập hợp tài nguyên được tạo sẵn và tái sử dụng thay vì tạo/hủy mỗi lần.
