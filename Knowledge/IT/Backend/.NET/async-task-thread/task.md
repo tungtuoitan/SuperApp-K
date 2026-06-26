@@ -22,9 +22,9 @@ Runtime lấy 1 pool thread, schedule lambda lên thread đó,
 trả về `Task` ngay lập tức.
 Thread hiện tại không bị block — nó tiếp tục hoặc `await` Task đó.
 
-# chức năng của Task.Run? [id:3350 order:6]
+<!--# chức năng của Task.Run? [id:3350 order:6]
 đẩy 1 đoạn code chạy trên thread pool
-, trả về `Task` để await. Dùng khi muốn offload CPU-bound work khỏi thread hiện tại.
+, trả về `Task` để await. Dùng khi muốn offload CPU-bound work khỏi thread hiện tại. -->
 
 # ví dụ phổ biến dùng Task.Run? [id:3351 order:7]
 ```csharp
