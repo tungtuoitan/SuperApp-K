@@ -38,8 +38,8 @@ Nhận dữ liệu số từ OS
 → chuyển thành tín hiệu điện (Ethernet) hoặc sóng radio (WiFi)
 → truyền ra mạng.
 
-# Network Interface là gì? [id:3305 order:12]
-là 1 struct chứa: IP address, MAC address, routing entry.
+<!--# Network Interface là gì? [id:3305 order:12]
+là 1 struct chứa: IP address, MAC address, routing entry. -->
 
 # chuyện gì xảy ra khi App gửi data đi? [id:3306 order:13]
 Chrome gọi socket.Send(data)
