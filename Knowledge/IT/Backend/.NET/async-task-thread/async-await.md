@@ -3,6 +3,8 @@ id: 347
 name: "async-await"
 ---
 
+# xxx [atts:async_01]
+yyy
 # async/await dùng để làm gì? [id:3328 order:1]
 để tránh lãng phí thread
 
