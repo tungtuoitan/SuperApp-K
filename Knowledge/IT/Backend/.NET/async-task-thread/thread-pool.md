@@ -69,5 +69,5 @@ Có. Mỗi worker thread trong thread pool là 1 OS thread thật. Pool chỉ t�
 # worker liên hệ gì với pool.thread? [id:3103 order:18]
 chúng là 1
 
-# khi nào pool.thread được dùng? [id:3371 order:19]
-khi gọi `Task.Run`, `await`, ...
+<!--# khi nào pool.thread được dùng? [id:3371 order:19]
+khi gọi `Task.Run`, `await`, ... -->
