@@ -51,9 +51,9 @@ NIC truyền dữ liệu vật lí ra ngoài
 # tại sao máy có nhiều network interface? [id:3307 order:14]
 vì máy có thể có nhiều đường ra mạng khác nhau
 
-# quan hệ Interface và wifi, ethernet? [id:3308 order:15]
+<!--# quan hệ Interface và wifi, ethernet? [id:3308 order:15]
 interface là abstract của 1 điểm tham gia vào mạng cụ thể
-còn wifi, ethernet là các điểm tham gia vào mạng
+còn wifi, ethernet là các điểm tham gia vào mạng -->
 
 # quan hệ giữa Adapter và NIC? [id:3309 order:16]
 Adapter là abstract của NIC
