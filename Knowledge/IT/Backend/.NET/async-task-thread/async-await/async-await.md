@@ -28,9 +28,9 @@ Rule of thumb: nếu await > vài chục micro giây thì đáng dùng await.
 sẽ là callback gắn vào Task đang chờ.
 Khi Task hoàn thành, runtime schedule continuation lên pool thread để chạy tiếp.
 
-# khi nào thread được trả về pool? [id:3341 order:8]
+<!--# khi nào thread được trả về pool? [id:3341 order:8]
 Khi gặp `await` một Task chưa complete.
-Lúc đó thread không có việc làm → trả về pool ngay, không chờ.
+Lúc đó thread không có việc làm → trả về pool ngay, không chờ. -->
 
 # mỗi khi await thì thread hiện tại luôn được trả về pool có phải không? vì sao? [id:3343 order:9]
 Không hoàn toàn.
