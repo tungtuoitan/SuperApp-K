@@ -47,8 +47,8 @@ thread chạy tiếp mà k cần trả về pool
 <!--# khi chạy await async() thì khi nào thread thực sự được giải phóng? [id:3412 order:12]
 khi chạy đến await đầu tiên trong async() -->
 
-# yield là gì? [id:3413 order:13]
-là trả thread về pool
+<!--# yield là gì? [id:3413 order:13]
+là trả thread về pool -->
 
 # khi nào thread yield? [id:3414 order:14]
 Khi `await` một Task chưa complete
