@@ -43,8 +43,8 @@ kết quả phụ thuộc vào thứ tự chạy (race), không đoán trước 
 là "cuộc đua".
 Race condition = các thread "đua nhau" để đọc/ghi biến — ai thắng (chạy trước) thì quyết định kết quả, không kiểm soát được.
 
-# ThreadStatic là gì? [id:3269 order:12]
-là attribute dùng cho field: mỗi thread đọc/ghi bản riêng của field đó, không đụng nhau.
+<!--# ThreadStatic là gì? [id:3269 order:12]
+là attribute dùng cho field: mỗi thread đọc/ghi bản riêng của field đó, không đụng nhau. -->
 
 # ThreadStatic k được dùng phổ biến phải k? [id:3270 order:13]
 Đúng.
