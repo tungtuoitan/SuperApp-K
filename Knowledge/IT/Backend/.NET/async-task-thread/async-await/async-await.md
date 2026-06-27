@@ -44,8 +44,8 @@ hoặc I/O cực nhanh xong ngay.
 # khi Task hoàn thành trước khi await yield thì sao? [id:3345 order:11]
 thread chạy tiếp mà k cần trả về pool
 
-# khi chạy await async() thì khi nào thread thực sự được giải phóng? [id:3412 order:12]
-khi chạy đến await đầu tiên trong async()
+<!--# khi chạy await async() thì khi nào thread thực sự được giải phóng? [id:3412 order:12]
+khi chạy đến await đầu tiên trong async() -->
 
 # yield là gì? [id:3413 order:13]
 là trả thread về pool
