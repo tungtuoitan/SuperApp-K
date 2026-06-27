@@ -60,8 +60,8 @@ vì hardware có nhiều loại, OS không thể biết trước cách điều k
 # driver và hardware luôn đi cùng nhau phải không? [id:3300 order:19]
 Không. Driver có thể tạo ra hardware ảo không có phần cứng vật lý — ví dụ VPN adapter, loopback interface. Driver ảo = software driver không cần NIC thật.
 
-# k có phần cứng vật lí thì cần gì driver nhỉ? [id:3301 order:20]
-Driver ảo cần để OS biết cách tạo interface cho thiết bị ảo đó. Ví dụ VPN adapter không có NIC thật, nhưng vẫn cần driver để OS tạo ra network interface với IP, MAC, routing rules.
+<!--# k có phần cứng vật lí thì cần gì driver nhỉ? [id:3301 order:20]
+Driver ảo cần để OS biết cách tạo interface cho thiết bị ảo đó. Ví dụ VPN adapter không có NIC thật, nhưng vẫn cần driver để OS tạo ra network interface với IP, MAC, routing rules. -->
 
 # hầu hết mọi phần cứng đều có interface phải không? vì sao [id:2934 order:21]
 Không.
