@@ -74,8 +74,8 @@ k ảnh hưởng, vì Kết quả cuối luôn giống nhau
 — `await` đảm bảo code sau nó chỉ chạy khi Task xong.
 Chỉ khác về performance: complete trước thì tiết kiệm 1 lần context switch, yield trước thì giải phóng thread cho request khác.
 
-# không kịp yield nghĩa là gì? [id:3420 order:20]
-`await` kiểm tra Task — nếu đã complete rồi thì chạy tiếp luôn trên thread hiện tại chứ k giải phóng thread
+<!--# không kịp yield nghĩa là gì? [id:3420 order:20]
+`await` kiểm tra Task — nếu đã complete rồi thì chạy tiếp luôn trên thread hiện tại chứ k giải phóng thread -->
 
 # khi nói thread gốc, main thread có nghĩa là thread nào? [id:3421 order:21]
 request thread hoặc UI thread tùy ngữ cảnh
