@@ -3,9 +3,9 @@ id: 355
 name: "IO-CPU-bound"
 ---
 
-# I/O bound là gì? [id:3444 order:1]
+<!--# I/O bound là gì? [id:3444 order:1]
 là Tác vụ mà thời gian chờ chủ yếu là chờ thiết bị ngoài (disk, network, DB)
- — CPU nhàn rỗi trong lúc chờ. Ngược với CPU-bound (CPU bận suốt).
+ — CPU nhàn rỗi trong lúc chờ. Ngược với CPU-bound (CPU bận suốt). -->
 
 # các hoạt động I/O phổ biến? [id:3445 order:2]
 - Đọc/ghi file, DB query, HTTP request
