@@ -109,8 +109,8 @@ khác: state có cache, còn property k có cache (luôn tính toán mỗi lần
 Mỗi khi gán giá trị: `user.Name = "abc"`
 → setter chạy. Đọc property (`var x = user.Name`) thì gọi getter, không gọi setter.
 
-# property có lưu giá trị không? vì sao? [id:3132 order:31]
-không lưu, vì bản chất nó là hàm
+<!--# property có lưu giá trị không? vì sao? [id:3132 order:31]
+không lưu, vì bản chất nó là hàm -->
 
 # const là gì? [id:2913 order:32]
 là gán giá trị ngay lúc khai báo, không đổi được.
