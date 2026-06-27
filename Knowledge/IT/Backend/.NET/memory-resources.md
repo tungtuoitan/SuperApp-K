@@ -61,8 +61,8 @@ stack lưu con trỏ, heap lưu object
 Hầu hết là vậy
 Object class luôn nằm trên heap, kể cả khi reference được khai báo local. Trừ khi dùng `Span<T>`, `ref struct` — đó là các trường hợp đặc biệt không phải reference type thông thường.
 
-# khi nào heap lưu value type? [id:3121 order:17]
-Khi value type là field của 1 class
+<!--# khi nào heap lưu value type? [id:3121 order:17]
+Khi value type là field của 1 class -->
 
 # stack và heap khác nhau gì? [id:2891 order:18]
 Stack:
