@@ -10,8 +10,8 @@ Trong .NET: offload = đẩy code từ thread đang chạy (vd UI thread, reques
 # mục đích offload ? [id:3335 order:2]
 giải phóng thread quan trọng (UI thread, request thread) khỏi công việc nặng/chờ lâu, để thread có thể phục vụ việc khác.
 
-# cách offload phổ biến? [id:3336 order:3]
-`Task.Run(() => ...)` — đẩy CPU-bound work lên Thread Pool thread để thread chính nhẹ đầu (UI thread hoặc request thread).
+<!--# cách offload phổ biến? [id:3336 order:3]
+`Task.Run(() => ...)` — đẩy CPU-bound work lên Thread Pool thread để thread chính nhẹ đầu (UI thread hoặc request thread). -->
 
 # khi ta offload sang 1 thread b thì giải phóng thread a nhưng lại tốn b, thì nó có lợi hơn chỗ nào nhỉ? [id:3342 order:4]
 Lợi khi:
