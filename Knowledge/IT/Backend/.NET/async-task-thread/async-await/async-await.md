@@ -50,8 +50,8 @@ khi chạy đến await đầu tiên trong async() -->
 <!--# yield là gì? [id:3413 order:13]
 là trả thread về pool -->
 
-# khi nào thread yield? [id:3414 order:14]
-Khi `await` một Task chưa complete
+<!--# khi nào thread yield? [id:3414 order:14]
+Khi `await` một Task chưa complete -->
 
 # khi nào thread k kịp yield ? [id:3415 order:15]
 khi task complete quá nhanh
