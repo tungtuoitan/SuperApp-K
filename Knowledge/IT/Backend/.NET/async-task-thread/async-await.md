@@ -133,5 +133,5 @@ Trong .NET: `Stream` (byte), `IEnumerable<T>` (sync), `IAsyncEnumerable<T>` (asy
 <!--# IAsyncEnumerable có phổ biến k [id:3403 order:32]
 Khá phổ biến -->
 
-# khi nào dùng IAsyncEnumerable? [id:3404 order:33]
-khi cần stream dữ liệu lớn mà không muốn load hết vào memory.
+<!--# khi nào dùng IAsyncEnumerable? [id:3404 order:33]
+khi cần stream dữ liệu lớn mà không muốn load hết vào memory. -->
