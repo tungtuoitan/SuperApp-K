@@ -30,9 +30,9 @@ Còn nhiều loại: memory stream (`MemoryStream`), pipe stream, crypto stream,
 # có stream từ memory không? [id:3449 order:6]
 Có — `MemoryStream` đọc/ghi trực tiếp trên buffer trong RAM. Không có I/O wait → CPU-bound, rất nhanh.
 
-# đọc file từ ổ cứng, memory có phải CPU-bound không? vì sao? [id:3450 order:7]
+<!--# đọc file từ ổ cứng, memory có phải CPU-bound không? vì sao? [id:3450 order:7]
 - Từ ổ cứng thì là I/O-bound — vì phải chờ disk, CPU nhàn trong lúc đó.
-- Từ memory/RAM (đã cache) thì là CPU-bound
+- Từ memory/RAM (đã cache) thì là CPU-bound -->
 
 # ghi file trong ổ cứng cũng là I/O à? [id:3451 order:8]
 Có — ghi disk là I/O-bound, CPU chờ disk controller ghi xong.
