@@ -3,8 +3,8 @@ id: 347
 name: "async-await"
 ---
 
-# xxx [id:3405 order:1]
-yyy
+<!--# xxx [id:3405 order:1]
+yyy -->
 
 # async/await dùng để làm gì? [id:3328 order:2]
 để tránh lãng phí thread
