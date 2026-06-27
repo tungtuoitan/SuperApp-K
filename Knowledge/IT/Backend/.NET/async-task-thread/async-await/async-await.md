@@ -77,8 +77,8 @@ Chỉ khác về performance: complete trước thì tiết kiệm 1 lần conte
 <!--# không kịp yield nghĩa là gì? [id:3420 order:20]
 `await` kiểm tra Task — nếu đã complete rồi thì chạy tiếp luôn trên thread hiện tại chứ k giải phóng thread -->
 
-# khi nói thread gốc, main thread có nghĩa là thread nào? [id:3421 order:21]
-request thread hoặc UI thread tùy ngữ cảnh
+<!--# khi nói thread gốc, main thread có nghĩa là thread nào? [id:3421 order:21]
+request thread hoặc UI thread tùy ngữ cảnh -->
 
 # batch nghĩa là gì? [id:3400 order:22]
 lô / nhóm
