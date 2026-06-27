@@ -1,4 +1,4 @@
-﻿---
+---
 id: 63
 name: "Networking-basic"
 ---
@@ -127,7 +127,6 @@ Subnet của WiFi là dải IP mà router cấp cho các thiết bị WiFi, ví 
 Quy ước của nhà sản xuất. `192.168.x.x` là dải IP private (RFC 1918) dành riêng cho mạng nội bộ, không route được trên internet. Router thường lấy địa chỉ đầu tiên trong subnet (`.1`) làm IP của mình.
 
 # Sơ đồ thành phần trong mạng nhà đơn giản? [id:528 order:37]
-```
 [Internet / ISP]
        |
     [Modem]         ← kết nối với ISP, chuyển tín hiệu
@@ -137,7 +136,8 @@ Quy ước của nhà sản xuất. `192.168.x.x` là dải IP private (RFC 1918
    /    |    \
 [Laptop] [Phone] [PC]
 WiFi .26  WiFi .50  Cáp .100
-```
+
+Internet → Modem (chuyển tín hiệu ISP) → Router (gateway, cấp DHCP) → thiết bị đầu cuối qua WiFi hoặc cáp LAN.
 
 # wifi là 1 subnet phải không? [id:2941 order:38]
 Đúng. Mỗi WiFi network (1 SSID) thường tương ứng 1 subnet — router cấp IP cùng dải cho tất cả thiết bị connect vào. Ví dụ tất cả device WiFi nhà đều có IP `192.168.2.x` → cùng subnet `192.168.2.0/24`.
