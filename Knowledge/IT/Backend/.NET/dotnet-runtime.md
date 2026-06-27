@@ -1,12 +1,13 @@
----
+﻿---
+id: 351
 name: "dotnet-runtime"
 ---
 
-# .net runtime được tải xuống server khi nào nhỉ?
+# .net runtime được tải xuống server khi nào nhỉ? [id:3406 order:1]
 khi cài .NET sdk
 Hoặc khi deploy app dạng **self-contained** — runtime được publish chung với app, không cần server cài sẵn.
 
-# .net sdk chứa gì?
+# .net sdk chứa gì? [id:3407 order:2]
 SDK = runtime + tooling để build/dev:
 - .NET runtime (chạy app)
 - compiler (`csc`, Roslyn)
@@ -14,18 +15,18 @@ SDK = runtime + tooling để build/dev:
 - MSBuild, NuGet client
 - BCL (Base Class Library)
 
-# deploy self-contained là gì?
-là deploy app kèm luôn .NET runtime trong folder publish 
+# deploy self-contained là gì? [id:3408 order:3]
+là deploy app kèm luôn .NET runtime trong folder publish
 — server không cần cài .NET sẵn vẫn chạy được.
 
-# bundle là gì?
+# bundle là gì? [id:3409 order:4]
 là thư mục publish sau khi build
  chứa exe + dll + runtime + assets, copy lên server là chạy.
 
-# bundle nặng hơn thì có vấn đề gì?
+# bundle nặng hơn thì có vấn đề gì? [id:3410 order:5]
 - deploy chậm hơn
 - Tốn dung lượng disk nếu chạy nhiều app self-contained
 
-# self-contained có phổ biến không? vì sao?
+# self-contained có phổ biến không? vì sao? [id:3411 order:6]
 ít phổ biến
 rot: vì chỉ được dùng để ship app cho khách

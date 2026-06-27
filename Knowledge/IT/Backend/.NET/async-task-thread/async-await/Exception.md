@@ -1,39 +1,40 @@
----
+﻿---
+id: 354
 name: "Exception"
 ---
 
-# trong async mà throw thì sao?
+# trong async mà throw thì sao? [id:3438 order:1]
 exception được gói vào Task trả về — không throw ngay tại chỗ gọi.
 Chỉ được rethrow khi `await` Task đó hoặc gọi `.Result`/`.Wait()`.
 
-# khi nào throw bị nuốt ?
-khi Task không được await (fire-and-forget) 
+# khi nào throw bị nuốt ? [id:3439 order:2]
+khi Task không được await (fire-and-forget)
 - → exception âm thầm biến mất.
 
-# tại sao throw nhưng k await thì exception bị nuốt ?
+# tại sao throw nhưng k await thì exception bị nuốt ? [id:3440 order:3]
 vì exception được gói trong Task trả về. Nếu không ai `await` Task đó → không ai mở Task ra → exception không bao giờ được rethrow → biến mất.
 
-# làm sao để Exception trong async không bị nuốt ?
+# làm sao để Exception trong async không bị nuốt ? [id:3441 order:4]
 chỉ cần dùng: await hoặc `.Wait()`, `.Result`... là k bị nuốt
 
-# await async void có hợp lệ không? vì sao? [id:3395 order:24]
+# await async void có hợp lệ không? vì sao? [id:3395 order:5]
 Không. `async void` trả về `void`, không phải `Task` — compiler không cho `await void`.
 
-# propagate là gì? [id:3396 order:25]
+# propagate là gì? [id:3396 order:6]
 lan truyền — exception propagate = exception được chuyển lên caller phía trên qua call stack cho đến khi gặp `catch` xử lý nó.
 
-<!--# async void (C): exception khong the catch tu ngoai -> luon tu catch ben trong --> giải thích và cho ví dụ [id:3393 order:22]
+<!--# async void (C): exception khong the catch tu ngoai -> luon tu catch ben trong --> giải thích và cho ví dụ [id:3393 order:7]
 `async void` không trả về `Task`, nên caller không có gì để `await` hay `catch`.
 Exception bị throw vào `SynchronizationContext` hiện tại → thường crash app, không bắt được. -->
 
-<!--# khi nào thì exception k đi vào catch? vì sao [id:3394 order:23]
+<!--# khi nào thì exception k đi vào catch? vì sao [id:3394 order:8]
 khi exception được throw trong `async void`
 vì caller không `await` được nên exception bay ra ngoài scope của `try/catch` đó. -->
 
-# WhenAll throw Exception thế nào? [id:3392 order:21]
+# WhenAll throw Exception thế nào? [id:3392 order:9]
 chỉ rethrow exception **đầu tiên**
 
-# có chạy vào catch không? vì sao?
+# có chạy vào catch không? vì sao? [id:3442 order:10]
 ```csharp
 var tasks = new List<Task<string>>();
 tasks.Add(B());
@@ -50,9 +51,10 @@ async Task<string> B()
     throw new Exception($"");
 }
 ```
+
 Có chạy vào catch.
 `Task.WhenAll` được `await` → exception trong Task được rethrow ra ngoài → try/catch bắt được. Khác với fire-and-forget (không await) — ở đây có await nên exception "mở Task" ra được.
 
-# khi có await thì ta luôn bắt được exception trong Task à? vì sao?
-đúng 
+# khi có await thì ta luôn bắt được exception trong Task à? vì sao? [id:3443 order:11]
+đúng
 vì `await` "mở Task" ra

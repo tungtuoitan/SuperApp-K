@@ -19,5 +19,5 @@ Public: ai cũng truy cập được. Private: chỉ owner mới truy cập đư
 Có.
 
 # Bật CDN thì URL thay đổi như thế nào? [id:289 order:6]
-Domain thay đổi từ `blob.core.windows.net` sang `azureedge.net`, path file giữ nguyên. 
+Domain thay đổi từ `blob.core.windows.net` sang `azureedge.net`, path file giữ nguyên.
 Ví dụ: `https://mystorage.blob.core.windows.net/files/img.jpg` → `https://mystorage.azureedge.net/files/img.jpg`.
