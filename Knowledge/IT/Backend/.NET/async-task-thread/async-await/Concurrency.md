@@ -59,9 +59,9 @@ là quyền (n) quyết định thread chạy tiếp cái gì.
 # ai nắm control ? [id:3435 order:11]
 hàm nào đang được thread thực thi thì hàm đó nắm control.
 
-# việc nắm control có nghĩa gì? [id:3436 order:12]
+<!--# việc nắm control có nghĩa gì? [id:3436 order:12]
 nghĩa là Thread đang thực thi code của hàm đó
-Mất control nghĩa là thread chuyển sang chạy code của thứ khác (caller, scheduler, OS).
+Mất control nghĩa là thread chuyển sang chạy code của thứ khác (caller, scheduler, OS). -->
 
 # caller là gì? [id:3437 order:13]
 là Method gọi method hiện tại.
