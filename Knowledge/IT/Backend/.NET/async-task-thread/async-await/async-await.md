@@ -114,13 +114,13 @@ Có tốn một chút (allocation + indirection), nhưng overhead nhỏ, không 
 k cần dùng,
 vì ASP.NET Core không có `SynchronizationContext`.
 
-# trong ASP.NET Core hiện đại, các lỗi sai thường gặp đi dùng async await? [id:3473 order:30]
+<!--# trong ASP.NET Core hiện đại, các lỗi sai thường gặp đi dùng async await? [id:3473 order:30]
 - `async void` thay vì `async Task` — exception bị nuốt
 - `Parallel.ForEach` với `async` lambda — không await được, kết thúc sớm
 - fire-and-forget trong controller — dùng disposed DI object, mất exception
 - `Task.WhenAll` + `catch (Exception)` — chỉ lấy exception đầu tiên
 - `Task.Run(async () => ...)` trả `Task<Task>`, quên `Unwrap()`
-- `await` trong `lock` — compile error
+- `await` trong `lock` — compile error -->
 
 # code này có vấn đề gì? [id:3474 order:31]
 ```cs
