@@ -148,8 +148,8 @@ Mục đích khác nhau: `Task.WhenAll` dành cho I/O-bound (nhiều task chờ 
 # Task.WhenAll() hoạt động thế nào? [id:3478 order:35]
 khi tất cả Task complete mới trả về.
 
-# có dùng số thread = số task không? [id:3479 order:36]
-Số thread phụ thuộc vào Task bên trong: I/O-bound có thể không cần thread nào lúc chờ.
+<!--# có dùng số thread = số task không? [id:3479 order:36]
+Số thread phụ thuộc vào Task bên trong: I/O-bound có thể không cần thread nào lúc chờ. -->
 
 # Task.WhenAll(multiple Task.Run( CPU-bound work)) có tương tự Parallel.ForEach không? [id:3480 order:37]
 Tương tự nhưng không giống hệt. `Task.WhenAll(Task.Run(...))` tạo N task trên pool, không kiểm soát degree of parallelism. `Parallel.ForEach` tự điều tiết số thread song song dựa trên CPU core và `MaxDegreeOfParallelism`.
