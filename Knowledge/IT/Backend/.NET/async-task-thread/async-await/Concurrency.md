@@ -3,24 +3,23 @@ id: 353
 name: "Concurrency"
 ---
 
-# t1,t2,t3 có chạy theo thứ tự k? [id:3391 order:1 atts:2]
+# 1 2 3 có chạy theo thứ tự k? vì sao?[id:3391 order:1 atts:2 open-context]
 ```cs
-Console.WriteLine("A1");
-var t1 = B();
-var t2 = B();
-var t3 = B();
+var t1 = B(1);
+var t2 = B(2);
+var t3 = B(3);
 var results = await Task.WhenAll(t1, t2, t3);
-Console.WriteLine("A2");
-
-async static Task B()
+async static Task B(int id)
 {
-    Console.WriteLine("B1");
+    Console.WriteLine(id);
 }
 ```
 
-không.
-Cả 3 task start gần như cùng lúc, thứ tự B1 in ra không đảm bảo.
-`Task.WhenAll` chỉ đảm bảo A2 chạy sau khi cả 3 xong — không đảm bảo thứ tự giữa t1/t2/t3.
+Có — in tuần tự `1 → 2 → 3` đúng thứ tự.
+Vì `B()` không có `await` nào bên trong → chạy **đồng bộ** hoàn toàn, trả về Task đã complete sẵn. 
+
+# nếu trong B có awaitTask.Delay(2000) thì thứ tự in có còn đảm bảo không?[id:3391 order:1 close-context]
+không còn đảm bảo
 
 # SemaphoreSlim là gì? Chức năng? [id:3397 order:2]
 Là một lock
