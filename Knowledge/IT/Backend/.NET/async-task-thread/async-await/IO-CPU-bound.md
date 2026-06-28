@@ -34,6 +34,6 @@ Có — `MemoryStream` đọc/ghi trực tiếp trên buffer trong RAM. Không c
 - Từ ổ cứng thì là I/O-bound — vì phải chờ disk, CPU nhàn trong lúc đó.
 - Từ memory/RAM (đã cache) thì là CPU-bound -->
 
-# ghi file trong ổ cứng cũng là I/O à? [id:3451 order:8]
+<!--# ghi file trong ổ cứng cũng là I/O à? [id:3451 order:8]
 Có — ghi disk là I/O-bound, CPU chờ disk controller ghi xong.
-Dùng `await File.WriteAllBytesAsync()` thay vì sync để không block thread.
+Dùng `await File.WriteAllBytesAsync()` thay vì sync để không block thread. -->
