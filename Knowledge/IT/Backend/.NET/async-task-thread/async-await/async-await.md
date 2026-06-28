@@ -247,8 +247,8 @@ Vì sau `await` continuation có thể chạy trên thread khác, trong khi `loc
 # khi nào cần dùng await foreach? [id:3495 order:52]
 Khi consume `IAsyncEnumerable<T>` — dữ liệu được produce bất đồng bộ từng phần (DB streaming, real-time feed, file lớn không muốn load hết vào memory).
 
-# lí do await foreach tồn tại là cho phép xử lí dữ liệu từng phần theo cách bất đồng bộ, để không block thread phải k? [id:3496 order:53]
-Đúng.
+<!--# lí do await foreach tồn tại là cho phép xử lí dữ liệu từng phần theo cách bất đồng bộ, để không block thread phải k? [id:3496 order:53]
+Đúng. -->
 
 # await foreach hoạt động thế nào? [id:3497 order:54]
 Mỗi iteration gọi `MoveNextAsync()` trên enumerator — `await` chờ phần tử tiếp theo sẵn sàng rồi tiếp tục.
