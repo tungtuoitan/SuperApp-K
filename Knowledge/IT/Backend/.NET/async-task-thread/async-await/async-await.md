@@ -98,24 +98,23 @@ Khá phổ biến -->
 # khi nào dùng IAsyncEnumerable? [id:3404 order:25]
 khi cần stream dữ liệu lớn mà không muốn load hết vào memory.
 
-
-# có nên dùng async void không? vì sao?
-Không. 
+# có nên dùng async void không? vì sao? [id:3469 order:26]
+Không.
 vì k trả về Task thì k thể xử lí tiếp được, do đó k thể await và exception bị nuốt
 
-# có cần quan tâm SynchronizationContext không? vì sao?
+# có cần quan tâm SynchronizationContext không? vì sao? [id:3470 order:27]
 không
-vì Trong ASP.NET Core: **không có** `SynchronizationContext` 
-— sau `await`, continuation chạy trên pool thread bất kỳ. 
+vì Trong ASP.NET Core: **không có** `SynchronizationContext`
+— sau `await`, continuation chạy trên pool thread bất kỳ.
 
-# việc capture thì tốn tài nguyên à?
+# việc capture thì tốn tài nguyên à? [id:3471 order:28]
 Có tốn một chút (allocation + indirection), nhưng overhead nhỏ, không đủ để lo trong app code. Chỉ đáng tối ưu trong hot-path của library.
 
-# trong ASP.NET Core hiện đại,,khi nào thì cần dùng ConfigureAwait(false) ?
+# trong ASP.NET Core hiện đại,,khi nào thì cần dùng ConfigureAwait(false) ? [id:3472 order:29]
 k cần dùng,
-vì ASP.NET Core không có `SynchronizationContext`. 
+vì ASP.NET Core không có `SynchronizationContext`.
 
-# trong ASP.NET Core hiện đại, các lỗi sai thường gặp đi dùng async await?
+# trong ASP.NET Core hiện đại, các lỗi sai thường gặp đi dùng async await? [id:3473 order:30]
 - `async void` thay vì `async Task` — exception bị nuốt
 - `Parallel.ForEach` với `async` lambda — không await được, kết thúc sớm
 - fire-and-forget trong controller — dùng disposed DI object, mất exception
@@ -123,41 +122,42 @@ vì ASP.NET Core không có `SynchronizationContext`.
 - `Task.Run(async () => ...)` trả `Task<Task>`, quên `Unwrap()`
 - `await` trong `lock` — compile error
 
-# code này có vấn đề gì?
+# code này có vấn đề gì? [id:3474 order:31]
 ```cs
 Parallel.ForEach(items, async item =>
 {
     await ProcessAsync(item);
 });
 ```
+
 `Parallel.ForEach` không hiểu `async` lambda: chạy mỗi item như `async void`, không chờ kết quả — `ForEach` kết thúc ngay dù các task chưa xong. Dùng `await Task.WhenAll(items.Select(ProcessAsync))` thay thế.
 
-# parallel.ForEach là gì? có phổ biến không? khi nào dùng? khác gì ForEach thông thường?
-Chạy iterations song song trên nhiều thread (CPU-bound parallelism). 
-Khá phổ biến cho CPU-bound work. 
-Khác `foreach` thường: iterations chạy đồng thời trên nhiều thread thay vì tuần tự. 
+# parallel.ForEach là gì? có phổ biến không? khi nào dùng? khác gì ForEach thông thường? [id:3475 order:32]
+Chạy iterations song song trên nhiều thread (CPU-bound parallelism).
+Khá phổ biến cho CPU-bound work.
+Khác `foreach` thường: iterations chạy đồng thời trên nhiều thread thay vì tuần tự.
 Không hợp với `async` lambda — dùng `Task.WhenAll` cho I/O-bound.
 
-# k nên dùng async await bên trong  parallel.ForEach phải không? vì sao?
-Đúng. 
+# k nên dùng async await bên trong parallel.ForEach phải không? vì sao? [id:3476 order:33]
+Đúng.
 `Parallel.ForEach` không hiểu `async` lambda — chạy như `async void`, không await được.
 
-# tại sao có Task.WhenAll() rồi mà vẫn cần parallel.ForEach?
+# tại sao có Task.WhenAll() rồi mà vẫn cần parallel.ForEach? [id:3477 order:34]
 Mục đích khác nhau: `Task.WhenAll` dành cho I/O-bound (nhiều task chờ async, không cần thêm thread); `Parallel.ForEach` dành cho CPU-bound (phân công work trên nhiều thread vật lý để tận dụng đa nhân).
 
-# Task.WhenAll() hoạt động thế nào? 
-khi tất cả Task complete mới trả về. 
+# Task.WhenAll() hoạt động thế nào? [id:3478 order:35]
+khi tất cả Task complete mới trả về.
 
-# có dùng số thread = số task không?
+# có dùng số thread = số task không? [id:3479 order:36]
 Số thread phụ thuộc vào Task bên trong: I/O-bound có thể không cần thread nào lúc chờ.
 
-# Task.WhenAll(multiple Task.Run( CPU-bound work)) có tương tự Parallel.ForEach không?
+# Task.WhenAll(multiple Task.Run( CPU-bound work)) có tương tự Parallel.ForEach không? [id:3480 order:37]
 Tương tự nhưng không giống hệt. `Task.WhenAll(Task.Run(...))` tạo N task trên pool, không kiểm soát degree of parallelism. `Parallel.ForEach` tự điều tiết số thread song song dựa trên CPU core và `MaxDegreeOfParallelism`.
 
-# tại sao parallel.foreach() k hợp với async await?
+# tại sao parallel.foreach() k hợp với async await? [id:3481 order:38]
 `Parallel.ForEach` expect delegate trả `void` — khi truyền `async` lambda thực ra trả `void` (fire-and-forget). `ForEach` không có cách nào chờ các task async hoàn thành.
 
-# có vấn đề gì? vì sao?
+# có vấn đề gì? vì sao? [id:3482 order:39]
 ```cs
 try
 {
@@ -167,34 +167,36 @@ catch (Exception ex){
     Console.log(ex)
 }
 ```
-bỏ sót các exception 2,3,4
-vì `ex` chỉ chứa exception ĐẦU TIÊN. 
 
-# semaphoreslim có gì khó dùng không?
+bỏ sót các exception 2,3,4
+vì `ex` chỉ chứa exception ĐẦU TIÊN.
+
+# semaphoreslim có gì khó dùng không? [id:3483 order:40]
 Có. Nếu quên `Release()` khi exception xảy ra thì semaphore bị leak — thread sau không vào được mãi. Phải wrap `Release()` trong `finally`.
 
-# cách dùng semaphoreslim?
+# cách dùng semaphoreslim? [id:3484 order:41]
 ```cs
 var sem = new SemaphoreSlim(1, 1);
 await sem.WaitAsync();
 try { /* critical section */ }
 finally { sem.Release(); }
 ```
+
 Dùng `WaitAsync()` thay `Wait()` để không block thread.
 
-# lưu ý khi dùng semaphoreslim?
+# lưu ý khi dùng semaphoreslim? [id:3485 order:42]
 - Luôn `Release()` trong `finally`
 
-# nếu quên release() trong semaphoreslim thì sao?
+# nếu quên release() trong semaphoreslim thì sao? [id:3486 order:43]
 Semaphore bị leak: count không tăng lại, các thread đang chờ `WaitAsync()` block mãi mãi → deadlock/hang toàn bộ code đi qua semaphore đó.
 
-# Semaphore luôn hoạt động nhờ count à?
+# Semaphore luôn hoạt động nhờ count à? [id:3487 order:44]
 Đúng. `SemaphoreSlim(initialCount, maxCount)`: `initialCount` = số lần có thể `WaitAsync()` ngay; mỗi `Release()` tăng count 1; khi count = 0, thread tiếp theo phải chờ.
 
-# dispose là gì?
+# dispose là gì? [id:3488 order:45]
 là giải phóng tài nguyên không quản lý (file handle, DB connection, socket) khi object không còn dùng. Thực hiện qua `IDisposable.Dispose()` hoặc `await using` với `IAsyncDisposable`.
 
-# có vấn đề gì?
+# có vấn đề gì? [id:3489 order:46]
 ```cs
 public async Task<IActionResult> Post([FromBody] Dto dto)
 {
@@ -206,13 +208,14 @@ public async Task<IActionResult> Post([FromBody] Dto dto)
     return Ok();
 }
 ```
+
 Fire-and-forget: `Post()` return ngay, `_dbContext` bị dispose, nhưng task nền vẫn chạy và gọi `SaveAsync` → `ObjectDisposedException`. Exception bị nuốt, không có error handling.
 
-# trong ASP.NET Core hiện đại, .Result và .Wait có được dùng phổ biến không? vì sao?
-Không. 
+# trong ASP.NET Core hiện đại, .Result và .Wait có được dùng phổ biến không? vì sao? [id:3490 order:47]
+Không.
 vì chúng Vẫn block thread > gây lãng phí thread pool.
 
-# vấn đề gì?
+# vấn đề gì? [id:3491 order:48]
 ```cs
 Task<Task> outer = Task.Run(async () =>
 {
@@ -220,41 +223,42 @@ Task<Task> outer = Task.Run(async () =>
 });
 await outer;
 ```
+
 `Task.Run(async () => ...)` trả `Task<Task>`. `await outer` chỉ await outer task (xong khi lambda bắt đầu chạy), không chờ inner task (`Delay`). Dùng `await outer.Unwrap()` hoặc `await await outer`.
 
-# vấn đề gì?
+# vấn đề gì? [id:3492 order:49]
 ```cs
 private int _count = 0;
 
 lock (_locker)
 {
-    await DoSomethingAsync(); 
+    await DoSomethingAsync();
 }
 ```
+
 `await` trong `lock` là compile error
 
-# tại sao await trong lock lại bị compile error?
+# tại sao await trong lock lại bị compile error? [id:3493 order:50]
 Vì sau `await` continuation có thể chạy trên thread khác, trong khi `lock` yêu cầu được release bởi đúng thread đã acquire. C# compiler cấm để tránh race condition và invalid lock release.
 
-# dùng `await foreach` được à?
+# dùng `await foreach` được à? [id:3494 order:51]
 Được. Dùng với `IAsyncEnumerable<T>`.
 
-# khi nào cần dùng await foreach?
+# khi nào cần dùng await foreach? [id:3495 order:52]
 Khi consume `IAsyncEnumerable<T>` — dữ liệu được produce bất đồng bộ từng phần (DB streaming, real-time feed, file lớn không muốn load hết vào memory).
 
-# lí do await foreach tồn tại là cho phép xử lí dữ liệu từng phần theo cách bất đồng bộ, để không block thread  phải k?
+# lí do await foreach tồn tại là cho phép xử lí dữ liệu từng phần theo cách bất đồng bộ, để không block thread phải k? [id:3496 order:53]
 Đúng.
 
-# await foreach hoạt động thế nào?
-Mỗi iteration gọi `MoveNextAsync()` trên enumerator — `await` chờ phần tử tiếp theo sẵn sàng rồi tiếp tục. 
+# await foreach hoạt động thế nào? [id:3497 order:54]
+Mỗi iteration gọi `MoveNextAsync()` trên enumerator — `await` chờ phần tử tiếp theo sẵn sàng rồi tiếp tục.
 
-# await foreach khác foreach thông thường ở chỗ hoạt động load item sẽ k block thread nữa , có phải không?
-Đúng. 
+# await foreach khác foreach thông thường ở chỗ hoạt động load item sẽ k block thread nữa , có phải không? [id:3498 order:55]
+Đúng.
 `foreach` gọi `MoveNext()` đồng bộ (block nếu cần chờ); `await foreach` gọi `MoveNextAsync()` — thread trả về pool trong lúc chờ item tiếp theo.
 
-# `await foreach` thường dùng làm gì?
+# `await foreach` thường dùng làm gì? [id:3499 order:56]
 - stream data từ DB, API, file lớn.
 
-# pitfall là gì?
+# pitfall là gì? [id:3500 order:57]
 là cạm bẫy — lỗi dễ mắc phải nhưng khó nhận ra khi mới nhìn vào code.
-
