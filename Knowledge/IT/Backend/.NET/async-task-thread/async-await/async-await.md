@@ -250,8 +250,8 @@ Khi consume `IAsyncEnumerable<T>` — dữ liệu được produce bất đồng
 <!--# lí do await foreach tồn tại là cho phép xử lí dữ liệu từng phần theo cách bất đồng bộ, để không block thread phải k? [id:3496 order:53]
 Đúng. -->
 
-# await foreach hoạt động thế nào? [id:3497 order:54]
-Mỗi iteration gọi `MoveNextAsync()` trên enumerator — `await` chờ phần tử tiếp theo sẵn sàng rồi tiếp tục.
+<!--# await foreach hoạt động thế nào? [id:3497 order:54]
+Mỗi iteration gọi `MoveNextAsync()` trên enumerator — `await` chờ phần tử tiếp theo sẵn sàng rồi tiếp tục. -->
 
 # await foreach khác foreach thông thường ở chỗ hoạt động load item sẽ k block thread nữa , có phải không? [id:3498 order:55]
 Đúng.
