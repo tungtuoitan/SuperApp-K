@@ -262,3 +262,7 @@ Mỗi iteration gọi `MoveNextAsync()` trên enumerator — `await` chờ phầ
 
 # `await foreach` thường dùng làm gì?
 - stream data từ DB, API, file lớn.
+
+# pitfall là gì?
+là cạm bẫy — lỗi dễ mắc phải nhưng khó nhận ra khi mới nhìn vào code.
+
