@@ -7,8 +7,8 @@ name: "Task-Run"
 là chuyển công việc từ chỗ hiện tại sang chỗ khác
 Trong .NET: offload = đẩy code từ thread đang chạy (vd UI thread, request thread) sang thread khác (thường là pool).
 
-# mục đích offload ? [id:3335 order:2]
-giải phóng thread quan trọng (UI thread, request thread) khỏi công việc nặng/chờ lâu, để thread có thể phục vụ việc khác.
+<!--# mục đích offload ? [id:3335 order:2]
+giải phóng thread quan trọng (UI thread, request thread) khỏi công việc nặng/chờ lâu, để thread có thể phục vụ việc khác. -->
 
 <!--# cách offload phổ biến? [id:3336 order:3]
 `Task.Run(() => ...)` — đẩy CPU-bound work lên Thread Pool thread để thread chính nhẹ đầu (UI thread hoặc request thread). -->
