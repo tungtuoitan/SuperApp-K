@@ -14,11 +14,11 @@ khi viết project mới hoặc nhảy vào project đang có Axios
 - chia thành nhiều đợt, mỗi đợt 1 ý
 - có gap giữa các đợt
 
-# Mình nên đọc mấy Repo đây? vì sao? [id:92 order:4]
+<!--# Mình nên đọc mấy Repo đây? vì sao? [id:92 order:4]
 mình nên đọc 3 repo
 vì nếu đọc 1 thì chưa chắc nó đã đủ tốt
 nếu đọc 5 repo thì nhiều quá áp dụng k hết
-đọc 3 là vừa vặn, và 3 repo là đã rút ra được 10 ý để Refactor rồi
+đọc 3 là vừa vặn, và 3 repo là đã rút ra được 10 ý để Refactor rồi -->
 
 # Tại sao mình lại chọn Repo bulletproof-react? [id:93 order:5]
 - vì nó 34k star, cho nên uy tín
