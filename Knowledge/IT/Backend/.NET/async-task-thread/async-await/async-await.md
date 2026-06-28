@@ -253,9 +253,9 @@ Khi consume `IAsyncEnumerable<T>` — dữ liệu được produce bất đồng
 <!--# await foreach hoạt động thế nào? [id:3497 order:54]
 Mỗi iteration gọi `MoveNextAsync()` trên enumerator — `await` chờ phần tử tiếp theo sẵn sàng rồi tiếp tục. -->
 
-# await foreach khác foreach thông thường ở chỗ hoạt động load item sẽ k block thread nữa , có phải không? [id:3498 order:55]
+<!--# await foreach khác foreach thông thường ở chỗ hoạt động load item sẽ k block thread nữa , có phải không? [id:3498 order:55]
 Đúng.
-`foreach` gọi `MoveNext()` đồng bộ (block nếu cần chờ); `await foreach` gọi `MoveNextAsync()` — thread trả về pool trong lúc chờ item tiếp theo.
+`foreach` gọi `MoveNext()` đồng bộ (block nếu cần chờ); `await foreach` gọi `MoveNextAsync()` — thread trả về pool trong lúc chờ item tiếp theo. -->
 
 # `await foreach` thường dùng làm gì? [id:3499 order:56]
 - stream data từ DB, API, file lớn.
