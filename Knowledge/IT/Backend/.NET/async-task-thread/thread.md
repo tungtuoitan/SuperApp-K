@@ -37,5 +37,5 @@ Kernel quản lý hardware (CPU, RAM, disk, network) và cung cấp syscall cho 
 Đúng.
 App gọi I/O (đọc file, gửi packet) → syscall → kernel giao việc cho driver/hardware. Trong khi hardware xử lý, app thread không cần đợi (với async I/O), kernel sẽ notify khi xong.
 
-# hoạt động IO là gì? [id:3366 order:10]
-là thao tác đọc/ghi dữ liệu ngoài CPU
+<!--# hoạt động IO là gì? [id:3366 order:10]
+là thao tác đọc/ghi dữ liệu ngoài CPU -->
