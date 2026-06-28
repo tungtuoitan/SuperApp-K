@@ -142,8 +142,8 @@ Không hợp với `async` lambda — dùng `Task.WhenAll` cho I/O-bound. -->
 Đúng.
 `Parallel.ForEach` không hiểu `async` lambda — chạy như `async void`, không await được.
 
-# tại sao có Task.WhenAll() rồi mà vẫn cần parallel.ForEach? [id:3477 order:34]
-Mục đích khác nhau: `Task.WhenAll` dành cho I/O-bound (nhiều task chờ async, không cần thêm thread); `Parallel.ForEach` dành cho CPU-bound (phân công work trên nhiều thread vật lý để tận dụng đa nhân).
+<!--# tại sao có Task.WhenAll() rồi mà vẫn cần parallel.ForEach? [id:3477 order:34]
+Mục đích khác nhau: `Task.WhenAll` dành cho I/O-bound (nhiều task chờ async, không cần thêm thread); `Parallel.ForEach` dành cho CPU-bound (phân công work trên nhiều thread vật lý để tận dụng đa nhân). -->
 
 # Task.WhenAll() hoạt động thế nào? [id:3478 order:35]
 khi tất cả Task complete mới trả về.
