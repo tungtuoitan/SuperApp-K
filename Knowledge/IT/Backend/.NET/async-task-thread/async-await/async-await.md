@@ -132,11 +132,11 @@ Parallel.ForEach(items, async item =>
 
 `Parallel.ForEach` không hiểu `async` lambda: chạy mỗi item như `async void`, không chờ kết quả — `ForEach` kết thúc ngay dù các task chưa xong. Dùng `await Task.WhenAll(items.Select(ProcessAsync))` thay thế.
 
-# parallel.ForEach là gì? có phổ biến không? khi nào dùng? khác gì ForEach thông thường? [id:3475 order:32]
+<!--# parallel.ForEach là gì? có phổ biến không? khi nào dùng? khác gì ForEach thông thường? [id:3475 order:32]
 Chạy iterations song song trên nhiều thread (CPU-bound parallelism).
 Khá phổ biến cho CPU-bound work.
 Khác `foreach` thường: iterations chạy đồng thời trên nhiều thread thay vì tuần tự.
-Không hợp với `async` lambda — dùng `Task.WhenAll` cho I/O-bound.
+Không hợp với `async` lambda — dùng `Task.WhenAll` cho I/O-bound. -->
 
 # k nên dùng async await bên trong parallel.ForEach phải không? vì sao? [id:3476 order:33]
 Đúng.
