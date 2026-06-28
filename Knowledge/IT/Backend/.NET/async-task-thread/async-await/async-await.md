@@ -151,8 +151,8 @@ khi tất cả Task complete mới trả về.
 <!--# có dùng số thread = số task không? [id:3479 order:36]
 Số thread phụ thuộc vào Task bên trong: I/O-bound có thể không cần thread nào lúc chờ. -->
 
-# Task.WhenAll(multiple Task.Run( CPU-bound work)) có tương tự Parallel.ForEach không? [id:3480 order:37]
-Tương tự nhưng không giống hệt. `Task.WhenAll(Task.Run(...))` tạo N task trên pool, không kiểm soát degree of parallelism. `Parallel.ForEach` tự điều tiết số thread song song dựa trên CPU core và `MaxDegreeOfParallelism`.
+<!--# Task.WhenAll(multiple Task.Run( CPU-bound work)) có tương tự Parallel.ForEach không? [id:3480 order:37]
+Tương tự nhưng không giống hệt. `Task.WhenAll(Task.Run(...))` tạo N task trên pool, không kiểm soát degree of parallelism. `Parallel.ForEach` tự điều tiết số thread song song dựa trên CPU core và `MaxDegreeOfParallelism`. -->
 
 # tại sao parallel.foreach() k hợp với async await? [id:3481 order:38]
 `Parallel.ForEach` expect delegate trả `void` — khi truyền `async` lambda thực ra trả `void` (fire-and-forget). `ForEach` không có cách nào chờ các task async hoàn thành.
