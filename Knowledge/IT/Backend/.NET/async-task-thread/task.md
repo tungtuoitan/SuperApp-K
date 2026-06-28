@@ -81,6 +81,6 @@ HTTP call, file read/write, DB query. Những task này dùng I/O completion por
 # khi gặp I/O bound task thì diễn biến thế nào? [id:3135 order:19]
 khi method `await` 1 I/O operation, thread đang chạy được trả về thread pool. OS dùng I/O completion port để chờ kết quả. Khi I/O xong, runtime lấy 1 thread bất kỳ từ pool để continue method.
 
-# thread A chạy hàm a, trong a có await Task b thì b được chạy bởi thread nào? [id:3360 order:20]
+<!--# thread A chạy hàm a, trong a có await Task b thì b được chạy bởi thread nào? [id:3360 order:20]
 Tùy task b.
-Nếu b là `Task.Run(...)` → 1 pool thread khác (không phải A). Nếu b là I/O async (`HttpGet`, `DbQuery`) → không thread nào chạy cả, chỉ kernel I/O xử lý; khi xong, runtime mới lấy 1 pool thread (có thể chính là A) để resume hàm a sau `await`.
+Nếu b là `Task.Run(...)` → 1 pool thread khác (không phải A). Nếu b là I/O async (`HttpGet`, `DbQuery`) → không thread nào chạy cả, chỉ kernel I/O xử lý; khi xong, runtime mới lấy 1 pool thread (có thể chính là A) để resume hàm a sau `await`. -->
