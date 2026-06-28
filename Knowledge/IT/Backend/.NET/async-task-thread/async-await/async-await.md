@@ -21,8 +21,8 @@ Cụ thể: trả thread hiện tại về pool, đăng ký callback, khi Task h
 Không
 vì `await` chỉ giải phóng thread khi thread chờ I/O. còn với CPU-bound task thì thread vẫn bận suốt -> k cần giải phóng.
 
-# làm sao để biết được dùng await có lợi hơn là không dùng? vì dùng await thì phải tốn tài nguyên cho context switch [id:3332 order:6]
-Rule of thumb: nếu await > vài chục micro giây thì đáng dùng await.
+<!--# làm sao để biết được dùng await có lợi hơn là không dùng? vì dùng await thì phải tốn tài nguyên cho context switch [id:3332 order:6]
+Rule of thumb: nếu await > vài chục micro giây thì đáng dùng await. -->
 
 # khi có await thì phần code sau nó đi đâu? [id:3333 order:7]
 sẽ là callback gắn vào Task đang chờ.
