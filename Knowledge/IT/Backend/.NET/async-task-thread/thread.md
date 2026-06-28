@@ -21,9 +21,9 @@ OS yêu cầu mọi process phải có 1 thread khởi đầu để chạy entry
 # thread nào chạy main code? [id:3361 order:5]
 Main thread
 
-# khi nào main thread exist? [id:3362 order:6]
+<!--# khi nào main thread exist? [id:3362 order:6]
 Khi `Main()` return (hoặc app gọi `Environment.Exit()`).
-Với console app async, main thread chờ `await` hoàn thành rồi mới exit.
+Với console app async, main thread chờ `await` hoàn thành rồi mới exit. -->
 
 # Kernel là gì? nó là phần mềm à? [id:3363 order:7]
 là phần mềm — lõi của hệ điều hành.
