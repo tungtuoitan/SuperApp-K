@@ -40,8 +40,8 @@ Không. `ICollection<T>` chỉ define có Count, Add, Remove — không bắt bu
 # ví dụ phổ biến dùng IEnumerable? [id:3186 order:10]
 khi muốn loop mà k muốn dùng type cụ thể
 
-# IEnumerable có được dùng phổ biến k? [id:3187 order:11]
-Có, rất phổ biến. Dùng làm return type khi muốn cho phép caller iterate/LINQ mà không expose collection cụ thể. Nhiều method LINQ trả về `IEnumerable<T>`.
+<!--# IEnumerable có được dùng phổ biến k? [id:3187 order:11]
+Có, rất phổ biến. Dùng làm return type khi muốn cho phép caller iterate/LINQ mà không expose collection cụ thể. Nhiều method LINQ trả về `IEnumerable<T>`. -->
 
 # lí do IEnumerable tồn tại? [id:3188 order:12]
 dùng để duyệt qua 1 collection
