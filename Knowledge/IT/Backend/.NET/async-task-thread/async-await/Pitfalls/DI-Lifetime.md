@@ -53,8 +53,8 @@ Có. cực ở chỗ phải nhớ Dispose() thủ công
 connection, file handle, memory không được giải phóng
  → cạn connection pool, đầy bộ nhớ,...
 
-# resolve nghĩa là gì? [id:3532 order:14]
-là lấy / khởi tạo một instance service từ DI container (`scope.ServiceProvider.GetService<T>()`).
+<!--# resolve nghĩa là gì? [id:3532 order:14]
+là lấy / khởi tạo một instance service từ DI container (`scope.ServiceProvider.GetService<T>()`). -->
 
 # resolve có mấy nghĩa? [id:3533 order:15]
 2 nghĩa:
