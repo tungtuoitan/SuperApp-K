@@ -54,9 +54,9 @@ là giành / chiếm được khóa (lock). Thread acquire lock thì mới vào 
 Không hẳn.
 nó chỉ đảm bảo k bị gán lại, nhưng value bên trong object thì có thể thay đổi
 
-# những thứ thread-safe và thread-unsafe phổ biến trong asp.net core? [id:3590 order:13]
+<!--# những thứ thread-safe và thread-unsafe phổ biến trong asp.net core? [id:3590 order:13]
 - Thread-safe: `ConcurrentDictionary`, `Interlocked`, `ILogger`, `HttpClient` (gọi song song), object immutable.
-- Thread-unsafe: `DbContext`, `List<T>` / `Dictionary<T>`, `HttpContext`, nhiều thread trong 1 request dùng chung 1 scoped service (vd: WhenAll + gọi dbContext)
+- Thread-unsafe: `DbContext`, `List<T>` / `Dictionary<T>`, `HttpContext`, nhiều thread trong 1 request dùng chung 1 scoped service (vd: WhenAll + gọi dbContext) -->
 
 # thread-unsafe là nguyên nhân gây race-condition phải không? [id:3591 order:14]
 Đúng phần lớn.
