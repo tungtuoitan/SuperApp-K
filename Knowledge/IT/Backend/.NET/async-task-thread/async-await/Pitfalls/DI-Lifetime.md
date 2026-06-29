@@ -68,8 +68,8 @@ using var scope = scopeFactory.CreateScope();
 var db = scope.ServiceProvider.GetRequiredService<AppDbContext>(); // resolve
 ``` -->
 
-# scopeFactory.CreateScope() có ý nghĩa gì? [id:3535 order:17]
-là tạo một DI scope mới — vùng chứa scoped service riêng (vd DbContext riêng). Dùng `using` để xong việc thì dispose toàn bộ scoped service trong scope đó.
+<!--# scopeFactory.CreateScope() có ý nghĩa gì? [id:3535 order:17]
+là tạo một DI scope mới — vùng chứa scoped service riêng (vd DbContext riêng). Dùng `using` để xong việc thì dispose toàn bộ scoped service trong scope đó. -->
 
 # scope trong "DI scope" có nghĩa là gì? giải thích cụ thể [id:3536 order:18]
 (hiểu phiến phiến thôi)
