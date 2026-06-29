@@ -34,9 +34,9 @@ vì chỉ có thể nhét primitive và string vào IL code, k thể nhét refer
 # tại sao k thể nhét reference type vào IL code được? [id:3238 order:9]
 vì phải cần `new` lúc runtime
 
-# khi nào dùng const, khi nào dùng readonly? [id:3239 order:10]
+<!--# khi nào dùng const, khi nào dùng readonly? [id:3239 order:10]
 dùng const khi hardcode
-dùng readonly khi field được set qua constructor
+dùng readonly khi field được set qua constructor -->
 
 # modifier là gì? [id:3240 order:11]
 rot: là keyword bổ sung
