@@ -3,9 +3,9 @@ id: 362
 name: "Service-State"
 ---
 
-# singleton bị share state thì có vấn đề gì? [id:3560 order:1]
+<!--# singleton bị share state thì có vấn đề gì? [id:3560 order:1]
 - Race condition khi nhiều request cùng ghi.
-- Dữ liệu request này lẫn sang request khác.
+- Dữ liệu request này lẫn sang request khác. -->
 
 # "state per-request" là gì? ví dụ? [id:3561 order:2]
 là giữ dữ liệu riêng theo từng request, không dùng chung.
