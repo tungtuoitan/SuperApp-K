@@ -29,8 +29,8 @@ vì `DbContext` cần state nội bộ riêng cho từng request
 Đúng.
 `DbContext` không thread-safe — không được dùng đồng thời bởi nhiều thread.
 
-# từ ngược lại với thread-safe là gì? [id:3583 order:6]
-Có — thread-unsafe (hoặc non-thread-safe).
+<!--# từ ngược lại với thread-safe là gì? [id:3583 order:6]
+Có — thread-unsafe (hoặc non-thread-safe). -->
 
 # khi dùng lock, thì các request phải đợi nhau để chạy đoạn lock đó à? [id:3584 order:7]
 Đúng.
