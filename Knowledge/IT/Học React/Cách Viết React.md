@@ -79,11 +79,11 @@ ví dụ: value, isTouched, error,...
 khi nào cần thì dùng, hiện tại tự dùng là đủ rồi,
 việc này tương tự việc dùng fetch thủ công thay vì Axios
 
-# 4 nguyên tắc viết FE? [id:165 order:23]
+<!--# 4 nguyên tắc viết FE? [id:165 order:23]
 - public api
 - Layered Architecture
 - Interceptor
-- Shared
+- Shared -->
 
 # trong React, Khi nào thì nên move local state lên trên? [id:167 order:24]
 - khi cần share với các component khác
