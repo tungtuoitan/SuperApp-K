@@ -45,9 +45,9 @@ nếu state toàn app + thread-safe → Singleton.
 - Cache in-memory (state toàn app).
 - Service giữ counter / connection tracker.
 
-# so sánh stateful và stateless? [id:3571 order:12]
+<!--# so sánh stateful và stateless? [id:3571 order:12]
 - Stateless: không giữ state, -> thread-safe.
-- Stateful: giữ state, -> cần cẩn thận thread-safe
+- Stateful: giữ state, -> cần cẩn thận thread-safe -->
 
 # code này sai gì? [id:3572 order:13]
 ```cs
