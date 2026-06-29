@@ -46,8 +46,8 @@ singleton
 # tại sao k nên new thủ công mà phải tạo qua IServiceScopeFactory.CreateScope() ? [id:3529 order:11]
 Vì `new` thủ công thì dev phải tự quản lí vòng đời -> cực
 
-# nếu dùng new thì quản lí vòng đời có khó không? [id:3530 order:12]
-Có. cực ở chỗ phải nhớ Dispose() thủ công
+<!--# nếu dùng new thì quản lí vòng đời có khó không? [id:3530 order:12]
+Có. cực ở chỗ phải nhớ Dispose() thủ công -->
 
 # nếu k dispose thì chuyện gì xảy ra ? [id:3531 order:13]
 connection, file handle, memory không được giải phóng
