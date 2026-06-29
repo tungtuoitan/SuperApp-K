@@ -103,9 +103,9 @@ là lifetime (vòng đời). -->
 # controller có lifetime gì? [id:3543 order:25]
 scoped
 
-# tại sao controller lại có lifetime scoped? [id:3544 order:26]
+<!--# tại sao controller lại có lifetime scoped? [id:3544 order:26]
 Vì controller phục vụ đúng 1 request và thường phụ thuộc các scoped service (DbContext).
-Tạo mới mỗi request giúp cô lập state giữa các request.
+Tạo mới mỗi request giúp cô lập state giữa các request. -->
 
 # tại sao hầu hết service, repo có lifetime scoped? [id:3545 order:27]
 vì chúng phụ thuộc DBContext
