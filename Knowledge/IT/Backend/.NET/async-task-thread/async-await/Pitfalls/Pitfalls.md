@@ -33,9 +33,9 @@ public Task<IActionResult> Get()
 
 exception bị nuốt vì k dùng await
 
-# trong asp.net core, .Result và .Wait có được dùng không? [id:3504 order:4]
+<!--# trong asp.net core, .Result và .Wait có được dùng không? [id:3504 order:4]
 Không nên.
-Chúng block thread (sync-over-async) → lãng phí thread pool, dưới tải cao gây starvation. Luôn ưu tiên `await`.
+Chúng block thread (sync-over-async) → lãng phí thread pool, dưới tải cao gây starvation. Luôn ưu tiên `await`. -->
 
 # có khi nào cần dùng .result .wait do k dùng được await không? [id:3505 order:5]
 Hiếm.
