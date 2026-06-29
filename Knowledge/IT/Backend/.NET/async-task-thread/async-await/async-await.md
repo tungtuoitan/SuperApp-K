@@ -174,15 +174,8 @@ vì `ex` chỉ chứa exception ĐẦU TIÊN.
 # semaphoreslim có gì khó dùng không? [id:3483 order:40]
 Có. Nếu quên `Release()` khi exception xảy ra thì semaphore bị leak — thread sau không vào được mãi. Phải wrap `Release()` trong `finally`.
 
-# cách dùng semaphoreslim? [id:3484 order:41]
-```cs
-var sem = new SemaphoreSlim(1, 1);
-await sem.WaitAsync();
-try { /* critical section */ }
-finally { sem.Release(); }
-```
-
-Dùng `WaitAsync()` thay `Wait()` để không block thread.
+<!--# cách dùng semaphoreslim? [id:3484 order:41]
+Dùng `WaitAsync()` thay `Wait()` để không block thread. -->
 
 # lưu ý khi dùng semaphoreslim? [id:3485 order:42]
 - Luôn `Release()` trong `finally`
