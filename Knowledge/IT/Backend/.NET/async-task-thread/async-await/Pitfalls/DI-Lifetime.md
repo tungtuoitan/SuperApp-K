@@ -81,8 +81,8 @@ khi SCOPE kết thúc. -> scoped service bị dispose
 
 Một SCOPE = một `IServiceScope`;
 
-# DI container là gì? [id:3537 order:19]
-là thành phần để triển khai DI pattern
+<!--# DI container là gì? [id:3537 order:19]
+là thành phần để triển khai DI pattern -->
 
 # vai trò của DI Container? [id:3538 order:20]
 là giúp dev tạo, cung cấp quản lí và dispose service tự động
