@@ -28,8 +28,8 @@ EF Core có dùng db connection pool
 <!--# lưu ý khi dùng dbContext? [id:3566 order:7]
 trong 1 request, tránh dùng nhiều dbContext cùng lúc -->
 
-# trong request, fire-and-forget 2 lần gọi update db thì có sao không? [id:3567 order:8]
-dễ bị ném lỗi/lỗi data do dbContext là thread-unsafe
+<!--# trong request, fire-and-forget 2 lần gọi update db thì có sao không? [id:3567 order:8]
+dễ bị ném lỗi/lỗi data do dbContext là thread-unsafe -->
 
 # nếu service là stateless thì nên dùng lifetime gì? tại sao? [id:3568 order:9]
 dùng Singleton ->
