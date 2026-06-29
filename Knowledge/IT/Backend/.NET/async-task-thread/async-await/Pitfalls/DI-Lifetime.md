@@ -113,5 +113,5 @@ vì chúng phụ thuộc DBContext
 # khi khởi tạo instance trực tiếp thì lifetime là gì? vì sao? [id:3546 order:28]
 k có lifetime, vì instance này không được đăng kí với DI
 
-# singleton, scoped, transient là scope hay là lifetime ? [id:3547 order:29]
-là lifetime (vòng đời).
+<!--# singleton, scoped, transient là scope hay là lifetime ? [id:3547 order:29]
+là lifetime (vòng đời). -->
