@@ -87,8 +87,8 @@ là thành phần để triển khai DI pattern -->
 # vai trò của DI Container? [id:3538 order:20]
 là giúp dev tạo, cung cấp quản lí và dispose service tự động
 
-# vòng đời là gì? [id:3539 order:21]
-là khoảng thời gian từ lúc object được tạo tới lúc bị hủy.
+<!--# vòng đời là gì? [id:3539 order:21]
+là khoảng thời gian từ lúc object được tạo tới lúc bị hủy. -->
 
 # tại sao phải xác định lifetime cho service? [id:3540 order:22]
 Để DI biết tạo bao nhiêu instance và hủy khi nào:
