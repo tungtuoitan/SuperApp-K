@@ -3,8 +3,8 @@ id: 334
 name: "array"
 ---
 
-# C#.Array là gì? [id:3155 order:1]
-là cấu trúc để lưu phần tử cùng kiểu liên tiếp 1 cách tối ưu nhất?
+<!--# C#.Array là gì? [id:3155 order:1]
+là cấu trúc để lưu phần tử cùng kiểu liên tiếp 1 cách tối ưu nhất? -->
 
 # C#.Array có phải cấu trúc lưu phần tử cùng kiểu liên tiếp tối ưu nhất không? [id:3156 order:2]
 Đúng.
