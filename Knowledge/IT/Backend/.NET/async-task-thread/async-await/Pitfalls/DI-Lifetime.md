@@ -94,8 +94,8 @@ là khoảng thời gian từ lúc object được tạo tới lúc bị hủy.
 Để DI biết tạo bao nhiêu instance và hủy khi nào:
 dùng chung cả app, riêng từng request, hay mới mỗi lần. Sai → rò rỉ state, captive dependency, hoặc dùng object đã dispose.
 
-# singleton, scoped, transient là scope hay là lifetime? [id:3541 order:23]
-là lifetime (vòng đời).
+<!--# singleton, scoped, transient là scope hay là lifetime? [id:3541 order:23]
+là lifetime (vòng đời). -->
 
 # controller, service , repository đều là 1 class hết phải không? [id:3542 order:24]
 Đúng — đều là class C#.
