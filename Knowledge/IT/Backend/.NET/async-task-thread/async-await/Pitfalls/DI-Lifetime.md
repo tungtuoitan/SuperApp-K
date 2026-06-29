@@ -19,11 +19,11 @@ vì Singleton sống lâu hơn scoped service nên scoped service dùng thoải 
 - nếu service dùng DBContext, thì chọn Scoped (vd: service nghiệp vụ, repository)
 - còn lại thì dùng Transient
 
-# trong 3 lifetime thì cái nào tốt nhất, vì sao? [id:3523 order:5]
+<!--# trong 3 lifetime thì cái nào tốt nhất, vì sao? [id:3523 order:5]
 Không có cái "tốt nhất" vì:
     Singleton tiết kiệm nhưng phải thread-safe.
     Scoped là an toàn cho web
-    Transient linh hoạt nhưng tốn bộ nhớ
+    Transient linh hoạt nhưng tốn bộ nhớ -->
 
 # Transient lifetime là ít phổ biến nhất phải không? [id:3524 order:6]
 Đúng.
