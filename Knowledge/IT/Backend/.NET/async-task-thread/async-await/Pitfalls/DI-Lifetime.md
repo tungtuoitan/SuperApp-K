@@ -61,12 +61,12 @@ là lấy / khởi tạo một instance service từ DI container (`scope.Servic
 (1) DI — lấy instance service từ DI container;
 (2) chung — giải quyết / xác định giá trị
 
-# cho câu ví dụ dùng resolve? [id:3534 order:16]
+<!--# cho câu ví dụ dùng resolve? [id:3534 order:16]
 Tạo scope rồi resolve `DbContext` từ container:
 ```cs
 using var scope = scopeFactory.CreateScope();
 var db = scope.ServiceProvider.GetRequiredService<AppDbContext>(); // resolve
-```
+``` -->
 
 # scopeFactory.CreateScope() có ý nghĩa gì? [id:3535 order:17]
 là tạo một DI scope mới — vùng chứa scoped service riêng (vd DbContext riêng). Dùng `using` để xong việc thì dispose toàn bộ scoped service trong scope đó.
