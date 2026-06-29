@@ -59,8 +59,8 @@ public class CacheService // Singleton
 
 singleton giữ mãi 1 DbContext, request sau dùng context đã dispose → lỗi.
 
-# cách dùng stateful service trong singleton đúng cách? [id:3573 order:14]
-tự tạo scope rồi dispose sau khi dùng
+<!--# cách dùng stateful service trong singleton đúng cách? [id:3573 order:14]
+tự tạo scope rồi dispose sau khi dùng -->
 
 # service singleton thuần là gì? [id:3574 order:15]
 là singleton không phụ thuộc service đời ngắn hơn,
