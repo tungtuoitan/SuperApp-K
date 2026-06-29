@@ -25,8 +25,8 @@ EF Core có dùng db connection pool
 - Stateless: hàm `Sum(list)` — kết quả chỉ phụ thuộc input.
 - Stateful: counter giữ `_count` tăng dần qua mỗi lần gọi.
 
-# lưu ý khi dùng dbContext? [id:3566 order:7]
-trong 1 request, tránh dùng nhiều dbContext cùng lúc
+<!--# lưu ý khi dùng dbContext? [id:3566 order:7]
+trong 1 request, tránh dùng nhiều dbContext cùng lúc -->
 
 # trong request, fire-and-forget 2 lần gọi update db thì có sao không? [id:3567 order:8]
 dễ bị ném lỗi/lỗi data do dbContext là thread-unsafe
