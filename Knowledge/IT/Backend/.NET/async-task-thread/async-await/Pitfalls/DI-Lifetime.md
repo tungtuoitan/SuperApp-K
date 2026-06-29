@@ -32,10 +32,10 @@ Trong web phần lớn là Scoped (theo request) + một số Singleton. Transie
 # quy tắc inject? [id:3525 order:7]
 - chỉ inject service có đời sống ≥ đời của mình.
 
-# khi request thread và thread của background job cùng dùng dbContext thì sẽ bị lỗi phải không? vì sao lỗi? nếu bị lỗi thì cách tránh là gì? [id:3526 order:8]
+<!--# khi request thread và thread của background job cùng dùng dbContext thì sẽ bị lỗi phải không? vì sao lỗi? nếu bị lỗi thì cách tránh là gì? [id:3526 order:8]
 Đúng
 vì DbContext không thread-safe.
-Tránh: background job tạo scope riêng (`IServiceScopeFactory.CreateScope()`) để có DbContext riêng, không dùng chung với request.
+Tránh: background job tạo scope riêng (`IServiceScopeFactory.CreateScope()`) để có DbContext riêng, không dùng chung với request. -->
 
 # các service trong background job thì nên dùng lifetime gì? [id:3527 order:9]
 nên tự tạo scope và dispose sau khi dùng
