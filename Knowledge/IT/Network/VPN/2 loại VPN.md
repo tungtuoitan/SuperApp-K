@@ -6,8 +6,8 @@ name: "2 loại VPN"
 # Consumer VPN dùng để làm gì? [id:479 order:1]
 Ẩn IP, vượt geo-block, bảo mật wi-fi công cộng.
 
-# Corporate VPN dùng để làm gì? [id:480 order:2]
-Remote access vào mạng nội bộ công ty an toàn.
+<!--# Corporate VPN dùng để làm gì? [id:480 order:2]
+Remote access vào mạng nội bộ công ty an toàn. -->
 
 # Điểm khác biệt chính giữa consumer và corporate VPN? [id:481 order:3]
 Consumer VPN: người dùng tin nhà cung cấp, server do nhà cung cấp quản lý. Corporate VPN: IT team kiểm soát toàn bộ — policy, access control, logging.
