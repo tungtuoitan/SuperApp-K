@@ -140,8 +140,8 @@ Khi object giữ unmanaged resource: file handle, DB connection, socket, stream,
 # IDisposable và using dùng để làm gì? [id:2926 order:38]
 `IDisposable` interface cho object nắm giữ resource cần dọn (file, connection, DB). `using` tự gọi `Dispose()` khi thoát scope, kể cả khi có exception.
 
-# struct này có vấn đề gì? Identity{public readonly string EyeColor { get; }} vì sao? [id:3145 order:39]
-readonly bị thừa, vì k có set thì k cần readonly nữa
+<!--# struct này có vấn đề gì? Identity{public readonly string EyeColor { get; }} vì sao? [id:3145 order:39]
+readonly bị thừa, vì k có set thì k cần readonly nữa -->
 
 # khi nào dùng struct? [id:3146 order:40]
 khi dữ liệu nhỏ, immutable, không cần kế thừa
