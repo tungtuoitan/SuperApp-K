@@ -37,8 +37,8 @@ Trong web phần lớn là Scoped (theo request) + một số Singleton. Transie
 vì DbContext không thread-safe.
 Tránh: background job tạo scope riêng (`IServiceScopeFactory.CreateScope()`) để có DbContext riêng, không dùng chung với request. -->
 
-# các service trong background job thì nên dùng lifetime gì? [id:3527 order:9]
-nên tự tạo scope và dispose sau khi dùng
+<!--# các service trong background job thì nên dùng lifetime gì? [id:3527 order:9]
+nên tự tạo scope và dispose sau khi dùng -->
 
 # background job thì có lifetime gì? [id:3528 order:10]
 singleton
