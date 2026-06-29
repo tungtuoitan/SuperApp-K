@@ -59,9 +59,9 @@ là runtime ÉP thread dừng
 ép kill thì state hỏng
 ạm dừng thì an toàn, sạch sẽ.
 
-# trong ASP.NET Core luôn luôn tự dừng à? [id:3511 order:11]
+<!--# trong ASP.NET Core luôn luôn tự dừng à? [id:3511 order:11]
 Đúng.
-.NET hiện đại bỏ `Thread.Abort` — mọi cancellation đều cooperative, code phải tự kiểm tra `CancellationToken`.
+.NET hiện đại bỏ `Thread.Abort` — mọi cancellation đều cooperative, code phải tự kiểm tra `CancellationToken`. -->
 
 # cooperative nghĩa là gì? [id:3512 order:12]
 là "hợp tác"
