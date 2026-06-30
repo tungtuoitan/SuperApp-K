@@ -58,7 +58,7 @@ là abstract của abstract của Hardware
 đúng
 — đây là pattern abstraction chuẩn của OS: lớp trên (interface) cho app dùng, lớp giữa (adapter/driver) dịch lệnh, lớp dưới (hardware) thực thi. Mẫu này lặp ở mọi loại I/O: network, disk, audio, display.
 
-# interface > adapter > hardware gọi là pattern gì? [id:3622 order:17]
+<!--# interface > adapter > hardware gọi là pattern gì? [id:3622 order:17] -->
 
 # quan hệ giữa Adapter và NIC? [id:3309 order:18]
 Adapter là abstract của NIC
