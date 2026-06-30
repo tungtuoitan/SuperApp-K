@@ -18,3 +18,5 @@ x
 x
 
 # AI trả lời sai nhiều, cần validate kĩ và đưa dẫn chứng [id:3630 order:6]
+
+# mình nên theo lộ trình của các .NET pro, để kiến thức được chính xác [id:3631 order:7]
