@@ -203,8 +203,8 @@ Vấn đề thread-safety chỉ phát sinh khi có ≥2 thread truy cập đồn
 <!--# lí do đa luồng tồn tại? [id:3613 order:36]
 để code chạy nhanh hơn? -->
 
-# khi nào thì cần đa luồng? [id:3614 order:37]
-khi muốn code chạy nhanh hơn
+<!--# khi nào thì cần đa luồng? [id:3614 order:37]
+khi muốn code chạy nhanh hơn -->
 
 # các trường hợp phổ biến cần đa luồng? [id:3615 order:38]
 - CPU-bound nặng: xử lý ảnh/video, tính toán lớn
