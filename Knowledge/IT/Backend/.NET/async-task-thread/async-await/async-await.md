@@ -58,7 +58,7 @@ là "nhường"
 # khi nào thread yield? [id:3414 order:15]
 khi Task chưa complete
 
-# yield phát âm? [id:3626 order:16]
+<!--# yield phát âm? [id:3626 order:16] -->
 
 # khi nào thread k kịp yield ? [id:3415 order:17]
 khi task complete quá nhanh
