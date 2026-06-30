@@ -6,8 +6,8 @@ name: "interfaces"
 # IEnumerable và IQueryable khác nhau thế nào? [id:3177 order:1]
 `IEnumerable`: query chạy in-memory (client-side, load hết data về rồi filter). `IQueryable`: query được translate sang SQL và chạy ở database.
 
-# IEnumerable dùng làm gì? [id:3178 order:2]
-cho phép forEach và LINQ
+<!--# IEnumerable dùng làm gì? [id:3178 order:2]
+cho phép forEach và LINQ -->
 
 # các interface phổ biến? [id:3179 order:3]
 IList, ICollection, IEnumerable, IDictionary
