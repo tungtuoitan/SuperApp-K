@@ -16,3 +16,7 @@ x
 
 # hết tháng 8 có 100 câu interview base question [id:3058 order:5]
 x
+
+# AI trả lời sai nhiều, cần validate kĩ và đưa dẫn chứng [id:3630 order:6]
+
+# mình nên theo lộ trình của các .NET pro, để kiến thức chính xác hơn [id:3631 order:7]
