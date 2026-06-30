@@ -1,4 +1,4 @@
-﻿---
+---
 id: 348
 name: "task"
 ---
@@ -84,3 +84,4 @@ khi method `await` 1 I/O operation, thread đang chạy được trả về thre
 <!--# thread A chạy hàm a, trong a có await Task b thì b được chạy bởi thread nào? [id:3360 order:20]
 Tùy task b.
 Nếu b là `Task.Run(...)` → 1 pool thread khác (không phải A). Nếu b là I/O async (`HttpGet`, `DbQuery`) → không thread nào chạy cả, chỉ kernel I/O xử lý; khi xong, runtime mới lấy 1 pool thread (có thể chính là A) để resume hàm a sau `await`. -->
+

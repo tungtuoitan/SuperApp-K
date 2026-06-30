@@ -1,4 +1,4 @@
-﻿---
+---
 id: 324
 name: "memory-resources"
 ---
@@ -61,7 +61,7 @@ stack lưu con trỏ, heap lưu object
 Hầu hết là vậy
 Object class luôn nằm trên heap, kể cả khi reference được khai báo local. Trừ khi dùng `Span<T>`, `ref struct` — đó là các trường hợp đặc biệt không phải reference type thông thường.
 
-# stack và heap khác nhau gì? [id:2891 order:17]
+# stack và heap khác nhau gì? [id:2891 order:18]
 Stack:
     chứa value type.
     lifetime ngắn, theo hàm
@@ -107,10 +107,6 @@ OS quản lý
 
 # quản lí tài nguyên nghĩa là gì? [id:3321 order:28]
 là cấp phát, theo dõi, và thu hồi tài nguyên.
-
-# ai quản lí tài nguyên của thread? CLR có được cấp phát, thu hồi thread không? [id:3322 order:29]
-OS quản lý thread (cấp phát, schedule, thu hồi).
-CLR quản lý stack content (local variable, frame) nhưng bản thân OS thread là do OS giữ.
 
 # CLR có được thu hồi thread không? [id:3623 order:30]
 không được

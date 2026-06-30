@@ -1,10 +1,15 @@
-﻿---
+---
 id: 23
 name: "Authentication"
 ---
 
 # Uỷ quyền là gì? [id:37 order:1]
 là việc cho phép một bên khác thao tác trong phạm vi nhất định thay cho mình, không cần đưa mật khẩu.
+
+# user trao quyền cho web vào gg Drive, so với Azure trao quyền cho user thì khác nhau gì?
+khác về **ai trao cho ai**:
+- Drive: **user** trao quyền cho **web/app** truy cập tài nguyên của chính user (delegated, OAuth consent).
+- Azure: **admin/tenant** trao quyền cho **user** truy cập tài nguyên của tổ chức (assigned, RBAC).
 
 # user trao quyền cho web vào gg Drive, so với Azure trao quyền cho user thì khác nhau gì? [id:3617 order:2]
 khác về **ai trao cho ai**:

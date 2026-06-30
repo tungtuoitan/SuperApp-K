@@ -1,4 +1,4 @@
-﻿---
+---
 id: 64
 name: "Mobile-debug-setup"
 ---
