@@ -179,8 +179,8 @@ catch (Exception ex){
 bỏ sót các exception 2,3,4
 vì `ex` chỉ chứa exception ĐẦU TIÊN.
 
-# semaphoreslim có gì khó dùng không? [id:3483 order:42]
-Có. Nếu quên `Release()` khi exception xảy ra thì semaphore bị leak — thread sau không vào được mãi. Phải wrap `Release()` trong `finally`.
+<!--# semaphoreslim có gì khó dùng không? [id:3483 order:42]
+Có. Nếu quên `Release()` khi exception xảy ra thì semaphore bị leak — thread sau không vào được mãi. Phải wrap `Release()` trong `finally`. -->
 
 <!--# cách dùng semaphoreslim? [id:3484 order:43]
 Dùng `WaitAsync()` thay `Wait()` để không block thread. -->
