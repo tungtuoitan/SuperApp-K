@@ -50,12 +50,12 @@ vì trong trường hợp này thôi ta chỉ có thể tối ưu bằng cách g
 Có.
 `Task.Run()` trả về Task chưa complete ngay → `await` trả request thread về pool. Pool thread chạy work song song.
 
-<!--# cho tôi flow cụ thể của await Task.Run(() => CpuHeavy()) và Task.Run() đi [id:3464 order:13]
-1. request thread gặp `await Task.Run(() => CpuHeavy())` →
-2. queue CpuHeavy() lên pool, nhận Task chưa complete
-3. phần code sau được gắn vào callback của Task
-4. main thread được giải phóng
-5. khi Task complete, runtime chạy callback để tiếp tục -->
+# await Task.Run(() => x()) chạy cụ thể thế nào?  [id:3464 order:13]
+
+# xxx
+1. tạo Task cho x, và đưa vào queue và đợi thread khác xử lí
+2. main thread chờ x (tức bị block)
+3. khi xong, main thread chạy tiếp
 
 # khi nào nên dùng await async(), khi nào nên dùng Task.Run() độc lập? [id:3465 order:14]
 nếu là I/O-bound thuần túy thì dùng await async()
