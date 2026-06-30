@@ -1,4 +1,4 @@
----
+﻿---
 id: 346
 name: "execution-context"
 ---
@@ -44,7 +44,7 @@ là "cuộc đua".
 Race condition = các thread "đua nhau" để đọc/ghi biến — ai thắng (chạy trước) thì quyết định kết quả, không kiểm soát được.
 
 # có cần học ThreadStatic không? vì sao? [id:3269 order:12]
-không cần đào sâu — chỉ cần biết tồn tại. 
+không cần đào sâu — chỉ cần biết tồn tại.
 Vì code modern hầu hết async
 , mà `[ThreadStatic]` không flow qua `await` → dev nên dùng `AsyncLocal` thay thế.
 
@@ -137,4 +137,3 @@ là [hàm + snapshot] các biến từ scope bên ngoài
 # closure allocation là gì? [id:3294 order:37]
 là việc object ẩn được tạo ra tự động
  để giữ snapshot của biến ngoài khi lambda dùng biến bên ngoài
-

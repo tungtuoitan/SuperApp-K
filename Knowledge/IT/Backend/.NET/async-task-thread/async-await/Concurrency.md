@@ -1,4 +1,4 @@
----
+﻿---
 id: 353
 name: "Concurrency"
 ---
@@ -27,7 +27,7 @@ Là một lock
 cho phép tối đa N thread vào critical section cùng lúc (so với `lock` chỉ cho 1).
 
 # SemaphoreSlim là thể loại gì? [id:3398 order:3]
-Là cơ chế điều phối truy cập tài nguyên 
+Là cơ chế điều phối truy cập tài nguyên
 dùng chung giữa nhiều thread.
 
 # primitive nghĩa là gì? [id:3399 order:4]
@@ -64,13 +64,13 @@ hàm nào đang được thread thực thi thì hàm đó nắm control.
 nghĩa là Thread đang thực thi code của hàm đó
 Mất control nghĩa là thread chuyển sang chạy code của thứ khác (caller, scheduler, OS). -->
 
-# khái niệm control (nắm quyền điều khiển) có trong .NET không?
-có. 
+# khái niệm control (nắm quyền điều khiển) có trong .NET không? [id:3628 order:13]
+có.
 `control` là khái niệm chung của runtime/CS, không riêng .NET. Trong .NET, ta hay gặp khi nói về:
 - `await` → "yield control back to caller"
 - exception → "control transfers to catch block"
 - `Main()` → entry point "where control starts"
 
-# caller là gì? [id:3437 order:13]
+# caller là gì? [id:3437 order:14]
 là Method gọi method hiện tại.
 Ví dụ: A() gọi B() → A là caller của B. Khi B return hoặc `await`, control trả về A.

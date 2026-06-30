@@ -1,4 +1,4 @@
----
+﻿---
 id: 330
 name: "class-basics"
 ---
@@ -110,8 +110,8 @@ Mỗi khi gán giá trị: `user.Name = "abc"`
 → setter chạy. Đọc property (`var x = user.Name`) thì gọi getter, không gọi setter.
 
 # property có lưu giá trị không? vì sao? [id:3132 order:31]
-tuỳ. 
-    khi có hàm get thì KHÔNG lưu, 
+tuỳ.
+    khi có hàm get thì KHÔNG lưu,
     khi k có thì lưu
 
 # const là gì? [id:2913 order:32]

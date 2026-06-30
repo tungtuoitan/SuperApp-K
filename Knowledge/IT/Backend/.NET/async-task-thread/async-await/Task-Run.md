@@ -12,7 +12,7 @@ giải phóng thread quan trọng (UI thread, request thread) khỏi công việ
 
 # cách offload phổ biến? [id:3336 order:3]
 - dùng async cho IO bound > để giải phóng thread
-dùng WhenAll cho nhiều hoạt động cùng lúc > để tiết kiệm time 
+dùng WhenAll cho nhiều hoạt động cùng lúc > để tiết kiệm time
 
 # khi ta offload sang 1 thread b thì giải phóng thread a nhưng lại tốn b, thì nó có lợi hơn chỗ nào nhỉ? [id:3342 order:4]
 Lợi khi:

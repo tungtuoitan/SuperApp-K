@@ -23,15 +23,14 @@ Không. `async void` trả về `void`, không phải `Task` — compiler không
 # propagate là gì? [id:3396 order:6]
 lan truyền — exception propagate = exception được chuyển lên caller phía trên qua call stack cho đến khi gặp `catch` xử lý nó.
 
-# trong bất đồng bộ, khi nào lỗi bị nuốt? [id:3394 order:8]
+# trong bất đồng bộ, khi nào lỗi bị nuốt? [id:3394 order:7]
 - khi gọi async mà k dùng await,....
 - khi dùng whenAll mà k gom hết exception
 
-
-# WhenAll throw Exception thế nào? [id:3392 order:9]
+# WhenAll throw Exception thế nào? [id:3392 order:8]
 chỉ rethrow exception **đầu tiên**
 
-# có chạy vào catch không? vì sao? [id:3442 order:10]
+# có chạy vào catch không? vì sao? [id:3442 order:9]
 ```csharp
 var tasks = new List<Task<string>>();
 tasks.Add(B());
@@ -52,6 +51,6 @@ async Task<string> B()
 Có chạy vào catch.
 `Task.WhenAll` được `await` → exception trong Task được rethrow ra ngoài → try/catch bắt được. Khác với fire-and-forget (không await) — ở đây có await nên exception "mở Task" ra được.
 
-# khi có await thì ta luôn bắt được exception trong Task à? vì sao? [id:3443 order:11]
+# khi có await thì ta luôn bắt được exception trong Task à? vì sao? [id:3443 order:10]
 đúng
 vì `await` "mở Task" ra

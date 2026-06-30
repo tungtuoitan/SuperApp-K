@@ -1,4 +1,4 @@
----
+﻿---
 id: 63
 name: "Networking-basic"
 ---
@@ -54,82 +54,84 @@ vì máy có thể có nhiều đường ra mạng khác nhau
 # quan hệ Interface và hardware? [id:3308 order:15]
 là abstract của abstract của Hardware
 
-# interface > adapter > hardware rất phổ biến phải không?
-đúng 
+# interface > adapter > hardware rất phổ biến phải không? [id:3621 order:16]
+đúng
 — đây là pattern abstraction chuẩn của OS: lớp trên (interface) cho app dùng, lớp giữa (adapter/driver) dịch lệnh, lớp dưới (hardware) thực thi. Mẫu này lặp ở mọi loại I/O: network, disk, audio, display.
-# interface > adapter > hardware gọi là pattern gì?
-# quan hệ giữa Adapter và NIC? [id:3309 order:16]
+
+# interface > adapter > hardware gọi là pattern gì? [id:3622 order:17]
+
+# quan hệ giữa Adapter và NIC? [id:3309 order:18]
 Adapter là abstract của NIC
 
-# quan hệ giữa Interface và Adapter? [id:3310 order:17]
+# quan hệ giữa Interface và Adapter? [id:3310 order:19]
 Interface là abstract của Adapter
 
-# ví dụ điểm tham gia vào mạng? [id:3311 order:18]
+# ví dụ điểm tham gia vào mạng? [id:3311 order:20]
 wifi, vpn, loopback, ethernet
 
-# Network interface là gì? [id:513 order:19]
+# Network interface là gì? [id:513 order:21]
 Điểm kết nối của máy vào mạng. Mỗi interface có: địa chỉ IP, MAC address, và driver. Gồm: WiFi adapter, Ethernet adapter, Loopback, VPN adapter... Mỗi cái có IP riêng.
 
-# lí do network interface tồn tại? [id:3312 order:20]
+# lí do network interface tồn tại? [id:3312 order:22]
 giúp App gửi request dễ dàng, với mọi loại NIC
 
-# cho ví dụ abstraction tương tự Network Interface/Adapter? [id:3313 order:21]
+# cho ví dụ abstraction tương tự Network Interface/Adapter? [id:3313 order:23]
 File System Interface là abstract của các ổ cứng
 Task là abstract của Thread
 
-# tại sao có driver rồi mà vẫn cần adapter? [id:3314 order:22]
+# tại sao có driver rồi mà vẫn cần adapter? [id:3314 order:24]
 Driver giúp OS nói chuyện với NIC (tầng hardware).
 Adapter là object đại diện NIC  (tầng software)
 
-# adapter là gì? [id:3315 order:23]
+# adapter là gì? [id:3315 order:25]
 - là struct/object đại diện cho 1 NIC
 
-# `127.0.0.1` có phải là IP không? [id:515 order:24]
+# `127.0.0.1` có phải là IP không? [id:515 order:26]
 Có, là một địa chỉ IPv4 đầy đủ. Thuộc dải `127.0.0.0/8` dành riêng làm loopback — mọi địa chỉ trong dải này đều trỏ về chính máy.
 
-# IP sinh ra từ đâu? [id:516 order:25]
+# IP sinh ra từ đâu? [id:516 order:27]
 Thường do DHCP server (thường là router) cấp phát tự động khi máy kết nối vào mạng.
 
-# IP có thể là static không? [id:517 order:26]
+# IP có thể là static không? [id:517 order:28]
 Có. Nếu cấu hình thủ công thì IP không đổi dù restart. Ví dụ `192.168.2.1` (Ethernet) là static IP được cài sẵn trên adapter.
 
-# Router là gateway? [id:518 order:27]
+# Router là gateway? [id:518 order:29]
 Trong mạng nhà, đúng — router chính là default gateway. Nhưng gateway là khái niệm rộng hơn: bất kỳ thiết bị nào đóng vai trò "cổng ra vào" giữa 2 mạng khác nhau đều là gateway.
 
-# Vai trò của gateway? [id:519 order:28]
+# Vai trò của gateway? [id:519 order:30]
 Nhận packet từ trong subnet, kiểm tra IP đích: nếu IP đích nằm ngoài subnet → forward ra ngoài. Nếu IP đích trong cùng subnet → chuyển thẳng.
 
-# 1 máy có nhiều IP không? [id:520 order:29]
+# 1 máy có nhiều IP không? [id:520 order:31]
 Có. Mỗi network interface có 1 IP riêng. Laptop thường có:
 - `127.0.0.1` — loopback (luôn có)
 - `192.168.2.26` — WiFi adapter
 - `192.168.2.1` — Ethernet adapter
 - Có thể có thêm: VPN adapter, Docker virtual network...
 
-# `127.0.0.1` là loại IP nào? [id:521 order:30]
+# `127.0.0.1` là loại IP nào? [id:521 order:32]
 IP của loopback interface — interface ảo, không gắn với phần cứng vật lý. Luôn có trên mọi máy, không thể xóa. Packet gửi tới đây không rời khỏi máy.
 
-# IP các thiết bị dùng chung WiFi có đặc điểm gì? [id:522 order:31]
+# IP các thiết bị dùng chung WiFi có đặc điểm gì? [id:522 order:33]
 Cùng prefix mạng — ví dụ tất cả đều là `192.168.2.x`. Điều này có nghĩa là cùng subnet, có thể giao tiếp trực tiếp mà không qua internet.
 
-# Ping trực tiếp là gì? [id:523 order:32]
+# Ping trực tiếp là gì? [id:523 order:34]
 Gửi packet thẳng từ thiết bị A đến thiết bị B mà không cần qua gateway/internet. Chỉ xảy ra khi 2 thiết bị cùng subnet.
 
-# IP thay đổi khi nào? [id:524 order:33]
+# IP thay đổi khi nào? [id:524 order:35]
 - Khi disconnect rồi reconnect vào mạng khác
 - Khi DHCP lease hết hạn (thường vài giờ đến vài ngày)
 - Khi router restart và cấp lại IP
 
-# Subnet có phải là 1 phần của IP không? [id:525 order:34]
+# Subnet có phải là 1 phần của IP không? [id:525 order:36]
 Subnet là một **dải** IP (nhiều địa chỉ), không phải 1 IP cụ thể. Ký hiệu `192.168.2.0/24`: `192.168.2.0` là địa chỉ mạng, `/24` = 24 bit đầu cố định → 8 bit còn lại cho thiết bị → 254 địa chỉ từ `.1` đến `.254`.
 
-# Subnet của WiFi là gì? Có phải là IP của router không? [id:526 order:35]
+# Subnet của WiFi là gì? Có phải là IP của router không? [id:526 order:37]
 Subnet của WiFi là dải IP mà router cấp cho các thiết bị WiFi, ví dụ `192.168.2.0/24`. IP của router (`192.168.2.253`) là 1 địa chỉ nằm trong subnet đó, không phải là subnet.
 
-# IP mặc định của router thường là `192.168.1.1` hay `192.168.0.1` — tại sao? [id:527 order:36]
+# IP mặc định của router thường là `192.168.1.1` hay `192.168.0.1` — tại sao? [id:527 order:38]
 Quy ước của nhà sản xuất. `192.168.x.x` là dải IP private (RFC 1918) dành riêng cho mạng nội bộ, không route được trên internet. Router thường lấy địa chỉ đầu tiên trong subnet (`.1`) làm IP của mình.
 
-# Sơ đồ thành phần trong mạng nhà đơn giản? [id:528 order:37]
+# Sơ đồ thành phần trong mạng nhà đơn giản? [id:528 order:39]
 [Internet / ISP]
        |
     [Modem]         ← kết nối với ISP, chuyển tín hiệu
@@ -142,21 +144,21 @@ WiFi .26  WiFi .50  Cáp .100
 
 Internet → Modem (chuyển tín hiệu ISP) → Router (gateway, cấp DHCP) → thiết bị đầu cuối qua WiFi hoặc cáp LAN.
 
-# wifi là 1 subnet phải không? [id:2941 order:38]
+# wifi là 1 subnet phải không? [id:2941 order:40]
 Đúng. Mỗi WiFi network (1 SSID) thường tương ứng 1 subnet — router cấp IP cùng dải cho tất cả thiết bị connect vào. Ví dụ tất cả device WiFi nhà đều có IP `192.168.2.x` → cùng subnet `192.168.2.0/24`.
 
-# ssid là gì? [id:2942 order:39]
+# ssid là gì? [id:2942 order:41]
 Service Set Identifier — tên hiển thị của 1 mạng WiFi (ví dụ "Home_5G", "VietnamPostOffice"). Là chuỗi tối đa 32 ký tự dùng để phân biệt các WiFi network với nhau.
 
-# pc kết nối wifi và pc kết nối đến router bằng cáp thì giống nhau/khác nhau gì? [id:2943 order:40]
+# pc kết nối wifi và pc kết nối đến router bằng cáp thì giống nhau/khác nhau gì? [id:2943 order:42]
 giống nhau: cùng subnet
 khác nhau: adapter khác nhau (wifi adapter vs ethernet adapter)
 
-# kết nối đến router wifi bằng cáp thì có phải là ethernet không? [id:2944 order:41]
+# kết nối đến router wifi bằng cáp thì có phải là ethernet không? [id:2944 order:43]
 Đúng. Bất kỳ kết nối nào dùng dây RJ45 cắm vào port LAN của router đều là Ethernet, dù router đó có hỗ trợ WiFi hay không.
 
-# Thiết bị cùng router thì luôn cùng subnet và ping trực tiếp được? [id:530 order:42]
+# Thiết bị cùng router thì luôn cùng subnet và ping trực tiếp được? [id:530 order:44]
 Phần lớn đúng, nhưng có ngoại lệ: router có thể cấu hình VLAN hoặc client isolation (WiFi isolation) để cô lập các thiết bị dù cùng subnet. Trong setup nhà bình thường thì đúng.
 
-# Tại sao không dùng `ipconfig` để lấy IP WiFi? [id:531 order:43]
+# Tại sao không dùng `ipconfig` để lấy IP WiFi? [id:531 order:45]
 `ipconfig` hiển thị nhièu ip nên dễ lấy nhầm

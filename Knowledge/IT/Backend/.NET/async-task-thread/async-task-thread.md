@@ -69,6 +69,7 @@ Quan trọng với UI app. WPF/WinForms chỉ cho update UI từ UI thread — n
 ```cs
 Task<ResultOptions> Error(LogDto log);
 ```
+
 cho dev biết: method này async
 
 # result type Task có nghĩa là chưa có kq, đang đợi có phải không? [id:2952 order:19]

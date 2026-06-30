@@ -1,4 +1,4 @@
----
+﻿---
 id: 317
 name: "kestrel-reverse-proxy"
 ---
@@ -21,10 +21,10 @@ là tên 1 loài chim cắt nhỏ, bay nhanh và linh hoạt — Microsoft đặ
 - `IIS`: Windows-only, nặng hơn, dùng làm reverse proxy trước Kestrel
 
 # Reverse Proxy là gì? [id:2774 order:5]
-là server đứng trước application server 
+là server đứng trước application server
 để nhận request từ Internet, rồi forward vào app server (Kestrel). Xử lý SSL, load balancing, caching, logging.
 
-# api server và app server có phải là 1 không??
-gần như là 1. 
+# api server và app server có phải là 1 không?? [id:3624 order:6]
+gần như là 1.
 `app server` có nghĩa rộng
 `api server` là app server chỉ phục vụ HTTP API
