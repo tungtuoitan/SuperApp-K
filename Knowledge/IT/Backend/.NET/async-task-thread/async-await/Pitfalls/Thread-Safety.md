@@ -200,8 +200,8 @@ Vấn đề thread-safety chỉ phát sinh khi có ≥2 thread truy cập đồn
 - Đa luồng: nhiều thread chạy đồng thời
   - (vd `Parallel.ForEach`, `Task.WhenAll` nhiều `Task.Run`, hoặc nhiều request cùng lúc).
 
-# lí do đa luồng tồn tại? [id:3613 order:36]
-để code chạy nhanh hơn?
+<!--# lí do đa luồng tồn tại? [id:3613 order:36]
+để code chạy nhanh hơn? -->
 
 # khi nào thì cần đa luồng? [id:3614 order:37]
 khi muốn code chạy nhanh hơn
