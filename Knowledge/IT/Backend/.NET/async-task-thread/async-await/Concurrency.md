@@ -1,4 +1,4 @@
----
+﻿---
 id: 353
 name: "Concurrency"
 ---
@@ -27,7 +27,7 @@ Là một lock
 cho phép tối đa N thread vào critical section cùng lúc (so với `lock` chỉ cho 1).
 
 # SemaphoreSlim là thể loại gì? [id:3398 order:3]
-Là cơ chế điều phối truy cập tài nguyên 
+Là cơ chế điều phối truy cập tài nguyên
 dùng chung giữa nhiều thread.
 
 # primitive nghĩa là gì? [id:3399 order:4]

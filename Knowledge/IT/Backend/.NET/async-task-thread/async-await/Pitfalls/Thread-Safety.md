@@ -112,6 +112,7 @@ public class HomeController : ControllerBase
     }
 }
 ```
+
 vì `_counter` là `static` — thuộc class chứ không thuộc instance, nên KHÔNG reset mỗi request dù controller scoped. Mọi request dùng chung 1 `_counter`. (Bỏ `static` thì mới reset mỗi request.)
 
 # Interlocked có phổ biến trong asp.net core không? [id:3598 order:21]

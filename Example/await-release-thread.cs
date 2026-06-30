@@ -1,4 +1,4 @@
-// Chay: dotnet script async_thread_release.cs
+﻿// att-id:3
 // Chung minh: request thread duoc giai phong khi gap await I/O dau tien
 
 using System;

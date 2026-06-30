@@ -27,7 +27,7 @@ lan truyền — exception propagate = exception được chuyển lên caller p
 - khi gọi async mà k dùng await,....
 - khi dùng whenAll mà k gom hết exception
 
-# WhenAll throw Exception thế nào? [id:3392 order:9]
+# WhenAll throw Exception thế nào? [id:3392 order:8]
 chỉ rethrow exception **đầu tiên**
 
 # có chạy vào catch không? vì sao? [id:3442 order:9]

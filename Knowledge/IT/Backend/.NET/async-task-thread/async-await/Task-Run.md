@@ -1,4 +1,4 @@
----
+﻿---
 id: 357
 name: "Task-Run"
 ---
@@ -12,13 +12,13 @@ giải phóng thread quan trọng (UI thread, request thread) khỏi công việ
 
 # cách trường hợp cần offload phổ biến trong api server? [id:3336 order:3]
 
-
 # khi ta offload sang 1 thread b thì giải phóng thread a nhưng lại tốn b, thì nó có lợi hơn chỗ nào nhỉ? [id:3342 order:4]
 Lợi khi:
 1. a là thread đặc biệt (UI thread, request thread) còn b là pool thread thường.
 UI thread block thì app freeze, request thread block thì nghẽn server. Pool thread block thì pool tự co giãn — ít hại hơn.
 2. hoạt động là I/O async: không cần thread b nào cả, chỉ kernel xử lý.
-- 
+-
+
 # lí do Task.Run() tồn tại? [id:3456 order:5]
 - Để offload CPU-bound work khỏi thread quan trọng (vd: UI thread)
 - Cho phép xử lí song song cùng lúc nhiều CPU-bound work
@@ -37,42 +37,43 @@ Chỉ dùng khi muốn fire-and-forget
 - evidence: C:\Users\Admin\source\SuperApp-K\Example\async_thread_release.cs
 
 # khi nào cần dùng await? [id:3460 order:9]
-- khi cần giải phóng thread 
-# khi nào dùng async mà k dùng await?
-# nếu async nhưng có cả CPU-bound và IO-bound thì nên dùng gì? vì sao? [id:3461 order:10]
+- khi cần giải phóng thread
+
+# khi nào dùng async mà k dùng await? [id:3655 order:10]
+
+# nếu async nhưng có cả CPU-bound và IO-bound thì nên dùng gì? vì sao? [id:3461 order:11]
 cứ dùng await
 vì trong trường hợp này thôi ta chỉ có thể tối ưu bằng cách giải phóng thread
 
-# mọi await đều giải phóng main thread nếu task chưa completed phải không? [id:3462 order:11]
+# mọi await đều giải phóng main thread nếu task chưa completed phải không? [id:3462 order:12]
 Đúng
 — bất kể loại Task, nếu chưa complete khi gặp `await` thì request thread được trả về pool. Lưu ý: "main thread" ở đây là request thread (pool thread), không phải main thread của process.
 
-# await Task.Run() có giải phóng main thread không? [id:3463 order:12]
+# await Task.Run() có giải phóng main thread không? [id:3463 order:13]
 Có.
 `await` trả request thread về pool.
 
-# await Task.Run(() => x()) chạy cụ thể thế nào?  [id:3464 order:13]
+# await Task.Run(() => x()) chạy cụ thể thế nào? [id:3464 order:14]
 1. tạo Task cho x, và đưa vào queue và đợi thread khác xử lí
 2. main thread chờ x (tức bị block)
 3. khi xong, main thread chạy tiếp
 
-# Task.Run (không await) thì có giải phóng main thread không??
+# Task.Run (không await) thì có giải phóng main thread không?? [id:3656 order:15]
 không
 vì await mới trigger giải phóng thread
 
 (evidence: Example\async-await\task-run-no-await.cs)
 
+# vai trò của await? [id:3657 order:16]
 
-# vai trò của await?
-
-# khi nào nên dùng await async()? [id:3465 order:14]
+# khi nào nên dùng await async()? [id:3465 order:17]
 mặc định hãy dùng await async cho mọi I/O
 
-# await Task.Run() có lợi ích gì so với async await không??
+# await Task.Run() có lợi ích gì so với async await không?? [id:3658 order:18]
 k có, thậm chí tệ hơn await async()
-nó chỉ bad performance hơn do overhead, so với await async 
+nó chỉ bad performance hơn do overhead, so với await async
 
-# code thế này có hợp lí không? giải thích? [id:3466 order:15]
+# code thế này có hợp lí không? giải thích? [id:3466 order:19]
 ```cs
 Task<ResultOptions> uploadTask = Task.Run(async () =>
 {

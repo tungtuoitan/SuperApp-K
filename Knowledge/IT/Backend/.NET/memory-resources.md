@@ -1,4 +1,4 @@
----
+﻿---
 id: 324
 name: "memory-resources"
 ---
@@ -61,7 +61,7 @@ stack lưu con trỏ, heap lưu object
 Hầu hết là vậy
 Object class luôn nằm trên heap, kể cả khi reference được khai báo local. Trừ khi dùng `Span<T>`, `ref struct` — đó là các trường hợp đặc biệt không phải reference type thông thường.
 
-# stack và heap khác nhau gì? [id:2891 order:18]
+# stack và heap khác nhau gì? [id:2891 order:17]
 Stack:
     chứa value type.
     lifetime ngắn, theo hàm
@@ -108,65 +108,65 @@ OS quản lý
 # quản lí tài nguyên nghĩa là gì? [id:3321 order:28]
 là cấp phát, theo dõi, và thu hồi tài nguyên.
 
-# CLR có được thu hồi thread không? [id:3623 order:30]
+# CLR có được thu hồi thread không? [id:3623 order:29]
 không được
 CLR chỉ **yêu cầu** OS tạo/kết thúc thread, còn cấp phát stack và thu hồi là do OS làm.
 
-# tài nguyên của process gồm những gì? [id:2849 order:31]
+# tài nguyên của process gồm những gì? [id:2849 order:30]
 - rot:
 - Memory
 - Thread
 
-# heap là tài nguyên của runtime à? [id:2850 order:32]
+# heap là tài nguyên của runtime à? [id:2850 order:31]
 Đúng (managed heap). CLR cấp phát và quản managed heap, dùng để chứa object. GC quét heap này để dọn rác.
 
-# heap chỉ là 1 phần của tài nguyên process phải k? [id:2851 order:33]
+# heap chỉ là 1 phần của tài nguyên process phải k? [id:2851 order:32]
 Đúng. Process có nhiều tài nguyên (file, socket, thread, ...), heap chỉ là vùng memory để chứa object.
 
-# dispose là gì? [id:2852 order:34]
+# dispose là gì? [id:2852 order:33]
 là giải phóng tài nguyên unmanaged. Class implement `IDisposable` phải có `Dispose()` để cleanup.
 
-# idisposable và using luôn đi cùng nhau phải không? [id:2923 order:35]
+# idisposable và using luôn đi cùng nhau phải không? [id:2923 order:34]
 Không bắt buộc. `IDisposable` chỉ định contract `Dispose()`, có thể gọi tay. Nhưng `using` chỉ chạy được với object implement `IDisposable` — nên khi gặp `using` thì luôn có `IDisposable`.
 
-# khi dùng using thì k cần gọi dispose à? tại sao? [id:2924 order:36]
+# khi dùng using thì k cần gọi dispose à? tại sao? [id:2924 order:35]
 Đúng. Compiler tự sinh `try/finally { obj.Dispose(); }` quanh block `using` — nên `Dispose()` luôn được gọi khi thoát scope, kể cả khi exception.
 
-# trường hợp nào cần dùng dispose? [id:2925 order:37]
+# trường hợp nào cần dùng dispose? [id:2925 order:36]
 Khi object giữ unmanaged resource: file handle, DB connection, socket, stream, timer. GC không tự dọn được resource ngoài managed heap.
 
-# IDisposable và using dùng để làm gì? [id:2926 order:38]
+# IDisposable và using dùng để làm gì? [id:2926 order:37]
 `IDisposable` interface cho object nắm giữ resource cần dọn (file, connection, DB). `using` tự gọi `Dispose()` khi thoát scope, kể cả khi có exception.
 
-<!--# struct này có vấn đề gì? Identity{public readonly string EyeColor { get; }} vì sao? [id:3145 order:39]
+<!--# struct này có vấn đề gì? Identity{public readonly string EyeColor { get; }} vì sao? [id:3145 order:38]
 readonly bị thừa, vì k có set thì k cần readonly nữa -->
 
-# khi nào dùng struct? [id:3146 order:40]
+# khi nào dùng struct? [id:3146 order:39]
 khi dữ liệu nhỏ, immutable, không cần kế thừa
 
-# struct có thể lưu mutable value không? có nên lưu mutable value không? vì sao? [id:3147 order:41]
+# struct có thể lưu mutable value không? có nên lưu mutable value không? vì sao? [id:3147 order:40]
 Có thể, nhưng không nên.
 Vì struct là value type nên Sửa field trên bản copy không ảnh hưởng bản gốc, dễ gây bug.
 Best practice: struct nên immutable.
 
-# ví dụ dùng struct phổ biến? [id:3149 order:42]
+# ví dụ dùng struct phổ biến? [id:3149 order:41]
 toạ độ, màu sắc
 
-# mutable, imutable là gì? [id:3150 order:43]
+# mutable, imutable là gì? [id:3150 order:42]
 mutable: có thể thay đổi.
 immutable: k thể thay đổi (cách dễ nhớ: im là "im ắng trọn đời")
 
-# sự khác nhau giữa struct và class? [id:3151 order:44]
+# sự khác nhau giữa struct và class? [id:3151 order:43]
 struct là value type còn class là reference type
 struct k kế thừa được
 
-# value type và reference type khác nhau thế nào khi gán/truyền? [id:3152 order:45]
+# value type và reference type khác nhau thế nào khi gán/truyền? [id:3152 order:44]
 value type: copy value
 Reference type: copy reference
 
-# tại sao lại phân ra thành value type và reference type? [id:3153 order:46]
+# tại sao lại phân ra thành value type và reference type? [id:3153 order:45]
 để tối ưu memory và performance.
 
-# tại sao phân ra value type và reference type lại tối ưu memory và performance? [id:3154 order:47]
+# tại sao phân ra value type và reference type lại tối ưu memory và performance? [id:3154 order:46]
 vì object to lớn trên heap sẽ được DÙNG CHUNG thông qua reference -> tiết kiệm memory
 còn value type ở stack thì copy nhanh và k cần GC
