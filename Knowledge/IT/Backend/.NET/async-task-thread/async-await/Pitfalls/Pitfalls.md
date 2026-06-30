@@ -81,8 +81,8 @@ App thường cứ dùng `Task`.
 <!--# cách fire-and-forget đúng cách trong ASP.NET Core? [id:3516 order:16]
 Không dùng scoped service đã inject trực tiếp mà hãy khởi tạo mới cho nó -->
 
-# tại sao bọc I/O async trong Task.Run trong controller là thừa? [id:3517 order:17]
-vì I/O async vốn đã không giữ thread trong lúc chờ. cho nên cứ dùng await I/O async là được
+<!--# tại sao bọc I/O async trong Task.Run trong controller là thừa? [id:3517 order:17]
+vì I/O async vốn đã không giữ thread trong lúc chờ. cho nên cứ dùng await I/O async là được -->
 
 # best practice để gọi nhiều IO song song? cho ví dụ? [id:3518 order:18]
 Dùng `Task.WhenAll` với các task I/O độc lập, không cần `Task.Run`:
