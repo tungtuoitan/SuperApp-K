@@ -12,9 +12,17 @@ Gần như đúng cho server-side. IO async giúp thread không bị block, serv
 # lợi ích của async khi dùng cho IO? [id:2813 order:3]
 Thread không bị block khi chờ IO → trả về thread pool để xử lý request khác. Server cùng số thread phục vụ được nhiều request hơn → throughput cao.
 
-# khi nào nên dùng Task.Run? [id:2814 order:4]
-Khi cần offload CPU-bound work khỏi thread hiện tại (UI thread, request thread). Không dùng cho I/O — I/O async đã không tốn thread rồi.
+# những case nào cần dùng Task.Run? [id:2814 order:4]
+- cần chạy song song các CPU-boundwork NẶNG (lưu ý phải đủ nặng thì mới đủ bù overhead, nếu nhẹ quá thì k đáng dùng Task.Run)
+- fire and forget
+- Khi cần offload CPU-bound work khỏi UI thread
 
+# các cách triển khai fire-and-forget? và khi nào thì dùng cách nào?
+- dùng Task.Run (dùng khi muốn đẩy Task vào thread khác NGAY LẬP TỨC)
+- dùng async only (dùng cho hoạt động I/O đơn giản)
+
+
+# robust là gì?
 # khi nào nên dùng Thread? [id:2816 order:5]
 Hiếm khi. Chỉ khi cần kiểm soát thấp như set priority, dùng `ThreadStatic`, hoặc tích hợp legacy API. Còn lại dùng Task.
 

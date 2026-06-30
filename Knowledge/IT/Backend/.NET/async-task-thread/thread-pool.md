@@ -69,4 +69,4 @@ Có. Mỗi worker thread trong thread pool là 1 OS thread thật. Pool chỉ t�
 chúng là 1
 
 # khi nào pool.thread được dùng? [id:3371 order:19]
-khi có request, hoặc gọi Task.Run() với CPU-bound work
+khi có request, hoặc gọi Task.Run()

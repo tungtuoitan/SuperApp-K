@@ -59,6 +59,12 @@ là abstract của abstract của Hardware
 — đây là pattern abstraction chuẩn của OS: lớp trên (interface) cho app dùng, lớp giữa (adapter/driver) dịch lệnh, lớp dưới (hardware) thực thi. Mẫu này lặp ở mọi loại I/O: network, disk, audio, display.
 
 # interface > adapter > hardware gọi là pattern gì?
+Layered Abstraction (hay Hardware Abstraction Layer — HAL). 
+Không có tên GoF riêng; đây là pattern kiến trúc OS chuẩn: lớp trên dùng interface, lớp giữa dịch lệnh, lớp dưới thực thi.
+
+# GoF là gì?
+Gang of Four — 4 tác giả cuốn "Design Patterns" (1994): Gamma, Helm, Johnson, Vlissides.
+
 # quan hệ giữa Adapter và NIC? [id:3309 order:16]
 Adapter là abstract của NIC
 
@@ -109,6 +115,19 @@ Có. Mỗi network interface có 1 IP riêng. Laptop thường có:
 
 # `127.0.0.1` là loại IP nào? [id:521 order:32]
 IP của loopback interface — interface ảo, không gắn với phần cứng vật lý. Luôn có trên mọi máy, không thể xóa. Packet gửi tới đây không rời khỏi máy.
+
+# loopback nghĩa là gì?
+"quay lại" 
+— packet gửi ra rồi quay ngược về chính máy, không ra mạng vật lý.
+
+# quan hệ giữa network và subnet?
+subnet là một phần của network — network là toàn bộ dải IP, subnet chia nhỏ dải đó thành các mảng con để tổ chức và kiểm soát traffic.
+
+# ví dụ các network phổ biến quen thuộc?
+
+# đặc điểm của 1 subnet?
+
+# thích chia network như nào cũng được à?
 
 # IP các thiết bị dùng chung WiFi có đặc điểm gì? [id:522 order:33]
 Cùng prefix mạng — ví dụ tất cả đều là `192.168.2.x`. Điều này có nghĩa là cùng subnet, có thể giao tiếp trực tiếp mà không qua internet.

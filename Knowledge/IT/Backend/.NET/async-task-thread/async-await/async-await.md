@@ -10,7 +10,7 @@ yyy
 để tránh lãng phí thread
 
 # lí do await tồn tại ? [id:3329 order:3]
-để giải phóng thread trong khi chờ I/O
+để giải phóng thread trong khi chờ Task complete
 — thay vì thread ngồi chờ không làm gì, `await` trả thread về Thread Pool để xử lý request khác. Khi I/O xong, task tiếp tục trên thread được cấp lại.
 
 # await nghĩa là gì? [id:3330 order:4]
@@ -33,7 +33,7 @@ khi thread được giải phóng
 
 # khi nào thread được giải phóng? [id:3625 order:9]
 - khi hoàn thành 1 Task
-- khi gặp await/Task.Run()
+- khi gặp await và Task chưa Complete (lúc này request thread được giải phóng)
 
 # mỗi khi await thì thread hiện tại luôn được trả về pool có phải không? vì sao? [id:3343 order:10]
 Không hoàn toàn.
@@ -47,10 +47,6 @@ hoặc I/O cực nhanh xong ngay.
 # khi Task hoàn thành trước khi await yield thì sao? [id:3345 order:12]
 thread chạy tiếp mà k cần trả về pool
 
-# trong await async(), khi nào thread được giải phóng? [id:3412 order:13]
-khi chạy đến await đầu tiên trong async() với điều kiện Task chưa complete
-nếu Task complete quá nhanh trước khi thread yield thì thread sẽ chạy luôn.
-
 # yield nghĩa gì? [id:3413 order:14]
 là "nhường"
 — thread nhường Control về caller/scheduler, không tiếp tục chạy code dưới. Trong async, khi gặp `await` mà Task chưa xong, thread yield → quay về pool, không bị block.
@@ -59,6 +55,7 @@ là "nhường"
 khi Task chưa complete
 
 # yield phát âm? [id:3626 order:16]
+/jiːld/
 
 # khi nào thread k kịp yield ? [id:3415 order:17]
 khi task complete quá nhanh

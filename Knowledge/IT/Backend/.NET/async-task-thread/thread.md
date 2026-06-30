@@ -35,6 +35,8 @@ Kernel quản lý hardware (CPU, RAM, disk, network) và cung cấp syscall cho 
 App gọi I/O (đọc file, gửi packet) → syscall → kernel giao việc cho driver/hardware. Trong khi hardware xử lý, app thread không cần đợi (với async I/O), kernel sẽ notify khi xong.
 
 # tại sao CPU phải chờ khi làm việc với thiết bị ngoài nhỉ? [id:3627 order:10]
+vì CPU rất nhanh (ns) còn thiết bị ngoài rất chậm 
+
 # hoạt động IO là gì? ? [id:3366 order:10]
 là phải hoạt động mà CPU phải chờ
 

@@ -10,33 +10,18 @@ name: "task"
 Gần giống `Promise`
 kết hợp với offload sang Web Worker. JS không có thread pool sẵn nên không có analog 1-1 — `setTimeout(fn, 0)` chỉ defer chứ không chạy thread khác.
 
-<!--# so sánh C#.Task.run và JS.promise? [id:3347 order:3]
-- `Task.Run`: schedule lambda **chạy trên thread khác** (thread pool) → đúng nghĩa parallel.
-- `Promise`: chỉ là wrapper async result, không tự tạo thread; code trong `new Promise(fn)` chạy đồng bộ trên main thread.
-- Tóm lại: `Task.Run` ≈ `Worker + Promise`, còn `Promise` đơn thuần ≈ `Task` (không có `.Run`). -->
-
 # ví dụ CPU-bound work phổ biến? [id:3348 order:4]
 encrypt/hash password, parse JSON lớn, xử lý ảnh, compress file, tính toán ML.
 
 # khi có Task.Run, chuyện gì xảy ra? [id:3349 order:5]
 Runtime lấy 1 pool thread, schedule lambda lên thread đó,
 trả về `Task` ngay lập tức.
-Thread hiện tại không bị block — nó tiếp tục hoặc `await` Task đó.
+nếu có await thì giải phóng main thread, nếu k thì main thread chạy tiếp
 
-# chức năng của Task.Run? [id:3350 order:6]
-chạy code trên Thread mới mà k giải phóng thread hiện tại
-
-# ví dụ phổ biến dùng Task.Run? [id:3351 order:7]
-```csharp
-var result = await Task.Run(() => JsonSerializer.Deserialize<BigObject>(json));
-```
-
-Dùng khi parse JSON lớn, xử lý ảnh, mã hóa — tránh block request thread.
-
-# task.run tạo task mới à? [id:3352 order:8]
+# task.run tạo Task mới à? [id:3352 order:8]
 Đúng.
 
-`Task.Run(...)` tạo 1 Task mới, schedule nó lên thread pool và return Task object để caller có thể await hoặc chờ kết quả.
+`Task.Run(...)` tạo 1 Task mới, schedule nó lên thread pool và return Task object để caller có thể await
 
 # Task liên hệ gì với thread pool? [id:2904 order:9]
 Task mặc định schedule lên thread pool — `Task.Run(() => ...)` lấy 1 worker thread từ pool để chạy. Task không tự sở hữu thread riêng.
