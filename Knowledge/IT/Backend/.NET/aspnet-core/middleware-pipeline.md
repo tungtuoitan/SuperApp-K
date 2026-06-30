@@ -12,8 +12,8 @@ là thành phần xử lý HTTP request/response theo pipeline.
 # cách đọc circuit ? [id:2856 order:3]
 Đọc là "sơ-kịt" (tiếng Anh /ˈsɜːr.kɪt/).
 
-# IHostedService là gì? [id:2857 order:4]
-là interface để chạy background task
+<!--# IHostedService là gì? [id:2857 order:4]
+là interface để chạy background task -->
 
 # .net server đơn giản nhất gồm những gì? [id:2858 order:5]
 - Kestrel: nhận HTTP connection
