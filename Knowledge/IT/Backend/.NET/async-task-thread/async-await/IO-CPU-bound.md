@@ -3,9 +3,8 @@ id: 355
 name: "IO-CPU-bound"
 ---
 
-<!--# I/O bound là gì? [id:3444 order:1]
-là Tác vụ mà thời gian chờ chủ yếu là chờ thiết bị ngoài (disk, network, DB)
- — CPU nhàn rỗi trong lúc chờ. Ngược với CPU-bound (CPU bận suốt). -->
+# I/O bound là gì? [id:3444 order:1]
+là Tác vụ mà CPU phải rảnh rỗi ngồi chờ
 
 # các hoạt động I/O phổ biến? [id:3445 order:2]
 - Đọc/ghi file, DB query, HTTP request
@@ -30,9 +29,9 @@ Còn nhiều loại: memory stream (`MemoryStream`), pipe stream, crypto stream,
 # có stream từ memory không? [id:3449 order:6]
 Có — `MemoryStream` đọc/ghi trực tiếp trên buffer trong RAM. Không có I/O wait → CPU-bound, rất nhanh.
 
-<!--# đọc file từ ổ cứng, memory có phải CPU-bound không? vì sao? [id:3450 order:7]
-- Từ ổ cứng thì là I/O-bound — vì phải chờ disk, CPU nhàn trong lúc đó.
-- Từ memory/RAM (đã cache) thì là CPU-bound -->
+# đọc file từ ổ cứng, memory có phải CPU-bound không? vì sao? [id:3450 order:7]
+- Từ ổ cứng thì là I/O-bound — vì CPU phải chờ disk
+- Từ memory/RAM (đã cache) thì là CPU-bound
 
 <!--# ghi file trong ổ cứng cũng là I/O à? [id:3451 order:8]
 Có — ghi disk là I/O-bound, CPU chờ disk controller ghi xong.

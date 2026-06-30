@@ -31,9 +31,9 @@ Không.
 vì `B()` throw ngay — không có `await` nào được gặp → thread không yield, không trả về pool.
 Exception được gói vào Task trả về, thread tiếp tục chạy dòng tiếp theo bình thường.
 
-<!--# nếu thêm delay vào B (trước throw) thì có giải phóng thread không? vì sao? [id:3426 order:5]
+# nếu thêm delay vào B (trước throw) thì có giải phóng thread không? vì sao? [id:3426 order:5]
 Có,
-Khi gặp `await Task.Delay` — Task chưa complete → thread yield về pool. -->
+Khi gặp `await Task.Delay` — Task chưa complete → thread yield về pool.
 
 # nếu dùng `await Task.Delay 1ms` thì có giải phóng thread không? vì sao? [id:3427 order:6 close-context]
 Thường là có, nhưng không đảm bảo.

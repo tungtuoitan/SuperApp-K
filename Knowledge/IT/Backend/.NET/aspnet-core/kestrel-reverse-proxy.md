@@ -1,4 +1,4 @@
-﻿---
+---
 id: 317
 name: "kestrel-reverse-proxy"
 ---
@@ -16,10 +16,15 @@ là tên 1 loài chim cắt nhỏ, bay nhanh và linh hoạt — Microsoft đặ
 - Viết tối ưu cho HTTP workload
 - Built on high-performance networking library (libuv / System.Net.Sockets)
 
-<!--# So sánh Kestrel, Nginx, Apache, IIS? [id:2773 order:4]
-- Kestrel: HTTP server của .NET, dùng trong process, nhanh, không có reverse proxy feature
-- Nginx/Apache: HTTP server + reverse proxy, thường đứng trước Kestrel để handle SSL termination, load balancing, serve static file
-- IIS: Windows-only, tích hợp với Windows Server, cũ hơn -->
+# So sánh Kestrel và IIS? [id:2773 order:4]
+- `Kestrel`: cross-platform, nhẹ, nhanh, dùng trong ASP.NET Core;
+- `IIS`: Windows-only, nặng hơn, dùng làm reverse proxy trước Kestrel
 
-<!--# Reverse Proxy là gì? [id:2774 order:5]
-là server đứng trước application server để nhận request từ Internet, rồi forward vào app server (Kestrel). Xử lý SSL, load balancing, caching, logging. -->
+# Reverse Proxy là gì? [id:2774 order:5]
+là server đứng trước application server 
+để nhận request từ Internet, rồi forward vào app server (Kestrel). Xử lý SSL, load balancing, caching, logging.
+
+# api server và app server có phải là 1 không??
+gần như là 1. 
+`app server` có nghĩa rộng
+`api server` là app server chỉ phục vụ HTTP API

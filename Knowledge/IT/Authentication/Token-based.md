@@ -31,9 +31,10 @@ navigation → page request > server render HTML → browser nhận HTML → bro
 Đúng.
 vì page request được thiết kế như vậy
 
-<!--# request trong SSR gọi là gì? [id:3069 order:9]
-**Page request** (hoặc **document request**, **navigation request**).
-Là HTTP request browser tự tạo khi navigation, server trả về HTML đầy đủ. Khác với **API call** (request trả về JSON cho JS xử lý). -->
+# html request trong SSR gọi là gì? [id:3069 order:9]
+**Page request** 
+(hoặc **document request**, **navigation request**).
+Là HTTP request browser tự tạo khi navigation, server trả về HTML đầy đủ. Khác với **API call** (request trả về JSON cho JS xử lý).
 
 # page request khác gì so với api thông thường? [id:3070 order:10]
 - Page request: được gọi khi navigation.

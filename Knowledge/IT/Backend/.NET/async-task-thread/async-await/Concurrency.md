@@ -1,4 +1,4 @@
-﻿---
+---
 id: 353
 name: "Concurrency"
 ---
@@ -26,16 +26,17 @@ Cả 3 task start gần như cùng lúc, thứ tự B1 in ra không đảm bảo
 Là một lock
 cho phép tối đa N thread vào critical section cùng lúc (so với `lock` chỉ cho 1).
 
-<!--# SemaphoreSlim và lock là cơ chế hay gì? [id:3398 order:3]
-Là synchronization primitive — cơ chế điều phối truy cập vào tài nguyên dùng chung giữa nhiều thread. -->
+# SemaphoreSlim là thể loại gì? [id:3398 order:3]
+Là cơ chế điều phối truy cập tài nguyên 
+dùng chung giữa nhiều thread.
 
 # primitive nghĩa là gì? [id:3399 order:4]
 nguyên thủy / cơ bản nhất
 
-<!--# ý nghĩa từ semaphore? [id:3401 order:5]
-Tiếng Latin: "semaphore" = "signal bearer" (người mang tín hiệu).
+# ý nghĩa từ semaphore? [id:3401 order:5]
+là biến đếm số process được phép truy cập tài nguyên cùng lúc
 Xuất phát từ hệ thống tín hiệu đường sắt — cờ hiệu cho phép hoặc chặn tàu vào đoạn đường.
-Trong CS: Edsger Dijkstra đặt tên năm 1965 — một biến đếm kiểm soát số lượng process được phép truy cập tài nguyên cùng lúc. -->
+Trong CS: Edsger Dijkstra đặt tên năm 1965 — một biến đếm kiểm soát số lượng process được phép truy cập tài nguyên cùng lúc.
 
 # deadlock là gì? [id:3430 order:6]
 Tình huống 2+ thread chờ nhau vô tận — không ai nhường trước.
@@ -62,6 +63,13 @@ hàm nào đang được thread thực thi thì hàm đó nắm control.
 <!--# việc nắm control có nghĩa gì? [id:3436 order:12]
 nghĩa là Thread đang thực thi code của hàm đó
 Mất control nghĩa là thread chuyển sang chạy code của thứ khác (caller, scheduler, OS). -->
+
+# khái niệm control (nắm quyền điều khiển) có trong .NET không?
+có. 
+`control` là khái niệm chung của runtime/CS, không riêng .NET. Trong .NET, ta hay gặp khi nói về:
+- `await` → "yield control back to caller"
+- exception → "control transfers to catch block"
+- `Main()` → entry point "where control starts"
 
 # caller là gì? [id:3437 order:13]
 là Method gọi method hiện tại.

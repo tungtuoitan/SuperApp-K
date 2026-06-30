@@ -1,4 +1,4 @@
-﻿---
+---
 id: 334
 name: "array"
 ---
@@ -31,9 +31,11 @@ là (v) duyệt qua từng phần tử theo thứ tự. Ví dụ: "traverse the 
 # traverse khác gì interate? [id:3375 order:8]
 trong văn nói là 1
 
-<!--# truy cập tức là đọc phải không? [id:3376 order:9]
-Không.
-truy cập (access) = đọc hoặc ghi -->
+# phân biệt truy cập/đọc/ghi? [id:3376 order:9]
+- `truy cập (access)`: tìm tới vị trí phần tử — `arr[5]` (bước tính địa chỉ).
+- `đọc (read)`: lấy giá trị tại vị trí đã truy cập — `var x = arr[5]`.
+- `ghi (write)`: gán giá trị mới tại vị trí đã truy cập — `arr[5] = 9`.
+truy cập là điều kiện chung; đọc/ghi là 2 thao tác cụ thể sau khi truy cập.
 
 # cấu trúc cấp thấp nghĩa là gì? [id:3159 order:10]
 là cấu trúc gần với phần cứng, ít abstraction.

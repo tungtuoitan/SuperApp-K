@@ -1,4 +1,4 @@
-﻿---
+---
 id: 347
 name: "async-await"
 ---
@@ -28,9 +28,12 @@ Rule of thumb: nếu await > vài chục micro giây thì đáng dùng await. --
 sẽ là callback gắn vào Task đang chờ.
 Khi Task hoàn thành, runtime schedule continuation lên pool thread để chạy tiếp.
 
-<!--# khi nào thread được trả về pool? [id:3341 order:8]
-Khi gặp `await` một Task chưa complete.
-Lúc đó thread không có việc làm → trả về pool ngay, không chờ. -->
+# khi nào thread được trả về pool? [id:3341 order:8]
+khi thread được giải phóng
+
+# khi nào thread được giải phóng?
+- khi hoàn thành 1 Task
+- khi gặp await/Task.Run()
 
 # mỗi khi await thì thread hiện tại luôn được trả về pool có phải không? vì sao? [id:3343 order:9]
 Không hoàn toàn.
@@ -44,15 +47,18 @@ hoặc I/O cực nhanh xong ngay.
 # khi Task hoàn thành trước khi await yield thì sao? [id:3345 order:11]
 thread chạy tiếp mà k cần trả về pool
 
-<!--# khi chạy await async() thì khi nào thread thực sự được giải phóng? [id:3412 order:12]
-khi chạy đến await đầu tiên trong async() -->
+# trong await async(), khi nào thread được giải phóng? [id:3412 order:12]
+khi chạy đến await đầu tiên trong async() với điều kiện Task chưa complete
+nếu Task complete quá nhanh trước khi thread yield thì thread sẽ chạy luôn.
 
-<!--# yield là gì? [id:3413 order:13]
-là trả thread về pool -->
+# yield nghĩa gì? [id:3413 order:13]
+là "nhường" 
+— thread nhường Control về caller/scheduler, không tiếp tục chạy code dưới. Trong async, khi gặp `await` mà Task chưa xong, thread yield → quay về pool, không bị block.
 
-<!--# khi nào thread yield? [id:3414 order:14]
-Khi `await` một Task chưa complete -->
+# khi nào thread yield? [id:3414 order:14]
+khi Task chưa complete
 
+# yield phát âm?
 # khi nào thread k kịp yield ? [id:3415 order:15]
 khi task complete quá nhanh
 
@@ -74,11 +80,11 @@ k ảnh hưởng, vì Kết quả cuối luôn giống nhau
 — `await` đảm bảo code sau nó chỉ chạy khi Task xong.
 Chỉ khác về performance: complete trước thì tiết kiệm 1 lần context switch, yield trước thì giải phóng thread cho request khác.
 
-<!--# không kịp yield nghĩa là gì? [id:3420 order:20]
-`await` kiểm tra Task — nếu đã complete rồi thì chạy tiếp luôn trên thread hiện tại chứ k giải phóng thread -->
+# không kịp yield nghĩa là gì? [id:3420 order:20]
+là Task hoàn thành QUÁ NHANH, cho nên thread sẽ chạy tiếp luôn
 
-<!--# khi nói thread gốc, main thread có nghĩa là thread nào? [id:3421 order:21]
-request thread hoặc UI thread tùy ngữ cảnh -->
+# thread gốc/main thread là gì? [id:3421 order:21]
+là request thread hoặc UI thread tùy ngữ cảnh
 
 # batch nghĩa là gì? [id:3400 order:22]
 lô / nhóm
@@ -92,8 +98,9 @@ là Dòng chảy liên tục của dữ liệu
 Ngược với batch (lấy hết rồi xử lý một lần).
 Trong .NET: `Stream` (byte), `IEnumerable<T>` (sync), `IAsyncEnumerable<T>` (async) đều là stream theo nghĩa này.
 
-<!--# IAsyncEnumerable có phổ biến k [id:3403 order:24]
-Khá phổ biến -->
+# IAsyncEnumerable có phổ biến k, được dùng trong trường hợp nào [id:3403 order:24]
+không phổ biến 
+Dùng khi stream, đọc file lớn
 
 # khi nào dùng IAsyncEnumerable? [id:3404 order:25]
 khi cần stream dữ liệu lớn mà không muốn load hết vào memory.

@@ -1,4 +1,4 @@
-﻿---
+---
 id: 313
 name: "aspnet-core"
 ---
@@ -70,20 +70,21 @@ vì static không thuộc instance nào.
 - Pass instance hiện tại ra ngoài: `Foo(this)`
 - Chain method: `return this;`
 
-<!--# trước mỗi object mới thì phải luôn có new à? [id:2968 order:19]
-Có với reference type (class, array, delegate) — `new` cấp phát memory trên heap. Value type (struct, int, bool) không cần `new`, gán literal trực tiếp được. -->
+# trước mỗi object mới thì phải luôn có new à? [id:2968 order:19]
+đúng với reference type
 
 # object là gì trong .NET? [id:3316 order:20]
-là instance của 1 class (reference type).
-Tất cả class đều kế thừa `System.Object`.
+có 2 nghĩa
+    là instance của 1 class (reference type).
+    `System.Object` (mọi type đều kế thừa System.Object)
 
 # nếu k dùng new cho object mới thì sao? [id:2969 order:21]
 bị Compile error
 
-<!--# vai trò của new? [id:2970 order:22]
+# khi new () thì chuyện gì xảy ra? [id:2970 order:22]
 - cấp phát memory,
 - chạy constructor,
-- trả về reference đến object mới. -->
+- trả về reference đến object mới.
 
 # object nào cũng có constructor à? [id:2971 order:23]
 đúng
@@ -101,8 +102,8 @@ Ví dụ: `5`, `"hello"`, `true`, `3.14`, `null`.
 # array trong c# là collection à? [id:2975 order:27]
 Có. Array implement `IEnumerable`, `ICollection`, `IList` nên được tính là collection. Khác `List<T>` ở chỗ size cố định.
 
-<!--# array khác gì collection? [id:2976 order:28]
-Array là 1 loại collection cụ thể. -->
+# quan hệ giữa array và collection? [id:2976 order:28]
+Array là 1 loại collection cụ thể.
 
 # quá trình khởi tạo 1 instance? [id:2977 order:29]
 4 bước theo thứ tự:

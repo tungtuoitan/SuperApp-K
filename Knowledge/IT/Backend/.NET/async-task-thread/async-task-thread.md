@@ -49,8 +49,8 @@ Cũng dùng như (v) "to abstract" = trừu tượng hóa.
 # đơn vị OS là gì? [id:2822 order:12]
 là tài nguyên thực do OS cấp phát và quản lý
 
-<!--# tài nguyên OS là gì? [id:3317 order:13]
-— process, thread, file handle, socket. -->
+# tài nguyên OS gồm những gì? [id:3317 order:13]
+— process, thread, file handle, socket.
 
 # abstraction nghĩa là gì? [id:2823 order:14]
 là che giấu chi tiết phức tạp bên dưới, chỉ phơi ra interface đơn giản. Task abstract Thread, ORM abstract SQL.
@@ -65,8 +65,11 @@ là ghép nhiều thành phần nhỏ lại thành thành phần lớn hơn. Tro
 Quan trọng với UI app. WPF/WinForms chỉ cho update UI từ UI thread — nếu await xong nhảy sang thread khác, code update UI sẽ throw exception. ASP.NET Core và console app không có ràng buộc này nên chạy thread nào cũng được, lợi cho throughput.
 1 thread .NET tương ứng với 1 OS thread
 
-<!--# Task<ResultOptions> Error(LogDto log); trong này Task có nghĩa gì? [id:2951 order:18]
-nghĩa là method này async — trả về `Task<ResultOptions>` thay vì trả thẳng `ResultOptions`. Caller phải `await` để lấy giá trị thật. -->
+# method trả về Task thì nói lên điều gì? [id:2951 order:18]
+```cs
+Task<ResultOptions> Error(LogDto log);
+```
+cho dev biết: method này async
 
 # result type Task có nghĩa là chưa có kq, đang đợi có phải không? [id:2952 order:19]
 Đúng.

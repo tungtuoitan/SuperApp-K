@@ -50,8 +50,8 @@ là mạng tồn tại ở mức phần mềm, không có dây cáp riêng. Các
 # Khi connect VPN, client có được cấp IP riêng không? [id:431 order:15]
 Có.
 
-<!--# IP đó gọi là gì? [id:432 order:16]
-Virtual IP hoặc VPN IP. -->
+# IP trong VPN gọi là gì? [id:432 order:16]
+Virtual IP hoặc VPN IP.
 
 # Virtual IP dùng để làm gì? [id:433 order:17]
 Để định danh và route traffic trong VPN.

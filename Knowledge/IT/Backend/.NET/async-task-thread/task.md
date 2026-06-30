@@ -1,4 +1,4 @@
-﻿---
+---
 id: 348
 name: "task"
 ---
@@ -10,9 +10,10 @@ name: "task"
 Gần giống `Promise`
 kết hợp với offload sang Web Worker. JS không có thread pool sẵn nên không có analog 1-1 — `setTimeout(fn, 0)` chỉ defer chứ không chạy thread khác.
 
-<!--# sự khác nhau của task.run và promise trong js? [id:3347 order:3]
-- `Task.Run` chạy trên thread pool thật (multi-thread).
-- Promise trong JS chạy trên event loop single-thread -->
+<!-- # so sánh C#.Task.run và JS.promise? [id:3347 order:3]
+- `Task.Run`: schedule lambda **chạy trên thread khác** (thread pool) → đúng nghĩa parallel.
+- `Promise`: chỉ là wrapper async result, không tự tạo thread; code trong `new Promise(fn)` chạy đồng bộ trên main thread.
+- Tóm lại: `Task.Run` ≈ `Worker + Promise`, còn `Promise` đơn thuần ≈ `Task` (không có `.Run`). -->
 
 # ví dụ CPU-bound work phổ biến? [id:3348 order:4]
 encrypt/hash password, parse JSON lớn, xử lý ảnh, compress file, tính toán ML.
@@ -22,9 +23,8 @@ Runtime lấy 1 pool thread, schedule lambda lên thread đó,
 trả về `Task` ngay lập tức.
 Thread hiện tại không bị block — nó tiếp tục hoặc `await` Task đó.
 
-<!--# chức năng của Task.Run? [id:3350 order:6]
-đẩy 1 đoạn code chạy trên thread pool
-, trả về `Task` để await. Dùng khi muốn offload CPU-bound work khỏi thread hiện tại. -->
+# chức năng của Task.Run? [id:3350 order:6]
+chạy code trên Thread mới mà k giải phóng thread hiện tại
 
 # ví dụ phổ biến dùng Task.Run? [id:3351 order:7]
 ```csharp
@@ -50,9 +50,9 @@ Compiler tự wrap body hàm `async` thành state machine và return về `Task`
 - Gọi `Task.Run(...)`
 - Gọi I/O async (`File.ReadAllTextAsync`, `HttpClient.GetAsync`)
 
-<!--# mỗi request đến server tương ứng 1 task à? [id:3355 order:12]
-Đúng trong ASP.NET Core.
-Mỗi HTTP request → 1 task chạy trên 1 pool thread. Khi handler `await`, thread được trả về pool, đến khi await xong runtime lấy thread khác (có thể cùng) chạy tiếp. -->
+# mỗi request đến server tương ứng 1 Task à? tại sao? [id:3355 order:12]
+đúng. Vì pipeline ASP.NET Core là async 
+<!-- — mỗi request được handler dispatch dưới dạng `async Task HandleRequest()`. Compiler bọc body thành Task để runtime resume khi I/O hoàn tất, không phải dedicate 1 thread suốt request. -->
 
 # Task của await IO có đi vào queue không? [id:3356 order:13]
 không.
@@ -84,3 +84,4 @@ khi method `await` 1 I/O operation, thread đang chạy được trả về thre
 <!--# thread A chạy hàm a, trong a có await Task b thì b được chạy bởi thread nào? [id:3360 order:20]
 Tùy task b.
 Nếu b là `Task.Run(...)` → 1 pool thread khác (không phải A). Nếu b là I/O async (`HttpGet`, `DbQuery`) → không thread nào chạy cả, chỉ kernel I/O xử lý; khi xong, runtime mới lấy 1 pool thread (có thể chính là A) để resume hàm a sau `await`. -->
+

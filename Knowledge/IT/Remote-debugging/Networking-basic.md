@@ -1,4 +1,4 @@
-﻿---
+---
 id: 63
 name: "Networking-basic"
 ---
@@ -38,8 +38,8 @@ Nhận dữ liệu số từ OS
 → chuyển thành tín hiệu điện (Ethernet) hoặc sóng radio (WiFi)
 → truyền ra mạng.
 
-<!--# Network Interface là gì? [id:3305 order:12]
-là 1 struct chứa: IP address, MAC address, routing entry. -->
+# Network Interface là gì? [id:3305 order:12]
+là abstract của Adapter
 
 # chuyện gì xảy ra khi App gửi data đi? [id:3306 order:13]
 Chrome gọi socket.Send(data)
@@ -51,10 +51,13 @@ NIC truyền dữ liệu vật lí ra ngoài
 # tại sao máy có nhiều network interface? [id:3307 order:14]
 vì máy có thể có nhiều đường ra mạng khác nhau
 
-<!--# quan hệ Interface và wifi, ethernet? [id:3308 order:15]
-interface là abstract của 1 điểm tham gia vào mạng cụ thể
-còn wifi, ethernet là các điểm tham gia vào mạng -->
+# quan hệ Interface và hardware? [id:3308 order:15]
+là abstract của abstract của Hardware
 
+# interface > adapter > hardware rất phổ biến phải không?
+đúng 
+— đây là pattern abstraction chuẩn của OS: lớp trên (interface) cho app dùng, lớp giữa (adapter/driver) dịch lệnh, lớp dưới (hardware) thực thi. Mẫu này lặp ở mọi loại I/O: network, disk, audio, display.
+# interface > adapter > hardware gọi là pattern gì?
 # quan hệ giữa Adapter và NIC? [id:3309 order:16]
 Adapter là abstract của NIC
 

@@ -23,13 +23,10 @@ Không. `async void` trả về `void`, không phải `Task` — compiler không
 # propagate là gì? [id:3396 order:6]
 lan truyền — exception propagate = exception được chuyển lên caller phía trên qua call stack cho đến khi gặp `catch` xử lý nó.
 
-<!--# async void (C): exception khong the catch tu ngoai -> luon tu catch ben trong --> giải thích và cho ví dụ [id:3393 order:7]
-`async void` không trả về `Task`, nên caller không có gì để `await` hay `catch`.
-Exception bị throw vào `SynchronizationContext` hiện tại → thường crash app, không bắt được. -->
+# trong bất đồng bộ, khi nào lỗi bị nuốt? [id:3394 order:8]
+- khi gọi async mà k dùng await,....
+- khi dùng whenAll mà k gom hết exception
 
-<!--# khi nào thì exception k đi vào catch? vì sao [id:3394 order:8]
-khi exception được throw trong `async void`
-vì caller không `await` được nên exception bay ra ngoài scope của `try/catch` đó. -->
 
 # WhenAll throw Exception thế nào? [id:3392 order:9]
 chỉ rethrow exception **đầu tiên**

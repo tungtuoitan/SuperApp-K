@@ -1,4 +1,4 @@
-﻿---
+---
 id: 349
 name: "thread"
 ---
@@ -6,9 +6,6 @@ name: "thread"
 # mỗi process có 1 main thread để chạy app à? [id:3096 order:1]
 Đúng.
 OS tạo main thread khi process start, chạy `Main()` đầu tiên.
-
-<!--# main thread có thuộc pool không? [id:3097 order:2]
-không -->
 
 # mỗi process đều có 1 main thread à? [id:3098 order:3]
 Đúng.
@@ -37,5 +34,8 @@ Kernel quản lý hardware (CPU, RAM, disk, network) và cung cấp syscall cho 
 Đúng.
 App gọi I/O (đọc file, gửi packet) → syscall → kernel giao việc cho driver/hardware. Trong khi hardware xử lý, app thread không cần đợi (với async I/O), kernel sẽ notify khi xong.
 
-<!--# hoạt động IO là gì? [id:3366 order:10]
-là thao tác đọc/ghi dữ liệu ngoài CPU -->
+# hoạt động IO là gì? ? [id:3366 order:10]
+là phải hoạt động mà CPU phải chờ
+
+# tại sao CPU phải chờ khi làm việc với thiết bị ngoài nhỉ?
+vì CPU rất nhanh so với bọn chúng
