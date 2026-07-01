@@ -64,7 +64,7 @@ vì await mới trigger giải phóng thread
 
 (evidence: Example\async-await\task-run-no-await.cs)
 
-# vai trò của await? [id:3657 order:16]
+<!--# vai trò của await? [id:3657 order:16] -->
 
 # khi nào nên dùng await async()? [id:3465 order:17]
 mặc định hãy dùng await async cho mọi I/O
