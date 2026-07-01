@@ -123,11 +123,11 @@ IP của loopback interface — interface ảo, không gắn với phần cứng
 # quan hệ giữa network và subnet? [id:3648 order:35]
 subnet là một phần của network — network là toàn bộ dải IP, subnet chia nhỏ dải đó thành các mảng con để tổ chức và kiểm soát traffic.
 
-# ví dụ các network phổ biến quen thuộc? [id:3649 order:36]
+<!--# ví dụ các network phổ biến quen thuộc? [id:3649 order:36] -->
 
-# đặc điểm của 1 subnet? [id:3650 order:37]
+<!--# đặc điểm của 1 subnet? [id:3650 order:37] -->
 
-# thích chia network như nào cũng được à? [id:3651 order:38]
+<!--# thích chia network như nào cũng được à? [id:3651 order:38] -->
 
 # IP các thiết bị dùng chung WiFi có đặc điểm gì? [id:522 order:39]
 Cùng prefix mạng — ví dụ tất cả đều là `192.168.2.x`. Điều này có nghĩa là cùng subnet, có thể giao tiếp trực tiếp mà không qua internet.
