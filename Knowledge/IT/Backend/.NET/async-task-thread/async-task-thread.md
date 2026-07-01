@@ -21,7 +21,7 @@ Thread không bị block khi chờ IO → trả về thread pool để xử lý 
 - dùng Task.Run (dùng khi muốn đẩy Task vào thread khác NGAY LẬP TỨC)
 - dùng async only (dùng cho hoạt động I/O đơn giản)
 
-# robust là gì? [id:3653 order:6]
+<!--# robust là gì? [id:3653 order:6] -->
 
 # khi nào nên dùng Thread? [id:2816 order:7]
 Hiếm khi. Chỉ khi cần kiểm soát thấp như set priority, dùng `ThreadStatic`, hoặc tích hợp legacy API. Còn lại dùng Task.
