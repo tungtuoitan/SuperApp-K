@@ -39,7 +39,7 @@ Chỉ dùng khi muốn fire-and-forget
 # khi nào cần dùng await? [id:3460 order:9]
 - khi cần giải phóng thread
 
-# khi nào dùng async mà k dùng await? [id:3655 order:10]
+<!--# khi nào dùng async mà k dùng await? [id:3655 order:10] -->
 
 # nếu async nhưng có cả CPU-bound và IO-bound thì nên dùng gì? vì sao? [id:3461 order:11]
 cứ dùng await
